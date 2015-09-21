@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100A54B01BB02D8C00F974A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100A54AF1BB02D8C00F974A2 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
 		2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47157A1B01AC65009F015F /* destinationViewController.m */; };
@@ -371,6 +372,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100A54AF1BB02D8C00F974A2 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
 		2B4715761B0196D2009F015F /* agreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agreementViewController.h; sourceTree = "<group>"; };
@@ -1755,6 +1757,7 @@
 				758BF5011AA42C280023A5A6 /* ViewModel */,
 				758BF49E1AA42B5A0023A5A6 /* AppDelegate.h */,
 				758BF49F1AA42B5A0023A5A6 /* AppDelegate.m */,
+				100A54AF1BB02D8C00F974A2 /* LaunchScreen.xib */,
 				758BF4A71AA42B5A0023A5A6 /* Images.xcassets */,
 				758BF49A1AA42B5A0023A5A6 /* Supporting Files */,
 			);
@@ -2059,6 +2062,7 @@
 				2B5C1F421BA9530E00E770FC /* logging@3x-02.png in Resources */,
 				2B5C1F591BA9530E00E770FC /* @3x_personal-02.png in Resources */,
 				2B5C1F6D1BA9530E00E770FC /* @3x_ install-05.png in Resources */,
+				100A54B01BB02D8C00F974A2 /* LaunchScreen.xib in Resources */,
 				2B5C1FBE1BA9582200E770FC /* CalendarNormalDate.png in Resources */,
 				2B5C1F201BA9530E00E770FC /* details@3x-02.png in Resources */,
 				2B5C1F4B1BA9530E00E770FC /* 120x120.png in Resources */,
@@ -2481,7 +2485,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2530,7 +2533,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
