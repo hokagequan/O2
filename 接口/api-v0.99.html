@@ -1,0 +1,3888 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>api</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<hr>
+
+<pre><code>1. 加载首页活动
+</code></pre>
+
+<p>/trip/ws/rest_acti/indexActi?paramjson={longitude=&quot;&quot;,latitude=&quot;&quot;,startPage:&quot;&quot;,pageSize:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_0">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>经度</td>
+<td>longitude</td>
+<td>经度</td>
+</tr>
+<tr>
+<td>纬度</td>
+<td>latitude</td>
+<td>纬度</td>
+</tr>
+<tr>
+<td>起始页</td>
+<td>startPage</td>
+<td></td>
+</tr>
+<tr>
+<td>分页大小</td>
+<td>pageSize</td>
+<td></td>
+</tr>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td>可选，如果登陆了，则有userId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_1">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>目的地</td>
+<td>destination</td>
+<td></td>
+</tr>
+<tr>
+<td>目的地ID</td>
+<td>destiId</td>
+<td></td>
+</tr>
+<tr>
+<td>目的地名称</td>
+<td>destiName</td>
+<td></td>
+</tr>
+<tr>
+<td>目的地活动数量</td>
+<td>actiNum</td>
+<td></td>
+</tr>
+<tr>
+<td>目的地图片链接</td>
+<td>destiImg</td>
+<td></td>
+</tr>
+<tr>
+<td>活动</td>
+<td>acti</td>
+<td></td>
+</tr>
+<tr>
+<td>活动Id</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiTitle</td>
+<td></td>
+</tr>
+<tr>
+<td>体力强度</td>
+<td>physicalStrength</td>
+<td></td>
+</tr>
+<tr>
+<td>活动类型</td>
+<td>actiType</td>
+<td></td>
+</tr>
+<tr>
+<td>活动距离</td>
+<td>tripDistance</td>
+<td></td>
+</tr>
+<tr>
+<td>活动天数</td>
+<td>days</td>
+<td></td>
+</tr>
+<tr>
+<td>评论数量</td>
+<td>discussNum</td>
+<td></td>
+</tr>
+<tr>
+<td>原价</td>
+<td>origPrice</td>
+<td></td>
+</tr>
+<tr>
+<td>特价</td>
+<td>speciaNum</td>
+<td></td>
+</tr>
+<tr>
+<td>点赞数</td>
+<td>praiseNum</td>
+<td></td>
+</tr>
+<tr>
+<td>活动图片</td>
+<td>actiImage</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_2">JSON</h4>
+
+<pre><code>{
+    err_code:&quot;200&quot;,
+    msg:&quot;&quot;
+    data:
+        {
+            destination :  
+            [
+                {
+                    destiId:&quot;&quot;, 
+                    destiName:&quot;&quot;  
+                    actiNum:&quot;&quot;,  
+                    destiImg:&quot;&quot;, 
+
+                }
+                ...
+            ],
+            acti:
+            [
+                {
+                    actiId:&quot;&quot;, 
+                    actiImage:[&quot;&quot;,&quot;&quot;],
+                    actiTitle:&quot;&quot;,
+                    actiType:&quot;&quot;,
+                    days:&quot;&quot;,
+                    descName:&quot;&quot;,
+                    discussNum:&quot;&quot;,
+                    distance:&quot;&quot;,
+                    hasPraise:&quot;&quot;,
+                    origPrice:&quot;&quot;,
+                    physicalStrength:&quot;&quot;,
+                    praiseNum:&quot;&quot;,
+                    specialPrice:&quot;&quot;,
+                    tripDistance:&quot;&quot;
+                }
+                ...
+            ]
+        }
+}
+</code></pre>
+
+<hr>
+
+<pre><code>2.点赞
+</code></pre>
+
+<p>/trip/ws/rest_user/addPraise?paramjson={&quot;actiId&quot;:&quot;&quot;,&quot;userId&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_3">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td>可选，如果登陆了，则有userId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_4">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>点赞数</td>
+<td>praiseNum</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot; : &quot;200&quot;,
+    &quot;msg&quot; : &quot;&quot;,
+    &quot;date&quot; :
+    {
+        &quot;praiseNum&quot;:&quot;&quot;          
+    }
+}
+</code></pre>
+
+<hr>
+
+<pre><code>3. 输入框搜索
+</code></pre>
+
+<p>/trip/ws/rest_acti/searchActi?paramjson={&quot;keyWord&quot;:&quot;&quot;,&quot;userId&quot;:&quot;&quot;,latitude:&quot;&quot;,longtitude:&quot;&quot;,&quot;startPage&quot;:&quot;&quot;,&quot;pageSize&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_5">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>关键词</td>
+<td>keyWord</td>
+<td></td>
+</tr>
+<tr>
+<td>纬度</td>
+<td>latitude</td>
+<td></td>
+</tr>
+<tr>
+<td>经度</td>
+<td>longtitude</td>
+<td></td>
+</tr>
+<tr>
+<td>起始页</td>
+<td>startPage</td>
+<td></td>
+</tr>
+<tr>
+<td>分页大小</td>
+<td>pageSize</td>
+<td></td>
+</tr>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td>可选，如果登陆了，则有userId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_6">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>目的地</td>
+<td>destination</td>
+<td></td>
+</tr>
+<tr>
+<td>目的地ID</td>
+<td>destiId</td>
+<td></td>
+</tr>
+<tr>
+<td>目的地名称</td>
+<td>destiName</td>
+<td></td>
+</tr>
+<tr>
+<td>目的地活动数量</td>
+<td>actiNum</td>
+<td></td>
+</tr>
+<tr>
+<td>目的地图片链接</td>
+<td>destiImg</td>
+<td></td>
+</tr>
+<tr>
+<td>活动</td>
+<td>acti</td>
+<td></td>
+</tr>
+<tr>
+<td>活动Id</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiTitle</td>
+<td></td>
+</tr>
+<tr>
+<td>体力强度</td>
+<td>physicalStrength</td>
+<td></td>
+</tr>
+<tr>
+<td>活动类型</td>
+<td>actiType</td>
+<td></td>
+</tr>
+<tr>
+<td>活动距离</td>
+<td>tripDistance</td>
+<td></td>
+</tr>
+<tr>
+<td>活动天数</td>
+<td>days</td>
+<td></td>
+</tr>
+<tr>
+<td>评论数量</td>
+<td>discussNum</td>
+<td></td>
+</tr>
+<tr>
+<td>原价</td>
+<td>origPrice</td>
+<td></td>
+</tr>
+<tr>
+<td>特价</td>
+<td>speciaNum</td>
+<td></td>
+</tr>
+<tr>
+<td>点赞数</td>
+<td>praiseNum</td>
+<td></td>
+</tr>
+<tr>
+<td>活动图片</td>
+<td>actiImage</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_7">JSON</h4>
+
+<pre><code>{
+    err_code:&quot;200&quot;,
+    msg:&quot;&quot;
+    data:
+        {
+            destination :  
+            [
+                {
+                    destiId:&quot;&quot;,
+                    destiName:&quot;&quot;,
+                    actiNum:&quot;&quot;,  
+                    destiImg:&quot;&quot;
+                }
+            ],
+            acti:
+            [
+                {
+                    actiId:&quot;&quot;, 
+                    actiImage:[&quot;&quot;,&quot;&quot;],
+                    actiTitle:&quot;&quot;,
+                    actiType:&quot;&quot;,
+                    days:&quot;&quot;,
+                    descName:&quot;&quot;,
+                    discussNum:&quot;&quot;,
+                    distance:&quot;&quot;,
+                    hasPraise:&quot;&quot;,
+                    origPrice:&quot;&quot;,
+                    physicalStrength:&quot;&quot;,
+                    praiseNum:&quot;&quot;,
+                    specialPrice:&quot;&quot;,
+                    tripDistance:&quot;&quot;
+                }
+            ]
+        }
+}
+</code></pre>
+
+<p>__</p>
+
+<pre><code>4.获取活动类型和国家用于搜索
+</code></pre>
+
+<p>/trip/ws/rest_acti/getCountryAndType</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_8">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>经度</td>
+<td>longitude</td>
+</tr>
+<tr>
+<td>纬度</td>
+<td>latitude</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_9">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动</td>
+<td>acti</td>
+<td></td>
+</tr>
+<tr>
+<td>活动Id</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiTitle</td>
+<td></td>
+</tr>
+<tr>
+<td>体力强度</td>
+<td>physicalStrength</td>
+<td></td>
+</tr>
+<tr>
+<td>活动类型</td>
+<td>actiType</td>
+<td></td>
+</tr>
+<tr>
+<td>活动距离</td>
+<td>tripDistance</td>
+<td></td>
+</tr>
+<tr>
+<td>活动天数</td>
+<td>days</td>
+<td></td>
+</tr>
+<tr>
+<td>评论数量</td>
+<td>discussNum</td>
+<td></td>
+</tr>
+<tr>
+<td>原价</td>
+<td>origPrice</td>
+<td></td>
+</tr>
+<tr>
+<td>特价</td>
+<td>speciaNum</td>
+<td></td>
+</tr>
+<tr>
+<td>点赞数</td>
+<td>praiseNum</td>
+<td></td>
+</tr>
+<tr>
+<td>活动图片</td>
+<td>actiImage</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_10">JSON</h4>
+
+<pre><code>{
+&quot;err_code&quot;: &quot;200&quot;,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: 
+    {
+        type:
+        [
+            {
+            typeId:&quot;&quot;,
+            typeImg:&quot;&quot;,
+            typeName:&quot;&quot;
+            }
+            ...
+        ],
+        country:
+        [
+            {
+            countryId:&quot;&quot;,
+            countryImg:&quot;&quot;,
+            countryName:&quot;&quot;
+            }
+            ...
+        ]   
+   }
+ }
+</code></pre>
+
+<hr>
+
+<pre><code>5.根据国家ID搜索活动
+</code></pre>
+
+<p>/trip/ws/rest_acti/findActiByCountryId?paramjson={&quot;countryId&quot;:&quot;&quot;,&quot;longitude&quot;:&quot;&quot;,&quot;latitude&quot;:&quot;&quot;,
+&quot;userId&quot;:&quot;&quot;,&quot;startPage&quot;:&quot;&quot;,&quot;pageSize&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_11">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>国家ID</td>
+<td>countryId</td>
+<td></td>
+</tr>
+<tr>
+<td>经度</td>
+<td>longitude</td>
+<td></td>
+</tr>
+<tr>
+<td>纬度</td>
+<td>latitude</td>
+<td></td>
+</tr>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td>可选，如果登陆了，则有userId</td>
+</tr>
+<tr>
+<td>起始页</td>
+<td>startPage</td>
+<td></td>
+</tr>
+<tr>
+<td>分页大小</td>
+<td>pageSize</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_12">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动</td>
+<td>acti</td>
+<td></td>
+</tr>
+<tr>
+<td>活动Id</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiTitle</td>
+<td></td>
+</tr>
+<tr>
+<td>体力强度</td>
+<td>physicalStrength</td>
+<td></td>
+</tr>
+<tr>
+<td>活动类型</td>
+<td>actiType</td>
+<td></td>
+</tr>
+<tr>
+<td>活动距离</td>
+<td>tripDistance</td>
+<td></td>
+</tr>
+<tr>
+<td>活动天数</td>
+<td>days</td>
+<td></td>
+</tr>
+<tr>
+<td>评论数量</td>
+<td>discussNum</td>
+<td></td>
+</tr>
+<tr>
+<td>原价</td>
+<td>origPrice</td>
+<td></td>
+</tr>
+<tr>
+<td>特价</td>
+<td>speciaNum</td>
+<td></td>
+</tr>
+<tr>
+<td>点赞数</td>
+<td>praiseNum</td>
+<td></td>
+</tr>
+<tr>
+<td>活动图片</td>
+<td>actiImage</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_13">JSON</h4>
+
+<pre><code>{
+&quot;err_code&quot;: &quot;200&quot;,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: 
+{
+    &quot;acti&quot;: 
+    [
+        {
+            &quot;actiId&quot;: &quot;001&quot;,
+            &quot;actiImage&quot;:[],
+            &quot;actiTitle&quot;:&quot;&quot;,
+            &quot;actiType&quot;:&quot;&quot;,
+            &quot;days&quot;:&quot;&quot;,
+            &quot;descName&quot;:&quot;&quot;,
+            &quot;discussNum&quot;:&quot;&quot;,
+            &quot;distance&quot;:&quot;&quot;,
+            &quot;hasPraise&quot;:&quot;&quot;,
+            &quot;physicalStrength&quot;:&quot;&quot;,
+            &quot;praiseNum&quot;:&quot;&quot;,
+            &quot;specialPrice&quot;:&quot;&quot;,
+            &quot;tripDistance&quot;:&quot;&quot;
+        }
+        ...
+    ]
+ }
+}
+</code></pre>
+
+<hr>
+
+<pre><code>6.在点赞数最多的活动中按类型搜索
+</code></pre>
+
+<p>/trip/ws/rest_acti/findActiByTypePosition?paramjson={&quot;actiType&quot;:&quot;&quot;,&quot;longitude&quot;:&quot;&quot;,&quot;latitude&quot;:&quot;&quot;,&quot;userId&quot;:&quot;&quot;,&quot;startPage&quot;:&quot;&quot;,&quot;pageSize&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_14">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动类型</td>
+<td>actiType</td>
+<td></td>
+</tr>
+<tr>
+<td>经度</td>
+<td>longitude</td>
+<td></td>
+</tr>
+<tr>
+<td>纬度</td>
+<td>latitude</td>
+<td></td>
+</tr>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td>可选，如果登陆了，则有userId</td>
+</tr>
+<tr>
+<td>起始页</td>
+<td>startPage</td>
+<td></td>
+</tr>
+<tr>
+<td>分页大小</td>
+<td>pageSize</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_15">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动</td>
+<td>acti</td>
+<td></td>
+</tr>
+<tr>
+<td>活动Id</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiTitle</td>
+<td></td>
+</tr>
+<tr>
+<td>体力强度</td>
+<td>physicalStrength</td>
+<td></td>
+</tr>
+<tr>
+<td>活动类型</td>
+<td>actiType</td>
+<td></td>
+</tr>
+<tr>
+<td>活动距离</td>
+<td>tripDistance</td>
+<td></td>
+</tr>
+<tr>
+<td>活动天数</td>
+<td>days</td>
+<td></td>
+</tr>
+<tr>
+<td>评论数量</td>
+<td>discussNum</td>
+<td></td>
+</tr>
+<tr>
+<td>原价</td>
+<td>origPrice</td>
+<td></td>
+</tr>
+<tr>
+<td>特价</td>
+<td>speciaNum</td>
+<td></td>
+</tr>
+<tr>
+<td>点赞数</td>
+<td>praiseNum</td>
+<td></td>
+</tr>
+<tr>
+<td>活动图片</td>
+<td>actiImage</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_16">JSON</h4>
+
+<pre><code>{
+&quot;err_code&quot;: &quot;200&quot;,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: 
+{
+    &quot;acti&quot;: 
+    [
+        {
+            &quot;actiId&quot;: &quot;001&quot;,
+            &quot;actiImage&quot;: [],
+            &quot;actiTitle&quot;:&quot;&quot;,
+            &quot;actiType&quot;:&quot;&quot;,
+            &quot;days&quot;:&quot;&quot;,
+            &quot;descName&quot;:&quot;&quot;,
+            &quot;discussNum&quot;:&quot;&quot;,
+            &quot;distance&quot;:&quot;&quot;,
+            &quot;hasPraise&quot;:&quot;&quot;,
+            &quot;physicalStrength&quot;:&quot;&quot;,
+            &quot;praiseNum&quot;:&quot;&quot;,
+            &quot;specialPrice&quot;:&quot;&quot;,
+            &quot;tripDistance&quot;:&quot;&quot;
+        }
+    ]
+}
+</code></pre>
+
+<hr>
+
+<pre><code>7. 点击活动进入详情页
+</code></pre>
+
+<p>/trip/ws/rest_acti/getActiInfo</p>
+
+<hr>
+
+<h4 id="toc_17">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动Id</td>
+<td>actiId</td>
+</tr>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_18">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动</td>
+<td>actiInfo</td>
+</tr>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+</tr>
+<tr>
+<td>活动图片</td>
+<td>actiImg</td>
+</tr>
+<tr>
+<td>活动价格</td>
+<td>actiPrice</td>
+</tr>
+<tr>
+<td>活动点赞数</td>
+<td>actiNum</td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiTitle</td>
+</tr>
+<tr>
+<td>活动等级</td>
+<td>actiLevel</td>
+</tr>
+<tr>
+<td>活动评论数</td>
+<td>dissNum</td>
+</tr>
+<tr>
+<td>国家</td>
+<td>country</td>
+</tr>
+<tr>
+<td>活动天数</td>
+<td>days</td>
+</tr>
+<tr>
+<td>活动类型</td>
+<td>actiType</td>
+</tr>
+<tr>
+<td>活动距离</td>
+<td>distance</td>
+</tr>
+<tr>
+<td>体力强度</td>
+<td>physicalStrength</td>
+</tr>
+<tr>
+<td>装备</td>
+<td>equips</td>
+</tr>
+<tr>
+<td>活动描述</td>
+<td>actiDesc</td>
+</tr>
+<tr>
+<td>费用说明</td>
+<td>costNotes</td>
+</tr>
+<tr>
+<td>退款说明</td>
+<td>refundNotes</td>
+</tr>
+<tr>
+<td>点赞用户</td>
+<td>praiseUsers</td>
+</tr>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>用户名</td>
+<td>userName</td>
+</tr>
+<tr>
+<td>用户图片</td>
+<td>userImg</td>
+</tr>
+<tr>
+<td>活动景点</td>
+<td>actiScenic</td>
+</tr>
+<tr>
+<td>活动路线景点经度</td>
+<td>longtitude</td>
+</tr>
+<tr>
+<td>活动路线景点纬度</td>
+<td>latitude</td>
+</tr>
+<tr>
+<td>活动每天内容</td>
+<td>actiDays</td>
+</tr>
+<tr>
+<td>景点图片</td>
+<td>secnicName</td>
+</tr>
+<tr>
+<td>景点描述</td>
+<td>secnicDesc</td>
+</tr>
+<tr>
+<td>景点名称</td>
+<td>secnicImg</td>
+</tr>
+<tr>
+<td>温馨提示</td>
+<td>prompt</td>
+</tr>
+<tr>
+<td>标签</td>
+<td>label</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_19">JSON</h4>
+
+<pre><code>{
+    &quot;err_code&quot; : &quot;200&quot;,
+    &quot;msg&quot; : &quot;&quot;,
+    &quot;data&quot; :
+        {
+            &quot;actiInfo&quot; :
+            {
+                actiDay:
+                [
+                    {
+                        dayNo:&quot;&quot;,
+                        secnicName:&quot;&quot;   ,
+                        secnicDesc:&quot;&quot;,
+                        secnicImg:&quot;&quot;
+                    }
+                    ...
+                ],
+                scenic:
+                [
+                    {
+                        dayNo:&quot;&quot;,
+                        dayTitle:&quot;&quot;,
+                        latitude:&quot;&quot;,
+                        longitude:&quot;&quot;        
+                    }
+                ],
+                actiDesc:&quot;&quot;,
+                actiId:&quot;&quot;,
+                actiImg:[],
+                actiLevel:&quot;&quot;,
+                actiNum:&quot;&quot;,
+                actiPrice:&quot;&quot;,
+                actiTitle:&quot;&quot;,
+                actiType:&quot;&quot;,
+                costNotes:&quot;&quot;,
+                prompt:&quot;&quot;,
+                label:&quot;&quot;,
+                accurateTag:&quot;&quot;
+                country:&quot;&quot;,
+                days:&quot;&quot;,
+                discuss:
+                [
+                    {
+                        actiPrice:&quot;&quot;,
+                        actiTitle:&quot;&quot;,
+                        dissContent:&quot;&quot;,
+                        dissDate:&quot;&quot;,
+                        level:&quot;&quot;,
+                        userId:&quot;&quot;,
+                        userName:&quot;&quot;
+                        userImg:&quot;&quot;
+                    }
+                    ...
+                ],
+                dissNum:&quot;&quot;,
+                distance:&quot;&quot;,
+                equips:&quot;&quot;,
+                isfavorite:&quot;&quot;,
+                physicalStrength:&quot;&quot;,
+                praiseUser:
+                [
+                    {
+                        userId:&quot;&quot;,
+                        userImg:&quot;&quot;,
+                        userName:&quot;&quot;
+                    }
+                    ...
+                ],
+                problems:
+                [
+                    {
+                        actiNum:&quot;&quot;,
+                        actiPrice:&quot;&quot;,
+                        proId:&quot;&quot;,
+                        problemContent:&quot;&quot;,
+                        problemDate:&quot;&quot;,
+                        reply:
+                        [
+                            {
+                                replyContent:&quot;&quot;,
+                                replyDate:&quot;&quot;
+                            }
+                            ...
+                        ],
+                        status:&quot;&quot;,
+                        userImage:&quot;&quot;,
+                        userName:&quot;&quot;
+                    }
+                    ...
+                ],
+                refundNotes:&quot;&quot;,
+                startTime:&quot;&quot;,
+                priceTime:
+                {
+                    [
+                        {
+                            date:&quot;&quot;,
+                            price:&quot;&quot;,
+                            adultNum:&quot;5&quot;,
+                            youthNum:&quot;5&quot;,
+                            childrenNum:&quot;2&quot;
+                        }                                           ...
+                    ]
+                    adultDesc:&quot;18-50&quot;,
+                    youthDesc:&quot;&quot;,
+                    childrenDesc:&quot;5-12&quot;,
+                    time:&quot;&quot;
+                }
+            } 
+         }
+</code></pre>
+
+<hr>
+
+<pre><code>8. 加载评论
+</code></pre>
+
+<p>/trip/ws/rest_acti/getDiscusses?paramjson={&quot;actiId&quot;:&quot;&quot;,&quot;startPage&quot;:&quot;&quot;,&quot;pageSize&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<h4 id="toc_20">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>页数</td>
+<td>startPage</td>
+<td></td>
+</tr>
+<tr>
+<td>每页数量</td>
+<td>pageSize</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_21">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td></td>
+</tr>
+<tr>
+<td>用户昵称</td>
+<td>nickName</td>
+<td></td>
+</tr>
+<tr>
+<td>用户头像</td>
+<td>userImage</td>
+<td></td>
+</tr>
+<tr>
+<td>评论内容</td>
+<td>dissContent</td>
+<td></td>
+</tr>
+<tr>
+<td>评论日期</td>
+<td>dissDate</td>
+<td></td>
+</tr>
+<tr>
+<td>评价等级</td>
+<td>level</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_22">JSON</h4>
+
+<pre><code>{
+&quot;err_code&quot; : &quot;200&quot;,
+&quot;msg&quot; : &quot;&quot;,
+&quot;data&quot; : 
+{
+    discuss:
+    [
+    {
+        &quot;userId&quot; : &quot;001&quot;,
+        “nickName” : &quot;QHdf8&quot;,
+        &quot;userImage&quot; : &quot;&quot;,
+        &quot;disContent&quot; : &quot;&quot;,
+        &quot;disDate&quot; : &quot;&quot;,
+        &quot;level&quot;:&quot;&quot;  
+    }
+    ...
+   ]
+  }
+</code></pre>
+
+<hr>
+
+<pre><code>9. 添加评论
+</code></pre>
+
+<p>/trip/ws/rest_acti/addDiscuss</p>
+
+<hr>
+
+<h4 id="toc_23">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>登录用户Id</td>
+<td>userId</td>
+<td></td>
+</tr>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>评论内容</td>
+<td>context</td>
+<td></td>
+</tr>
+<tr>
+<td>评价等级</td>
+<td>level</td>
+<td>整数(1-10)</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_24">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>标志</td>
+<td>flag</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_25">JSON</h4>
+
+<pre><code>{
+    &quot;err_code&quot; : &quot;200&quot;,
+    &quot;msg&quot; : &quot;添加成功&quot;,
+    “flag” : &quot;true&quot;
+}
+</code></pre>
+
+<hr>
+
+<pre><code>10. 收藏活动
+</code></pre>
+
+<p>/trip/ws/rest_acti/addfavoriteActi?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;actiId&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_26">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_27">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>标志</td>
+<td>flag</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_28">JSON</h4>
+
+<pre><code>{
+    &quot;err_code&quot; : &quot;200&quot;,
+    &quot;msg&quot; : &quot;&quot;,
+    &quot;flag&quot; : &quot;true&quot;
+}
+</code></pre>
+
+<hr>
+
+<pre><code>11. 点击搜藏，查看用户收藏的活动   
+</code></pre>
+
+<p>/trip/ws/rest_user/getFavouritesByUser?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;startPage&quot;:&quot;1&quot;,&quot;pageSize&quot;:&quot;4&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_29">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>页数</td>
+<td>startPage</td>
+</tr>
+<tr>
+<td>数量</td>
+<td>pageSize</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_30">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiTitle</td>
+</tr>
+<tr>
+<td>国家</td>
+<td>country</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>type</td>
+</tr>
+<tr>
+<td>价格</td>
+<td>price</td>
+</tr>
+<tr>
+<td>图片</td>
+<td>image</td>
+</tr>
+<tr>
+<td>活动类型</td>
+<td>actiType</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_31">JSON</h4>
+
+<pre><code>{
+&quot;err_code&quot; : &quot;200&quot;,
+&quot;msg&quot; : &quot;&quot;,
+&quot;favourites&quot; :
+[
+    {
+        &quot;actiId&quot; : &quot;0323&quot;,
+        &quot;actiTitle&quot;: &quot;普吉岛奇幻乐园&quot;,
+        &quot;country&quot; : &quot;美国&quot;,
+        &quot;distance&quot;:&quot;&quot;
+        &quot;price&quot; : &quot;2890&quot;,
+        &quot;type&quot; : &quot;户外探险&quot;,
+        &quot;iamge&quot; : []
+    }
+    ...
+  ]
+}
+</code></pre>
+
+<hr>
+
+<pre><code>12.取消收藏
+</code></pre>
+
+<p>/trip/ws/rest_user/cancelFavourite?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;actiId&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_32">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td></td>
+</tr>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+<td>多个活动用&quot;,&quot;分隔,如:&quot;2324345,3233222&quot;</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_33">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>收藏标志</td>
+<td>flag</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot; :&quot; 200&quot; ,
+    &quot;msg&quot; :&quot;取消收藏成功&quot; ,
+    &quot;flag&quot; :&quot;true&quot;
+}
+</code></pre>
+
+<hr>
+
+<pre><code>13. 修改昵称、性别、绑定手机的接口
+</code></pre>
+
+<p>/trip/ws/rest<em>register</em>user/updateUser?paramjson={&quot;user<em>id&quot;:&quot;123456&quot;,&quot;nick</em>name&quot;:&quot;dawson&quot;,&quot;sex&quot;:&quot;1&quot;,
+&quot;phone&quot;:&quot;18521592075&quot;}</p>
+
+<hr>
+
+<h4 id="toc_34">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td></td>
+</tr>
+<tr>
+<td>昵称</td>
+<td>nickName</td>
+<td></td>
+</tr>
+<tr>
+<td>性别</td>
+<td>sex</td>
+<td>0,未选择 1，男 2，女</td>
+</tr>
+<tr>
+<td>电话</td>
+<td>phone</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_35">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>flag</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot; :&quot; 200&quot; ,
+    &quot;msg&quot; :&quot;修改成功&quot; ,
+    &quot;flag&quot; :&quot;true&quot;
+}
+</code></pre>
+
+<hr>
+
+<pre><code>14.登录
+</code></pre>
+
+<p>/trip/ws/rest_login/login?paramjson={&quot;account&quot;:&quot;&quot;,&quot;password&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_36">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户名</td>
+<td>account</td>
+<td>Otrip</td>
+</tr>
+<tr>
+<td>密码</td>
+<td>passWord</td>
+<td>12345</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_37">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>account</td>
+<td>001</td>
+</tr>
+<tr>
+<td>用户名</td>
+<td>email</td>
+<td>“otrip”</td>
+</tr>
+<tr>
+<td>用户Id</td>
+<td>loginUserId</td>
+<td>url</td>
+</tr>
+<tr>
+<td>用户密码</td>
+<td>password</td>
+<td></td>
+</tr>
+<tr>
+<td>用户电话</td>
+<td>phone</td>
+<td></td>
+</tr>
+<tr>
+<td>会话ID</td>
+<td>session<em>id</em>key</td>
+<td></td>
+</tr>
+<tr>
+<td>登录ID</td>
+<td>wsLogLoginId</td>
+<td></td>
+</tr>
+<tr>
+<td>注册时间</td>
+<td>registerDate</td>
+<td></td>
+</tr>
+<tr>
+<td>昵称</td>
+<td>nick_name</td>
+<td></td>
+</tr>
+<tr>
+<td>图片</td>
+<td>image</td>
+<td></td>
+</tr>
+<tr>
+<td>性别</td>
+<td>sex</td>
+<td></td>
+</tr>
+<tr>
+<td>订单数</td>
+<td>orderNum</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_38">JSON代码</h4>
+
+<pre><code>{
+    &quot;err_code&quot; :&quot; 200&quot; ,
+    &quot;msg&quot; :&quot;&quot; ,
+    &quot;flag&quot; :&quot;true&quot;,
+    user:
+    {
+        account:&quot;&quot;,
+        email:&quot;&quot;,
+        loginUserId:&quot;&quot;,
+        password:&quot;&quot;,
+        phone:&quot;&quot;,
+        session_id_key:&quot;&quot;,
+        wsLogLoginId:&quot;&quot;,
+        registerDate:&quot;2015-07-09&quot;,
+        nick_name:&quot;&quot;,
+        image:&quot;&quot;,
+        orderNum:&quot;&quot;
+    }
+
+}
+</code></pre>
+
+<hr>
+
+<pre><code>15.注册用户
+</code></pre>
+
+<p>/trip/ws/rest<em>register</em>user/register?paramjson={&quot;account&quot;:&quot;&quot;,passWord:&quot;&quot;,verifyCode:&quot;&quot;}</p>
+
+<hr>
+
+<p>POST</p>
+
+<h4 id="toc_39">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户名</td>
+<td>account</td>
+<td>15202342124</td>
+</tr>
+<tr>
+<td>密码</td>
+<td>passWord</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>手机验证码</td>
+<td>verifyCode</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_40">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>登录ID</td>
+<td>session<em>id</em>key</td>
+<td></td>
+</tr>
+<tr>
+<td>电话</td>
+<td>phone</td>
+<td></td>
+</tr>
+<tr>
+<td>登录用户ID</td>
+<td>loginUserId</td>
+<td></td>
+</tr>
+<tr>
+<td>邮箱</td>
+<td>email</td>
+<td></td>
+</tr>
+<tr>
+<td>账号</td>
+<td>account</td>
+<td></td>
+</tr>
+<tr>
+<td>注册时间</td>
+<td>registerDate</td>
+<td></td>
+</tr>
+<tr>
+<td>昵称</td>
+<td>nick_name</td>
+<td></td>
+</tr>
+<tr>
+<td>图片</td>
+<td>image</td>
+<td></td>
+</tr>
+<tr>
+<td>性别</td>
+<td>sex</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_41">JSON</h4>
+
+<pre><code>{
+    &quot;err_code&quot; :&quot; 200&quot; ,
+    &quot;msg&quot; :&quot;&quot; ,
+    &quot;flag&quot; :&quot;true&quot;,
+    user:
+    {
+        userId:&quot;&quot;,
+        account:&quot;&quot;,
+        session_id_key:&quot;&quot;,
+        phone:&quot;&quot;,
+        email:&quot;&quot;,
+        registerDate:&quot;2015-07-09&quot;,
+        nick_name:&quot;&quot;,
+        image:&quot;&quot;,
+        sex:&quot;&quot;
+    }
+
+}
+</code></pre>
+
+<hr>
+
+<pre><code>    16 获取手机验证码
+</code></pre>
+
+<p>/trip/ws/rest<em>register</em>user/getVerifyCode</p>
+
+<hr>
+
+<h4 id="toc_42">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>手机号码</td>
+<td>mobile</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_43">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>flag</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot; : &quot;200&quot;,
+    &quot;msg&quot; : &quot;发送成功&quot;,
+    &quot;flag&quot; :&quot;true&quot;      
+}
+</code></pre>
+
+<hr>
+
+<pre><code>17. 增加反馈
+</code></pre>
+
+<p>/trip/ws/rest_user/addFeedBack?paramjson={userId:&quot;&quot;,content:&quot;&quot;}</p>
+
+<hr>
+
+<h4 id="toc_44">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户名Id</td>
+<td>userId</td>
+<td>|</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>content</td>
+<td>|</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_45">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>flag</td>
+<td>true/false</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot; : &quot;200&quot;,
+    &quot;msg&quot; : &quot;&quot;,
+    &quot;flag&quot; :&quot;true&quot;      
+}
+</code></pre>
+
+<hr>
+
+<pre><code>18 添加活动到购物车
+</code></pre>
+
+<p>/trip/ws/rest_order/addToShoppingCart</p>
+
+<hr>
+
+<h4 id="toc_46">参数</h4>
+
+<p>POST</p>
+
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userID</td>
+</tr>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+</tr>
+<tr>
+<td>成年人数</td>
+<td>adultNumber</td>
+</tr>
+<tr>
+<td>青年人数</td>
+<td>youthNumber</td>
+</tr>
+<tr>
+<td>儿童人数</td>
+<td>childrenNumber</td>
+</tr>
+<tr>
+<td>预定日期</td>
+<td>date</td>
+</tr>
+<tr>
+<td>预定时间</td>
+<td>time</td>
+</tr>
+<tr>
+<td>支付金额</td>
+<td>totalPay</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    userId:&quot;32443432&quot;,
+    actiId:&quot;wewqr2323&quot;,
+    adultNumber:&quot;2&quot;,
+    youthNumber:&quot;3&quot;,
+    childrenNumber:&quot;4&quot;,
+    date:&quot;2015-04-03&quot;,
+    time:&quot;18:00&quot;
+    totalPay:&quot;2352&quot;
+}
+</code></pre>
+
+<h4 id="toc_47">响应</h4>
+
+<pre><code>{
+&quot;err_code&quot; : &quot;200&quot;,
+&quot;msg&quot; : &quot;添加成功&quot;,
+&quot;flag&quot; :&quot;true&quot;      ]
+}
+</code></pre>
+
+<hr>
+
+<pre><code>19  获取购物车的信息
+</code></pre>
+
+<p>/trip/ws/rest_shopping/getShoppingCart?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;startPage&quot;:&quot;&quot;,&quot;pageSize&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<h4 id="toc_48">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>userId</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>起始页</td>
+<td>startPage</td>
+</tr>
+<tr>
+<td>分页大小</td>
+<td>pageSize</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_49">响应参数</h4>
+
+<pre><code>|参数|name|
+|----|----|
+|商品Id|goodsId|
+|活动Id|actiId|
+|活动标题|actiTitle|
+|活动图片|actiImage|
+|出行日期|date|
+|出行时间|time|
+|出行总人数|number|
+|单价|price|
+|总价|totalPrice|
+
+{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+    goods:
+    [
+        {
+            goodsId:&quot;&quot;,
+            actiId:&quot;&quot;,
+            actiTitle:&quot;&quot;,
+            actiImage:&quot;&quot;.
+            date:&quot;2015-03-02&quot;
+            time:&quot;18:00&quot;,
+            number:&quot;&quot;,
+            price:&quot;&quot;,
+            totalPrice:&quot;&quot;
+        }
+        ...
+    ]
+}
+</code></pre>
+
+<hr>
+
+<pre><code>20 修改购物车的商品
+</code></pre>
+
+<p>/trip/ws/rest_shopping/editShoppingItem</p>
+
+<hr>
+
+<h4 id="toc_50">参数</h4>
+
+<p>POST</p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>商品ID</td>
+<td>goodsId</td>
+</tr>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+</tr>
+<tr>
+<td>出行日期</td>
+<td>date</td>
+</tr>
+<tr>
+<td>出行时间</td>
+<td>time</td>
+</tr>
+<tr>
+<td>成人数量</td>
+<td>adultNum</td>
+</tr>
+<tr>
+<td>青年数量</td>
+<td>youthNum</td>
+</tr>
+<tr>
+<td>儿童数量</td>
+<td>childrenNum</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_51">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>标志</td>
+<td>flag(true/false)</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+&quot;err_code&quot; : &quot;200&quot;,
+&quot;msg&quot; : &quot;&quot;,
+&quot;flag&quot; :&quot;true&quot;      ]
+}
+</code></pre>
+
+<hr>
+
+<pre><code>21 删除购物车商品
+</code></pre>
+
+<p>/trip/ws/rest_shopping/delShoppingItem</p>
+
+<hr>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>userId</td>
+<td></td>
+</tr>
+<tr>
+<td>商品ID</td>
+<td>goodsId</td>
+<td>多个goodsId用,分隔的字符串如“3235435,3232323”</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_52">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>标志</td>
+<td>flag(true/false)</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+&quot;err_code&quot; : &quot;200&quot;,
+&quot;msg&quot; : &quot;修改成功&quot;,
+&quot;flag&quot; :&quot;true&quot;      ]
+}
+</code></pre>
+
+<hr>
+
+<pre><code>22 结算购物车信息
+</code></pre>
+
+<p>/trip/ws/rest_shopping/chargeShoppingCart</p>
+
+<hr>
+
+<h4 id="toc_53">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td></td>
+</tr>
+<tr>
+<td>商品Id</td>
+<td>goodsId</td>
+<td>多个goodsId用,分隔的字符串如“3235435,3232323”</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="toc_54">响应参数</h5>
+
+<h5 id="toc_55">返回待确认订单</h5>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>订单编号</td>
+<td>orderId</td>
+</tr>
+<tr>
+<td>商品属性数组</td>
+<td>goods</td>
+</tr>
+<tr>
+<td>订单总价</td>
+<td>totalPay</td>
+</tr>
+<tr>
+<td>商品数量</td>
+<td>goodsNum</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>单个商品属性内容</th>
+<th>item</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>订单Item</td>
+<td>orderItemId</td>
+</tr>
+<tr>
+<td>标题</td>
+<td>itemTitle</td>
+</tr>
+<tr>
+<td>单价</td>
+<td>itemPrice</td>
+</tr>
+<tr>
+<td>总价</td>
+<td>itemTotal</td>
+</tr>
+<tr>
+<td>活动图片</td>
+<td>itemImage</td>
+</tr>
+<tr>
+<td>出行日期</td>
+<td>date</td>
+</tr>
+<tr>
+<td>出行时间</td>
+<td>time</td>
+</tr>
+<tr>
+<td>成人数</td>
+<td>adultNum</td>
+</tr>
+<tr>
+<td>青年人数</td>
+<td>youthNum</td>
+</tr>
+<tr>
+<td>儿童人数</td>
+<td>childrenNum</td>
+</tr>
+<tr>
+<td>总价</td>
+<td>totalPay</td>
+</tr>
+<tr>
+<td>条目个数</td>
+<td>itemNum</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+    data:
+    {
+        orderId:&quot;24342323&quot;
+        orderItems:
+        [
+            {
+                orderItemId:&quot;&quot;
+                itemTitle:&quot;&quot;,
+                itemPrice:&quot;&quot;,
+                itemTotal:&quot;&quot;,
+                adultNum:&quot;&quot;,
+                youthNum:&quot;&quot;,
+                childrenNum:&quot;&quot;,
+                date:&quot;&quot;,
+                time:&quot;&quot;,
+                itemImage:&quot;&quot;
+            }
+            ...
+        ],
+        totalPay:&quot;5333&quot;，
+        itemNum：“2”
+    }
+}
+</code></pre>
+
+<hr>
+
+<pre><code>23 清空购物车
+</code></pre>
+
+<p>/trip/ws/rest_shopping/clearShoppingItem</p>
+
+<hr>
+
+<h4 id="toc_56">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>userId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_57">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>标志</td>
+<td>flag(true/false)</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+&quot;err_code&quot; : &quot;200&quot;,
+&quot;msg&quot; : &quot;修改成功&quot;,
+&quot;flag&quot; :&quot;true&quot;      ]
+}
+</code></pre>
+
+<p>————</p>
+
+<pre><code>24 获取联系人列表
+</code></pre>
+
+<p>/trip/ws/rest_contact/getContactList?paramjson={&quot;userId&quot;:&quot;&quot;}</p>
+
+<p>—————
+|参数|name|
+|---|----|
+|用户Id|userId|</p>
+
+<h4 id="toc_58">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>联系人id</td>
+<td>contactId</td>
+</tr>
+<tr>
+<td>姓</td>
+<td>firstName</td>
+</tr>
+<tr>
+<td>名</td>
+<td>lastName</td>
+</tr>
+<tr>
+<td>拼音</td>
+<td>py</td>
+</tr>
+<tr>
+<td>手机</td>
+<td>mobile</td>
+</tr>
+<tr>
+<td>微信</td>
+<td>weChat</td>
+</tr>
+<tr>
+<td>邮箱</td>
+<td>email</td>
+</tr>
+<tr>
+<td>默认选择</td>
+<td>default</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+    data:
+    [
+        {
+            contactId:&quot;&quot;,
+            firstName:&quot;&quot;,
+            lastName:&quot;&quot;,
+            py:&quot;&quot;,
+            mobile:&quot;&quot;,
+            weChat:&quot;&quot;,
+            email:&quot;&quot;,
+            default:&quot;&quot;
+        }   
+        ...
+    ]
+}
+</code></pre>
+
+<hr>
+
+<pre><code>25 新增联系人
+</code></pre>
+
+<p>/trip/ws/rest_contact/addContactItem</p>
+
+<hr>
+
+<h4 id="toc_59">参数</h4>
+
+<p>POST </p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>姓</td>
+<td>firstName</td>
+</tr>
+<tr>
+<td>名</td>
+<td>lastName</td>
+</tr>
+<tr>
+<td>拼音</td>
+<td>py</td>
+</tr>
+<tr>
+<td>手机</td>
+<td>mobile</td>
+</tr>
+<tr>
+<td>微信</td>
+<td>weChat</td>
+</tr>
+<tr>
+<td>邮箱</td>
+<td>email</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_60">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>成功标志</td>
+<td>flag</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+}
+</code></pre>
+
+<hr>
+
+<pre><code>26 删除联系人
+</code></pre>
+
+<p>/trip/ws/rest_contact/delContactItem</p>
+
+<hr>
+
+<h4 id="toc_61">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>联系人ID</td>
+<td>contactId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_62">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>成功标志</td>
+<td>flag</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+}
+</code></pre>
+
+<hr>
+
+<pre><code>27 设置默认联系人
+</code></pre>
+
+<p>/trip/ws/rest_contact/setDefaultContact?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;contactId&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>联系人id</td>
+<td>contactId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_63">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>成功标志</td>
+<td>flag</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+}
+</code></pre>
+
+<hr>
+
+<pre><code>28 编辑联系人
+</code></pre>
+
+<p>/trip/ws/rest_contact/editContactItem</p>
+
+<hr>
+
+<h4 id="toc_64">参数</h4>
+
+<p>POST </p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>联系人Id</td>
+<td>contactId</td>
+</tr>
+<tr>
+<td>姓</td>
+<td>firstName</td>
+</tr>
+<tr>
+<td>名</td>
+<td>lastName</td>
+</tr>
+<tr>
+<td>拼音</td>
+<td>py</td>
+</tr>
+<tr>
+<td>手机</td>
+<td>mobile</td>
+</tr>
+<tr>
+<td>微信</td>
+<td>weChat</td>
+</tr>
+<tr>
+<td>邮箱</td>
+<td>email</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_65">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>成功标志</td>
+<td>flag</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+}
+</code></pre>
+
+<hr>
+
+<pre><code>29 显示订单列表
+</code></pre>
+
+<p>/trip/ws/rest_order/getOrderByUser?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;status&quot;:&quot;&quot;,&quot;startPage&quot;:&quot;&quot;,&quot;pageSize&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+<td></td>
+</tr>
+<tr>
+<td>订单类型</td>
+<td>status</td>
+<td>&quot;all&quot;全部，&quot;unpay&quot;未付款,&quot;confirm&quot;已确定,</td>
+</tr>
+<tr>
+<td>页码数</td>
+<td>startPage</td>
+<td></td>
+</tr>
+<tr>
+<td>页面条数</td>
+<td>pageSize</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_66">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>订单ID</td>
+<td>orderId</td>
+<td></td>
+</tr>
+<tr>
+<td>订单号</td>
+<td>orderNo</td>
+<td></td>
+</tr>
+<tr>
+<td>订单状态</td>
+<td>orderState</td>
+<td>1表示已付款，0表示未付款</td>
+</tr>
+<tr>
+<td>订单单价</td>
+<td>price</td>
+<td></td>
+</tr>
+<tr>
+<td>订单总价</td>
+<td>orderTotal</td>
+<td></td>
+</tr>
+<tr>
+<td>成人出行人数</td>
+<td>adultNum</td>
+<td></td>
+</tr>
+<tr>
+<td>青年出行人数</td>
+<td>youthNum</td>
+<td></td>
+</tr>
+<tr>
+<td>儿童出行人数</td>
+<td>childrenNum</td>
+<td></td>
+</tr>
+<tr>
+<td>活动Id</td>
+<td>actiId</td>
+<td></td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiTitle</td>
+<td></td>
+</tr>
+<tr>
+<td>出行日期</td>
+<td>date</td>
+<td></td>
+</tr>
+<tr>
+<td>出行时间</td>
+<td>time</td>
+<td></td>
+</tr>
+<tr>
+<td>活动图片</td>
+<td>actiImage</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+    data:
+    [
+        {
+            orderId:&quot;&quot;,
+            orderNo:&quot;&quot;,
+            orderState:&quot;&quot;.
+            orderItems:
+            [
+                {
+                    orderItemId:&quot;&quot;
+                    itemTitle:&quot;&quot;,
+                    itemPrice:&quot;&quot;,
+                    itemTotal:&quot;&quot;,
+                    adultNum:&quot;&quot;,
+                    youthNum:&quot;&quot;,
+                    childrenNum:&quot;&quot;,
+                    date:&quot;&quot;,
+                    time:&quot;&quot;,
+                    itemImage:&quot;&quot;
+                }
+                ...
+            ]   
+        }           
+        ...
+    ]
+}
+</code></pre>
+
+<hr>
+
+<pre><code>30 取消订单和支付
+</code></pre>
+
+<p>/trip/ws/rest_order/cancelOrder?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;orderId&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<h4 id="toc_67">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户id</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>订单Id</td>
+<td>orderId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_68">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>flag</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+}
+</code></pre>
+
+<hr>
+
+<pre><code>31 对未付款订单进行支付
+</code></pre>
+
+<p>/trip/ws/rest_order/chargeUnpayOrder?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;orderId&quot;:&quot;&#39;}</p>
+
+<hr>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>订单Id</td>
+<td>orderId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_69">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+    data:
+    {
+            orderId:&quot;&quot;,
+            orderNo:&quot;&quot;,
+            orderState:&quot;&quot;.
+            contactInfo:
+            {
+                contactId:&quot;&quot;,
+                contactName:&quot;&quot;,
+                mobile:&quot;&quot;,
+                weChat:&quot;&quot;,
+                email:&quot;&quot;
+            }
+            orderItems:
+            [
+                {
+                    orderItemId:&quot;&quot;
+                    itemTitle:&quot;&quot;,
+                    itemPrice:&quot;&quot;,
+                    itemTotal:&quot;&quot;,
+                    adultNum:&quot;&quot;,
+                    youthNum:&quot;&quot;,
+                    childrenNum:&quot;&quot;,
+                    date:&quot;&quot;,
+                    time:&quot;&quot;,
+                    itemImage:&quot;&quot;
+                }
+                ...
+            ],
+            totalPay:&quot;&quot;,
+            itemNum:&quot;&quot;,
+            payWay:
+            [   
+               {
+                    way:&quot;weChatPay&quot;,
+                    default:&quot;1&quot;
+                }，              
+                {
+                    way:&quot;alipay&quot;,
+                    default:&quot;0&quot;
+                }
+
+            ]
+    }
+</code></pre>
+
+<hr>
+
+<pre><code>32 单个活动立即预定提交订单
+</code></pre>
+
+<p>/trip/ws/rest_order/postOrder</p>
+
+<hr>
+
+<h5 id="toc_70">输入参数</h5>
+
+<p>POST</p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>活动ID</td>
+<td>actiId</td>
+</tr>
+<tr>
+<td>价格</td>
+<td>price</td>
+</tr>
+<tr>
+<td>成人出行人数</td>
+<td>adultNum</td>
+</tr>
+<tr>
+<td>青年出行人数</td>
+<td>youthNum</td>
+</tr>
+<tr>
+<td>儿童出行人数</td>
+<td>childrenNum</td>
+</tr>
+<tr>
+<td>出行日期</td>
+<td>date</td>
+</tr>
+<tr>
+<td>出行时间</td>
+<td>time</td>
+</tr>
+<tr>
+<td>支付总金额</td>
+<td>total</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="toc_71">返回参数</h5>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>订单ID</td>
+<td>orderId</td>
+</tr>
+<tr>
+<td>订单编号</td>
+<td>orderNo</td>
+</tr>
+<tr>
+<td>账户昵称</td>
+<td>nickName</td>
+</tr>
+<tr>
+<td>联系人名字</td>
+<td>realName</td>
+</tr>
+<tr>
+<td>联系人电子邮件</td>
+<td>email</td>
+</tr>
+<tr>
+<td>联系人电话号码</td>
+<td>tel</td>
+</tr>
+<tr>
+<td>活动标题</td>
+<td>actiName</td>
+</tr>
+<tr>
+<td>出发日期</td>
+<td>date</td>
+</tr>
+<tr>
+<td>出发时间</td>
+<td>time</td>
+</tr>
+<tr>
+<td>出行人数</td>
+<td>number</td>
+</tr>
+<tr>
+<td>活动单价</td>
+<td>price</td>
+</tr>
+<tr>
+<td>总金额</td>
+<td>total</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+    data:
+    {
+        orderId:&quot;24342323&quot;
+        orderItems:
+        [
+            {
+                orderItemId:&quot;&quot;
+                itemTitle:&quot;&quot;,
+                itemPrice:&quot;&quot;,
+                itemTotal:&quot;&quot;,
+                adultNum:&quot;&quot;,
+                youthNum:&quot;&quot;,
+                childrenNum:&quot;&quot;,
+                date:&quot;&quot;,
+                time:&quot;&quot;,
+                itemImage:&quot;&quot;
+            }
+            ...
+        ],
+        totalPay:&quot;5333&quot;，
+        itemNum：“2”
+    }
+}
+</code></pre>
+
+<hr>
+
+<pre><code>33 支付 ,服务器发送支付请求
+</code></pre>
+
+<p>/trip/ws/rest_order/getCharge
+向客户端发送支付凭据</p>
+
+<hr>
+
+<p>POST</p>
+
+<p>|参数|name|说明|
+|----|----|
+|订单ID|OrderId|
+|联系人Id|contactId|
+|使用的第三方渠道|channel|&quot;weChat&quot;:&quot;01&quot;,alipay:&quot;02&quot;|
+|客户端Ip|clientIp|
+|货币代码|currency|默认为cny
+|确认支付|flag|</p>
+
+<h6 id="toc_72">返回Charge对象</h6>
+
+<p>第三方支付的charge对象,参考ping++ charge对象说明
+|参数|name|
+|---|----|</p>
+
+<hr>
+
+<pre><code>34 确认单
+</code></pre>
+
+<p>/trip/ws/rest_order/getConfirmSheet?paramjson={&quot;userId&quot;:&quot;&quot;,&quot;orderId&quot;:&quot;&quot;,&quot;itemId&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<h4 id="toc_73">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户ID</td>
+<td>userId</td>
+</tr>
+<tr>
+<td>订单ID</td>
+<td>orderId</td>
+</tr>
+<tr>
+<td>订单ItemID</td>
+<td>itemId</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_74">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>确认号</td>
+<td>confirmNo</td>
+</tr>
+<tr>
+<td>姓名</td>
+<td>name</td>
+</tr>
+<tr>
+<td>拼音</td>
+<td>py</td>
+</tr>
+<tr>
+<td>总人数</td>
+<td>totalNumber</td>
+</tr>
+<tr>
+<td>活动名称</td>
+<td>actiTitle</td>
+</tr>
+<tr>
+<td>活动名称英文</td>
+<td>actiEngTitle</td>
+</tr>
+<tr>
+<td>活动日期</td>
+<td>date</td>
+</tr>
+<tr>
+<td>活动时间</td>
+<td>time</td>
+</tr>
+<tr>
+<td>接送信息</td>
+<td>pickUpInfo</td>
+</tr>
+<tr>
+<td>提示说明</td>
+<td>desc</td>
+</tr>
+<tr>
+<td>确认单二位码图片</td>
+<td>image</td>
+</tr>
+<tr>
+<td>联系信息</td>
+<td>tel</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>{
+    &quot;err_code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;flag&quot;:&quot;true&quot;,
+    data:
+    {
+        confirmNo:&quot;&quot;,
+        name:&quot;&quot;,
+        py:&quot;&quot;,
+        totalNumber:&quot;&quot;,
+        actiTitle:&quot;&quot;,
+        actiEngTitle:&quot;&quot;,
+        date:&quot;&quot;,
+        time:&quot;&quot;,
+        pickUpInfo:&quot;&quot;,
+        desc:&quot;&quot;,
+        image:&quot;&quot;,
+        tel:&quot;&quot;
+    }
+}
+
+
+#35 上传用户头像
+</code></pre>
+
+<p>urL :
+trip/ws/rest_user/uploadPortrait</p>
+
+<h2 id="toc_75"></h2>
+
+<p>POST</p>
+
+<h4 id="toc_76">参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户Id</td>
+<td>userId</td>
+<td>|</td>
+</tr>
+<tr>
+<td>文件流名</td>
+<td>uploadedFile</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_77">JSON</h4>
+
+<p>{
+        &quot;err_code&quot;:&quot;200&quot;,
+        &quot;msg&quot;:&quot;&quot;,
+        &quot;flag&quot;:&quot;true&quot;,
+}</p>
+
+<pre><code>#36 退出登陆
+</code></pre>
+
+<p>/trip/ws/rest_login/logout?paramjson={&quot;account&quot;:&quot;&quot;}</p>
+
+<hr>
+
+<p>GET</p>
+
+<h4 id="toc_78">输入参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用户名</td>
+<td>account</td>
+<td>Otrip</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_79">返回参数</h4>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>flag</td>
+<td>true/false</td>
+<td>退出成功或者失败</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_80">JSON代码</h4>
+
+<pre><code>{
+    &quot;err_code&quot; :&quot; 200&quot; ,
+    &quot;msg&quot; :&quot;&quot; ,
+    &quot;flag&quot; :&quot;true&quot;
+}
+</code></pre>
+
+
+</body>
+
+</html>

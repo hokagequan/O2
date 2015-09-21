@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FZLTXHJW.TTF">
+            <string>FZLTXHJW--GB1-0</string>
+            <string>FZLTXHJW--GB1-0</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell12" rowHeight="293" id="8ZZ-sd-ImZ" customClass="detailDayViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="293"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ZZ-sd-ImZ" id="s4m-ZQ-UOJ">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动详情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFY-2g-I8c">
+                        <rect key="frame" x="124" y="8" width="72" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="IcD-yD-cYJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="FZLTXHJW--GB1-0" family="FZLanTingHeiS-EL-GB" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="IWd-ol-BBZ">
+                        <rect key="frame" x="16" y="40" width="288" height="160"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="160" id="dpt-6v-bfP"/>
+                        </constraints>
+                    </scrollView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk9-KI-3w8">
+                        <rect key="frame" x="27" y="206" width="267" height="86"/>
+                        <fontDescription key="fontDescription" name="FZLTXHJW--GB1-0" family="FZLanTingHeiS-EL-GB" pointSize="12"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IWd-ol-BBZ" firstAttribute="leading" secondItem="s4m-ZQ-UOJ" secondAttribute="leadingMargin" constant="8" id="5VP-nm-V9h"/>
+                    <constraint firstItem="tFY-2g-I8c" firstAttribute="top" secondItem="s4m-ZQ-UOJ" secondAttribute="topMargin" id="Adx-44-T11"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tFY-2g-I8c" secondAttribute="trailing" constant="116" id="PwO-YL-lot"/>
+                    <constraint firstItem="kk9-KI-3w8" firstAttribute="top" secondItem="IWd-ol-BBZ" secondAttribute="bottom" constant="6" id="aRw-ex-yXT"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kk9-KI-3w8" secondAttribute="bottom" constant="-8" id="h8H-PT-NF0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kk9-KI-3w8" secondAttribute="trailing" constant="18" id="lPi-tj-4my"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IWd-ol-BBZ" secondAttribute="trailing" constant="8" id="rwF-17-t3G"/>
+                    <constraint firstItem="tFY-2g-I8c" firstAttribute="leading" secondItem="s4m-ZQ-UOJ" secondAttribute="leadingMargin" constant="116" id="wZ5-Fo-Mfu"/>
+                    <constraint firstItem="IWd-ol-BBZ" firstAttribute="top" secondItem="tFY-2g-I8c" secondAttribute="bottom" constant="16" id="x5F-4F-cNg"/>
+                    <constraint firstItem="kk9-KI-3w8" firstAttribute="leading" secondItem="s4m-ZQ-UOJ" secondAttribute="leadingMargin" constant="19" id="z8n-Tf-Qmd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="huodongLabel" destination="tFY-2g-I8c" id="AtI-4a-9tc"/>
+                <outlet property="jieshao" destination="kk9-KI-3w8" id="ksM-s5-FKX"/>
+                <outlet property="scrollView" destination="IWd-ol-BBZ" id="8PC-N7-7ea"/>
+            </connections>
+            <point key="canvasLocation" x="211" y="265.5"/>
+        </tableViewCell>
+    </objects>
+</document>

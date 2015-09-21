@@ -1,0 +1,16 @@
+viewController 对应storyboard 上的界面绑定
+
+viewController 层调用　viewModel 层　
+
+viewModel 层拼接参数　引用request 层进行网络调求，得到数据装配到 model 
+
+再应用到view 显示或做别的业务。
+
+
+
+
+config 层是封装一些常量
+resource 是资源文件，如图片
+
+vendor 是第三方的库
+

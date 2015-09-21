@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9F6D65C8-9C68-4091-9E11-130078B75EC8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>O2Trip</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>540907E8F76B42FAF4027E9B8B69FEC675E41056</key>
+		<string>o2lx.unfuddle.com:o2lx/whale.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>O2Trip/O2Trip.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>540907E8F76B42FAF4027E9B8B69FEC675E41056</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>o2lx.unfuddle.com:o2lx/whale.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>540907E8F76B42FAF4027E9B8B69FEC675E41056</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>540907E8F76B42FAF4027E9B8B69FEC675E41056</string>
+			<key>IDESourceControlWCCName</key>
+			<string>whale</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeViewC2Cell" rowHeight="18" id="FH0-L3-sjo" customClass="detailButtonViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="18"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FH0-L3-sjo" id="7xk-0k-aey">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLn-Rz-o6f">
+                        <rect key="frame" x="152" y="0.0" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="Yj2-1M-Foh"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="details@3x-04.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YLn-Rz-o6f" firstAttribute="centerX" secondItem="7xk-0k-aey" secondAttribute="centerX" id="JMw-Yx-KUk"/>
+                    <constraint firstItem="YLn-Rz-o6f" firstAttribute="top" secondItem="7xk-0k-aey" secondAttribute="top" id="Jdr-YQ-8Mk"/>
+                    <constraint firstItem="YLn-Rz-o6f" firstAttribute="centerY" secondItem="7xk-0k-aey" secondAttribute="centerY" id="vSQ-Yp-oBa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="strechButton" destination="YLn-Rz-o6f" id="Al0-wt-3eW"/>
+            </connections>
+            <point key="canvasLocation" x="259" y="147"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="details@3x-04.png" width="55" height="55"/>
+    </resources>
+</document>
