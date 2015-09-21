@@ -22,6 +22,16 @@
 #import "middleViewController.h"
 #import "GiFHUD.h"
 #import "UIImageView+WebCache.h"
+
+typedef enum {
+    MyListRowsInformation = 0,
+    MyListRowsShoppingCart,
+    MyListRowsOrders,
+    MyListRowsContacts,
+    MyListRowsFavorates,
+    MyListRowsMax
+}MyListRows;
+
 @implementation mylistViewController
 {
     mylistCell2* _cell;
