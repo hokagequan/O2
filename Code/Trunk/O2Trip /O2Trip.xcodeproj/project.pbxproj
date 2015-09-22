@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		100A54B01BB02D8C00F974A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100A54AF1BB02D8C00F974A2 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
 		100A54B71BB14B2300F974A2 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		100A54BA1BB14FBA00F974A2 /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54B91BB14FBA00F974A2 /* ShoppingCartCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
 		2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47157A1B01AC65009F015F /* destinationViewController.m */; };
@@ -376,6 +377,7 @@
 		100A54AF1BB02D8C00F974A2 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		100A54B51BB14B2200F974A2 /* O2Trip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "O2Trip-Bridging-Header.h"; path = "ViewControllers/O2Trip-Bridging-Header.h"; sourceTree = "<group>"; };
 		100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		100A54B91BB14FBA00F974A2 /* ShoppingCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
 		2B4715761B0196D2009F015F /* agreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agreementViewController.h; sourceTree = "<group>"; };
@@ -965,6 +967,7 @@
 			isa = PBXGroup;
 			children = (
 				100A54B51BB14B2200F974A2 /* O2Trip-Bridging-Header.h */,
+				100A54B81BB14F9700F974A2 /* Views */,
 				100A54B41BB14AD700F974A2 /* ViewControllers */,
 			);
 			path = NewO2Trip;
@@ -976,6 +979,14 @@
 				100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		100A54B81BB14F9700F974A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				100A54B91BB14FBA00F974A2 /* ShoppingCartCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2B5C1E851BA9530E00E770FC /* image */ = {
@@ -2305,6 +2316,7 @@
 				2B4715C31B021BDA009F015F /* mylistViewController.m in Sources */,
 				2B9B12831AFA247B00C1B308 /* MKtripAnnotation.m in Sources */,
 				2B817A131B73046400528E57 /* myDataViewController.m in Sources */,
+				100A54BA1BB14FBA00F974A2 /* ShoppingCartCell.swift in Sources */,
 				2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */,
 				2B5C21EB1BA9933700E770FC /* AFURLResponseSerialization.m in Sources */,
 				7554FA6B1AB14220005ED311 /* NetRequestClass.m in Sources */,

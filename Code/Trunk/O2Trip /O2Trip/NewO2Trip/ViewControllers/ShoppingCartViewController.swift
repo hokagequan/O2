@@ -8,7 +8,13 @@
 
 import UIKit
 
-class ShoppingCartViewController: UIViewController {
+class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var selectAllButton: UIButton!
+    @IBOutlet weak var settleButton: UIButton!
+    @IBOutlet weak var TotalLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,26 @@ class ShoppingCartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Actions
+    @IBAction func clickEdit(sender: AnyObject) {
+    }
+    
+    @IBAction func clickSelectAll(sender: AnyObject) {
+    }
+    
+    @IBAction func clickSettle(sender: AnyObject) {
+    }
+    
+    // MARK: - TableView
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingCartCell", forIndexPath: indexPath) as! ShoppingCartCell
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation
