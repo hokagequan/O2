@@ -24,15 +24,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        GiFHUD.setGifWithImageName("loading.gif")
-        GiFHUD.show()
-        
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestShoppingCart(userID as! String, start: "0", count: "10", completion: { (response) -> Void in
-            self.handleInfo(response)
-            }) { (error) -> Void in
-                self.showAlert("获取信息失败")
-        }
+        self.refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +34,32 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     
     func handleInfo(info: Dictionary<String, AnyObject>) {
         
+    }
+    
+    func loadShoppingCartInfo(from: Int, count: Int) {
+        GiFHUD.setGifWithImageName("loading.gif")
+        GiFHUD.show()
+        
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        HttpReqManager.httpRequestShoppingCart(userID as! String, start: "\(from)", count: "\(count)", completion: { (response) -> Void in
+            self.handleInfo(response)
+            // TODO: Load more
+            }) { (error) -> Void in
+                self.showAlert("获取信息失败")
+        }
+    }
+    
+    func refresh() {
+        GiFHUD.setGifWithImageName("loading.gif")
+        GiFHUD.show()
+        
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        HttpReqManager.httpRequestShoppingCart(userID as! String, start: "0", count: "10", completion: { (response) -> Void in
+            self.handleInfo(response)
+            self.tableView.reloadData()
+            }) { (error) -> Void in
+                self.showAlert("获取信息失败")
+        }
     }
     
     // MARK: - Actions
