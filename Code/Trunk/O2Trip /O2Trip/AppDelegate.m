@@ -45,6 +45,9 @@
     }
     // Required
     [APService setupWithOption:launchOptions];
+    
+    [self customNavigationBar];
+    
     return YES;
 }
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -123,5 +126,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)customNavigationBar {
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor greenColor]} forState:UIControlStateNormal];
+}
 
 @end

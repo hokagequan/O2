@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		100A54B01BB02D8C00F974A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 100A54AF1BB02D8C00F974A2 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
+		100A54B71BB14B2300F974A2 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
 		2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47157A1B01AC65009F015F /* destinationViewController.m */; };
@@ -373,6 +374,8 @@
 
 /* Begin PBXFileReference section */
 		100A54AF1BB02D8C00F974A2 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		100A54B51BB14B2200F974A2 /* O2Trip-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "O2Trip-Bridging-Header.h"; path = "ViewControllers/O2Trip-Bridging-Header.h"; sourceTree = "<group>"; };
+		100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
 		2B4715761B0196D2009F015F /* agreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agreementViewController.h; sourceTree = "<group>"; };
@@ -958,6 +961,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100A54B31BB14AD700F974A2 /* NewO2Trip */ = {
+			isa = PBXGroup;
+			children = (
+				100A54B51BB14B2200F974A2 /* O2Trip-Bridging-Header.h */,
+				100A54B41BB14AD700F974A2 /* ViewControllers */,
+			);
+			path = NewO2Trip;
+			sourceTree = "<group>";
+		};
+		100A54B41BB14AD700F974A2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		2B5C1E851BA9530E00E770FC /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -1746,6 +1766,7 @@
 		758BF4991AA42B5A0023A5A6 /* O2Trip */ = {
 			isa = PBXGroup;
 			children = (
+				100A54B31BB14AD700F974A2 /* NewO2Trip */,
 				2B5C1F781BA957CF00E770FC /* otherRMCalendar */,
 				758BF4BE1AA42C280023A5A6 /* Config */,
 				758BF4C11AA42C280023A5A6 /* Model */,
@@ -2014,6 +2035,7 @@
 		758BF48F1AA42B5A0023A5A6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = lst;
 				TargetAttributes = {
@@ -2340,6 +2362,7 @@
 				758BF49D1AA42B5A0023A5A6 /* main.m in Sources */,
 				2B5C221B1BA9933700E770FC /* UIImage+GIF.m in Sources */,
 				2B5C22181BA9933700E770FC /* SDWebImageManager.m in Sources */,
+				100A54B71BB14B2300F974A2 /* ShoppingCartViewController.swift in Sources */,
 				2B5C22211BA9933700E770FC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2B5C22141BA9933700E770FC /* SDWebImageCompat.m in Sources */,
 				758A226D1AB5E3D500801878 /* UserViewModel.m in Sources */,
@@ -2485,6 +2508,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2524,6 +2549,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=*]" = "5273a393-05b3-4593-8d26-50e33403c63e";
+				SWIFT_OBJC_BRIDGING_HEADER = "O2Trip/NewO2Trip/ViewControllers/O2Trip-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lib";
 			};
@@ -2533,6 +2560,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2571,6 +2600,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "O2Trip/NewO2Trip/ViewControllers/O2Trip-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lib";
 			};

@@ -65,7 +65,12 @@ typedef enum {
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (section == 0) {
+        return 1;
+    }
+    else {
+        return MyListRowsMax;
+    }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -74,7 +79,7 @@ typedef enum {
   
     }else
     {
-        return 317;
+        return 44.0;
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,18 +137,53 @@ typedef enum {
         
     }else
     {
-        _cell=[tableView dequeueReusableCellWithIdentifier:@"mylistcell2"];
-        if (_cell==nil) {
-            _cell=[[[NSBundle mainBundle]loadNibNamed:@"mylistCell2" owner:self options:nil]lastObject];
+//        _cell=[tableView dequeueReusableCellWithIdentifier:@"mylistcell2"];
+//        if (_cell==nil) {
+//            _cell=[[[NSBundle mainBundle]loadNibNamed:@"mylistCell2" owner:self options:nil]lastObject];
+//        }
+//        _cell.mydataBgLabel.backgroundColor=[UIColor whiteColor];
+//        _cell.collectBglabel.backgroundColor=[UIColor whiteColor];
+//        _cell.jiantouImage.image=[UIImage imageNamed:@"mine@3x-08.png"];
+//        _cell.jiantouImage2.image=[UIImage imageNamed:@"mine@3x-08.png"];
+//        _cell.selectionStyle=UITableViewCellSelectionStyleNone;
+//        [_cell.myDataButton addTarget:self action:@selector(myDataButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//        [_cell.collectButton addTarget:self action:@selector(collectButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//        return _cell;
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListCell" forIndexPath:indexPath];
+        
+        switch (indexPath.row) {
+            case MyListRowsInformation:
+                cell.imageView.image = [UIImage imageNamed:@"mine@3x-04.png"];
+                cell.textLabel.text = @"个人资料";
+                cell.detailTextLabel.text = @"";
+                break;
+            case MyListRowsFavorates:
+                cell.imageView.image = [UIImage imageNamed:@"mine@3x-05.png"];
+                cell.textLabel.text = @"收藏列表";
+                cell.detailTextLabel.text = @"";
+                break;
+            case MyListRowsShoppingCart:
+                cell.imageView.image = [UIImage imageNamed:@""];
+                cell.textLabel.text = @"购物车";
+                cell.detailTextLabel.text = @"";
+                break;
+            case MyListRowsOrders:
+                cell.imageView.image = [UIImage imageNamed:@""];
+                cell.textLabel.text = @"订单中心";
+                cell.detailTextLabel.text = @"";
+                break;
+            case MyListRowsContacts:
+                cell.imageView.image = [UIImage imageNamed:@""];
+                cell.textLabel.text = @"联系人";
+                cell.detailTextLabel.text = @"";
+                break;
+                
+            default:
+                break;
         }
-        _cell.mydataBgLabel.backgroundColor=[UIColor whiteColor];
-        _cell.collectBglabel.backgroundColor=[UIColor whiteColor];
-        _cell.jiantouImage.image=[UIImage imageNamed:@"mine@3x-08.png"];
-        _cell.jiantouImage2.image=[UIImage imageNamed:@"mine@3x-08.png"];
-        _cell.selectionStyle=UITableViewCellSelectionStyleNone;
-        [_cell.myDataButton addTarget:self action:@selector(myDataButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_cell.collectButton addTarget:self action:@selector(collectButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        return _cell;
+        
+        return cell;
     }
 }
 //修改头像
@@ -192,7 +232,23 @@ typedef enum {
     NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
     NSString* useId=[userDefaults objectForKey:@"account"];
     if (useId.length!=0) {
-        
+        switch (indexPath.row) {
+            case MyListRowsInformation:
+                [self myDataButtonClick:nil];
+                break;
+            case MyListRowsFavorates:
+                [self collectButtonClick:nil];
+                break;
+            case MyListRowsShoppingCart:
+                break;
+            case MyListRowsOrders:
+                break;
+            case MyListRowsContacts:
+                break;
+                
+            default:
+                break;
+        }
     }else
     {
         UIStoryboard* SB=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
