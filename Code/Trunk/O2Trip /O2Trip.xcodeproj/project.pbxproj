@@ -11,6 +11,7 @@
 		100A54B71BB14B2300F974A2 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54BA1BB14FBA00F974A2 /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54B91BB14FBA00F974A2 /* ShoppingCartCell.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54BF1BB1575400F974A2 /* HttpReqManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54BE1BB1575400F974A2 /* HttpReqManager.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE42571BB19CC400E37C76 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
 		2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47157A1B01AC65009F015F /* destinationViewController.m */; };
@@ -380,6 +381,7 @@
 		100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		100A54B91BB14FBA00F974A2 /* ShoppingCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
 		100A54BE1BB1575400F974A2 /* HttpReqManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpReqManager.swift; sourceTree = "<group>"; };
+		10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
 		2B4715761B0196D2009F015F /* agreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agreementViewController.h; sourceTree = "<group>"; };
@@ -968,6 +970,7 @@
 		100A54B31BB14AD700F974A2 /* NewO2Trip */ = {
 			isa = PBXGroup;
 			children = (
+				10FE42551BB19C7600E37C76 /* Customs */,
 				100A54B51BB14B2200F974A2 /* O2Trip-Bridging-Header.h */,
 				100A54BB1BB1573300F974A2 /* Managers */,
 				100A54BC1BB1573300F974A2 /* Models */,
@@ -1014,6 +1017,14 @@
 			children = (
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		10FE42551BB19C7600E37C76 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */,
+			);
+			path = Customs;
 			sourceTree = "<group>";
 		};
 		2B5C1E851BA9530E00E770FC /* image */ = {
@@ -2332,6 +2343,7 @@
 				2BD655AE1B0F24C400242F8F /* collectionModel.m in Sources */,
 				2B5C221F1BA9933700E770FC /* UIImageView+WebCache.m in Sources */,
 				2BD7FDEC1B183B7F00C0E6B1 /* homeModel.m in Sources */,
+				10FE42571BB19CC400E37C76 /* UIViewController+ShowAlert.swift in Sources */,
 				2B6394481B74848F00C210E4 /* contactViewController.m in Sources */,
 				2B5C1FD51BA9582200E770FC /* MJType.m in Sources */,
 				2BDE8C421B04B8AC00C09985 /* collectionViewController.m in Sources */,
