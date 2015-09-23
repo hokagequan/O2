@@ -10,6 +10,16 @@ import UIKit
 
 class OrderCell: UITableViewCell {
 
+    @IBOutlet weak var orderIDLabel: UILabel!
+    @IBOutlet weak var orderTitleLabel: UILabel!
+    @IBOutlet weak var orderDateLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var statLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var actionButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +29,10 @@ class OrderCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    // MARK: - Actions
+    @IBAction func doAction(sender: AnyObject) {
     }
 
 }

@@ -2393,7 +2393,7 @@
                                                         <constraint firstAttribute="height" constant="160" id="HoG-cj-DH5"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动类型" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhv-4J-DKu">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhv-4J-DKu">
                                                     <rect key="frame" x="24" y="8" width="225" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="qqs-On-eyP"/>
@@ -2462,6 +2462,9 @@
                                                     <state key="normal" title="付款">
                                                         <color key="titleColor" red="1" green="0.58823529409999997" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="doAction:" destination="P6F-el-7d3" eventType="touchUpInside" id="AXS-cJ-gyZ"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="600" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dre-Sk-aEg">
                                                     <rect key="frame" x="235" y="42" width="70" height="14"/>
@@ -2517,6 +2520,17 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="actionButton" destination="tyO-w6-SiS" id="mhn-6l-EaX"/>
+                                            <outlet property="iconImageView" destination="QA2-hF-0Mg" id="oN7-6K-oh1"/>
+                                            <outlet property="numberLabel" destination="bNC-a7-SNn" id="6Dt-Hn-0ac"/>
+                                            <outlet property="orderDateLabel" destination="KDd-QB-JJn" id="Ro8-AU-rBw"/>
+                                            <outlet property="orderIDLabel" destination="mhv-4J-DKu" id="6dv-bZ-ge7"/>
+                                            <outlet property="orderTitleLabel" destination="dLh-CW-Xdf" id="knF-cH-re5"/>
+                                            <outlet property="priceLabel" destination="dre-Sk-aEg" id="4H9-Ru-9EG"/>
+                                            <outlet property="statLabel" destination="ZxO-Lx-Vyg" id="lkk-DI-Ulk"/>
+                                            <outlet property="totalPriceLabel" destination="cO2-hs-u5n" id="1Ay-dU-tQg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
