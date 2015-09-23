@@ -14,6 +14,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var selectAllButton: UIButton!
     @IBOutlet weak var settleButton: UIButton!
     @IBOutlet weak var TotalLabel: UILabel!
+    
+    var items = [ShoppingCartItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +46,18 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         HttpReqManager.httpRequestShoppingCart(userID as! String, start: "\(from)", count: "\(count)", completion: { (response) -> Void in
             self.handleInfo(response)
             // TODO: Load more
+            var indexPaths = [NSIndexPath]()
+            for from..<count {
+                
+            }
             }) { (error) -> Void in
                 self.showAlert("获取信息失败")
         }
     }
     
     func refresh() {
+        items.removeAll()
+        
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         

@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class ShoppingCartItem {
+    
+    var identifier: String?
+    var activityID: String?
+    var activityTitle: String?
+    var activityImageName: String?
+    var tripDate: String?
+    var tripTime: String?
+    var tripPersonCount: String?
+    var price: String?
+    var totalPrice: String?
+}
