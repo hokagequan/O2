@@ -15,6 +15,8 @@
 		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		10FE42571BB19CC400E37C76 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE42591BB2ED1600E37C76 /* OrderFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42581BB2ED1600E37C76 /* OrderFilterCell.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE425B1BB2F09F00E37C76 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE425A1BB2F09F00E37C76 /* OrderCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
 		2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47157A1B01AC65009F015F /* destinationViewController.m */; };
@@ -387,6 +389,8 @@
 		100A54C51BB2B88900F974A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
+		10FE42581BB2ED1600E37C76 /* OrderFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderFilterCell.swift; sourceTree = "<group>"; };
+		10FE425A1BB2F09F00E37C76 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
 		2B4715761B0196D2009F015F /* agreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agreementViewController.h; sourceTree = "<group>"; };
@@ -998,6 +1002,8 @@
 			isa = PBXGroup;
 			children = (
 				100A54B91BB14FBA00F974A2 /* ShoppingCartCell.swift */,
+				10FE42581BB2ED1600E37C76 /* OrderFilterCell.swift */,
+				10FE425A1BB2F09F00E37C76 /* OrderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2362,6 +2368,7 @@
 				2B9B12831AFA247B00C1B308 /* MKtripAnnotation.m in Sources */,
 				2B817A131B73046400528E57 /* myDataViewController.m in Sources */,
 				100A54BA1BB14FBA00F974A2 /* ShoppingCartCell.swift in Sources */,
+				10FE42591BB2ED1600E37C76 /* OrderFilterCell.swift in Sources */,
 				2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */,
 				2B5C21EB1BA9933700E770FC /* AFURLResponseSerialization.m in Sources */,
 				7554FA6B1AB14220005ED311 /* NetRequestClass.m in Sources */,
@@ -2406,6 +2413,7 @@
 				2B5C1FD11BA9582200E770FC /* RMCollectionCell.m in Sources */,
 				2B5CDB0F1BA0260000E36662 /* timeViewModel.m in Sources */,
 				2B5C1FD61BA9582200E770FC /* NSObject+MJCoding.m in Sources */,
+				10FE425B1BB2F09F00E37C76 /* OrderCell.swift in Sources */,
 				2BDD17C31B05FDC900E65DE2 /* detailCommentViewCell.m in Sources */,
 				2B513AD21B4A89F40011EA28 /* timeModel.m in Sources */,
 				2BDA336E1B148139001C9334 /* DisscussModel.m in Sources */,
