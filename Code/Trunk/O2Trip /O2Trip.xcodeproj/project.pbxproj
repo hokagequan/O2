@@ -12,6 +12,7 @@
 		100A54BA1BB14FBA00F974A2 /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54B91BB14FBA00F974A2 /* ShoppingCartCell.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54BF1BB1575400F974A2 /* HttpReqManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54BE1BB1575400F974A2 /* HttpReqManager.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54C11BB22C3900F974A2 /* ShoppingCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C01BB22C3900F974A2 /* ShoppingCartItem.swift */; settings = {ASSET_TAGS = (); }; };
+		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		10FE42571BB19CC400E37C76 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
@@ -360,7 +361,6 @@
 		758A226D1AB5E3D500801878 /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 758A226C1AB5E3D500801878 /* UserViewModel.m */; };
 		758BF49D1AA42B5A0023A5A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 758BF49C1AA42B5A0023A5A6 /* main.m */; };
 		758BF4A01AA42B5A0023A5A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 758BF49F1AA42B5A0023A5A6 /* AppDelegate.m */; };
-		758BF4A61AA42B5A0023A5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758BF4A41AA42B5A0023A5A6 /* Main.storyboard */; };
 		758BF4A81AA42B5A0023A5A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758BF4A71AA42B5A0023A5A6 /* Images.xcassets */; };
 		758BF4B41AA42B5A0023A5A6 /* O2TripTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 758BF4B31AA42B5A0023A5A6 /* O2TripTests.m */; };
 		758BF5061AA42C280023A5A6 /* CenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 758BF4C31AA42C280023A5A6 /* CenterModel.m */; };
@@ -383,6 +383,7 @@
 		100A54B91BB14FBA00F974A2 /* ShoppingCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
 		100A54BE1BB1575400F974A2 /* HttpReqManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpReqManager.swift; sourceTree = "<group>"; };
 		100A54C01BB22C3900F974A2 /* ShoppingCartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartItem.swift; sourceTree = "<group>"; };
+		100A54C51BB2B88900F974A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
@@ -884,7 +885,6 @@
 		758BF49C1AA42B5A0023A5A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		758BF49E1AA42B5A0023A5A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		758BF49F1AA42B5A0023A5A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		758BF4A51AA42B5A0023A5A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		758BF4A71AA42B5A0023A5A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		758BF4AD1AA42B5A0023A5A6 /* O2TripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = O2TripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		758BF4B21AA42B5A0023A5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1939,7 +1939,7 @@
 		758BF4C81AA42C280023A5A6 /* InterfaceBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				758BF4A41AA42B5A0023A5A6 /* Main.storyboard */,
+				100A54C51BB2B88900F974A2 /* Main.storyboard */,
 			);
 			path = InterfaceBuilder;
 			sourceTree = "<group>";
@@ -2179,7 +2179,6 @@
 				2B5C1F3F1BA9530E00E770FC /* discover@3x-16.png in Resources */,
 				2B5C1F511BA9530E00E770FC /* mine@3x-02.png in Resources */,
 				2B5C1F4D1BA9530E00E770FC /* 58X58.png in Resources */,
-				758BF4A61AA42B5A0023A5A6 /* Main.storyboard in Resources */,
 				2B5C1FC71BA9582200E770FC /* CalendarTodaysDate.png in Resources */,
 				2B5C1F741BA9530E00E770FC /* startpage4.jpg in Resources */,
 				2B5C1F221BA9530E00E770FC /* details@3x-04.png in Resources */,
@@ -2218,6 +2217,7 @@
 				2BDCC3671AFB101A00B758BA /* WeiboSDK.bundle in Resources */,
 				2B5C1F701BA9530E00E770FC /* collect@3x-02.png in Resources */,
 				2BDD17C41B05FDC900E65DE2 /* detailCommentViewCell.xib in Resources */,
+				100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */,
 				2B5C1F551BA9530E00E770FC /* mine@3x-06.png in Resources */,
 				2B5C21F31BA9933700E770FC /* Pingpp.bundle in Resources */,
 				2B5C1F2D1BA9530E00E770FC /* home@3x-06.png in Resources */,
@@ -2470,15 +2470,6 @@
 				2BDCC3401AFB101900B758BA /* zh-Hans */,
 			);
 			name = ShareSDKLocalizable.strings;
-			sourceTree = "<group>";
-		};
-		758BF4A41AA42B5A0023A5A6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				758BF4A51AA42B5A0023A5A6 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

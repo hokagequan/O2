@@ -240,8 +240,10 @@ typedef enum {
                 [self collectButtonClick:nil];
                 break;
             case MyListRowsShoppingCart:
+                [self performSegueWithIdentifier:@"ShoppingCartSegue" sender:self];
                 break;
             case MyListRowsOrders:
+                [self performSegueWithIdentifier:@"OrdersSegue" sender:self];
                 break;
             case MyListRowsContacts:
                 break;
