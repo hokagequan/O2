@@ -40,6 +40,8 @@ typedef enum {
 {
     [super viewWillAppear:YES];
     
+    self.navigationController.navigationBarHidden = YES;
+    
     [self.tableView reloadData];
     
 

@@ -2314,7 +2314,7 @@
         <!--订单中心-->
         <scene sceneID="6cf-Uk-kWg">
             <objects>
-                <viewController id="8ma-D6-o02" sceneMemberID="viewController">
+                <viewController id="8ma-D6-o02" customClass="OrdersViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eAy-gl-8VF"/>
                         <viewControllerLayoutGuide type="bottom" id="7VB-HS-kzX"/>

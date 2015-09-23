@@ -22,6 +22,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -52,6 +53,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         
         let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         HttpReqManager.httpRequestShoppingCart(userID as! String, start: "\(from)", count: "\(count)", completion: { (response) -> Void in
+            GiFHUD.dismiss()
+            
             self.handleInfo(response)
             var indexPaths = [NSIndexPath]()
             for i in from..<count {
@@ -60,6 +63,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             
             self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
             }) { (error) -> Void in
+                GiFHUD.dismiss()
+                
                 self.showAlert("获取信息失败")
         }
     }
@@ -72,9 +77,11 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         
         let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         HttpReqManager.httpRequestShoppingCart(userID as! String, start: "0", count: "10", completion: { (response) -> Void in
+            GiFHUD.dismiss()
             self.handleInfo(response)
             self.tableView.reloadData()
             }) { (error) -> Void in
+                GiFHUD.dismiss()
                 self.showAlert("获取信息失败")
         }
     }

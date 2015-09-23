@@ -13,6 +13,7 @@
 		100A54BF1BB1575400F974A2 /* HttpReqManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54BE1BB1575400F974A2 /* HttpReqManager.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54C11BB22C3900F974A2 /* ShoppingCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C01BB22C3900F974A2 /* ShoppingCartItem.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		10FE42571BB19CC400E37C76 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
@@ -384,6 +385,7 @@
 		100A54BE1BB1575400F974A2 /* HttpReqManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpReqManager.swift; sourceTree = "<group>"; };
 		100A54C01BB22C3900F974A2 /* ShoppingCartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartItem.swift; sourceTree = "<group>"; };
 		100A54C51BB2B88900F974A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
@@ -987,6 +989,7 @@
 			isa = PBXGroup;
 			children = (
 				100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */,
+				100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2365,6 +2368,7 @@
 				2B5C1FBB1BA9582200E770FC /* RMCalendarModel.m in Sources */,
 				2B5C1FD81BA9582200E770FC /* NSObject+MJProperty.m in Sources */,
 				2B4715BE1B01EC2D009F015F /* moreCell.m in Sources */,
+				100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */,
 				2BDD17C51B05FDC900E65DE2 /* detailCostnotesViewCell.m in Sources */,
 				2B5C221C1BA9933700E770FC /* UIImage+MultiFormat.m in Sources */,
 				2B50B70E1B5FA4C300E3840C /* aboutViewController.m in Sources */,

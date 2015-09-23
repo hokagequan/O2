@@ -35,7 +35,7 @@ class HttpReqManager {
             let url = "\(httpUrl)\(method)?paramjson={\(jsonParams)}"
             
             let afManager = AFHTTPRequestOperationManager()
-            afManager.GET(url, parameters: "", success: { (operation, response) -> Void in
+            afManager.GET(url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding), parameters: "", success: { (operation, response) -> Void in
                 completion?(response as! Dictionary<String, AnyObject>)
                 }, failure: { (operation, error) -> Void in
                     failure?(error)

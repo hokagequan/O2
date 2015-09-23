@@ -128,6 +128,7 @@
 
 - (void)customNavigationBar {
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor greenColor]} forState:UIControlStateNormal];
+    [[UINavigationBar appearance] setTintColor:[UIColor greenColor]];
 }
 
 @end
