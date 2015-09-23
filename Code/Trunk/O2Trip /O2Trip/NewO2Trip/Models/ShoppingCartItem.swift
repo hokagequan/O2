@@ -19,4 +19,16 @@ class ShoppingCartItem {
     var tripPersonCount: String?
     var price: String?
     var totalPrice: String?
+    
+    func loadInfo(info: Dictionary<String, String>) {
+        identifier = info["goodsId"]
+        activityID = info["actiId"]
+        activityTitle = info["actiTitle"]
+        activityImageName = info["actiImage"]
+        tripDate = info["date"]
+        tripTime = info["time"]
+        tripPersonCount = info["number"]
+        price = info["price"]
+        totalPrice = info["totalPrice"]
+    }
 }

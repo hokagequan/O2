@@ -16,6 +16,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var TotalLabel: UILabel!
     
     var items = [ShoppingCartItem]()
+    var selectedIndexes = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,14 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func handleInfo(info: Dictionary<String, AnyObject>) {
+        let goods = info["goods"] as! Array<Dictionary<String, String>>
         
+        for i in 0..<goods.count {
+            let goodInfo = goods[i]
+            let item = ShoppingCartItem()
+            item.loadInfo(goodInfo)
+            items.append(item)
+        }
     }
     
     func loadShoppingCartInfo(from: Int, count: Int) {
@@ -45,11 +53,12 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         HttpReqManager.httpRequestShoppingCart(userID as! String, start: "\(from)", count: "\(count)", completion: { (response) -> Void in
             self.handleInfo(response)
-            // TODO: Load more
             var indexPaths = [NSIndexPath]()
-            for from..<count {
-                
+            for i in from..<count {
+                indexPaths.append(NSIndexPath(forRow: i, inSection: 0))
             }
+            
+            self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
             }) { (error) -> Void in
                 self.showAlert("获取信息失败")
         }
@@ -70,25 +79,74 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    func refreshSettleInfo() {
+        var totalPrice = 0
+        for item in items {
+            totalPrice += Int(item.totalPrice!)!
+        }
+        
+        let text = NSAttributedString(string: "合计：￥ \(totalPrice)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0), NSForegroundColorAttributeName: UIColor.whiteColor()])
+        TotalLabel.attributedText = text
+        
+        settleButton.setTitle("结算(\(items.count))", forState: UIControlState.Normal)
+        
+        selectAllButton.selected = (items.count == selectedIndexes.count)
+    }
+    
     // MARK: - Actions
     @IBAction func clickEdit(sender: AnyObject) {
+        // TODO: 编辑
     }
     
     @IBAction func clickSelectAll(sender: AnyObject) {
+        let button = sender as! UIButton
+        button.selected = !button.selected
+        
+        selectedIndexes.removeAll()
+        if button.selected == true {
+            for i in 0..<items.count {
+                selectedIndexes.append(i)
+            }
+        }
     }
     
     @IBAction func clickSettle(sender: AnyObject) {
+        // TODO: 结算
     }
     
     // MARK: - TableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0;
+        return items.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingCartCell", forIndexPath: indexPath) as! ShoppingCartCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        let item = items[indexPath.row]
+        cell.titleLabel.text = item.activityTitle
+        cell.datelabel.text = "出行日期：\(item.tripDate) \(item.tripTime)"
+        cell.numberLabel.text = "出行人数：\(item.tripPersonCount)人"
+        let text = NSMutableAttributedString(string: "￥\(item.price) x\(item.tripPersonCount)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor(red: 140.0 / 255.0, green: 140.0 / 255.0, blue: 140.0 / 255.0, alpha: 1.0)])
+        cell.priceLabel.attributedText = text
+        
+        cell.selected = selectedIndexes.contains(indexPath.row)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if selectedIndexes.contains(indexPath.row) {
+            selectedIndexes.removeAtIndex(selectedIndexes.indexOf(indexPath.row)!)
+        }
+        else {
+            selectedIndexes.append(indexPath.row)
+        }
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ShoppingCartCell
+        cell.selected = selectedIndexes.contains(indexPath.row)
+        
+        self.refreshSettleInfo()
     }
 
     /*
