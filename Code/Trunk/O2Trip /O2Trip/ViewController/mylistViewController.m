@@ -248,6 +248,7 @@ typedef enum {
                 [self performSegueWithIdentifier:@"OrdersSegue" sender:self];
                 break;
             case MyListRowsContacts:
+                [self performSegueWithIdentifier:@"ContactsSegue" sender:self];
                 break;
                 
             default:
