@@ -12,6 +12,7 @@ enum OrderStat: Int {
     case All = 0
     case Unpay
     case Confirmed
+    case Payed
     
     init(key: String) {
         switch key {
@@ -35,6 +36,8 @@ enum OrderStat: Int {
             return "unpay"
         case .Confirmed:
             return "confirm"
+        case .Payed:
+            return "payed"
         }
     }
     
@@ -46,6 +49,8 @@ enum OrderStat: Int {
             return "未付款"
         case .Confirmed:
             return "已确认"
+        case .Payed:
+            return "待确认"
         }
     }
 }
@@ -56,9 +61,9 @@ class OrderItem {
     var number: String?
     var price: String?
     var totalPrice: String?
-    var tripAdultCount: String?
-    var tripYoungCount: String?
-    var tripChildCount: String?
+    var tripAdultCount: Int = 0
+    var tripYoungCount: Int = 0
+    var tripChildCount: Int = 0
     var activityID: String?
     var activityTitle: String?
     var tripDate: String?
@@ -71,9 +76,24 @@ class OrderItem {
         number = info["orderNo"]
         price = info["price"]
         totalPrice = info["orderTotal"]
-        tripAdultCount = info["adultNum"]
-        tripYoungCount = info["youthNum"]
-        tripChildCount = info["childrenNum"]
+        if let adultCount = info["adultNum"] {
+            tripAdultCount = Int(adultCount)!
+        } else {
+            tripAdultCount = 0
+        }
+        
+        if let youngCount = info["youthNum"] {
+            tripYoungCount = Int(youngCount)!
+        } else {
+            tripYoungCount = 0
+        }
+        
+        if let childCount = info["childrenNum"] {
+            tripChildCount = Int(childCount)!
+        } else {
+            tripChildCount = 0
+        }
+        
         activityID = info["actiId"]
         activityTitle = info["actiTitle"]
         tripDate = info["date"]
@@ -88,9 +108,24 @@ class OrderItem {
         stat = OrderStat(key: orderStat)
         price = details["itemPrice"]
         totalPrice = details["itemTotal"]
-        tripAdultCount = details["adultNum"]
-        tripYoungCount = details["youthNum"]
-        tripChildCount = details["childrenNum"]
+        if let adultCount = details["adultNum"] {
+            tripAdultCount = Int(adultCount)!
+        } else {
+            tripAdultCount = 0
+        }
+        
+        if let youngCount = details["youthNum"] {
+            tripYoungCount = Int(youngCount)!
+        } else {
+            tripYoungCount = 0
+        }
+        
+        if let childCount = details["childrenNum"] {
+            tripChildCount = Int(childCount)!
+        } else {
+            tripChildCount = 0
+        }
+
         activityID = details["orderItemId"]
         activityTitle = details["itemTitle"]
         tripDate = details["date"]

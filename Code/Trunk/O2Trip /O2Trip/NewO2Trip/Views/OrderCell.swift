@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol OrderCellDelegate {
+    optional func didClickAction(cell: OrderCell)
+}
+
 class OrderCell: UITableViewCell {
 
     @IBOutlet weak var orderIDLabel: UILabel!
@@ -19,6 +23,8 @@ class OrderCell: UITableViewCell {
     @IBOutlet weak var statLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var actionButton: UIButton!
+    
+    weak var delegate: OrderCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +39,7 @@ class OrderCell: UITableViewCell {
     
     // MARK: - Actions
     @IBAction func doAction(sender: AnyObject) {
+        delegate?.didClickAction?(self)
     }
 
 }

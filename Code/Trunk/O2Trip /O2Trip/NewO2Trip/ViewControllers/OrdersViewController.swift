@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrdersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class OrdersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, OrderCellDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,12 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.refresh(filter)
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,13 +124,43 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return orderItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("OrderCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("OrderCell", forIndexPath: indexPath) as! OrderCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        let item = orderItems[indexPath.row]
+        cell.orderIDLabel.text = item.number
+        cell.orderTitleLabel.text = item.activityTitle
+        cell.priceLabel.text = item.price
+        cell.numberLabel.text = "x\(item.tripAdultCount + item.tripYoungCount + item.tripChildCount)"
+        cell.orderDateLabel.text = "\(item.tripDate) \(item.tripTime)"
+        cell.totalPriceLabel.text = "总价：￥ \(item.totalPrice)"
+        
+        var buttonTitle = "付款"
+        if item.stat == OrderStat.Payed {
+            buttonTitle = "确认单"
+        }
+        cell.actionButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         
         return cell
+    }
+    
+    // MARK: - OrderCellDelegate
+    func didClickAction(cell: OrderCell) {
+        guard let indexPath = tableView.indexPathForCell(cell) else {
+            return
+        }
+        
+        let item = orderItems[indexPath.row]
+        if item.stat == OrderStat.Unpay {
+            // TODO: 付款
+        }
+        else if item.stat == OrderStat.Payed {
+            // TODO: 确认
+        }
     }
 
     /*
