@@ -65,7 +65,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         let item = contactItems[indexPath.row]
-        cell.nameLabel.text = item.name
+        cell.nameLabel.text = "\(item.lastName)\(item.firstName)"
         cell.phoneLabel.text = item.phone
         cell.weixinLabel.text = item.weixin
         cell.emailLabel.text = item.email

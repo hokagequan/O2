@@ -21,6 +21,8 @@
 		10FE425D1BB42E2900E37C76 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE425C1BB42E2900E37C76 /* ContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		10FE425F1BB42FA300E37C76 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE425E1BB42FA300E37C76 /* ContactCell.swift */; settings = {ASSET_TAGS = (); }; };
 		10FE42611BB585CF00E37C76 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42601BB585CF00E37C76 /* ContactItem.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE42631BB58C3800E37C76 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42621BB58C3800E37C76 /* NewContactViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE42671BB5902700E37C76 /* ContactEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42661BB5902700E37C76 /* ContactEditCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
 		2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47157A1B01AC65009F015F /* destinationViewController.m */; };
@@ -399,6 +401,8 @@
 		10FE425C1BB42E2900E37C76 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		10FE425E1BB42FA300E37C76 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		10FE42601BB585CF00E37C76 /* ContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
+		10FE42621BB58C3800E37C76 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		10FE42661BB5902700E37C76 /* ContactEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactEditCell.swift; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
 		2B4715761B0196D2009F015F /* agreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agreementViewController.h; sourceTree = "<group>"; };
@@ -1003,6 +1007,7 @@
 				100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */,
 				100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */,
 				10FE425C1BB42E2900E37C76 /* ContactsViewController.swift */,
+				10FE42621BB58C3800E37C76 /* NewContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1014,6 +1019,7 @@
 				10FE42581BB2ED1600E37C76 /* OrderFilterCell.swift */,
 				10FE425A1BB2F09F00E37C76 /* OrderCell.swift */,
 				10FE425E1BB42FA300E37C76 /* ContactCell.swift */,
+				10FE42661BB5902700E37C76 /* ContactEditCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2417,6 +2423,7 @@
 				2BDD17BF1B05FDC900E65DE2 /* detailMapViewCell.m in Sources */,
 				2B5CDB121BA0421400E36662 /* yearModel.m in Sources */,
 				2B5C22201BA9933700E770FC /* UIView+WebCacheOperation.m in Sources */,
+				10FE42671BB5902700E37C76 /* ContactEditCell.swift in Sources */,
 				2BDE8C471B04BCAB00C09985 /* collectionCell.m in Sources */,
 				100A54C11BB22C3900F974A2 /* ShoppingCartItem.swift in Sources */,
 				10FE425F1BB42FA300E37C76 /* ContactCell.swift in Sources */,
@@ -2446,6 +2453,7 @@
 				2B5C221B1BA9933700E770FC /* UIImage+GIF.m in Sources */,
 				2B5C22181BA9933700E770FC /* SDWebImageManager.m in Sources */,
 				100A54B71BB14B2300F974A2 /* ShoppingCartViewController.swift in Sources */,
+				10FE42631BB58C3800E37C76 /* NewContactViewController.swift in Sources */,
 				2B5C22211BA9933700E770FC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2B5C22141BA9933700E770FC /* SDWebImageCompat.m in Sources */,
 				758A226D1AB5E3D500801878 /* UserViewModel.m in Sources */,

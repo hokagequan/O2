@@ -2471,7 +2471,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="联系人" id="21p-ym-Qvv">
-                        <barButtonItem key="rightBarButtonItem" title="新建" id="5RX-9Q-Hb4"/>
+                        <barButtonItem key="rightBarButtonItem" title="新建" id="5RX-9Q-Hb4">
+                            <connections>
+                                <segue destination="Lez-BD-X6T" kind="push" id="oSK-Jd-rUA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -2481,6 +2485,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdc-61-hyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-190" y="-2902"/>
+        </scene>
+        <!--新建联系人-->
+        <scene sceneID="MMm-dj-VOq">
+            <objects>
+                <viewController id="Lez-BD-X6T" customClass="NewContactViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LVr-e8-x5a"/>
+                        <viewControllerLayoutGuide type="bottom" id="sMc-1d-wMb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A9X-lJ-y1n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="30" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gsq-kE-FBY">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactEditCell" id="Y35-sx-QtC" customClass="ContactEditCell" customModule="O2Trip" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y35-sx-QtC" id="21a-oj-JZ7">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKW-Fb-CWT" userLabel="Title">
+                                                    <rect key="frame" x="15" y="4" width="73" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="kxw-Yh-V1d"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEq-Ts-wbt" userLabel="Detail">
+                                                    <rect key="frame" x="88" y="5" width="217" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="dWV-aW-eAg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MEq-Ts-wbt" firstAttribute="centerY" secondItem="21a-oj-JZ7" secondAttribute="centerY" id="8s5-2r-MOY"/>
+                                                <constraint firstItem="MEq-Ts-wbt" firstAttribute="leading" secondItem="gKW-Fb-CWT" secondAttribute="trailing" id="K1w-2I-scB"/>
+                                                <constraint firstItem="MEq-Ts-wbt" firstAttribute="width" secondItem="gKW-Fb-CWT" secondAttribute="width" multiplier="3:1" id="Sbo-jQ-GV7"/>
+                                                <constraint firstItem="MEq-Ts-wbt" firstAttribute="leading" secondItem="gKW-Fb-CWT" secondAttribute="trailing" id="aNf-C8-bQR"/>
+                                                <constraint firstItem="gKW-Fb-CWT" firstAttribute="leading" secondItem="21a-oj-JZ7" secondAttribute="leading" constant="15" id="mpv-0i-FPK"/>
+                                                <constraint firstItem="gKW-Fb-CWT" firstAttribute="centerY" secondItem="21a-oj-JZ7" secondAttribute="centerY" id="pfh-Rp-fLL"/>
+                                                <constraint firstAttribute="trailing" secondItem="MEq-Ts-wbt" secondAttribute="trailing" constant="15" id="yGo-3H-7Lo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailTextField" destination="MEq-Ts-wbt" id="8MY-oy-ASD"/>
+                                            <outlet property="titleLabel" destination="gKW-Fb-CWT" id="9yk-Wp-egd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lez-BD-X6T" id="C13-b4-LYM"/>
+                                    <outlet property="delegate" destination="Lez-BD-X6T" id="Idd-39-s3C"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gsq-kE-FBY" secondAttribute="trailing" id="4tP-0z-984"/>
+                            <constraint firstItem="Gsq-kE-FBY" firstAttribute="leading" secondItem="A9X-lJ-y1n" secondAttribute="leading" id="Sm2-qm-Ncl"/>
+                            <constraint firstItem="Gsq-kE-FBY" firstAttribute="top" secondItem="LVr-e8-x5a" secondAttribute="bottom" id="jOY-aK-ejv"/>
+                            <constraint firstItem="sMc-1d-wMb" firstAttribute="top" secondItem="Gsq-kE-FBY" secondAttribute="bottom" id="zBa-46-dhd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="新建联系人" id="VwZ-cq-j9C"/>
+                    <connections>
+                        <outlet property="tableView" destination="Gsq-kE-FBY" id="5h9-Ac-SzT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hpo-nl-r2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="-2902"/>
         </scene>
         <!--订单中心-->
         <scene sceneID="6cf-Uk-kWg">

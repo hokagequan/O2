@@ -11,16 +11,18 @@ import Foundation
 class ContactItem {
     
     var identifier: String?
-    var name: String?
+    var firstName: String?
+    var lastName: String?
+    var pinyin: String?
     var weixin: String?
     var phone: String?
     var email: String?
     
     func loadInfo(info: Dictionary<String, String>) {
         identifier = info["contactId"]
-        let firstName = info["firstName"]
-        let lastName = info["lastName"]
-        name = "\(lastName)\(firstName)"
+        firstName = info["firstName"]
+        lastName = info["lastName"]
+        pinyin = info["py"]
         weixin = info["weChat"]
         phone = info["mobile"]
         email = info["email"]
