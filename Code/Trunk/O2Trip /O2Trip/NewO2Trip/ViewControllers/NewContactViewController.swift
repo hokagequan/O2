@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewContactViewController: UIViewController {
+class NewContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,6 +23,23 @@ class NewContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Actions
+    
+    @IBAction func clickSave(sender: AnyObject) {
+    }
+    
+    // MARK: TableView
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContactEditCell", forIndexPath: indexPath) as! ContactEditCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation

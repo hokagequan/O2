@@ -2498,7 +2498,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="30" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gsq-kE-FBY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="30" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gsq-kE-FBY">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2524,7 +2524,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="dWV-aW-eAg"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -2548,10 +2548,24 @@
                                     <outlet property="delegate" destination="Lez-BD-X6T" id="Idd-39-s3C"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hy7-LP-eJk">
+                                <rect key="frame" x="15" y="488" width="290" height="40"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.52941176469999995" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="b2D-tP-p4b"/>
+                                </constraints>
+                                <state key="normal" title="保存并使用"/>
+                                <connections>
+                                    <action selector="clickSave:" destination="Lez-BD-X6T" eventType="touchUpInside" id="zpr-la-xlI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gsq-kE-FBY" secondAttribute="trailing" id="4tP-0z-984"/>
+                            <constraint firstAttribute="trailing" secondItem="hy7-LP-eJk" secondAttribute="trailing" constant="15" id="80X-gw-SnC"/>
+                            <constraint firstItem="sMc-1d-wMb" firstAttribute="top" secondItem="hy7-LP-eJk" secondAttribute="bottom" constant="40" id="9Rc-m3-7wW"/>
+                            <constraint firstItem="hy7-LP-eJk" firstAttribute="leading" secondItem="A9X-lJ-y1n" secondAttribute="leading" constant="15" id="9Yg-tE-s9l"/>
                             <constraint firstItem="Gsq-kE-FBY" firstAttribute="leading" secondItem="A9X-lJ-y1n" secondAttribute="leading" id="Sm2-qm-Ncl"/>
                             <constraint firstItem="Gsq-kE-FBY" firstAttribute="top" secondItem="LVr-e8-x5a" secondAttribute="bottom" id="jOY-aK-ejv"/>
                             <constraint firstItem="sMc-1d-wMb" firstAttribute="top" secondItem="Gsq-kE-FBY" secondAttribute="bottom" id="zBa-46-dhd"/>
