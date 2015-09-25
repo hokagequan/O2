@@ -57,11 +57,18 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return contactItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        let item = contactItems[indexPath.row]
+        cell.nameLabel.text = item.name
+        cell.phoneLabel.text = item.phone
+        cell.weixinLabel.text = item.weixin
+        cell.emailLabel.text = item.email
         
         return cell
     }
