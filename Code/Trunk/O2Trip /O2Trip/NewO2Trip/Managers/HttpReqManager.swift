@@ -40,6 +40,17 @@ class HttpReqManager {
         }
     }
     
+    // 获取联系人列表
+    class func httpRequestContacts(userID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        self.httpRequest("rest_contact/getContactList", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
     // MARK: - Private
     
     private class func httpRequest(method: String, params: Dictionary<String, String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {

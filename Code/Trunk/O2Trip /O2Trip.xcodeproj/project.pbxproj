@@ -20,6 +20,7 @@
 		10FE425B1BB2F09F00E37C76 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE425A1BB2F09F00E37C76 /* OrderCell.swift */; settings = {ASSET_TAGS = (); }; };
 		10FE425D1BB42E2900E37C76 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE425C1BB42E2900E37C76 /* ContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		10FE425F1BB42FA300E37C76 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE425E1BB42FA300E37C76 /* ContactCell.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE42611BB585CF00E37C76 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42601BB585CF00E37C76 /* ContactItem.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
 		2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47157A1B01AC65009F015F /* destinationViewController.m */; };
@@ -397,6 +398,7 @@
 		10FE425A1BB2F09F00E37C76 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		10FE425C1BB42E2900E37C76 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		10FE425E1BB42FA300E37C76 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		10FE42601BB585CF00E37C76 /* ContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
 		2B4715761B0196D2009F015F /* agreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agreementViewController.h; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 			children = (
 				100A54C01BB22C3900F974A2 /* ShoppingCartItem.swift */,
 				100A54CB1BB37FF100F974A2 /* OrderItem.swift */,
+				10FE42601BB585CF00E37C76 /* ContactItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2421,6 +2424,7 @@
 				758BF5061AA42C280023A5A6 /* CenterModel.m in Sources */,
 				2B5C22151BA9933700E770FC /* SDWebImageDecoder.m in Sources */,
 				2BDD17C71B05FDC900E65DE2 /* detailPromptViewCell.m in Sources */,
+				10FE42611BB585CF00E37C76 /* ContactItem.swift in Sources */,
 				2B5C1FD11BA9582200E770FC /* RMCollectionCell.m in Sources */,
 				2B5CDB0F1BA0260000E36662 /* timeViewModel.m in Sources */,
 				2B5C1FD61BA9582200E770FC /* NSObject+MJCoding.m in Sources */,

@@ -14,6 +14,7 @@ class ContactCell: UITableViewCell {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var weixinLabel: UILabel!
+    @IBOutlet weak var checkMarkImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

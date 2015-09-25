@@ -2323,7 +2323,7 @@
         <!--联系人-->
         <scene sceneID="oYl-dr-xj2">
             <objects>
-                <viewController id="akF-Sd-h06" sceneMemberID="viewController">
+                <viewController id="akF-Sd-h06" customClass="ContactsViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="10j-od-v9U"/>
                         <viewControllerLayoutGuide type="bottom" id="P98-HN-zUJ"/>
@@ -2429,6 +2429,13 @@
                                                         <constraint firstItem="WEb-eE-znW" firstAttribute="leading" secondItem="nsK-T0-vka" secondAttribute="leading" id="yvZ-UJ-4Hu"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FYG-yA-bff" userLabel="CheckMark">
+                                                    <rect key="frame" x="290" y="40" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="5AS-7y-3j9"/>
+                                                        <constraint firstAttribute="height" constant="15" id="QUc-AP-F4F"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -2436,9 +2443,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="fEw-pI-bnc" secondAttribute="trailing" id="LL9-qD-uas"/>
                                                 <constraint firstItem="fEw-pI-bnc" firstAttribute="top" secondItem="yAd-Iw-WXV" secondAttribute="top" constant="15" id="SNK-R4-xAc"/>
                                                 <constraint firstItem="fEw-pI-bnc" firstAttribute="leading" secondItem="yAd-Iw-WXV" secondAttribute="leading" id="sHq-Rl-Jet"/>
+                                                <constraint firstAttribute="trailing" secondItem="FYG-yA-bff" secondAttribute="trailing" constant="15" id="vZ4-wy-SGf"/>
+                                                <constraint firstItem="FYG-yA-bff" firstAttribute="centerY" secondItem="yAd-Iw-WXV" secondAttribute="centerY" id="xIM-40-DXk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkMarkImageView" destination="FYG-yA-bff" id="ezW-4A-XV5"/>
                                             <outlet property="emailLabel" destination="WEb-eE-znW" id="wAO-3Z-uUN"/>
                                             <outlet property="nameLabel" destination="fkd-Pk-ccC" id="KzU-Iw-hLH"/>
                                             <outlet property="phoneLabel" destination="nsK-T0-vka" id="2pV-iz-b4c"/>
@@ -2464,6 +2474,9 @@
                         <barButtonItem key="rightBarButtonItem" title="新建" id="5RX-9Q-Hb4"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="C1M-OE-VfN" id="6j5-PW-m0o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdc-61-hyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

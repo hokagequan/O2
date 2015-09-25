@@ -8,12 +8,34 @@
 
 import UIKit
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var contactItems = [ContactItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        GiFHUD.setGifWithImageName("loading.gif")
+        GiFHUD.show()
+        
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        HttpReqManager.httpRequestContacts(userID as! String, completion: { (response) -> Void in
+            GiFHUD.dismiss()
+            
+            self.tableView.reloadData()
+            }) { (error) -> Void in
+                GiFHUD.dismiss()
+                
+                self.showAlert("获取信息失败")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +43,28 @@ class ContactsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func handleInfo(info: Dictionary<String, AnyObject>) {
+        let items = info["data"] as! Array<Dictionary<String, String>>
+        
+        for item in items {
+            let contactItem = ContactItem()
+            contactItem.loadInfo(item)
+            
+            contactItems.append(contactItem)
+        }
+    }
+    
+    // MARK: - TableView
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactCell
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation
