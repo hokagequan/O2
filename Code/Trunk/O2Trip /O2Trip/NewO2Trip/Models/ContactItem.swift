@@ -17,11 +17,12 @@ class ContactItem {
     var weixin: String?
     var phone: String?
     var email: String?
+    var gender: String?
     
     func loadInfo(info: Dictionary<String, String>) {
         identifier = info["contactId"]
-        firstName = info["firstName"]
-        lastName = info["lastName"]
+        firstName = info["lastName"]
+        lastName = info["firstName"]
         pinyin = info["py"]
         weixin = info["weChat"]
         phone = info["mobile"]

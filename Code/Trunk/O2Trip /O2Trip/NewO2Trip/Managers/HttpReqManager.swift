@@ -51,6 +51,41 @@ class HttpReqManager {
         }
     }
     
+    // 新增联系人
+    class func httpRequestAddContact(userID: String, contact:ContactItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["firstName"] = contact.lastName
+        params["lastName"] = contact.firstName
+        params["py"] = contact.pinyin
+        params["mobile"] = contact.phone
+        params["weChat"] = contact.weixin
+        params["email"] = contact.email
+        self.httpRequest("rest_contact/addContactItem", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
+    // 编辑联系人
+    class func httpRequestEditContact(userID: String, contact:ContactItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["contactId"] = contact.identifier
+        params["firstName"] = contact.lastName
+        params["lastName"] = contact.firstName
+        params["py"] = contact.pinyin
+        params["mobile"] = contact.phone
+        params["weChat"] = contact.weixin
+        params["email"] = contact.email
+        self.httpRequest("rest_contact/editContactItem", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
     // MARK: - Private
     
     private class func httpRequest(method: String, params: Dictionary<String, String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
