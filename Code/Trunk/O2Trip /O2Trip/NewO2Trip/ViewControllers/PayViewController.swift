@@ -57,7 +57,7 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
             }
         }
         
-        
+        // Reload Table View's first cell
     }
     
     // MARK: TableView
