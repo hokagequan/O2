@@ -23,6 +23,9 @@
 		10FE42611BB585CF00E37C76 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42601BB585CF00E37C76 /* ContactItem.swift */; settings = {ASSET_TAGS = (); }; };
 		10FE42631BB58C3800E37C76 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42621BB58C3800E37C76 /* NewContactViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		10FE42671BB5902700E37C76 /* ContactEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42661BB5902700E37C76 /* ContactEditCell.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE42691BB6E75A00E37C76 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42681BB6E75A00E37C76 /* PayViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE426B1BB8280A00E37C76 /* PayTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE426A1BB8280A00E37C76 /* PayTotalCell.swift */; settings = {ASSET_TAGS = (); }; };
+		10FE426D1BB828D500E37C76 /* PayModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE426C1BB828D500E37C76 /* PayModeCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */; };
 		2B4715781B0196D2009F015F /* agreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4715771B0196D2009F015F /* agreementViewController.m */; };
 		2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B47157A1B01AC65009F015F /* destinationViewController.m */; };
@@ -403,6 +406,9 @@
 		10FE42601BB585CF00E37C76 /* ContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		10FE42621BB58C3800E37C76 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		10FE42661BB5902700E37C76 /* ContactEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactEditCell.swift; sourceTree = "<group>"; };
+		10FE42681BB6E75A00E37C76 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		10FE426A1BB8280A00E37C76 /* PayTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayTotalCell.swift; sourceTree = "<group>"; };
+		10FE426C1BB828D500E37C76 /* PayModeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayModeCell.swift; sourceTree = "<group>"; };
 		2B3463951B43FBC9006FA9A5 /* MJAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAnnotation.h; sourceTree = "<group>"; };
 		2B3463961B43FBC9006FA9A5 /* MJAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAnnotation.m; sourceTree = "<group>"; };
 		2B4715761B0196D2009F015F /* agreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agreementViewController.h; sourceTree = "<group>"; };
@@ -1008,6 +1014,7 @@
 				100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */,
 				10FE425C1BB42E2900E37C76 /* ContactsViewController.swift */,
 				10FE42621BB58C3800E37C76 /* NewContactViewController.swift */,
+				10FE42681BB6E75A00E37C76 /* PayViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1020,6 +1027,8 @@
 				10FE425A1BB2F09F00E37C76 /* OrderCell.swift */,
 				10FE425E1BB42FA300E37C76 /* ContactCell.swift */,
 				10FE42661BB5902700E37C76 /* ContactEditCell.swift */,
+				10FE426A1BB8280A00E37C76 /* PayTotalCell.swift */,
+				10FE426C1BB828D500E37C76 /* PayModeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2365,6 +2374,7 @@
 				2B5C22271BA9933700E770FC /* UIWebView+AFNetworking.m in Sources */,
 				2BE6FB3C1B12C0E400CD981E /* bigMapViewController.m in Sources */,
 				2B5C220F1BA9933700E770FC /* UIScrollView+SVPullToRefresh.m in Sources */,
+				10FE42691BB6E75A00E37C76 /* PayViewController.swift in Sources */,
 				2B5C22261BA9933700E770FC /* UIRefreshControl+AFNetworking.m in Sources */,
 				2B60CC261B5364510037ECC0 /* mylistCell.m in Sources */,
 				2B531DD91B9EBA0000FB2467 /* setDataViewController.m in Sources */,
@@ -2377,6 +2387,7 @@
 				2B6394481B74848F00C210E4 /* contactViewController.m in Sources */,
 				2B5C1FD51BA9582200E770FC /* MJType.m in Sources */,
 				2BDE8C421B04B8AC00C09985 /* collectionViewController.m in Sources */,
+				10FE426B1BB8280A00E37C76 /* PayTotalCell.swift in Sources */,
 				2B5C1FCF1BA9582200E770FC /* RMCalendarCollectionViewLayout.m in Sources */,
 				2B729B8C1B79F6D900E39376 /* middleViewController.m in Sources */,
 				2B5C21F81BA9933700E770FC /* REFrostedViewController.m in Sources */,
@@ -2409,6 +2420,7 @@
 				2BDE8B961B0451F800C09985 /* changeViewController.m in Sources */,
 				2B5DFC951BA1370000916CAD /* maxModel.m in Sources */,
 				758A226A1AB5C76C00801878 /* UserModel.m in Sources */,
+				10FE426D1BB828D500E37C76 /* PayModeCell.swift in Sources */,
 				2B5C221E1BA9933700E770FC /* UIImageView+HighlightedWebCache.m in Sources */,
 				2B5C22161BA9933700E770FC /* SDWebImageDownloader.m in Sources */,
 				2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */,

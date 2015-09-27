@@ -18,6 +18,7 @@ class ContactItem {
     var phone: String?
     var email: String?
     var gender: String?
+    var isDefalut: Bool = false
     
     func loadInfo(info: Dictionary<String, String>) {
         identifier = info["contactId"]
