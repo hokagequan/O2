@@ -13,6 +13,7 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var payTableView: UITableView!
     
     var orders = [OrderItem]()
+    var contact: ContactItem? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,22 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func handleContactInfo(info: Dictionary<String, AnyObject>) {
+        let items = info["data"] as! Array<Dictionary<String, String>>
+        
+        for item in items {
+            let contactItem = ContactItem()
+            contactItem.loadInfo(item)
+            contact = contactItem
+            
+            if contactItem.isDefalut == true {
+                break
+            }
+        }
+        
+        
     }
     
     // MARK: TableView

@@ -31,6 +31,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         HttpReqManager.httpRequestContacts(userID as! String, completion: { (response) -> Void in
             GiFHUD.dismiss()
             
+            self.handleInfo(response)
             self.tableView.reloadData()
             }) { (error) -> Void in
                 GiFHUD.dismiss()
