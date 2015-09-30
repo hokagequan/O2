@@ -12,6 +12,7 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     var filter: OrderStat = OrderStat.All
     var orderItems = [OrderItem]()
