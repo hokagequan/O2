@@ -70,7 +70,9 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("", forIndexPath: indexPath)
         
+        return cell
     }
 
     /*

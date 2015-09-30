@@ -14,6 +14,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var selectAllButton: UIButton!
     @IBOutlet weak var settleButton: UIButton!
     @IBOutlet weak var TotalLabel: UILabel!
+    @IBOutlet weak var emptyView: UIView!
     
     var items = [ShoppingCartItem]()
     var selectedIndexes = [Int]()
@@ -23,6 +24,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
 
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBarHidden = false
+        
+        emptyView.alpha = 0.0
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -44,6 +47,16 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             let item = ShoppingCartItem()
             item.loadInfo(goodInfo)
             items.append(item)
+        }
+    }
+    
+    func layoutViews() {
+        let emptyAlpha: CGFloat = items.count == 0 ? 1.0 : 0.0
+        let detailAlpha: CGFloat = emptyAlpha == 0.0 ? 1.0 : 0.0
+        
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.emptyView.alpha = emptyAlpha
+            self.tableView.alpha = detailAlpha
         }
     }
     
@@ -80,6 +93,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             GiFHUD.dismiss()
             self.handleInfo(response)
             self.tableView.reloadData()
+            self.layoutViews()
             }) { (error) -> Void in
                 GiFHUD.dismiss()
                 self.showAlert("获取信息失败")
@@ -92,7 +106,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             totalPrice += Int(item.totalPrice!)!
         }
         
-        let text = NSAttributedString(string: "合计：￥ \(totalPrice)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0), NSForegroundColorAttributeName: UIColor.whiteColor()])
+        let text = NSMutableAttributedString(string: "合计：￥ \(totalPrice)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0), NSForegroundColorAttributeName: UIColor.whiteColor()])
+        text.addAttributes([NSFontAttributeName: UIFont.systemFontOfSize(9)], range: NSMakeRange(0, "合计：".characters.count))
         TotalLabel.attributedText = text
         
         settleButton.setTitle("结算(\(items.count))", forState: UIControlState.Normal)
@@ -134,7 +149,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         cell.titleLabel.text = item.activityTitle
         cell.datelabel.text = "出行日期：\(item.tripDate) \(item.tripTime)"
         cell.numberLabel.text = "出行人数：\(item.tripPersonCount)人"
-        let text = NSMutableAttributedString(string: "￥\(item.price) x\(item.tripPersonCount)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor(red: 140.0 / 255.0, green: 140.0 / 255.0, blue: 140.0 / 255.0, alpha: 1.0)])
+        let text = NSMutableAttributedString(string: "￥\(item.price) x\(item.tripPersonCount)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(8), NSForegroundColorAttributeName: UIColor(red: 102.0 / 255.0, green: 102.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)])
+        text.addAttributes([NSForegroundColorAttributeName: UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0)], range: NSMakeRange(0, "\(item.price)".characters.count + 1))
         cell.priceLabel.attributedText = text
         
         cell.selected = selectedIndexes.contains(indexPath.row)

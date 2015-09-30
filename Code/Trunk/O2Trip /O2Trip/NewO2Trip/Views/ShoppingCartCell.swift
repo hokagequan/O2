@@ -26,6 +26,8 @@ class ShoppingCartCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        let markName = selected ? "check_sel" : "check_nor"
+        selectMarkImageView.image = UIImage(named: markName)
     }
 
 }

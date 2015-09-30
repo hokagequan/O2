@@ -19,7 +19,7 @@ class HttpReqManager {
         params["userId"] = userID
         params["startPage"] = start
         params["pageSize"] = count
-        self.httpRequest("rest_shopping/getShoppingCar", params: params, completion: { (response) -> Void in
+        self.httpRequest("rest_shopping/getShoppingCart", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in
                 failure?(error)

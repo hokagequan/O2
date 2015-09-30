@@ -127,8 +127,16 @@
 }
 
 - (void)customNavigationBar {
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor greenColor]} forState:UIControlStateNormal];
-    [[UINavigationBar appearance] setTintColor:[UIColor greenColor]];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:26 / 255.0
+ green:188 / 255.0 blue:156 / 255.0 alpha:1.0]} forState:UIControlStateNormal];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:26 / 255.0
+                                                               green:188 / 255.0 blue:156 / 255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:240 / 255.0
+                                                                     green:240 / 255.0
+                                                                      blue:240 / 255.0
+                                                                     alpha:1.0]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:13.0], NSForegroundColorAttributeName: [UIColor colorWithRed:48 / 255.0 green:48 / 255.0 blue:48 / 255.0 alpha:1.0]}];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:13.0]} forState:UIControlStateNormal];
 }
 
 @end
