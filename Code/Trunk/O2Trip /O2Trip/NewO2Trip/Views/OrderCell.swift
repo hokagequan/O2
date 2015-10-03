@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol OrderCellDelegate {
     optional func didClickAction(cell: OrderCell)
+    optional func didClickCancel(cell: OrderCell)
 }
 
 class OrderCell: UITableViewCell {
@@ -23,6 +24,7 @@ class OrderCell: UITableViewCell {
     @IBOutlet weak var statLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     weak var delegate: OrderCellDelegate?
     
@@ -42,4 +44,8 @@ class OrderCell: UITableViewCell {
         delegate?.didClickAction?(self)
     }
 
+    @IBAction func clickCancel(sender: AnyObject) {
+        delegate?.didClickCancel?(self)
+    }
+    
 }

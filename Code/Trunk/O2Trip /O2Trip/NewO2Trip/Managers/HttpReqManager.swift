@@ -40,6 +40,31 @@ class HttpReqManager {
         }
     }
     
+    // 取消订单
+    class func httpRequestCancelOrder(userID: String, orderID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["orderId"] = orderID
+        self.httpRequest("rest_order/cancelOrder", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
+    // 确认订单
+    class func httpRequestConfirmOrder(userID: String, orderID: String, itemID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["orderId"] = orderID
+        params["itemId"] = itemID
+        self.httpRequest("rest_order/cancelOrder", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
     // 获取联系人列表
     class func httpRequestContacts(userID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
         var params = Dictionary<String, String>()

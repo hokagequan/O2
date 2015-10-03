@@ -13,6 +13,7 @@ enum OrderStat: Int {
     case Unpay
     case Confirmed
     case Payed
+    case Closed
     
     init(key: String) {
         switch key {
@@ -22,6 +23,8 @@ enum OrderStat: Int {
             self = .Unpay
         case "confirm":
             self = .Confirmed
+        case "closed":
+            self = .Closed
             
         default:
             self = .All
@@ -38,6 +41,8 @@ enum OrderStat: Int {
             return "confirm"
         case .Payed:
             return "payed"
+        case .Closed:
+            return "closed"
         }
     }
     
@@ -51,6 +56,8 @@ enum OrderStat: Int {
             return "已确认"
         case .Payed:
             return "待确认"
+        case .Closed:
+            return "关闭"
         }
     }
 }
@@ -58,6 +65,7 @@ enum OrderStat: Int {
 class OrderItem {
     
     var identifier: String?
+//    var itemID: String?
     var number: String?
     var price: String?
     var totalPrice: String?
@@ -70,6 +78,37 @@ class OrderItem {
     var tripTime: String?
     var iconImage: String?
     var stat: OrderStat = .All
+    
+    func cancel(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        HttpReqManager.httpRequestCancelOrder(userID as! String, orderID: identifier!, completion: { (response) -> Void in
+            let success = (response["err_code"] as! String == "200")
+            if success == true {
+                completion?(response)
+            }
+            else {
+                failure?(NSError(domain: response["msg"] as! String, code: Int(response["err_code"] as! String)!, userInfo: nil))
+            }
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
+    func confirm(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        HttpReqManager.httpRequestConfirmOrder(userID as! String, orderID: identifier!, itemID: activityID!, completion: { (response) -> Void in
+            let success = (response["err_code"] as! String == "200")
+            if success == true {
+                self.stat = OrderStat.Confirmed
+                completion?(response)
+            }
+            else {
+                failure?(NSError(domain: response["msg"] as! String, code: Int(response["err_code"] as! String)!, userInfo: nil))
+            }
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
     
     func loadInfo(info: Dictionary<String, String>) {
         identifier = info["orderId"]
