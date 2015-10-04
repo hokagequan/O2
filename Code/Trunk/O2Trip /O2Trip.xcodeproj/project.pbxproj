@@ -15,6 +15,11 @@
 		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54CC1BB37FF100F974A2 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54CB1BB37FF100F974A2 /* OrderItem.swift */; settings = {ASSET_TAGS = (); }; };
+		10A689CF1BC160D500768482 /* contact_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CA1BC160D500768482 /* contact_check@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10A689D01BC160D500768482 /* contact_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CB1BC160D500768482 /* contact_email@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10A689D11BC160D500768482 /* contact_name@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CC1BC160D500768482 /* contact_name@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10A689D21BC160D500768482 /* contact_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CD1BC160D500768482 /* contact_phone@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10A689D31BC160D500768482 /* contact_wechat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CE1BC160D500768482 /* contact_wechat@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D6AABD1BBC1F520010EF51 /* check_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AABC1BBC1F520010EF51 /* check_nor@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D6AABF1BBC1FA40010EF51 /* check_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AABE1BBC1FA40010EF51 /* check_sel@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D6AAC21BBC2D270010EF51 /* order_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -402,6 +407,11 @@
 		100A54C51BB2B88900F974A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		100A54CB1BB37FF100F974A2 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		10A689CA1BC160D500768482 /* contact_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_check@2x.png"; sourceTree = "<group>"; };
+		10A689CB1BC160D500768482 /* contact_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_email@2x.png"; sourceTree = "<group>"; };
+		10A689CC1BC160D500768482 /* contact_name@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_name@2x.png"; sourceTree = "<group>"; };
+		10A689CD1BC160D500768482 /* contact_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_phone@2x.png"; sourceTree = "<group>"; };
+		10A689CE1BC160D500768482 /* contact_wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_wechat@2x.png"; sourceTree = "<group>"; };
 		10D6AABC1BBC1F520010EF51 /* check_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_nor@2x.png"; sourceTree = "<group>"; };
 		10D6AABE1BBC1FA40010EF51 /* check_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_sel@2x.png"; sourceTree = "<group>"; };
 		10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_empty@2x.png"; sourceTree = "<group>"; };
@@ -1067,6 +1077,18 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		10A689C91BC160D500768482 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				10A689CA1BC160D500768482 /* contact_check@2x.png */,
+				10A689CB1BC160D500768482 /* contact_email@2x.png */,
+				10A689CC1BC160D500768482 /* contact_name@2x.png */,
+				10A689CD1BC160D500768482 /* contact_phone@2x.png */,
+				10A689CE1BC160D500768482 /* contact_wechat@2x.png */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		10D6AAC01BBC2D270010EF51 /* Order */ = {
 			isa = PBXGroup;
 			children = (
@@ -1086,6 +1108,7 @@
 		10FE426E1BBACD5F00E37C76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10A689C91BC160D500768482 /* Contacts */,
 				10D6AAC01BBC2D270010EF51 /* Order */,
 				10FE426F1BBACD5F00E37C76 /* ShoppingCart */,
 			);
@@ -2224,6 +2247,7 @@
 				2B5C1F331BA9530E00E770FC /* discover@3x-04.png in Resources */,
 				2B5C1F391BA9530E00E770FC /* discover@3x-10.png in Resources */,
 				2B5C1F1F1BA9530E00E770FC /* details@3x-01.png in Resources */,
+				10A689CF1BC160D500768482 /* contact_check@2x.png in Resources */,
 				2B5DC4D21B4D00F500BFD0AF /* detailDayViewCell.xib in Resources */,
 				2BDCC3651AFB101A00B758BA /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				2B5C1F2E1BA9530E00E770FC /* icon@3x.png in Resources */,
@@ -2236,6 +2260,8 @@
 				2B5C1F681BA9530E00E770FC /* payment process@3x-13.png in Resources */,
 				2B5C1F311BA9530E00E770FC /* discover@3x-02.png in Resources */,
 				2B5C1F3D1BA9530E00E770FC /* discover@3x-14.png in Resources */,
+				10A689D21BC160D500768482 /* contact_phone@2x.png in Resources */,
+				10A689D01BC160D500768482 /* contact_email@2x.png in Resources */,
 				2B5C1F3B1BA9530E00E770FC /* discover@3x-12.png in Resources */,
 				2B5C1F1A1BA9530E00E770FC /* @3x_home-11.png in Resources */,
 				2B5C1F571BA9530E00E770FC /* mine@3x-08.png in Resources */,
@@ -2254,6 +2280,7 @@
 				2B5C1F511BA9530E00E770FC /* mine@3x-02.png in Resources */,
 				2B5C1F4D1BA9530E00E770FC /* 58X58.png in Resources */,
 				2B5C1FC71BA9582200E770FC /* CalendarTodaysDate.png in Resources */,
+				10A689D11BC160D500768482 /* contact_name@2x.png in Resources */,
 				2B5C1F741BA9530E00E770FC /* startpage4.jpg in Resources */,
 				2B5C1F221BA9530E00E770FC /* details@3x-04.png in Resources */,
 				2B5C1F321BA9530E00E770FC /* discover@3x-03.png in Resources */,
@@ -2287,6 +2314,7 @@
 				2B5C1F061BA9530E00E770FC /* @3x_home-12-2.png in Resources */,
 				2B5C1F731BA9530E00E770FC /* 1@2x.jpg in Resources */,
 				2B5C1F6F1BA9530E00E770FC /* @3x_ install-07.png in Resources */,
+				10A689D31BC160D500768482 /* contact_wechat@2x.png in Resources */,
 				2B5C1F691BA9530E00E770FC /* payment process@3x-18.png in Resources */,
 				2B5C1FCE1BA9582200E770FC /* payment process@3x-17-17.png in Resources */,
 				2BDCC3671AFB101A00B758BA /* WeiboSDK.bundle in Resources */,

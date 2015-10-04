@@ -2332,38 +2332,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C1M-OE-VfN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C1M-OE-VfN">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" id="N9H-LF-Kc9" customClass="ContactCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="95"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N9H-LF-Kc9" id="yAd-Iw-WXV">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEw-pI-bnc">
-                                                    <rect key="frame" x="0.0" y="15" width="320" height="79"/>
+                                                    <rect key="frame" x="0.0" y="12" width="320" height="67"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b2m-sF-NdY" userLabel="NameIcon">
-                                                            <rect key="frame" x="15" y="15" width="15" height="15"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_name.png" translatesAutoresizingMaskIntoConstraints="NO" id="b2m-sF-NdY" userLabel="NameIcon">
+                                                            <rect key="frame" x="15" y="11" width="12" height="12"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="15" id="Rqw-gL-1fn"/>
-                                                                <constraint firstAttribute="height" constant="15" id="m5W-qP-s4c"/>
+                                                                <constraint firstAttribute="width" constant="12" id="Rqw-gL-1fn"/>
+                                                                <constraint firstAttribute="height" constant="12" id="m5W-qP-s4c"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wea-DQ-paS" userLabel="PhoneIcon">
-                                                            <rect key="frame" x="121" y="15" width="15" height="15"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="wea-DQ-paS" userLabel="PhoneIcon">
+                                                            <rect key="frame" x="122" y="11" width="12" height="12"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xiF-PY-prp" userLabel="EmailIcon">
-                                                            <rect key="frame" x="121" y="49" width="15" height="15"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_email.png" translatesAutoresizingMaskIntoConstraints="NO" id="xiF-PY-prp" userLabel="EmailIcon">
+                                                            <rect key="frame" x="122" y="39" width="12" height="12"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iDQ-uO-Pxi" userLabel="WeixinIcon">
-                                                            <rect key="frame" x="15" y="49" width="15" height="15"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_email.png" translatesAutoresizingMaskIntoConstraints="NO" id="iDQ-uO-Pxi" userLabel="WeixinIcon">
+                                                            <rect key="frame" x="15" y="39" width="12" height="12"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkd-Pk-ccC">
-                                                            <rect key="frame" x="45" y="16" width="68" height="14"/>
+                                                            <rect key="frame" x="39" y="10" width="75" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="ld8-5u-0qB"/>
                                                             </constraints>
@@ -2372,7 +2373,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsK-T0-vka">
-                                                            <rect key="frame" x="151" y="15" width="139" height="14"/>
+                                                            <rect key="frame" x="146" y="10" width="144" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="Pb5-Sl-syv"/>
                                                             </constraints>
@@ -2381,7 +2382,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-ae-qe4">
-                                                            <rect key="frame" x="45" y="49" width="68" height="14"/>
+                                                            <rect key="frame" x="39" y="38" width="75" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="MEB-70-uOq"/>
                                                             </constraints>
@@ -2390,7 +2391,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-eE-znW">
-                                                            <rect key="frame" x="151" y="49" width="139" height="14"/>
+                                                            <rect key="frame" x="146" y="38" width="144" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="nSw-O4-bM8"/>
                                                             </constraints>
@@ -2401,6 +2402,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="b2m-sF-NdY" firstAttribute="centerY" secondItem="fEw-pI-bnc" secondAttribute="centerY" multiplier="1:2" id="0zr-Jw-G3E"/>
                                                         <constraint firstItem="xiF-PY-prp" firstAttribute="width" secondItem="wea-DQ-paS" secondAttribute="width" id="1Yt-s0-TPj"/>
                                                         <constraint firstItem="xiF-PY-prp" firstAttribute="leading" secondItem="wea-DQ-paS" secondAttribute="leading" id="3os-Tx-2bD"/>
                                                         <constraint firstAttribute="trailing" secondItem="nsK-T0-vka" secondAttribute="trailing" constant="30" id="4pF-7N-ipj"/>
@@ -2413,27 +2415,26 @@
                                                         <constraint firstItem="fSI-ae-qe4" firstAttribute="centerY" secondItem="iDQ-uO-Pxi" secondAttribute="centerY" id="TYb-H7-q6I"/>
                                                         <constraint firstItem="fkd-Pk-ccC" firstAttribute="centerY" secondItem="b2m-sF-NdY" secondAttribute="centerY" id="Tfq-gc-xja"/>
                                                         <constraint firstItem="xiF-PY-prp" firstAttribute="height" secondItem="wea-DQ-paS" secondAttribute="height" id="Yd0-sC-PDq"/>
-                                                        <constraint firstItem="nsK-T0-vka" firstAttribute="leading" secondItem="wea-DQ-paS" secondAttribute="trailing" constant="15" id="Zo3-5R-5Sv"/>
+                                                        <constraint firstItem="nsK-T0-vka" firstAttribute="leading" secondItem="wea-DQ-paS" secondAttribute="trailing" constant="12" id="Zo3-5R-5Sv"/>
                                                         <constraint firstItem="WEb-eE-znW" firstAttribute="trailing" secondItem="nsK-T0-vka" secondAttribute="trailing" id="b5F-2L-2C8"/>
                                                         <constraint firstItem="iDQ-uO-Pxi" firstAttribute="leading" secondItem="fEw-pI-bnc" secondAttribute="leading" constant="15" id="ba0-ld-WJs"/>
                                                         <constraint firstItem="xiF-PY-prp" firstAttribute="centerY" secondItem="iDQ-uO-Pxi" secondAttribute="centerY" id="enc-jd-v1m"/>
-                                                        <constraint firstItem="b2m-sF-NdY" firstAttribute="top" secondItem="fEw-pI-bnc" secondAttribute="top" constant="15" id="evj-np-Nx5"/>
                                                         <constraint firstItem="wea-DQ-paS" firstAttribute="leading" secondItem="fkd-Pk-ccC" secondAttribute="trailing" constant="8" id="gdQ-av-iKN"/>
                                                         <constraint firstItem="iDQ-uO-Pxi" firstAttribute="width" secondItem="b2m-sF-NdY" secondAttribute="width" id="hqq-r9-B7D"/>
-                                                        <constraint firstAttribute="bottom" secondItem="iDQ-uO-Pxi" secondAttribute="bottom" constant="15" id="jDU-jS-HO1"/>
                                                         <constraint firstItem="wea-DQ-paS" firstAttribute="centerY" secondItem="b2m-sF-NdY" secondAttribute="centerY" id="jXl-U8-H9X"/>
                                                         <constraint firstItem="fSI-ae-qe4" firstAttribute="leading" secondItem="fkd-Pk-ccC" secondAttribute="leading" id="lej-kO-z8x"/>
                                                         <constraint firstItem="nsK-T0-vka" firstAttribute="centerY" secondItem="wea-DQ-paS" secondAttribute="centerY" id="pAg-r6-HZ3"/>
-                                                        <constraint firstItem="fkd-Pk-ccC" firstAttribute="leading" secondItem="b2m-sF-NdY" secondAttribute="trailing" constant="15" id="suh-dF-3rX"/>
+                                                        <constraint firstItem="fkd-Pk-ccC" firstAttribute="leading" secondItem="b2m-sF-NdY" secondAttribute="trailing" constant="12" id="suh-dF-3rX"/>
                                                         <constraint firstItem="iDQ-uO-Pxi" firstAttribute="height" secondItem="b2m-sF-NdY" secondAttribute="height" id="v1Q-NK-KEv"/>
                                                         <constraint firstItem="WEb-eE-znW" firstAttribute="leading" secondItem="nsK-T0-vka" secondAttribute="leading" id="yvZ-UJ-4Hu"/>
+                                                        <constraint firstItem="iDQ-uO-Pxi" firstAttribute="centerY" secondItem="fEw-pI-bnc" secondAttribute="centerY" multiplier="1:2" constant="28" id="zMS-go-JxX"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FYG-yA-bff" userLabel="CheckMark">
-                                                    <rect key="frame" x="290" y="40" width="15" height="15"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_check.png" translatesAutoresizingMaskIntoConstraints="NO" id="FYG-yA-bff" userLabel="CheckMark">
+                                                    <rect key="frame" x="294" y="34" width="11" height="11"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="15" id="5AS-7y-3j9"/>
-                                                        <constraint firstAttribute="height" constant="15" id="QUc-AP-F4F"/>
+                                                        <constraint firstAttribute="width" constant="11" id="5AS-7y-3j9"/>
+                                                        <constraint firstAttribute="height" constant="11" id="QUc-AP-F4F"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -2441,12 +2442,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="fEw-pI-bnc" secondAttribute="bottom" id="3Hy-OM-NRT"/>
                                                 <constraint firstAttribute="trailing" secondItem="fEw-pI-bnc" secondAttribute="trailing" id="LL9-qD-uas"/>
-                                                <constraint firstItem="fEw-pI-bnc" firstAttribute="top" secondItem="yAd-Iw-WXV" secondAttribute="top" constant="15" id="SNK-R4-xAc"/>
+                                                <constraint firstItem="fEw-pI-bnc" firstAttribute="top" secondItem="yAd-Iw-WXV" secondAttribute="top" constant="12" id="SNK-R4-xAc"/>
                                                 <constraint firstItem="fEw-pI-bnc" firstAttribute="leading" secondItem="yAd-Iw-WXV" secondAttribute="leading" id="sHq-Rl-Jet"/>
                                                 <constraint firstAttribute="trailing" secondItem="FYG-yA-bff" secondAttribute="trailing" constant="15" id="vZ4-wy-SGf"/>
                                                 <constraint firstItem="FYG-yA-bff" firstAttribute="centerY" secondItem="yAd-Iw-WXV" secondAttribute="centerY" id="xIM-40-DXk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="checkMarkImageView" destination="FYG-yA-bff" id="ezW-4A-XV5"/>
                                             <outlet property="emailLabel" destination="WEb-eE-znW" id="wAO-3Z-uUN"/>
@@ -2462,7 +2464,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="C1M-OE-VfN" firstAttribute="top" secondItem="10j-od-v9U" secondAttribute="bottom" id="CHM-CR-RDd"/>
                             <constraint firstAttribute="trailing" secondItem="C1M-OE-VfN" secondAttribute="trailing" id="Hv2-Mc-iG7"/>
@@ -5348,6 +5350,10 @@
         <image name="check_nor.png" width="14" height="14"/>
         <image name="check_sel.png" width="16" height="16"/>
         <image name="collect@3x-03.png" width="60" height="60"/>
+        <image name="contact_check.png" width="11" height="11"/>
+        <image name="contact_email.png" width="12" height="12"/>
+        <image name="contact_name.png" width="12" height="12"/>
+        <image name="contact_phone.png" width="12" height="12"/>
         <image name="details@3x-05.png" width="60" height="60"/>
         <image name="details@3x-06.png" width="60" height="60"/>
         <image name="discover@3x-01.png" width="52" height="52"/>
@@ -5375,7 +5381,7 @@
         <image name="shopping cart_empty.png" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="oSK-Jd-rUA"/>
         <segue reference="6yf-me-hNE"/>
-        <segue reference="rB5-Wa-plr"/>
     </inferredMetricsTieBreakers>
 </document>
