@@ -11,6 +11,7 @@ import UIKit
 class NewContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var contactInfo: ContactItem? = nil
     var pageType: ContactPageType = .Add
@@ -65,6 +66,9 @@ class NewContactViewController: UIViewController, UITableViewDataSource, UITable
         else if pageType == .Edit {
             self.title = "编辑联系人"
         }
+        
+        saveButton.layer.cornerRadius = 4.0
+        saveButton.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
