@@ -15,11 +15,15 @@
 		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54CC1BB37FF100F974A2 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54CB1BB37FF100F974A2 /* OrderItem.swift */; settings = {ASSET_TAGS = (); }; };
+		108CAEAB1BC5642600902E34 /* PayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CAEAA1BC5642600902E34 /* PayManager.swift */; settings = {ASSET_TAGS = (); }; };
 		10A689CF1BC160D500768482 /* contact_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CA1BC160D500768482 /* contact_check@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689D01BC160D500768482 /* contact_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CB1BC160D500768482 /* contact_email@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689D11BC160D500768482 /* contact_name@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CC1BC160D500768482 /* contact_name@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689D21BC160D500768482 /* contact_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CD1BC160D500768482 /* contact_phone@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689D31BC160D500768482 /* contact_wechat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CE1BC160D500768482 /* contact_wechat@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10A689D71BC16DC400768482 /* pay_wechat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689D51BC16DC400768482 /* pay_wechat@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10A689D81BC16DC400768482 /* pay_zhifubao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689D61BC16DC400768482 /* pay_zhifubao@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10A689DA1BC1714200768482 /* ContactNoOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A689D91BC1714200768482 /* ContactNoOneCell.swift */; settings = {ASSET_TAGS = (); }; };
 		10D6AABD1BBC1F520010EF51 /* check_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AABC1BBC1F520010EF51 /* check_nor@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D6AABF1BBC1FA40010EF51 /* check_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AABE1BBC1FA40010EF51 /* check_sel@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D6AAC21BBC2D270010EF51 /* order_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -407,11 +411,15 @@
 		100A54C51BB2B88900F974A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		100A54CB1BB37FF100F974A2 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		108CAEAA1BC5642600902E34 /* PayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayManager.swift; sourceTree = "<group>"; };
 		10A689CA1BC160D500768482 /* contact_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_check@2x.png"; sourceTree = "<group>"; };
 		10A689CB1BC160D500768482 /* contact_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_email@2x.png"; sourceTree = "<group>"; };
 		10A689CC1BC160D500768482 /* contact_name@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_name@2x.png"; sourceTree = "<group>"; };
 		10A689CD1BC160D500768482 /* contact_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_phone@2x.png"; sourceTree = "<group>"; };
 		10A689CE1BC160D500768482 /* contact_wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_wechat@2x.png"; sourceTree = "<group>"; };
+		10A689D51BC16DC400768482 /* pay_wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pay_wechat@2x.png"; sourceTree = "<group>"; };
+		10A689D61BC16DC400768482 /* pay_zhifubao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pay_zhifubao@2x.png"; sourceTree = "<group>"; };
+		10A689D91BC1714200768482 /* ContactNoOneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactNoOneCell.swift; sourceTree = "<group>"; };
 		10D6AABC1BBC1F520010EF51 /* check_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_nor@2x.png"; sourceTree = "<group>"; };
 		10D6AABE1BBC1FA40010EF51 /* check_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_sel@2x.png"; sourceTree = "<group>"; };
 		10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_empty@2x.png"; sourceTree = "<group>"; };
@@ -1048,6 +1056,7 @@
 				10FE42661BB5902700E37C76 /* ContactEditCell.swift */,
 				10FE426A1BB8280A00E37C76 /* PayTotalCell.swift */,
 				10FE426C1BB828D500E37C76 /* PayModeCell.swift */,
+				10A689D91BC1714200768482 /* ContactNoOneCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1056,6 +1065,7 @@
 			isa = PBXGroup;
 			children = (
 				100A54BE1BB1575400F974A2 /* HttpReqManager.swift */,
+				108CAEAA1BC5642600902E34 /* PayManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1089,6 +1099,15 @@
 			path = Contacts;
 			sourceTree = "<group>";
 		};
+		10A689D41BC16DC400768482 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				10A689D51BC16DC400768482 /* pay_wechat@2x.png */,
+				10A689D61BC16DC400768482 /* pay_zhifubao@2x.png */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
 		10D6AAC01BBC2D270010EF51 /* Order */ = {
 			isa = PBXGroup;
 			children = (
@@ -1108,6 +1127,7 @@
 		10FE426E1BBACD5F00E37C76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10A689D41BC16DC400768482 /* Pay */,
 				10A689C91BC160D500768482 /* Contacts */,
 				10D6AAC01BBC2D270010EF51 /* Order */,
 				10FE426F1BBACD5F00E37C76 /* ShoppingCart */,
@@ -2332,8 +2352,10 @@
 				2BDCC3621AFB101A00B758BA /* Resource.bundle in Resources */,
 				2B5C21ED1BA9933700E770FC /* AlipaySDK.bundle in Resources */,
 				2B5C1F5F1BA9530E00E770FC /* payment process@3x-02.png in Resources */,
+				10A689D81BC16DC400768482 /* pay_zhifubao@2x.png in Resources */,
 				2B5C1F641BA9530E00E770FC /* payment process@3x-09.png in Resources */,
 				2B5C1FC31BA9582200E770FC /* CalendarRowBottom.png in Resources */,
+				10A689D71BC16DC400768482 /* pay_wechat@2x.png in Resources */,
 				2B5C1FCC1BA9582200E770FC /* payment process@3x-15.png in Resources */,
 				2B5C1F0C1BA9530E00E770FC /* tab@2x-02.png in Resources */,
 				2B5C1F5E1BA9530E00E770FC /* payment process@3x-01.png in Resources */,
@@ -2428,6 +2450,7 @@
 				2B642EEB1B87304800D30D82 /* acModel.m in Sources */,
 				2B642EE61B8702BB00D30D82 /* searchresultViewController.m in Sources */,
 				2B5C1FD71BA9582200E770FC /* NSObject+MJKeyValue.m in Sources */,
+				108CAEAB1BC5642600902E34 /* PayManager.swift in Sources */,
 				2BDD17A51B05F79500E65DE2 /* mudidiCell.m in Sources */,
 				2B5C22231BA9933700E770FC /* UIButton+AFNetworking.m in Sources */,
 				2B5C21F91BA9933700E770FC /* UIImage+REFrostedViewController.m in Sources */,
@@ -2502,6 +2525,7 @@
 				2B5C21FB1BA9933700E770FC /* UIViewController+REFrostedViewController.m in Sources */,
 				2BDD17BF1B05FDC900E65DE2 /* detailMapViewCell.m in Sources */,
 				2B5CDB121BA0421400E36662 /* yearModel.m in Sources */,
+				10A689DA1BC1714200768482 /* ContactNoOneCell.swift in Sources */,
 				2B5C22201BA9933700E770FC /* UIView+WebCacheOperation.m in Sources */,
 				10FE42671BB5902700E37C76 /* ContactEditCell.swift in Sources */,
 				2BDE8C471B04BCAB00C09985 /* collectionCell.m in Sources */,

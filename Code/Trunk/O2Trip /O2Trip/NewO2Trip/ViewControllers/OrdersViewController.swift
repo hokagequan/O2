@@ -8,6 +8,11 @@
 
 import UIKit
 
+let greenColor = UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0)
+let grayColor = UIColor(red: 102 / 255.0, green: 102 / 255.0, blue: 102 / 255.0, alpha: 1.0)
+let lightGrayColor = UIColor(red: 153 / 255.0, green: 153 / 255.0, blue: 153 / 255.0, alpha: 1.0)
+let blackColor = UIColor(red: 48 / 255.0, green: 48 / 255.0, blue: 48 / 255.0, alpha: 1.0)
+
 class OrdersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, OrderCellDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -17,11 +22,6 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
     var filter: OrderStat = OrderStat.All
     var orderItems = [OrderItem]()
     var selectItem: OrderItem? = nil
-    
-    let greenColor = UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0)
-    let grayColor = UIColor(red: 102 / 255.0, green: 102 / 255.0, blue: 102 / 255.0, alpha: 1.0)
-    let lightGrayColor = UIColor(red: 153 / 255.0, green: 153 / 255.0, blue: 153 / 255.0, alpha: 1.0)
-    let blackColor = UIColor(red: 48 / 255.0, green: 48 / 255.0, blue: 48 / 255.0, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
