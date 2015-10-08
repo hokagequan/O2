@@ -115,12 +115,13 @@ class HttpReqManager {
     
     private class func httpRequest(method: String, params: Dictionary<String, String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
         do {
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions())
             let jsonParams = String(data: jsonData, encoding: NSUTF8StringEncoding)
-            let url = "\(httpUrl)\(method)?paramjson={\(jsonParams)}"
+            let url = "\(httpUrl)\(method)?paramjson=\(jsonParams!)"
             
             let afManager = AFHTTPRequestOperationManager()
-            afManager.GET(url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding), parameters: "", success: { (operation, response) -> Void in
+            afManager.responseSerializer.acceptableContentTypes = NSSet(array: ["text/json", "text/plain"]) as Set<NSObject>
+            afManager.GET(url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding), parameters: nil, success: { (operation, response) -> Void in
                 completion?(response as! Dictionary<String, AnyObject>)
                 }, failure: { (operation, error) -> Void in
                     failure?(error)
