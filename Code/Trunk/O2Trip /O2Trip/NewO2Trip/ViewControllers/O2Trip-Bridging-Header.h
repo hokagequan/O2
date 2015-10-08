@@ -4,3 +4,5 @@
 
 #import "AFNetworking.h"
 #import "GiFHUD.h"
+#import "WXApi.h"
+#import "WXApiObject.h"

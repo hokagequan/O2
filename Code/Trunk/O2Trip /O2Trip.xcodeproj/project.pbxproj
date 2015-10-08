@@ -1022,6 +1022,7 @@
 		100A54B31BB14AD700F974A2 /* NewO2Trip */ = {
 			isa = PBXGroup;
 			children = (
+				108CAEAC1BC56B7B00902E34 /* ThirdPartys */,
 				10FE426E1BBACD5F00E37C76 /* Resources */,
 				100A54B51BB14B2200F974A2 /* O2Trip-Bridging-Header.h */,
 				10FE42551BB19C7600E37C76 /* Customs */,
@@ -1085,6 +1086,13 @@
 			children = (
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		108CAEAC1BC56B7B00902E34 /* ThirdPartys */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdPartys;
 			sourceTree = "<group>";
 		};
 		10A689C91BC160D500768482 /* Contacts */ = {

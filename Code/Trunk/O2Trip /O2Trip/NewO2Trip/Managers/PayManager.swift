@@ -14,5 +14,26 @@ enum PayMode: Int {
 }
 
 class PayManager {
+    static let sharedPayManager = PayManager()
     
+    var isPaying = false
+    
+    class func sharedInstance() -> PayManager {
+        return sharedPayManager
+    }
+    
+    func pay(mode: PayMode) {
+        switch mode {
+        case .WeiXin:
+            payUsingWeChat()
+            break
+        case .ZhiFuBao:
+            payUsingZhiFuBao()
+            break
+        }
+    }
+    
+    func payUsingWeChat() {}
+    
+    func payUsingZhiFuBao() {}
 }

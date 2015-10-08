@@ -17,6 +17,8 @@
 #import "APService.h"
 #import "Pingpp.h"
 #import "orderViewController.h"
+#import "O2Trip-Swift.h"
+
 @interface AppDelegate ()
 
 @end
