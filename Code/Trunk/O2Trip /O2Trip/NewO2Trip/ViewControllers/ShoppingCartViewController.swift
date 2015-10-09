@@ -10,7 +10,7 @@ import UIKit
 
 class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: RefreshAndLoadTableView!
     @IBOutlet weak var selectAllButton: UIButton!
     @IBOutlet weak var settleButton: UIButton!
     @IBOutlet weak var TotalLabel: UILabel!
@@ -26,12 +26,14 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationController?.navigationBarHidden = false
         
         emptyView.alpha = 0.0
+        
+        tableView.enableRefresh(self, refresh: "refresh")
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.refresh()
+//        self.refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,9 +91,12 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         
+        self.tableView.refreshControl?.beginRefreshing()
+        
         let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         HttpReqManager.httpRequestShoppingCart(userID as! String, start: "0", count: "10", completion: { (response) -> Void in
             GiFHUD.dismiss()
+            self.tableView.refreshControl?.endRefreshing()
             self.handleInfo(response)
             self.tableView.reloadData()
             self.layoutViews()

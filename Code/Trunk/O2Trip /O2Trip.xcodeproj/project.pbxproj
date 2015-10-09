@@ -15,6 +15,7 @@
 		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54CC1BB37FF100F974A2 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54CB1BB37FF100F974A2 /* OrderItem.swift */; settings = {ASSET_TAGS = (); }; };
+		10854E681BC8153800EA4373 /* RefreshAndLoadTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */; settings = {ASSET_TAGS = (); }; };
 		108CAEAB1BC5642600902E34 /* PayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CAEAA1BC5642600902E34 /* PayManager.swift */; settings = {ASSET_TAGS = (); }; };
 		10A689CF1BC160D500768482 /* contact_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CA1BC160D500768482 /* contact_check@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689D01BC160D500768482 /* contact_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CB1BC160D500768482 /* contact_email@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -411,6 +412,7 @@
 		100A54C51BB2B88900F974A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		100A54CB1BB37FF100F974A2 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAndLoadTableView.swift; sourceTree = "<group>"; };
 		108CAEAA1BC5642600902E34 /* PayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayManager.swift; sourceTree = "<group>"; };
 		10A689CA1BC160D500768482 /* contact_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_check@2x.png"; sourceTree = "<group>"; };
 		10A689CB1BC160D500768482 /* contact_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_email@2x.png"; sourceTree = "<group>"; };
@@ -1128,6 +1130,7 @@
 			isa = PBXGroup;
 			children = (
 				10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */,
+				10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -2471,6 +2474,7 @@
 				2B5C22121BA9933700E770FC /* NSData+ImageContentType.m in Sources */,
 				2B5C1FD01BA9582200E770FC /* RMCalendarMonthHeaderView.m in Sources */,
 				2B5C22271BA9933700E770FC /* UIWebView+AFNetworking.m in Sources */,
+				10854E681BC8153800EA4373 /* RefreshAndLoadTableView.swift in Sources */,
 				2BE6FB3C1B12C0E400CD981E /* bigMapViewController.m in Sources */,
 				2B5C220F1BA9933700E770FC /* UIScrollView+SVPullToRefresh.m in Sources */,
 				10FE42691BB6E75A00E37C76 /* PayViewController.swift in Sources */,
