@@ -40,7 +40,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func handleInfo(info: Dictionary<String, AnyObject>) {
-        let goods = info["goods"] as! Array<Dictionary<String, String>>
+        let data = info["data"] as! Dictionary<String, AnyObject>
+        let goods = data["goods"] as! Array<Dictionary<String, String>>
         
         for i in 0..<goods.count {
             let goodInfo = goods[i]

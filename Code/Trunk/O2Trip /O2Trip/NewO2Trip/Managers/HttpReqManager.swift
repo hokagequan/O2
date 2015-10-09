@@ -122,7 +122,13 @@ class HttpReqManager {
             let afManager = AFHTTPRequestOperationManager()
             afManager.responseSerializer.acceptableContentTypes = NSSet(array: ["text/json", "text/plain"]) as Set<NSObject>
             afManager.GET(url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding), parameters: nil, success: { (operation, response) -> Void in
-                completion?(response as! Dictionary<String, AnyObject>)
+                let rep = response["err_code"] as! String
+                if rep == "200" {
+                    completion?(response as! Dictionary<String, AnyObject>)
+                }
+                else {
+                    failure?(NSError(domain: response["msg"] as! String, code: 404, userInfo: nil))
+                }
                 }, failure: { (operation, error) -> Void in
                     failure?(error)
             })
