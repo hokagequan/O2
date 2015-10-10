@@ -26,13 +26,13 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationController?.navigationBarHidden = false
         
         emptyView.alpha = 0.0
-        
-        tableView.enableRefresh(self, refresh: "refresh")
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        tableView.enableRefresh(self, refresh: "refresh")
+        tableView.enableLoadMore(self, loadMore: "loadMore")
 //        self.refresh()
     }
 
@@ -81,6 +81,19 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             }) { (error) -> Void in
                 GiFHUD.dismiss()
                 
+                self.showAlert("获取信息失败")
+        }
+    }
+    
+    func loadMore() {
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        HttpReqManager.httpRequestShoppingCart(userID as! String, start: "\(items.count)", count: "10", completion: { (response) -> Void in
+            self.tableView.endLoadMore()
+            self.handleInfo(response)
+            self.tableView.reloadData()
+            self.layoutViews()
+            }) { (error) -> Void in
+                self.tableView.endLoadMore()
                 self.showAlert("获取信息失败")
         }
     }

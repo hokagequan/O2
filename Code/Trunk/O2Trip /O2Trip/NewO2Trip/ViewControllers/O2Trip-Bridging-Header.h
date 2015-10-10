@@ -6,3 +6,4 @@
 #import "GiFHUD.h"
 #import "WXApi.h"
 #import "WXApiObject.h"
+#import "RefreshControl.h"

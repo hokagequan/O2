@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RefreshAndLoadTableView: UITableView {
+class RefreshAndLoadTableView: UITableView, RefreshControlDelegate {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -19,12 +19,16 @@ class RefreshAndLoadTableView: UITableView {
     */
         
     var refreshControl: UIRefreshControl? = nil
+    var loadMoreControl: RefreshControl? = nil
+    var loadMoreSelector: Selector? = nil
+    weak var loadMoreTarget: NSObject? = nil
     
     func enableRefresh(target: NSObject, refresh: Selector) {
         if refreshControl != nil {
             return
         }
         
+        loadMoreTarget = target
         refreshControl = UIRefreshControl(frame: CGRectMake(0, 0, self.bounds.size.width, 60))
         refreshControl!.tintColor = UIColor.lightGrayColor()
         refreshControl!.attributedTitle = NSAttributedString(string: "下拉刷新")
@@ -32,11 +36,27 @@ class RefreshAndLoadTableView: UITableView {
         self.addSubview(refreshControl!)
     }
     
-    func enableLoadMore() {
+    func enableLoadMore(target: NSObject, loadMore: Selector) {
+        if loadMoreControl != nil {
+            return
+        }
         
+        loadMoreControl = RefreshControl(scrollView: self, delegate: self)
+        loadMoreControl?.bottomEnabled = true
+        loadMoreSelector = loadMore
+    }
+    
+    func endLoadMore() {
+        loadMoreControl?.finishRefreshingDirection(RefreshDirectionBottom)
     }
     
     // MARK: - Private
     
+    // MARK: - RefreshControl
+    func refreshControl(refreshControl: RefreshControl!, didEngageRefreshDirection direction: RefreshDirection) {
+        if direction == RefreshDirectionBottom {
+            loadMoreTarget?.performSelector(loadMoreSelector!)
+        }
+    }
 
 }
