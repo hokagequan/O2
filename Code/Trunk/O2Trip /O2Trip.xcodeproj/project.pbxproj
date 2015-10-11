@@ -30,6 +30,11 @@
 		10D4CE151BC8974000565D59 /* pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D4CE0E1BC8974000565D59 /* pull_refresh@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D4CE161BC8974000565D59 /* RefreshBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE101BC8974000565D59 /* RefreshBottomView.m */; settings = {ASSET_TAGS = (); }; };
 		10D4CE171BC8974000565D59 /* RefreshTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE121BC8974000565D59 /* RefreshTopView.m */; settings = {ASSET_TAGS = (); }; };
+		10D4CE251BC9F56800565D59 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D4CE231BC9F56800565D59 /* add@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10D4CE261BC9F56800565D59 /* decrease@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D4CE241BC9F56800565D59 /* decrease@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10D4CE281BC9F6FD00565D59 /* OrderEditNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE271BC9F6FD00565D59 /* OrderEditNormalCell.swift */; settings = {ASSET_TAGS = (); }; };
+		10D4CE2A1BC9F71100565D59 /* OrderEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE291BC9F71100565D59 /* OrderEditCell.swift */; settings = {ASSET_TAGS = (); }; };
+		10D4CE2D1BC9F8C000565D59 /* CustomObjectUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE2C1BC9F8C000565D59 /* CustomObjectUtil.m */; settings = {ASSET_TAGS = (); }; };
 		10D6AABD1BBC1F520010EF51 /* check_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AABC1BBC1F520010EF51 /* check_nor@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D6AABF1BBC1FA40010EF51 /* check_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AABE1BBC1FA40010EF51 /* check_sel@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D6AAC21BBC2D270010EF51 /* order_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -436,6 +441,12 @@
 		10D4CE111BC8974000565D59 /* RefreshTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshTopView.h; sourceTree = "<group>"; };
 		10D4CE121BC8974000565D59 /* RefreshTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshTopView.m; sourceTree = "<group>"; };
 		10D4CE131BC8974000565D59 /* RefreshViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshViewDelegate.h; sourceTree = "<group>"; };
+		10D4CE231BC9F56800565D59 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		10D4CE241BC9F56800565D59 /* decrease@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decrease@2x.png"; sourceTree = "<group>"; };
+		10D4CE271BC9F6FD00565D59 /* OrderEditNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderEditNormalCell.swift; sourceTree = "<group>"; };
+		10D4CE291BC9F71100565D59 /* OrderEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderEditCell.swift; sourceTree = "<group>"; };
+		10D4CE2B1BC9F8C000565D59 /* CustomObjectUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomObjectUtil.h; sourceTree = "<group>"; };
+		10D4CE2C1BC9F8C000565D59 /* CustomObjectUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomObjectUtil.m; sourceTree = "<group>"; };
 		10D6AABC1BBC1F520010EF51 /* check_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_nor@2x.png"; sourceTree = "<group>"; };
 		10D6AABE1BBC1FA40010EF51 /* check_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_sel@2x.png"; sourceTree = "<group>"; };
 		10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_empty@2x.png"; sourceTree = "<group>"; };
@@ -1075,6 +1086,8 @@
 				10FE426A1BB8280A00E37C76 /* PayTotalCell.swift */,
 				10FE426C1BB828D500E37C76 /* PayModeCell.swift */,
 				10A689D91BC1714200768482 /* ContactNoOneCell.swift */,
+				10D4CE271BC9F6FD00565D59 /* OrderEditNormalCell.swift */,
+				10D4CE291BC9F71100565D59 /* OrderEditCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1101,6 +1114,8 @@
 		100A54BD1BB1573300F974A2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				10D4CE2B1BC9F8C000565D59 /* CustomObjectUtil.h */,
+				10D4CE2C1BC9F8C000565D59 /* CustomObjectUtil.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1188,6 +1203,8 @@
 		10FE426F1BBACD5F00E37C76 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				10D4CE231BC9F56800565D59 /* add@2x.png */,
+				10D4CE241BC9F56800565D59 /* decrease@2x.png */,
 				10FE42701BBACD7200E37C76 /* shopping cart_empty@2x.png */,
 				10D6AABC1BBC1F520010EF51 /* check_nor@2x.png */,
 				10D6AABE1BBC1FA40010EF51 /* check_sel@2x.png */,
@@ -2395,6 +2412,7 @@
 				2B5C1F551BA9530E00E770FC /* mine@3x-06.png in Resources */,
 				2B5C21F31BA9933700E770FC /* Pingpp.bundle in Resources */,
 				2B5C1F2D1BA9530E00E770FC /* home@3x-06.png in Resources */,
+				10D4CE251BC9F56800565D59 /* add@2x.png in Resources */,
 				2B5C1F1D1BA9530E00E770FC /* @3x_home-14.png in Resources */,
 				2B5C1F181BA9530E00E770FC /* @3x_home-09.png in Resources */,
 				2B5C1F621BA9530E00E770FC /* payment process@3x-07.png in Resources */,
@@ -2404,6 +2422,7 @@
 				2B5C21ED1BA9933700E770FC /* AlipaySDK.bundle in Resources */,
 				2B5C1F5F1BA9530E00E770FC /* payment process@3x-02.png in Resources */,
 				10A689D81BC16DC400768482 /* pay_zhifubao@2x.png in Resources */,
+				10D4CE261BC9F56800565D59 /* decrease@2x.png in Resources */,
 				2B5C1F641BA9530E00E770FC /* payment process@3x-09.png in Resources */,
 				2B5C1FC31BA9582200E770FC /* CalendarRowBottom.png in Resources */,
 				10A689D71BC16DC400768482 /* pay_wechat@2x.png in Resources */,
@@ -2480,6 +2499,7 @@
 				2B5C22191BA9933700E770FC /* SDWebImagePrefetcher.m in Sources */,
 				2B9532991B68DE980055FF0B /* FZLTXHJW.TTF in Sources */,
 				2B5C21E41BA9933700E770FC /* AFHTTPRequestOperation.m in Sources */,
+				10D4CE281BC9F6FD00565D59 /* OrderEditNormalCell.swift in Sources */,
 				2B4715BB1B01EC06009F015F /* mapCell.m in Sources */,
 				2B5C21E91BA9933700E770FC /* AFURLConnectionOperation.m in Sources */,
 				2B5C21E61BA9933700E770FC /* AFHTTPSessionManager.m in Sources */,
@@ -2510,6 +2530,7 @@
 				2BD2743D1B03742A001949C1 /* detailCell.m in Sources */,
 				2B9B12771AFA21F300C1B308 /* mapViewController.m in Sources */,
 				2B531DD61B9E973B00FB2467 /* reservationViewController.m in Sources */,
+				10D4CE2A1BC9F71100565D59 /* OrderEditCell.swift in Sources */,
 				2B60CC2C1B5368850037ECC0 /* mylistCell2.m in Sources */,
 				2B5C22121BA9933700E770FC /* NSData+ImageContentType.m in Sources */,
 				2B5C1FD01BA9582200E770FC /* RMCalendarMonthHeaderView.m in Sources */,
@@ -2572,6 +2593,7 @@
 				2B4715781B0196D2009F015F /* agreementViewController.m in Sources */,
 				2B79050A1B749ED000D51E83 /* webViewController.m in Sources */,
 				7574DF701ABE80D60070050A /* LoginViewController.m in Sources */,
+				10D4CE2D1BC9F8C000565D59 /* CustomObjectUtil.m in Sources */,
 				2B5C1FB91BA9582200E770FC /* RMCalendarController.m in Sources */,
 				2B5C21E81BA9933700E770FC /* AFSecurityPolicy.m in Sources */,
 				2B5C22101BA9933700E770FC /* AFNetworkActivityIndicatorManager.m in Sources */,

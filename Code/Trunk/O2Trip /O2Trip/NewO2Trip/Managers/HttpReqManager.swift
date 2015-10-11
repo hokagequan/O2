@@ -26,6 +26,36 @@ class HttpReqManager {
         }
     }
     
+    // 修改购物车
+    class func httpRequestEditShoppingCart(userID: String, goodID: String, activityID: String, date: String, time: String, adult: Int, young: Int, child: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["goodsId"] = goodID
+        params["actiId"] = activityID
+        params["date"] = date
+        params["time"] = time
+        params["adultNum"] = "\(adult)"
+        params["youthNum"] = "\(young)"
+        params["childrenNum"] = "\(child)"
+        self.httpRequest("rest_shopping/editShoppingItem", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
+    // 删除购物车
+    class func httpRequestDeleteShoppingCart(userID: String, goodIDs: Array<String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["goodsId"] = (goodIDs as NSArray).componentsJoinedByString(",")
+        self.httpRequest("rest_shopping/delShoppingItem", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
     // 获取订单列表
     class func httpRequestOrders(userID: String, start: String, count: String, stat: OrderStat, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
         var params = Dictionary<String, String>()
