@@ -16,6 +16,7 @@
 		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54CC1BB37FF100F974A2 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54CB1BB37FF100F974A2 /* OrderItem.swift */; settings = {ASSET_TAGS = (); }; };
 		10854E681BC8153800EA4373 /* RefreshAndLoadTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */; settings = {ASSET_TAGS = (); }; };
+		10854E6A1BC952E000EA4373 /* OrderEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10854E691BC952E000EA4373 /* OrderEditViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		108CAEAB1BC5642600902E34 /* PayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CAEAA1BC5642600902E34 /* PayManager.swift */; settings = {ASSET_TAGS = (); }; };
 		10A689CF1BC160D500768482 /* contact_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CA1BC160D500768482 /* contact_check@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689D01BC160D500768482 /* contact_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689CB1BC160D500768482 /* contact_email@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -417,6 +418,7 @@
 		100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		100A54CB1BB37FF100F974A2 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAndLoadTableView.swift; sourceTree = "<group>"; };
+		10854E691BC952E000EA4373 /* OrderEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderEditViewController.swift; sourceTree = "<group>"; };
 		108CAEAA1BC5642600902E34 /* PayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayManager.swift; sourceTree = "<group>"; };
 		10A689CA1BC160D500768482 /* contact_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_check@2x.png"; sourceTree = "<group>"; };
 		10A689CB1BC160D500768482 /* contact_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact_email@2x.png"; sourceTree = "<group>"; };
@@ -1057,6 +1059,7 @@
 				10FE425C1BB42E2900E37C76 /* ContactsViewController.swift */,
 				10FE42621BB58C3800E37C76 /* NewContactViewController.swift */,
 				10FE42681BB6E75A00E37C76 /* PayViewController.swift */,
+				10854E691BC952E000EA4373 /* OrderEditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2557,6 +2560,7 @@
 				7541E3B11AAF2FB400EB0B4F /* UIImage+ImageEffects.m in Sources */,
 				2B5C21F41BA9933700E770FC /* GiFHUD.m in Sources */,
 				2B5C22221BA9933700E770FC /* UIAlertView+AFNetworking.m in Sources */,
+				10854E6A1BC952E000EA4373 /* OrderEditViewController.swift in Sources */,
 				2BDE8B961B0451F800C09985 /* changeViewController.m in Sources */,
 				2B5DFC951BA1370000916CAD /* maxModel.m in Sources */,
 				758A226A1AB5C76C00801878 /* UserModel.m in Sources */,

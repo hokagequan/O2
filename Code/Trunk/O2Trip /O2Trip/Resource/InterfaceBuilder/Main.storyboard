@@ -572,7 +572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jz-6f-Fqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="161" y="-705"/>
+            <point key="canvasLocation" x="141" y="-311"/>
         </scene>
         <!--Detailactivity View Controller-->
         <scene sceneID="geI-i9-TW7">
@@ -3468,11 +3468,59 @@
                         <outlet property="selectAllButton" destination="UdD-pA-e5F" id="3kd-Wj-eWP"/>
                         <outlet property="settleButton" destination="L7w-JW-j7f" id="N2D-Jf-TpM"/>
                         <outlet property="tableView" destination="f97-LX-Kdz" id="wWu-V1-Zbd"/>
+                        <segue destination="Myf-hc-kkY" kind="push" identifier="EditSegue" id="1J2-i0-QAq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDc-LK-4Ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-190" y="-1555"/>
+        </scene>
+        <!--Order Edit View Controller-->
+        <scene sceneID="tX0-pb-HVA">
+            <objects>
+                <viewController id="Myf-hc-kkY" customClass="OrderEditViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E9L-uK-TNd"/>
+                        <viewControllerLayoutGuide type="bottom" id="AFl-lb-e6i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ST0-Qb-Sud">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="34" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SIA-hs-SD1">
+                                <rect key="frame" x="0.0" y="77" width="320" height="491"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hSt-Tg-Zp3">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="34"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hSt-Tg-Zp3" id="5Mc-hz-iWE">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SIA-hs-SD1" secondAttribute="trailing" id="2Sk-hC-uQM"/>
+                            <constraint firstItem="SIA-hs-SD1" firstAttribute="top" secondItem="E9L-uK-TNd" secondAttribute="bottom" constant="13" id="WUk-Vg-tB1"/>
+                            <constraint firstItem="SIA-hs-SD1" firstAttribute="leading" secondItem="ST0-Qb-Sud" secondAttribute="leading" id="dty-Bt-ZGh"/>
+                            <constraint firstItem="AFl-lb-e6i" firstAttribute="top" secondItem="SIA-hs-SD1" secondAttribute="bottom" id="uKB-bj-AM4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="p9Y-Bh-1RO">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="duo-xK-taI"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ps8-uH-JsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="-1555"/>
         </scene>
         <!--确认订单-->
         <scene sceneID="yTL-aX-mck">
@@ -3904,7 +3952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqd-Cj-bZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="-1821"/>
+            <point key="canvasLocation" x="282" y="-2225"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="hV4-RV-DSB">
