@@ -16,19 +16,30 @@ class ShoppingCartItem {
     var activityImageName: String?
     var tripDate: String?
     var tripTime: String?
-    var tripPersonCount: String?
-    var price: String?
-    var totalPrice: String?
+    var tripPersonCount: Int = 0
+    var adultCount: Int = 0
+    var youngCount: Int = 0
+    var childCount: Int = 0
+    var price: Int = 0
+    var youngPrice: Int = 0
+    var childPrice: Int = 0
+    var totalPrice: Int = 0
     
-    func loadInfo(info: Dictionary<String, String>) {
-        identifier = info["goodsId"]
-        activityID = info["actiId"]
-        activityTitle = info["actiTitle"]
-        activityImageName = info["actiImage"]
-        tripDate = info["date"]
-        tripTime = info["time"]
-        tripPersonCount = info["number"]
-        price = info["price"]
-        totalPrice = info["totalPrice"]
+    func loadInfo(info: Dictionary<String, AnyObject>) {
+        identifier = info["id"] as? String
+        activityID = info["actiId"] as? String
+        activityTitle = info["title"] as? String
+        activityImageName = info["url"] as? String
+        tripDate = info["startDate"] as? String
+        let time = info["startTime"] as! Int
+        tripTime = "\(time)"
+        adultCount = info["adultNum"] as! Int
+        youngCount = info["youthNum"] as! Int
+        childCount = info["childrenNum"] as! Int
+        tripPersonCount = adultCount + youngCount + childCount
+        price = info["adultPrice"] as! Int
+        childPrice = info["childrenPrice"] as! Int
+        youngPrice = info["youthPrice"] as! Int
+        totalPrice = price * adultCount + youngPrice * youngCount + childPrice * childCount
     }
 }

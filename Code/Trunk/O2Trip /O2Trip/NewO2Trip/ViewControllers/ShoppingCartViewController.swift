@@ -33,7 +33,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         
         tableView.enableRefresh(self, refresh: "refresh")
         tableView.enableLoadMore(self, loadMore: "loadMore")
-//        self.refresh()
+        self.refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +43,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     
     func handleInfo(info: Dictionary<String, AnyObject>) {
         let data = info["data"] as! Dictionary<String, AnyObject>
-        let goods = data["goods"] as! Array<Dictionary<String, String>>
+        let goods = data["goods"] as! Array<Dictionary<String, AnyObject>>
         
         for i in 0..<goods.count {
             let goodInfo = goods[i]
