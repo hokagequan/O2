@@ -122,7 +122,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     func refreshSettleInfo() {
         var totalPrice = 0
         for item in items {
-            totalPrice += Int(item.totalPrice!)!
+            totalPrice += item.totalPrice
         }
         
         let text = NSMutableAttributedString(string: "合计：￥ \(totalPrice)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12.0), NSForegroundColorAttributeName: UIColor.whiteColor()])
