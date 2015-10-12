@@ -31,8 +31,7 @@ class ShoppingCartItem {
         activityTitle = info["title"] as? String
         activityImageName = info["url"] as? String
         tripDate = info["startDate"] as? String
-        let time = info["startTime"] as! Int
-        tripTime = "\(time)"
+        tripTime = info["startTime"] as? String
         adultCount = info["adultNum"] as! Int
         youngCount = info["youthNum"] as! Int
         childCount = info["childrenNum"] as! Int

@@ -8,3 +8,4 @@
 #import "WXApiObject.h"
 #import "RefreshControl.h"
 #import "CustomObjectUtil.h"
+#import "UIImageView+WebCache.h"

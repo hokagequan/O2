@@ -141,6 +141,16 @@ class HttpReqManager {
         }
     }
     
+    class func imageUrl(imageName: String?) -> NSURL? {
+        if imageName == nil {
+            return nil
+        }
+        
+        let urlString = imageUrl + imageName!
+        
+        return NSURL(string: urlString)
+    }
+    
     // MARK: - Private
     
     private class func httpRequest(method: String, params: Dictionary<String, String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {

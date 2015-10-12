@@ -172,6 +172,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         text.addAttributes([NSForegroundColorAttributeName: UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0)], range: NSMakeRange(0, "\(item.price)".characters.count + 1))
         cell.priceLabel.attributedText = text
         
+        cell.iconImageView.sd_setImageWithURL(HttpReqManager.imageUrl(item.activityImageName))
+        
         cell.selected = selectedIndexes.contains(indexPath.row)
         
         return cell
