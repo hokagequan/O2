@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OrderEditViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, OrderEditCellDelegate {
     
     enum OrderEditRow: Int {
         case Header = 0
@@ -54,11 +54,13 @@ class OrderEditViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var footerView: UIView!
     
     var order: OrderItem? = nil
+    var personCount: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        personCount = order?.tripPersonCount
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +71,20 @@ class OrderEditViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Actions
     
     @IBAction func clickSave(sender: AnyObject) {
+        var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: OrderEditRow.Adult.rawValue, inSection: 0)) as! OrderEditCell
+        let adult = cell.count
+        
+        cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: OrderEditRow.Young.rawValue, inSection: 0)) as! OrderEditCell
+        let young = cell.count
+        
+        cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: OrderEditRow.Child.rawValue, inSection: 0)) as! OrderEditCell
+        let child = cell.count
+        
+        order?.edit(adult, youngCount: young, childCount: child, completion: { (response) -> Void in
+            self.navigationController?.popViewControllerAnimated(true)
+            }, failure: { (error) -> Void in
+                self.showAlert("保存失败")
+        })
     }
     
     // MARK: - TableView
@@ -95,11 +111,11 @@ class OrderEditViewController: UIViewController, UITableViewDataSource, UITableV
             cell.titleLabel.text = row?.title()
             
             if row == OrderEditRow.Header {
-                cell.detailLabel.text = "\(order!.tripDate) \(order!.tripTime)"
+                cell.detailLabel.text = "\(order!.tripDate!) \(order!.tripTime!)"
                 cell.detailLabel.textColor = blackColor
             }
             else if row == OrderEditRow.Number {
-                cell.detailLabel.text = "\(order?.tripPersonCount)"
+                cell.detailLabel.text = "\(personCount!)"
                 cell.detailLabel.textColor = greenColor
             }
             else if row == OrderEditRow.Price {
@@ -112,6 +128,8 @@ class OrderEditViewController: UIViewController, UITableViewDataSource, UITableV
         
         let cell = tableView.dequeueReusableCellWithIdentifier("OrderEditCell", forIndexPath: indexPath) as! OrderEditCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        cell.delegate = self
         
         cell.titleLabel.text = row?.title()
         
@@ -129,6 +147,19 @@ class OrderEditViewController: UIViewController, UITableViewDataSource, UITableV
         }
 
         return cell
+    }
+    
+    // MARK: - OrderEditCellDelegate
+    
+    func didChangeCount(cell: OrderEditCell, adding: Bool) {
+        if adding {
+            personCount!++
+        }
+        else {
+            personCount!--
+        }
+        
+        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: OrderEditRow.Number.rawValue, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
     }
 
     /*

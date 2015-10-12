@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol OrderEditCellDelegate {
+    optional func didChangeCount(cell: OrderEditCell, adding: Bool)
+}
+
 class OrderEditCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -15,6 +19,8 @@ class OrderEditCell: UITableViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var decreaseButton: UIButton!
+    
+    weak var delegate: OrderEditCellDelegate?
     
     var count: Int {
         get {
@@ -25,7 +31,9 @@ class OrderEditCell: UITableViewCell {
             return Int(self.numberLabel.text!)!
         }
         set (newValue) {
-            self.numberLabel.text = "\(newValue)"
+            if newValue >= 0 {
+                self.numberLabel.text = "\(newValue)"
+            }
         }
     }
     
@@ -46,10 +54,14 @@ class OrderEditCell: UITableViewCell {
     
     @IBAction func clickAdd(sender: AnyObject) {
         self.count++
+        
+        delegate?.didChangeCount?(self, adding: true)
     }
     
     @IBAction func clickDecrease(sender: AnyObject) {
         self.count--
+        
+        delegate?.didChangeCount?(self, adding: false)
     }
     
 }

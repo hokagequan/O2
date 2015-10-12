@@ -159,7 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBg@3x.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="h0Q-tf-T8l">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="delete_nor" translatesAutoresizingMaskIntoConstraints="NO" id="h0Q-tf-T8l">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                             </imageView>
@@ -288,7 +288,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBg@3x.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-ww-D5D">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete_nor" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-ww-D5D">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                             </imageView>
@@ -384,7 +384,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBg@3x.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RyH-bF-2eQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="delete_nor" translatesAutoresizingMaskIntoConstraints="NO" id="RyH-bF-2eQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                             </imageView>
@@ -994,7 +994,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBg@3x.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="geX-wY-Wnu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="delete_nor" translatesAutoresizingMaskIntoConstraints="NO" id="geX-wY-Wnu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                             </imageView>
@@ -3264,7 +3264,7 @@
                                     <constraint firstItem="TMC-xI-ax2" firstAttribute="top" secondItem="OZM-UD-5kr" secondAttribute="top" constant="126" id="aq9-O7-Qgm"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f97-LX-Kdz" customClass="RefreshAndLoadTableView" customModule="O2Trip" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f97-LX-Kdz" customClass="RefreshAndLoadTableView" customModule="O2Trip" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="320" height="464"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3473,7 +3473,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="购物车" id="TYP-fA-tES">
-                        <barButtonItem key="rightBarButtonItem" title="编辑" id="oZD-A6-zjg">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="oZD-A6-zjg">
                             <connections>
                                 <action selector="clickEdit:" destination="79T-Pf-PgD" id="lUT-aM-nPh"/>
                             </connections>
@@ -3498,7 +3498,7 @@
         <!--Order Edit View Controller-->
         <scene sceneID="tX0-pb-HVA">
             <objects>
-                <viewController id="Myf-hc-kkY" customClass="OrderEditViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Myf-hc-kkY" customClass="OrderEditViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E9L-uK-TNd"/>
                         <viewControllerLayoutGuide type="bottom" id="AFl-lb-e6i"/>
@@ -3512,7 +3512,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="QZN-6a-uAV" userLabel="Footer">
-                                    <rect key="frame" x="0.0" y="160" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="96" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（此活动需2人以上出行才可预定）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCh-cH-wV3">
@@ -3536,7 +3536,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderEditNormalCell" id="hSt-Tg-Zp3" customClass="OrderEditNormalCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="34"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hSt-Tg-Zp3" id="5Mc-hz-iWE">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
@@ -3592,7 +3592,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderEditCell" id="csz-yT-WiW" customClass="OrderEditCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="126" width="320" height="34"/>
+                                        <rect key="frame" x="0.0" y="62" width="320" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="csz-yT-WiW" id="0Tn-j0-6Aw">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
@@ -3610,7 +3610,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkb-ts-AyX" userLabel="Price">
-                                                    <rect key="frame" x="45" y="7" width="132" height="21"/>
+                                                    <rect key="frame" x="45" y="7" width="134" height="21"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="IJa-kP-GQ8"/>
@@ -3640,7 +3640,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmv-Uj-p4z" userLabel="Decrease">
-                                                    <rect key="frame" x="224" y="4" width="27" height="27"/>
+                                                    <rect key="frame" x="226" y="4" width="27" height="27"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="eUa-q0-qvw"/>
@@ -3654,7 +3654,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xom-M4-ZHM" userLabel="Number">
-                                                    <rect key="frame" x="251" y="4" width="27" height="27"/>
+                                                    <rect key="frame" x="252" y="4" width="27" height="27"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
@@ -3666,13 +3666,13 @@
                                                 <constraint firstItem="LVE-iD-f8k" firstAttribute="height" secondItem="Xom-M4-ZHM" secondAttribute="height" id="2hT-JP-xcC"/>
                                                 <constraint firstItem="Lmv-Uj-p4z" firstAttribute="leading" secondItem="bkb-ts-AyX" secondAttribute="trailing" constant="47" id="4VI-68-yRz"/>
                                                 <constraint firstAttribute="bottom" secondItem="DF8-Fm-hUK" secondAttribute="bottom" id="Gk1-1X-rKK"/>
-                                                <constraint firstItem="Xom-M4-ZHM" firstAttribute="leading" secondItem="Lmv-Uj-p4z" secondAttribute="trailing" id="MQn-7a-g7Z"/>
+                                                <constraint firstItem="Xom-M4-ZHM" firstAttribute="leading" secondItem="Lmv-Uj-p4z" secondAttribute="trailing" constant="-1" id="MQn-7a-g7Z"/>
                                                 <constraint firstAttribute="trailing" secondItem="LVE-iD-f8k" secondAttribute="trailing" constant="15" id="RF5-xC-DVH"/>
                                                 <constraint firstItem="bkb-ts-AyX" firstAttribute="leading" secondItem="aZr-Fb-e9R" secondAttribute="trailing" id="Rvh-NK-bqP"/>
                                                 <constraint firstItem="LVE-iD-f8k" firstAttribute="centerY" secondItem="0Tn-j0-6Aw" secondAttribute="centerY" id="UfF-sG-MG1"/>
                                                 <constraint firstItem="Xom-M4-ZHM" firstAttribute="centerY" secondItem="0Tn-j0-6Aw" secondAttribute="centerY" id="YYW-Yl-cCW"/>
                                                 <constraint firstItem="aZr-Fb-e9R" firstAttribute="leading" secondItem="0Tn-j0-6Aw" secondAttribute="leading" constant="15" id="ZCe-Oz-MCs"/>
-                                                <constraint firstItem="LVE-iD-f8k" firstAttribute="leading" secondItem="Xom-M4-ZHM" secondAttribute="trailing" id="bY6-tO-yK2"/>
+                                                <constraint firstItem="LVE-iD-f8k" firstAttribute="leading" secondItem="Xom-M4-ZHM" secondAttribute="trailing" constant="-1" id="bY6-tO-yK2"/>
                                                 <constraint firstItem="aZr-Fb-e9R" firstAttribute="centerY" secondItem="0Tn-j0-6Aw" secondAttribute="centerY" id="dnn-HX-B6f"/>
                                                 <constraint firstItem="aZr-Fb-e9R" firstAttribute="centerY" secondItem="0Tn-j0-6Aw" secondAttribute="centerY" id="eBa-Yi-nbP"/>
                                                 <constraint firstItem="bkb-ts-AyX" firstAttribute="centerY" secondItem="0Tn-j0-6Aw" secondAttribute="centerY" id="lbM-gi-07u"/>
@@ -6180,6 +6180,7 @@
         <image name="contact_phone.png" width="12" height="12"/>
         <image name="contact_wechat.png" width="12" height="12"/>
         <image name="decrease.png" width="12" height="12"/>
+        <image name="delete_nor" width="1242" height="2208"/>
         <image name="details@3x-05.png" width="60" height="60"/>
         <image name="details@3x-06.png" width="60" height="60"/>
         <image name="discover@3x-01.png" width="52" height="52"/>
@@ -6191,7 +6192,6 @@
         <image name="logging@3x-05.png" width="1122" height="130"/>
         <image name="logging@3x-06.png" width="1122" height="130"/>
         <image name="logging@3x-07.png" width="1122" height="130"/>
-        <image name="loginBg@3x.jpg" width="1242" height="2208"/>
         <image name="mine@3x-02.png" width="240" height="240"/>
         <image name="mine@3x-03.png" width="60" height="60"/>
         <image name="mine@3x-04.png" width="60" height="60"/>

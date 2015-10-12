@@ -112,8 +112,31 @@ class OrderItem {
         }
     }
     
+    func edit(adultCount: Int, youngCount: Int, childCount: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+//        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        // Test
+        let userID = "b8a2597b-b6db-47ee-8175-33356558b726"
+        self.identifier = "1"
+        self.activityID = "e04e3016-7824-4858-bc3c-60f7bd5da9e6"
+        
+        HttpReqManager.httpRequestEditShoppingCart(userID as! String, goodID: self.identifier!, activityID: self.activityID!, date: self.tripDate!, time: self.tripTime!, adult: adultCount, young: youngCount, child: childCount, completion: { (response) -> Void in
+            if response["err_code"] as! String == "200" {
+                self.adultCount = adultCount
+                self.youngCount = youngCount
+                self.childCount = childCount
+                self.tripPersonCount = adultCount + youngCount + childCount
+                
+                self.totalPrice = self.price * adultCount + self.youngPrice * youngCount + self.childPrice * childCount
+            }
+            else {
+                failure?(NSError(domain: response["msg"] as! String, code: 404, userInfo: nil))
+            }
+            }, failure: failure)
+    }
+    
     func loadShoppingCartInfo(info: Dictionary<String, AnyObject>) {
-        identifier = info["id"] as? String
+        let intID = info["id"] as! Int
+        identifier = "\(intID)"
         activityID = info["actiId"] as? String
         activityTitle = info["title"] as? String
         activityImageName = info["url"] as? String

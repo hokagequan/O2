@@ -19,6 +19,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     
     var items = [OrderItem]()
     var selectedIndexes = [Int]()
+    var selectedOrder: OrderItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,10 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         
         tableView.enableRefresh(self, refresh: "refresh")
         tableView.enableLoadMore(self, loadMore: "loadMore")
-        self.refresh()
+        
+        if items.count == 0 {
+            self.refresh()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,10 +126,10 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     
     func refreshSettleInfo() {
         if selectedIndexes.count == 0 {
-            rightBaritem.title = "编辑"
+            rightBaritem.image = UIImage(named: "delete_disable")
         }
         else {
-            rightBaritem.title = "删除"
+            rightBaritem.image = UIImage(named: "delete_enable")
         }
         
         var totalPrice = 0
@@ -145,36 +149,35 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     // MARK: - Actions
+    
     @IBAction func clickEdit(sender: AnyObject) {
-        // TODO: 编辑
-        let button = sender as! UIBarButtonItem
-        
-        if button.title == "编辑" {}
-        else if button.title == "删除" {
-            let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-            var goods = [String]()
-            
-            for index in selectedIndexes {
-                let item = items[index]
-                goods.append(item.activityID!)
-            }
-            
-            GiFHUD.setGifWithImageName("loading.gif")
-            GiFHUD.show()
-            HttpReqManager.httpRequestDeleteShoppingCart(userID as! String, goodIDs: goods, completion: { (response) -> Void in
-                GiFHUD.dismiss()
-                if response["err_code"] as! String == "200" && response["flag"] as! String == "true" {
-                    self.selectedIndexes.removeAll()
-                    self.tableView.reloadData()
-                }
-                else {
-                    self.showAlert("删除失败")
-                }
-                }, failure: { (error) -> Void in
-                    GiFHUD.dismiss()
-                    self.showAlert("删除失败")
-            })
+        if selectedIndexes.count == 0 {
+            return
         }
+        
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        var goods = [String]()
+        
+        for index in selectedIndexes {
+            let item = items[index]
+            goods.append(item.activityID!)
+        }
+        
+        GiFHUD.setGifWithImageName("loading.gif")
+        GiFHUD.show()
+        HttpReqManager.httpRequestDeleteShoppingCart(userID as! String, goodIDs: goods, completion: { (response) -> Void in
+            GiFHUD.dismiss()
+            if response["err_code"] as! String == "200" && response["flag"] as! String == "true" {
+                self.selectedIndexes.removeAll()
+                self.tableView.reloadData()
+            }
+            else {
+                self.showAlert("删除失败")
+            }
+            }, failure: { (error) -> Void in
+                GiFHUD.dismiss()
+                self.showAlert("删除失败")
+        })
     }
     
     @IBAction func clickSelectAll(sender: AnyObject) {
@@ -225,6 +228,15 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedOrder = items[indexPath.row]
+        self.performSegueWithIdentifier("EditSegue", sender: self)
+    }
+    
+    // MARK: - ShoppingCartCellDelegate
+    
+    func didClickSelect(cell: ShoppingCartCell) {
+        let indexPath = tableView.indexPathForCell(cell)!
+        
         if selectedIndexes.contains(indexPath.row) {
             selectedIndexes.removeAtIndex(selectedIndexes.indexOf(indexPath.row)!)
         }
@@ -235,12 +247,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         self.refreshSettleInfo()
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if selectedIndexes.contains(indexPath.row) {
-            selectedIndexes.removeAtIndex(selectedIndexes.indexOf(indexPath.row)!)
-        }
-        
-        self.refreshSettleInfo()
+    func didClickImage(cell: ShoppingCartCell) {
+        // TODO: 进入商品详情
     }
 
     // MARK: - Navigation
@@ -258,6 +266,10 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             }
             
             payViewController.orders = orders
+        }
+        else if segue.identifier == "EditSegue" {
+            let editViewController = segue.destinationViewController as! OrderEditViewController
+            editViewController.order = selectedOrder
         }
     }
 
