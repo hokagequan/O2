@@ -12,11 +12,12 @@ let greenColor = UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0,
 let grayColor = UIColor(red: 102 / 255.0, green: 102 / 255.0, blue: 102 / 255.0, alpha: 1.0)
 let lightGrayColor = UIColor(red: 153 / 255.0, green: 153 / 255.0, blue: 153 / 255.0, alpha: 1.0)
 let blackColor = UIColor(red: 48 / 255.0, green: 48 / 255.0, blue: 48 / 255.0, alpha: 1.0)
+let redColor = UIColor(red: 255 / 255.0, green: 102 / 255.0, blue: 102 / 255.0, alpha: 1.0)
 
 class OrdersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, OrderCellDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: RefreshAndLoadTableView!
     @IBOutlet weak var emptyView: UIView!
     
     var filter: OrderStat = OrderStat.All
@@ -27,12 +28,17 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.refresh(filter)
+        collectionView.selectItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.Left)
+        
+        tableView.enableRefresh(self, refresh: "refresh")
+        tableView.enableLoadMore(self, loadMore: "loadMore")
+        self.refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +47,8 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func handleInfo(info: Dictionary<String, AnyObject>) {
-        let orderArray = info["data"] as! Array<Dictionary<String, AnyObject>>
+        let ordersInfo = info["data"] as! Dictionary<String, AnyObject>
+        let orderArray = ordersInfo["orders"] as! Array<Dictionary<String, AnyObject>>
         for order in orderArray {
             let orderID = order["orderId"]
             let orderNo = order["orderNo"]
@@ -50,39 +57,21 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             for detail in orderDetails {
                 let item = OrderItem()
-                item.loadSpecailInfo(orderID as! String, orderNumber: orderNo as! String, orderStat: orderStat as! String, details: detail)
+                item.loadSpecailInfo(orderID as! String, orderNumber: orderNo as? String, orderStat: orderStat as? String, details: detail)
                 
                 orderItems.append(item)
             }
         }
     }
     
-    func refresh(filter: OrderStat) {
-        orderItems.removeAll()
-        
-        GiFHUD.setGifWithImageName("loading.gif")
-        GiFHUD.show()
-        
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestOrders(userID as! String, start: "0", count: "10", stat: filter, completion: { (response) -> Void in
-            GiFHUD.dismiss()
-            
-            self.handleInfo(response)
-            self.tableView.reloadData()
-            }) { (error) -> Void in
-                GiFHUD.dismiss()
-                
-                self.showAlert("获取信息失败")
-        }
-    }
-    
-    func loadMore(filter: OrderStat) {
-        GiFHUD.setGifWithImageName("loading.gif")
-        GiFHUD.show()
+    func loadMore() {
+//        GiFHUD.setGifWithImageName("loading.gif")
+//        GiFHUD.show()
         
         let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         HttpReqManager.httpRequestOrders(userID as! String, start: "\(orderItems.count)", count: "10", stat: filter, completion: { (response) -> Void in
-            GiFHUD.dismiss()
+//            GiFHUD.dismiss()
+            self.tableView.endLoadMore()
             
             self.handleInfo(response)
             var indexPaths = [NSIndexPath]()
@@ -92,7 +81,40 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
             }) { (error) -> Void in
-                GiFHUD.dismiss()
+//                GiFHUD.dismiss()
+                self.tableView.endLoadMore()
+                
+                self.showAlert("获取信息失败")
+        }
+    }
+    
+    func layoutViews() {
+        let emptyAlpha: CGFloat = orderItems.count == 0 ? 1.0 : 0.0
+        let detailAlpha: CGFloat = emptyAlpha == 0.0 ? 1.0 : 0.0
+        
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.emptyView.alpha = emptyAlpha
+            self.tableView.alpha = detailAlpha
+        }
+    }
+    
+    func refresh() {
+        orderItems.removeAll()
+        
+//        GiFHUD.setGifWithImageName("loading.gif")
+//        GiFHUD.show()
+        
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        HttpReqManager.httpRequestOrders(userID as! String, start: "0", count: "10", stat: filter, completion: { (response) -> Void in
+//            GiFHUD.dismiss()
+            self.tableView.refreshControl?.endRefreshing()
+            
+            self.handleInfo(response)
+            self.layoutViews()
+            self.tableView.reloadData()
+            }) { (error) -> Void in
+//                GiFHUD.dismiss()
+                self.tableView.refreshControl?.endRefreshing()
                 
                 self.showAlert("获取信息失败")
         }
@@ -107,6 +129,7 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("OrderFilterCell", forIndexPath: indexPath) as! OrderFilterCell
         cell.titleLabel.text = OrderStat(rawValue: indexPath.row)?.title()
+        cell.titleLabel.textColor = filter.rawValue == indexPath.row ? greenColor : grayColor
         
         return cell
     }
@@ -119,7 +142,7 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
         if filter != tempFilter {
             filter = tempFilter
             
-            self.refresh(filter)
+            self.refresh()
         }
     }
     
@@ -148,12 +171,15 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = tableView.dequeueReusableCellWithIdentifier("OrderCell", forIndexPath: indexPath) as! OrderCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
+        cell.delegate = self
+        
         let item = orderItems[indexPath.row]
         cell.orderIDLabel.text = item.number
         cell.orderTitleLabel.text = item.activityTitle
         cell.priceLabel.text = "￥ \(item.price)"
         cell.numberLabel.text = "x\(item.tripPersonCount)"
-        cell.orderDateLabel.text = "活动时间：\(item.tripDate) \(item.tripTime)"
+        cell.orderDateLabel.text = "活动时间：\(item.tripDate!) \(item.tripTime!)"
+        cell.iconImageView.sd_setImageWithURL(HttpReqManager.imageUrl(item.activityImageName))
         
         let header = "总价："
         let text = NSMutableAttributedString(string: "\(header)￥ \(item.totalPrice)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(9), NSForegroundColorAttributeName: blackColor])
@@ -161,8 +187,20 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
         cell.totalPriceLabel.attributedText = text
         
         var buttonTitle = "付款"
+        CustomObjectUtil.customObject([cell.actionButton], backgroundColor: UIColor.clearColor(), borderWith: 1.0, borderColor: redColor, corner: 3.0)
+        cell.statLabel.text = "待付款"
+        cell.statLabel.textColor = redColor
+        cell.actionButton.setTitleColor(redColor, forState: UIControlState.Normal)
         if item.stat == OrderStat.Payed {
             buttonTitle = "确认单"
+            cell.statLabel.text = "交易成功"
+            cell.statLabel.textColor = grayColor
+            CustomObjectUtil.customObject([cell.actionButton], backgroundColor: UIColor.clearColor(), borderWith: 1.0, borderColor: greenColor, corner: 3.0)
+            cell.actionButton.setTitleColor(greenColor, forState: UIControlState.Normal)
+        }
+        else if item.stat == OrderStat.Closed {
+            cell.statLabel.text = "交易关闭"
+            cell.statLabel.textColor = grayColor
         }
         cell.actionButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         cell.cancelButton.hidden = item.stat != OrderStat.Unpay

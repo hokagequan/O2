@@ -2851,7 +2851,7 @@
         <!--订单中心-->
         <scene sceneID="6cf-Uk-kWg">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="8ma-D6-o02" customClass="OrdersViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8ma-D6-o02" customClass="OrdersViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eAy-gl-8VF"/>
                         <viewControllerLayoutGuide type="bottom" id="7VB-HS-kzX"/>
@@ -2863,6 +2863,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vGY-ro-IH6">
                                 <rect key="frame" x="0.0" y="64" width="320" height="34"/>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="7xp-Zn-g28"/>
                                 </constraints>
@@ -2892,6 +2893,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="bAh-Dv-mbT" firstAttribute="leading" secondItem="qOz-QW-1NY" secondAttribute="leading" id="3wE-Vt-nLC"/>
                                             <constraint firstAttribute="bottom" secondItem="bAh-Dv-mbT" secondAttribute="bottom" id="Hkq-5b-ebA"/>
@@ -2940,7 +2942,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Q9r-wR-VcR" secondAttribute="trailing" constant="10" id="rPR-wY-Xbl"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ti-cN-Bz4">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ti-cN-Bz4" customClass="RefreshAndLoadTableView" customModule="O2Trip" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3044,7 +3046,7 @@
                                                         <constraint firstAttribute="height" constant="14" id="fHN-58-NYx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="FZLTXHJW--GB1-0" family="FZLanTingHeiS-EL-GB" pointSize="10.5"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discover@3x-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="29f-zv-Ddc">
@@ -6190,7 +6192,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6yf-me-hNE"/>
-        <segue reference="oSK-Jd-rUA"/>
-        <segue reference="gRI-iX-hP5"/>
+        <segue reference="WGx-Ii-LWR"/>
+        <segue reference="rB5-Wa-plr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -132,11 +132,24 @@ class OrderItem {
     func loadInfo(info: Dictionary<String, AnyObject>) {
         identifier = info["orderId"] as? String
         number = info["orderNo"] as? String
-        price = info["price"] as! Int
-        totalPrice = info["orderTotal"] as! Int
-        adultCount = info["adultNum"] as! Int
-        youngCount = info["youthNum"] as! Int
-        childCount = info["childrenNum"] as! Int
+        var floatValue = info["adultPrice"] as! String
+        var value = Float(floatValue)
+        price = Int(value!)
+        floatValue = info["itemTotal"] as! String
+        value = Float(floatValue)
+        totalPrice = Int(value!)
+        floatValue = info["childrenPrice"] as! String
+        value = Float(floatValue)
+        childPrice = Int(value!)
+        floatValue = info["youthPrice"] as! String
+        value = Float(floatValue)
+        youngPrice = Int(value!)
+        floatValue = info["adultNum"] as! String
+        adultCount = Int(floatValue)!
+        floatValue = info["youthNum"] as! String
+        youngCount = Int(floatValue)!
+        floatValue = info["childrenNum"] as! String
+        childCount = Int(floatValue)!
         tripPersonCount = adultCount + youngCount + childCount
         activityID = info["actiId"] as? String
         activityTitle = info["actiTitle"] as? String
@@ -146,15 +159,33 @@ class OrderItem {
         stat = OrderStat(key: (info["orderState"] as? String)!)
     }
     
-    func loadSpecailInfo(orderID: String, orderNumber: String, orderStat: String, details: Dictionary<String, AnyObject>) {
+    func loadSpecailInfo(orderID: String, orderNumber: String?, orderStat: String?, details: Dictionary<String, AnyObject>) {
         identifier = orderID
         number = orderNumber
-        stat = OrderStat(key: orderStat)
-        price = details["price"] as! Int
-        totalPrice = details["orderTotal"] as! Int
-        adultCount = details["adultNum"] as! Int
-        youngCount = details["youthNum"] as! Int
-        childCount = details["childrenNum"] as! Int
+        if orderStat == nil {
+            stat = OrderStat.All
+        }
+        else {
+            stat = OrderStat(key: orderStat!)
+        }
+        var floatValue = details["adultPrice"] as! String
+        var value = Float(floatValue)
+        price = Int(value!)
+        floatValue = details["itemTotal"] as! String
+        value = Float(floatValue)
+        totalPrice = Int(value!)
+        floatValue = details["childrenPrice"] as! String
+        value = Float(floatValue)
+        childPrice = Int(value!)
+        floatValue = details["youthPrice"] as! String
+        value = Float(floatValue)
+        youngPrice = Int(value!)
+        floatValue = details["adultNum"] as! String
+        adultCount = Int(floatValue)!
+        floatValue = details["youthNum"] as! String
+        youngCount = Int(floatValue)!
+        floatValue = details["childrenNum"] as! String
+        childCount = Int(floatValue)!
         tripPersonCount = adultCount + youngCount + childCount
         activityID = details["orderItemId"] as? String
         activityTitle = details["itemTitle"] as? String
