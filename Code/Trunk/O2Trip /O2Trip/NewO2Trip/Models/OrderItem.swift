@@ -64,19 +64,21 @@ enum OrderStat: Int {
 
 class OrderItem {
     
-    var identifier: String?
-//    var itemID: String?
-    var number: String?
-    var price: String?
-    var totalPrice: String?
-    var tripAdultCount: Int = 0
-    var tripYoungCount: Int = 0
-    var tripChildCount: Int = 0
-    var activityID: String?
-    var activityTitle: String?
-    var tripDate: String?
-    var tripTime: String?
-    var iconImage: String?
+    var identifier: String? = nil
+    var activityID: String? = nil
+    var activityTitle: String? = nil
+    var activityImageName: String? = nil
+    var tripDate: String? = nil
+    var tripTime: String? = nil
+    var number: String? = nil
+    var tripPersonCount: Int = 0
+    var adultCount: Int = 0
+    var youngCount: Int = 0
+    var childCount: Int = 0
+    var price: Int = 0
+    var youngPrice: Int = 0
+    var childPrice: Int = 0
+    var totalPrice: Int = 0
     var stat: OrderStat = .All
     
     func cancel(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
@@ -110,65 +112,54 @@ class OrderItem {
         }
     }
     
-    func loadInfo(info: Dictionary<String, String>) {
-        identifier = info["orderId"]
-        number = info["orderNo"]
-        price = info["price"]
-        totalPrice = info["orderTotal"]
-        if let adultCount = info["adultNum"] {
-            tripAdultCount = Int(adultCount)!
-        } else {
-            tripAdultCount = 0
-        }
-        
-        if let youngCount = info["youthNum"] {
-            tripYoungCount = Int(youngCount)!
-        } else {
-            tripYoungCount = 0
-        }
-        
-        if let childCount = info["childrenNum"] {
-            tripChildCount = Int(childCount)!
-        } else {
-            tripChildCount = 0
-        }
-        
-        activityID = info["actiId"]
-        activityTitle = info["actiTitle"]
-        tripDate = info["date"]
-        tripTime = info["time"]
-        iconImage = info["actiImage"]
-        stat = OrderStat(key: info["orderState"]!)
+    func loadShoppingCartInfo(info: Dictionary<String, AnyObject>) {
+        identifier = info["id"] as? String
+        activityID = info["actiId"] as? String
+        activityTitle = info["title"] as? String
+        activityImageName = info["url"] as? String
+        tripDate = info["startDate"] as? String
+        tripTime = info["startTime"] as? String
+        adultCount = info["adultNum"] as! Int
+        youngCount = info["youthNum"] as! Int
+        childCount = info["childrenNum"] as! Int
+        tripPersonCount = adultCount + youngCount + childCount
+        price = info["adultPrice"] as! Int
+        childPrice = info["childrenPrice"] as! Int
+        youngPrice = info["youthPrice"] as! Int
+        totalPrice = price * adultCount + youngPrice * youngCount + childPrice * childCount
     }
     
-    func loadSpecailInfo(orderID: String, orderNumber: String, orderStat: String, details: Dictionary<String, String>) {
+    func loadInfo(info: Dictionary<String, AnyObject>) {
+        identifier = info["orderId"] as? String
+        number = info["orderNo"] as? String
+        price = info["price"] as! Int
+        totalPrice = info["orderTotal"] as! Int
+        adultCount = info["adultNum"] as! Int
+        youngCount = info["youthNum"] as! Int
+        childCount = info["childrenNum"] as! Int
+        tripPersonCount = adultCount + youngCount + childCount
+        activityID = info["actiId"] as? String
+        activityTitle = info["actiTitle"] as? String
+        tripDate = info["date"] as? String
+        tripTime = info["time"] as? String
+        activityImageName = info["actiImage"] as? String
+        stat = OrderStat(key: (info["orderState"] as? String)!)
+    }
+    
+    func loadSpecailInfo(orderID: String, orderNumber: String, orderStat: String, details: Dictionary<String, AnyObject>) {
         identifier = orderID
         number = orderNumber
         stat = OrderStat(key: orderStat)
-        price = details["itemPrice"]
-        totalPrice = details["itemTotal"]
-        if let adultCount = details["adultNum"] {
-            tripAdultCount = Int(adultCount)!
-        } else {
-            tripAdultCount = 0
-        }
-        
-        if let youngCount = details["youthNum"] {
-            tripYoungCount = Int(youngCount)!
-        } else {
-            tripYoungCount = 0
-        }
-        
-        if let childCount = details["childrenNum"] {
-            tripChildCount = Int(childCount)!
-        } else {
-            tripChildCount = 0
-        }
-
-        activityID = details["orderItemId"]
-        activityTitle = details["itemTitle"]
-        tripDate = details["date"]
-        tripTime = details["time"]
-        iconImage = details["itemImage"]
+        price = details["price"] as! Int
+        totalPrice = details["orderTotal"] as! Int
+        adultCount = details["adultNum"] as! Int
+        youngCount = details["youthNum"] as! Int
+        childCount = details["childrenNum"] as! Int
+        tripPersonCount = adultCount + youngCount + childCount
+        activityID = details["orderItemId"] as? String
+        activityTitle = details["itemTitle"] as? String
+        tripDate = details["date"] as? String
+        tripTime = details["time"] as? String
+        activityImageName = details["itemImage"] as? String
     }
 }

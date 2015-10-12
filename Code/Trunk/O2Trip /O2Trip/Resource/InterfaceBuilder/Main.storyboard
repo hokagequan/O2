@@ -3262,7 +3262,7 @@
                                     <constraint firstItem="TMC-xI-ax2" firstAttribute="top" secondItem="OZM-UD-5kr" secondAttribute="top" constant="126" id="aq9-O7-Qgm"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f97-LX-Kdz" customClass="RefreshAndLoadTableView" customModule="O2Trip" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f97-LX-Kdz" customClass="RefreshAndLoadTableView" customModule="O2Trip" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="320" height="464"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3465,10 +3465,12 @@
                     <connections>
                         <outlet property="TotalLabel" destination="lSy-e8-OYX" id="cgh-No-Aou"/>
                         <outlet property="emptyView" destination="OZM-UD-5kr" id="CHN-9b-n6a"/>
+                        <outlet property="rightBaritem" destination="oZD-A6-zjg" id="7fc-sp-897"/>
                         <outlet property="selectAllButton" destination="UdD-pA-e5F" id="3kd-Wj-eWP"/>
                         <outlet property="settleButton" destination="L7w-JW-j7f" id="N2D-Jf-TpM"/>
                         <outlet property="tableView" destination="f97-LX-Kdz" id="wWu-V1-Zbd"/>
                         <segue destination="Myf-hc-kkY" kind="push" identifier="EditSegue" id="1J2-i0-QAq"/>
+                        <segue destination="plh-03-ygh" kind="push" identifier="PaySegue" id="gRI-iX-hP5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDc-LK-4Ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6187,7 +6189,8 @@
         <image name="shopping cart_empty.png" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oSK-Jd-rUA"/>
         <segue reference="6yf-me-hNE"/>
+        <segue reference="oSK-Jd-rUA"/>
+        <segue reference="gRI-iX-hP5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -152,7 +152,7 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
         cell.orderIDLabel.text = item.number
         cell.orderTitleLabel.text = item.activityTitle
         cell.priceLabel.text = "￥ \(item.price)"
-        cell.numberLabel.text = "x\(item.tripAdultCount + item.tripYoungCount + item.tripChildCount)"
+        cell.numberLabel.text = "x\(item.tripPersonCount)"
         cell.orderDateLabel.text = "活动时间：\(item.tripDate) \(item.tripTime)"
         
         let header = "总价："

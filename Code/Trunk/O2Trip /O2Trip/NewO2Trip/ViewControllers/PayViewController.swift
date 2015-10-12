@@ -143,7 +143,7 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 
                 var price = 0
                 for order in orders {
-                    price += Int(order.totalPrice!)!
+                    price += order.totalPrice
                 }
                 let priceText = NSMutableAttributedString(string: "实付 ￥\(price)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: greenColor])
                 priceText.addAttributes([NSFontAttributeName: UIFont.systemFontOfSize(11), NSForegroundColorAttributeName: blackColor], range: NSMakeRange(0, 2))
@@ -159,7 +159,7 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
             cell.titleLabel.text = item.activityTitle
             cell.datelabel.text = "出行日期：\(item.tripDate) \(item.tripTime)"
             
-            let personCount = item.tripAdultCount + item.tripYoungCount + item.tripChildCount
+            let personCount = item.tripPersonCount
             cell.numberLabel.text = "出行人数：\(personCount)人"
             let text = NSMutableAttributedString(string: "￥\(item.price) x\(personCount)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(8), NSForegroundColorAttributeName: UIColor(red: 102.0 / 255.0, green: 102.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)])
             text.addAttributes([NSForegroundColorAttributeName: UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0)], range: NSMakeRange(0, "\(item.price)".characters.count + 1))

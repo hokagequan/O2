@@ -15,8 +15,9 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var settleButton: UIButton!
     @IBOutlet weak var TotalLabel: UILabel!
     @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var rightBaritem: UIBarButtonItem!
     
-    var items = [ShoppingCartItem]()
+    var items = [OrderItem]()
     var selectedIndexes = [Int]()
 
     override func viewDidLoad() {
@@ -47,8 +48,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         
         for i in 0..<goods.count {
             let goodInfo = goods[i]
-            let item = ShoppingCartItem()
-            item.loadInfo(goodInfo)
+            let item = OrderItem()
+            item.loadShoppingCartInfo(goodInfo)
             items.append(item)
         }
     }
@@ -120,8 +121,17 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func refreshSettleInfo() {
+        if selectedIndexes.count == 0 {
+            rightBaritem.title = "编辑"
+        }
+        else {
+            rightBaritem.title = "删除"
+        }
+        
         var totalPrice = 0
-        for item in items {
+        
+        for index in selectedIndexes {
+            let item = items[index]
             totalPrice += item.totalPrice
         }
         
@@ -129,7 +139,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         text.addAttributes([NSFontAttributeName: UIFont.systemFontOfSize(9)], range: NSMakeRange(0, "合计：".characters.count))
         TotalLabel.attributedText = text
         
-        settleButton.setTitle("结算(\(items.count))", forState: UIControlState.Normal)
+        settleButton.setTitle("结算(\(selectedIndexes.count))", forState: UIControlState.Normal)
         
         selectAllButton.selected = (items.count == selectedIndexes.count)
     }
@@ -137,6 +147,34 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - Actions
     @IBAction func clickEdit(sender: AnyObject) {
         // TODO: 编辑
+        let button = sender as! UIBarButtonItem
+        
+        if button.title == "编辑" {}
+        else if button.title == "删除" {
+            let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+            var goods = [String]()
+            
+            for index in selectedIndexes {
+                let item = items[index]
+                goods.append(item.activityID!)
+            }
+            
+            GiFHUD.setGifWithImageName("loading.gif")
+            GiFHUD.show()
+            HttpReqManager.httpRequestDeleteShoppingCart(userID as! String, goodIDs: goods, completion: { (response) -> Void in
+                GiFHUD.dismiss()
+                if response["err_code"] as! String == "200" && response["flag"] as! String == "true" {
+                    self.selectedIndexes.removeAll()
+                    self.tableView.reloadData()
+                }
+                else {
+                    self.showAlert("删除失败")
+                }
+                }, failure: { (error) -> Void in
+                    GiFHUD.dismiss()
+                    self.showAlert("删除失败")
+            })
+        }
     }
     
     @IBAction func clickSelectAll(sender: AnyObject) {
@@ -152,7 +190,13 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBAction func clickSettle(sender: AnyObject) {
-        // TODO: 结算
+        if selectedIndexes.count == 0 {
+            self.showAlert("请选择活动再结算")
+            
+            return
+        }
+        
+        self.performSegueWithIdentifier("PaySegue", sender: self)
     }
     
     // MARK: - TableView
@@ -171,7 +215,6 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         let text = NSMutableAttributedString(string: "￥\(item.price) x\(item.tripPersonCount)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(8), NSForegroundColorAttributeName: UIColor(red: 102.0 / 255.0, green: 102.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)])
         text.addAttributes([NSForegroundColorAttributeName: UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0)], range: NSMakeRange(0, "\(item.price)".characters.count + 1))
         cell.priceLabel.attributedText = text
-        
         cell.iconImageView.sd_setImageWithURL(HttpReqManager.imageUrl(item.activityImageName))
         
         cell.selected = selectedIndexes.contains(indexPath.row)
@@ -187,20 +230,33 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             selectedIndexes.append(indexPath.row)
         }
         
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ShoppingCartCell
-        cell.selected = selectedIndexes.contains(indexPath.row)
+        self.refreshSettleInfo()
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if selectedIndexes.contains(indexPath.row) {
+            selectedIndexes.removeAtIndex(selectedIndexes.indexOf(indexPath.row)!)
+        }
         
         self.refreshSettleInfo()
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "PaySegue" {
+            let payViewController = segue.destinationViewController as! PayViewController
+            
+            var orders = [OrderItem]()
+            for index in selectedIndexes {
+                orders.append(items[index])
+            }
+            
+            payViewController.orders = orders
+        }
     }
-    */
 
 }

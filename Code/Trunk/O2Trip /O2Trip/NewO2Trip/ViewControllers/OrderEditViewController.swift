@@ -99,7 +99,7 @@ class OrderEditViewController: UIViewController, UITableViewDataSource, UITableV
                 cell.detailLabel.textColor = blackColor
             }
             else if row == OrderEditRow.Number {
-                cell.detailLabel.text = "\(order!.tripAdultCount + order!.tripYoungCount + order!.tripChildCount)"
+                cell.detailLabel.text = "\(order?.tripPersonCount)"
                 cell.detailLabel.textColor = greenColor
             }
             else if row == OrderEditRow.Price {
@@ -117,15 +117,15 @@ class OrderEditViewController: UIViewController, UITableViewDataSource, UITableV
         
         if row == OrderEditRow.Adult {
             cell.priceLabel.text = "￥ \(order!.price)"
-            cell.count = order!.tripAdultCount
+            cell.count = order!.adultCount
         }
         else if row == OrderEditRow.Young {
             cell.priceLabel.text = "￥ \(order!.price)"
-            cell.count = order!.tripYoungCount
+            cell.count = order!.youngCount
         }
         else if row == OrderEditRow.Child {
             cell.priceLabel.text = "￥ \(order!.price)"
-            cell.count = order!.tripChildCount
+            cell.count = order!.childCount
         }
 
         return cell
