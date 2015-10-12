@@ -3279,16 +3279,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6n-Ye-eKj" userLabel="Container">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_nor.png" translatesAutoresizingMaskIntoConstraints="NO" id="ExL-NV-cGD">
-                                                            <rect key="frame" x="18" y="41" width="16" height="16"/>
-                                                            <animations/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="QhE-Eg-bop"/>
-                                                                <constraint firstAttribute="width" constant="16" id="n1F-Lj-DWR"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9xc-qg-udZ">
-                                                            <rect key="frame" x="49" y="11" width="107" height="75"/>
+                                                            <rect key="frame" x="48" y="11" width="107" height="75"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="75" id="Cl1-55-yF8"/>
@@ -3296,7 +3288,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南海岸冰川徒步" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E11-1e-Vmg">
-                                                            <rect key="frame" x="166" y="11" width="146" height="15"/>
+                                                            <rect key="frame" x="165" y="11" width="147" height="15"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="m73-6T-eIv"/>
@@ -3306,7 +3298,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出行日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6X-Ss-X71">
-                                                            <rect key="frame" x="166" y="32" width="146" height="13"/>
+                                                            <rect key="frame" x="165" y="32" width="147" height="13"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="13" id="6no-vK-hP1"/>
@@ -3316,7 +3308,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出行人数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7t-6E-Caf">
-                                                            <rect key="frame" x="166" y="51" width="146" height="13"/>
+                                                            <rect key="frame" x="165" y="51" width="147" height="13"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="13" id="Rk8-Hv-ebR"/>
@@ -3326,33 +3318,57 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foc-4g-dti">
-                                                            <rect key="frame" x="166" y="70" width="146" height="16"/>
+                                                            <rect key="frame" x="165" y="70" width="147" height="16"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOj-dg-bqz" userLabel="select">
+                                                            <rect key="frame" x="15" y="40" width="18" height="18"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="18" id="L9l-wd-k8C"/>
+                                                                <constraint firstAttribute="height" constant="18" id="Uc6-Ob-n2I"/>
+                                                            </constraints>
+                                                            <state key="normal" image="check_nor.png"/>
+                                                            <state key="selected" image="check_sel.png"/>
+                                                            <connections>
+                                                                <action selector="clickSelect:" destination="BaM-lb-ses" eventType="touchUpInside" id="4Hz-Qg-Rna"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCL-2y-dMM" userLabel="Image">
+                                                            <rect key="frame" x="48" y="11" width="107" height="75"/>
+                                                            <animations/>
+                                                            <connections>
+                                                                <action selector="clickImage:" destination="BaM-lb-ses" eventType="touchUpInside" id="aqW-Hx-DFw"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="foc-4g-dti" firstAttribute="trailing" secondItem="E11-1e-Vmg" secondAttribute="trailing" id="1pD-Ld-7Z2"/>
+                                                        <constraint firstItem="yCL-2y-dMM" firstAttribute="top" secondItem="9xc-qg-udZ" secondAttribute="top" id="4Aa-Vq-gYL"/>
                                                         <constraint firstItem="foc-4g-dti" firstAttribute="top" secondItem="P7t-6E-Caf" secondAttribute="bottom" constant="6" id="5Xl-Mg-YiJ"/>
                                                         <constraint firstItem="E11-1e-Vmg" firstAttribute="top" secondItem="9xc-qg-udZ" secondAttribute="top" id="6Ex-t4-pmf"/>
-                                                        <constraint firstItem="ExL-NV-cGD" firstAttribute="leading" secondItem="d6n-Ye-eKj" secondAttribute="leading" constant="18" id="9Gg-Wi-ONk"/>
                                                         <constraint firstItem="foc-4g-dti" firstAttribute="leading" secondItem="E11-1e-Vmg" secondAttribute="leading" id="C9W-Yz-1Sg"/>
                                                         <constraint firstItem="P7t-6E-Caf" firstAttribute="top" secondItem="p6X-Ss-X71" secondAttribute="bottom" constant="6" id="DXz-4Y-UM2"/>
-                                                        <constraint firstItem="ExL-NV-cGD" firstAttribute="centerY" secondItem="d6n-Ye-eKj" secondAttribute="centerY" id="Dyg-GT-KJp"/>
+                                                        <constraint firstItem="9xc-qg-udZ" firstAttribute="leading" secondItem="aOj-dg-bqz" secondAttribute="trailing" constant="15" id="HMe-x0-uWn"/>
+                                                        <constraint firstItem="yCL-2y-dMM" firstAttribute="leading" secondItem="9xc-qg-udZ" secondAttribute="leading" id="IJQ-Qb-v5b"/>
                                                         <constraint firstItem="9xc-qg-udZ" firstAttribute="centerY" secondItem="d6n-Ye-eKj" secondAttribute="centerY" id="Mi6-6W-AcH"/>
                                                         <constraint firstItem="P7t-6E-Caf" firstAttribute="trailing" secondItem="E11-1e-Vmg" secondAttribute="trailing" id="Qqk-Qz-lxG"/>
                                                         <constraint firstItem="P7t-6E-Caf" firstAttribute="leading" secondItem="E11-1e-Vmg" secondAttribute="leading" id="UEk-iF-LNZ"/>
-                                                        <constraint firstItem="9xc-qg-udZ" firstAttribute="leading" secondItem="ExL-NV-cGD" secondAttribute="trailing" constant="15" id="WkZ-8g-GuG"/>
                                                         <constraint firstItem="E11-1e-Vmg" firstAttribute="leading" secondItem="9xc-qg-udZ" secondAttribute="trailing" constant="10" id="c2M-U1-WTL"/>
+                                                        <constraint firstItem="yCL-2y-dMM" firstAttribute="trailing" secondItem="9xc-qg-udZ" secondAttribute="trailing" id="clb-Hy-kmg"/>
                                                         <constraint firstAttribute="trailing" secondItem="E11-1e-Vmg" secondAttribute="trailing" constant="8" id="da5-3Z-uAR"/>
                                                         <constraint firstItem="p6X-Ss-X71" firstAttribute="trailing" secondItem="E11-1e-Vmg" secondAttribute="trailing" id="f3G-dg-55L"/>
+                                                        <constraint firstItem="aOj-dg-bqz" firstAttribute="leading" secondItem="d6n-Ye-eKj" secondAttribute="leading" constant="15" id="lZK-YV-r0A"/>
                                                         <constraint firstItem="p6X-Ss-X71" firstAttribute="top" secondItem="E11-1e-Vmg" secondAttribute="bottom" constant="6" id="lc1-UP-WMZ"/>
+                                                        <constraint firstItem="yCL-2y-dMM" firstAttribute="bottom" secondItem="9xc-qg-udZ" secondAttribute="bottom" id="mq0-Ir-KAg"/>
                                                         <constraint firstItem="foc-4g-dti" firstAttribute="bottom" secondItem="9xc-qg-udZ" secondAttribute="bottom" id="scL-yo-F5K"/>
                                                         <constraint firstItem="p6X-Ss-X71" firstAttribute="leading" secondItem="E11-1e-Vmg" secondAttribute="leading" id="vZA-g8-SOq"/>
+                                                        <constraint firstItem="aOj-dg-bqz" firstAttribute="centerY" secondItem="d6n-Ye-eKj" secondAttribute="centerY" id="yLP-mo-Iht"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -3371,7 +3387,7 @@
                                             <outlet property="iconImageView" destination="9xc-qg-udZ" id="K68-TY-MVv"/>
                                             <outlet property="numberLabel" destination="P7t-6E-Caf" id="wiE-Dz-zT6"/>
                                             <outlet property="priceLabel" destination="foc-4g-dti" id="QxM-CC-enP"/>
-                                            <outlet property="selectMarkImageView" destination="ExL-NV-cGD" id="LhQ-EJ-Qzs"/>
+                                            <outlet property="selectButton" destination="aOj-dg-bqz" id="7I7-U0-f2F"/>
                                             <outlet property="titleLabel" destination="E11-1e-Vmg" id="AP4-fN-nZA"/>
                                         </connections>
                                     </tableViewCell>
@@ -6193,6 +6209,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="6yf-me-hNE"/>
         <segue reference="oSK-Jd-rUA"/>
-        <segue reference="WGx-Ii-LWR"/>
+        <segue reference="gRI-iX-hP5"/>
     </inferredMetricsTieBreakers>
 </document>

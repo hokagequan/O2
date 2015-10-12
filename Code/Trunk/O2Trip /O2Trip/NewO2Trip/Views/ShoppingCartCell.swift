@@ -8,14 +8,21 @@
 
 import UIKit
 
+@objc protocol ShoppingCartCellDelegate {
+    optional func didClickSelect(cell: ShoppingCartCell)
+    optional func didClickImage(cell: ShoppingCartCell)
+}
+
 class ShoppingCartCell: UITableViewCell {
     
-    @IBOutlet weak var selectMarkImageView: UIImageView!
+    @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var datelabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    weak var delegate: ShoppingCartCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,8 +33,17 @@ class ShoppingCartCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        let markName = selected ? "check_sel" : "check_nor"
-        selectMarkImageView.image = UIImage(named: markName)
     }
 
+    @IBAction func clickSelect(sender: AnyObject) {
+        let button = sender as! UIButton
+        button.selected = !button.selected
+        
+        delegate?.didClickSelect?(self)
+    }
+    
+    @IBAction func clickImage(sender: AnyObject) {
+        delegate?.didClickImage?(self)
+    }
+    
 }

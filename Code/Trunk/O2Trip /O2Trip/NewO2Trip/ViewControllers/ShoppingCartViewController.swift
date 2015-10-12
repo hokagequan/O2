@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ShoppingCartCellDelegate {
     
     @IBOutlet weak var tableView: RefreshAndLoadTableView!
     @IBOutlet weak var selectAllButton: UIButton!
@@ -207,6 +207,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingCartCell", forIndexPath: indexPath) as! ShoppingCartCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        cell.delegate = self
         
         let item = items[indexPath.row]
         cell.titleLabel.text = item.activityTitle
