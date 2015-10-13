@@ -3875,10 +3875,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GU1-Zd-u0D" userLabel="Container">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R6O-EY-wuz">
-                                                            <rect key="frame" x="15" y="17" width="107" height="75"/>
+                                                            <rect key="frame" x="15" y="11" width="107" height="75"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="107" id="VSh-VZ-h9n"/>
@@ -3886,7 +3886,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出行日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usl-ON-uRo">
-                                                            <rect key="frame" x="132" y="40" width="180" height="13"/>
+                                                            <rect key="frame" x="132" y="34" width="180" height="13"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="13" id="4VT-Ml-7Ba"/>
@@ -3896,7 +3896,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出行人数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwh-Y3-yxk">
-                                                            <rect key="frame" x="132" y="59" width="180" height="13"/>
+                                                            <rect key="frame" x="132" y="53" width="180" height="13"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="13" id="ik5-bW-MUY"/>
@@ -3906,7 +3906,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwo-2q-gfh">
-                                                            <rect key="frame" x="132" y="78" width="180" height="14"/>
+                                                            <rect key="frame" x="132" y="72" width="180" height="14"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -3949,10 +3949,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="GU1-Zd-u0D" secondAttribute="trailing" id="4Ep-oZ-fgM"/>
                                                 <constraint firstItem="GU1-Zd-u0D" firstAttribute="top" secondItem="5cZ-ei-xGl" secondAttribute="top" id="Dhd-xz-1EF"/>
                                                 <constraint firstItem="GU1-Zd-u0D" firstAttribute="leading" secondItem="5cZ-ei-xGl" secondAttribute="leading" id="MMI-ec-dku"/>
-                                                <constraint firstAttribute="bottom" secondItem="GU1-Zd-u0D" secondAttribute="bottom" id="UhW-aI-I8k"/>
+                                                <constraint firstAttribute="bottom" secondItem="GU1-Zd-u0D" secondAttribute="bottom" constant="12" id="UhW-aI-I8k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="datelabel" destination="usl-ON-uRo" id="4gj-cW-Sd2"/>
                                             <outlet property="iconImageView" destination="R6O-EY-wuz" id="jRI-iN-c9k"/>

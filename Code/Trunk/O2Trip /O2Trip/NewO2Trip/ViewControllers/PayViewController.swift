@@ -37,8 +37,6 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
             
             }) { (error) -> Void in
                 GiFHUD.dismiss()
-                
-                self.showAlert("获取信息失败")
         }
     }
 
@@ -88,6 +86,36 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
         }
         
         return 0
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 68.0
+        }
+        else if indexPath.section == 1 {
+            if indexPath.row == orders.count {
+                return 34.0
+            }
+            else {
+                return 109.0
+            }
+        }
+        
+        return 34.0
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "联系人"
+        }
+        else if section == 1 {
+            return "订单详情"
+        }
+        else if section == 2 {
+            return "选择支付方式"
+        }
+        
+        return ""
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -164,6 +192,8 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
             let text = NSMutableAttributedString(string: "￥\(item.price) x\(personCount)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(8), NSForegroundColorAttributeName: UIColor(red: 102.0 / 255.0, green: 102.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)])
             text.addAttributes([NSForegroundColorAttributeName: UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0)], range: NSMakeRange(0, "\(item.price)".characters.count + 1))
             cell.priceLabel.attributedText = text
+            
+            cell.iconImageView.sd_setImageWithURL(HttpReqManager.imageUrl(item.activityImageName))
             
             return cell
         }
