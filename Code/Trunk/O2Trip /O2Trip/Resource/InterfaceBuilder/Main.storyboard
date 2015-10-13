@@ -2299,7 +2299,7 @@
         <!--Mylist View Controller-->
         <scene sceneID="pQh-wP-UAV">
             <objects>
-                <viewController storyboardIdentifier="mylistViewController" hidesBottomBarWhenPushed="YES" id="tRB-tF-kJg" customClass="mylistViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mylistViewController" id="tRB-tF-kJg" customClass="mylistViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rOC-9z-eSa"/>
                         <viewControllerLayoutGuide type="bottom" id="vUA-bK-vP3"/>
@@ -3517,29 +3517,6 @@
                                 <rect key="frame" x="0.0" y="77" width="320" height="491"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="QZN-6a-uAV" userLabel="Footer">
-                                    <rect key="frame" x="0.0" y="96" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（此活动需2人以上出行才可预定）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCh-cH-wV3">
-                                            <rect key="frame" x="15" y="11" width="290" height="21"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="mjL-Rg-hCZ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="HCh-cH-wV3" firstAttribute="centerY" secondItem="QZN-6a-uAV" secondAttribute="centerY" id="NVe-j5-gtq"/>
-                                        <constraint firstAttribute="trailing" secondItem="HCh-cH-wV3" secondAttribute="trailing" constant="15" id="P03-1R-sjA"/>
-                                        <constraint firstItem="HCh-cH-wV3" firstAttribute="leading" secondItem="QZN-6a-uAV" secondAttribute="leading" constant="15" id="ssz-26-WO0"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderEditNormalCell" id="hSt-Tg-Zp3" customClass="OrderEditNormalCell" customModule="O2Trip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="34"/>
@@ -3727,13 +3704,36 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ps8-uH-JsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="QZN-6a-uAV" userLabel="Footer">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（此活动需2人以上出行才可预定）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCh-cH-wV3">
+                            <rect key="frame" x="15" y="11" width="290" height="21"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="mjL-Rg-hCZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="HCh-cH-wV3" firstAttribute="centerY" secondItem="QZN-6a-uAV" secondAttribute="centerY" id="NVe-j5-gtq"/>
+                        <constraint firstAttribute="trailing" secondItem="HCh-cH-wV3" secondAttribute="trailing" constant="15" id="P03-1R-sjA"/>
+                        <constraint firstItem="HCh-cH-wV3" firstAttribute="leading" secondItem="QZN-6a-uAV" secondAttribute="leading" constant="15" id="ssz-26-WO0"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="282" y="-1555"/>
         </scene>
         <!--确认订单-->
         <scene sceneID="yTL-aX-mck">
             <objects>
-                <viewController id="plh-03-ygh" customClass="PayViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="plh-03-ygh" customClass="PayViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZPv-Ep-DZY"/>
                         <viewControllerLayoutGuide type="bottom" id="A8h-Hg-bXM"/>
@@ -3747,35 +3747,9 @@
                                 <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="Kdn-yB-pmR" userLabel="FooterView">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="111"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-70-JLt">
-                                            <rect key="frame" x="15" y="34" width="290" height="33"/>
-                                            <animations/>
-                                            <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="33" id="Byu-Lu-xJF"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <state key="normal" title="确认支付"/>
-                                            <connections>
-                                                <action selector="clickConfirm:" destination="plh-03-ygh" eventType="touchUpInside" id="YAw-f7-7lP"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="6cU-70-JLt" firstAttribute="leading" secondItem="Kdn-yB-pmR" secondAttribute="leading" constant="15" id="Joq-O5-Fes"/>
-                                        <constraint firstAttribute="trailing" secondItem="6cU-70-JLt" secondAttribute="trailing" constant="15" id="RaZ-an-e14"/>
-                                        <constraint firstItem="6cU-70-JLt" firstAttribute="top" secondItem="Kdn-yB-pmR" secondAttribute="top" constant="34" id="kO7-bK-UIg"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="68" id="qkJ-sn-l5s" customClass="ContactCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="225" width="320" height="68"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qkJ-sn-l5s" id="GfP-pe-0Eb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
@@ -3894,7 +3868,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingCartCell" rowHeight="109" id="m3b-vs-rjJ" customClass="ShoppingCartCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="293" width="320" height="109"/>
+                                        <rect key="frame" x="0.0" y="118" width="320" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m3b-vs-rjJ" id="5cZ-ei-xGl">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
@@ -3988,7 +3962,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayTotalCell" rowHeight="34" id="dxW-Tx-h7i" customClass="PayTotalCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="402" width="320" height="34"/>
+                                        <rect key="frame" x="0.0" y="227" width="320" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxW-Tx-h7i" id="hdE-Ui-CGb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
@@ -4032,7 +4006,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayModeCell" rowHeight="34" id="RrO-ll-3ql" customClass="PayModeCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="436" width="320" height="34"/>
+                                        <rect key="frame" x="0.0" y="261" width="320" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RrO-ll-3ql" id="ikq-lQ-Eju">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
@@ -4095,7 +4069,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactNoOneCell" rowHeight="68" id="W9D-F9-zS0" customClass="ContactNoOneCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="470" width="320" height="68"/>
+                                        <rect key="frame" x="0.0" y="295" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W9D-F9-zS0" id="eFc-yq-zLL">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
@@ -4159,6 +4133,32 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqd-Cj-bZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Kdn-yB-pmR" userLabel="FooterView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-70-JLt">
+                            <rect key="frame" x="15" y="34" width="290" height="33"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="33" id="Byu-Lu-xJF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="确认支付"/>
+                            <connections>
+                                <action selector="clickConfirm:" destination="plh-03-ygh" eventType="touchUpInside" id="YAw-f7-7lP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6cU-70-JLt" firstAttribute="leading" secondItem="Kdn-yB-pmR" secondAttribute="leading" constant="15" id="Joq-O5-Fes"/>
+                        <constraint firstAttribute="trailing" secondItem="6cU-70-JLt" secondAttribute="trailing" constant="15" id="RaZ-an-e14"/>
+                        <constraint firstItem="6cU-70-JLt" firstAttribute="top" secondItem="Kdn-yB-pmR" secondAttribute="top" constant="34" id="kO7-bK-UIg"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="282" y="-2225"/>
         </scene>
@@ -6215,7 +6215,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6yf-me-hNE"/>
-        <segue reference="oSK-Jd-rUA"/>
         <segue reference="gRI-iX-hP5"/>
+        <segue reference="rB5-Wa-plr"/>
     </inferredMetricsTieBreakers>
 </document>
