@@ -15,7 +15,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var settleButton: UIButton!
     @IBOutlet weak var TotalLabel: UILabel!
     @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var rightBaritem: UIBarButtonItem!
+    @IBOutlet weak var rightBaritem: UIButton!
     
     var items = [OrderItem]()
     var selectedIndexes = [Int]()
@@ -126,10 +126,10 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     
     func refreshSettleInfo() {
         if selectedIndexes.count == 0 {
-            rightBaritem.image = UIImage(named: "delete_disable")
+            rightBaritem.setImage(UIImage(named: "delete_disable"), forState: UIControlState.Normal)
         }
         else {
-            rightBaritem.image = UIImage(named: "delete_enable")
+            rightBaritem.setImage(UIImage(named: "delete_enable"), forState: UIControlState.Normal)
         }
         
         var totalPrice = 0
@@ -168,6 +168,18 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         HttpReqManager.httpRequestDeleteShoppingCart(userID as! String, goodIDs: goods, completion: { (response) -> Void in
             GiFHUD.dismiss()
             if response["err_code"] as! String == "200" && response["flag"] as! String == "true" {
+                var toDelItems: Set<OrderItem> = Set()
+                for index in self.selectedIndexes {
+                    toDelItems.insert(self.items[index])
+                }
+
+                let itemsSet = Set(self.items)
+                self.items = Array(itemsSet.exclusiveOr(toDelItems))
+//                for item in toDelItems {
+//                    if self.items.contains(item) {
+//                        self.items.removeAtIndex(self.items.indexOf(item)!)
+//                    }
+//                }
                 self.selectedIndexes.removeAll()
                 self.tableView.reloadData()
             }
@@ -222,7 +234,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         cell.priceLabel.attributedText = text
         cell.iconImageView.sd_setImageWithURL(HttpReqManager.imageUrl(item.activityImageName))
         
-        cell.selected = selectedIndexes.contains(indexPath.row)
+        cell.selectButton.selected = selectedIndexes.contains(indexPath.row)
         
         return cell
     }

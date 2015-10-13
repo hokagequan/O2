@@ -8,6 +8,12 @@
 
 import Foundation
 
+// MARK: - Equatable
+
+func ==(lhs: OrderItem, rhs: OrderItem) -> Bool {
+    return lhs.hashValue == rhs.hashValue
+}
+
 enum OrderStat: Int {
     case All = 0
     case Unpay
@@ -62,7 +68,14 @@ enum OrderStat: Int {
     }
 }
 
-class OrderItem {
+class OrderItem: Hashable {
+    
+    // MARK: - Hashable
+    var hashValue: Int {
+        get {
+            return (identifier! + activityID!).hashValue
+        }
+    }
     
     var identifier: String? = nil
     var activityID: String? = nil
@@ -216,4 +229,5 @@ class OrderItem {
         tripTime = details["time"] as? String
         activityImageName = details["itemImage"] as? String
     }
+    
 }

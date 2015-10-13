@@ -2564,7 +2564,7 @@
         <!--联系人-->
         <scene sceneID="oYl-dr-xj2">
             <objects>
-                <viewController id="akF-Sd-h06" customClass="ContactsViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="akF-Sd-h06" customClass="ContactsViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="10j-od-v9U"/>
                         <viewControllerLayoutGuide type="bottom" id="P98-HN-zUJ"/>
@@ -2580,7 +2580,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" id="N9H-LF-Kc9" customClass="ContactCell" customModule="O2Trip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N9H-LF-Kc9" id="yAd-Iw-WXV">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
@@ -2851,7 +2851,7 @@
         <!--订单中心-->
         <scene sceneID="6cf-Uk-kWg">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8ma-D6-o02" customClass="OrdersViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="8ma-D6-o02" customClass="OrdersViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eAy-gl-8VF"/>
                         <viewControllerLayoutGuide type="bottom" id="7VB-HS-kzX"/>
@@ -3223,7 +3223,7 @@
         <!--购物车-->
         <scene sceneID="NEw-Fr-pZV">
             <objects>
-                <viewController id="79T-Pf-PgD" customClass="ShoppingCartViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="79T-Pf-PgD" customClass="ShoppingCartViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bO6-gY-zKJ"/>
                         <viewControllerLayoutGuide type="bottom" id="KY9-P1-b3Z"/>
@@ -3473,17 +3473,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="购物车" id="TYP-fA-tES">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="oZD-A6-zjg">
-                            <connections>
-                                <action selector="clickEdit:" destination="79T-Pf-PgD" id="lUT-aM-nPh"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wUC-ai-XDB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ubw-EC-Ntd">
+                                <rect key="frame" x="289" y="11" width="15" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" image="delete_disable.png"/>
+                                <connections>
+                                    <action selector="clickEdit:" destination="79T-Pf-PgD" eventType="touchUpInside" id="Djt-PE-gtP"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="TotalLabel" destination="lSy-e8-OYX" id="cgh-No-Aou"/>
                         <outlet property="emptyView" destination="OZM-UD-5kr" id="CHN-9b-n6a"/>
-                        <outlet property="rightBaritem" destination="oZD-A6-zjg" id="7fc-sp-897"/>
+                        <outlet property="rightBaritem" destination="ubw-EC-Ntd" id="Z0A-9c-ZKD"/>
                         <outlet property="selectAllButton" destination="UdD-pA-e5F" id="3kd-Wj-eWP"/>
                         <outlet property="settleButton" destination="L7w-JW-j7f" id="N2D-Jf-TpM"/>
                         <outlet property="tableView" destination="f97-LX-Kdz" id="wWu-V1-Zbd"/>
@@ -6180,6 +6186,7 @@
         <image name="contact_phone.png" width="12" height="12"/>
         <image name="contact_wechat.png" width="12" height="12"/>
         <image name="decrease.png" width="12" height="12"/>
+        <image name="delete_disable.png" width="15" height="15"/>
         <image name="delete_nor" width="1242" height="2208"/>
         <image name="details@3x-05.png" width="60" height="60"/>
         <image name="details@3x-06.png" width="60" height="60"/>

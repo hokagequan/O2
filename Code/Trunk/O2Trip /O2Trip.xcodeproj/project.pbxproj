@@ -15,6 +15,10 @@
 		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54CC1BB37FF100F974A2 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54CB1BB37FF100F974A2 /* OrderItem.swift */; settings = {ASSET_TAGS = (); }; };
+		1052CCE41BCD067100DDDAA5 /* delete_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCE01BCD067100DDDAA5 /* delete_disable@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1052CCE51BCD067100DDDAA5 /* delete_disable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCE11BCD067100DDDAA5 /* delete_disable@3x.png */; settings = {ASSET_TAGS = (); }; };
+		1052CCE61BCD067100DDDAA5 /* delete_enable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCE21BCD067100DDDAA5 /* delete_enable@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1052CCE71BCD067100DDDAA5 /* delete_enable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCE31BCD067100DDDAA5 /* delete_enable@3x.png */; settings = {ASSET_TAGS = (); }; };
 		10854E681BC8153800EA4373 /* RefreshAndLoadTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */; settings = {ASSET_TAGS = (); }; };
 		10854E6A1BC952E000EA4373 /* OrderEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10854E691BC952E000EA4373 /* OrderEditViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		108CAEAB1BC5642600902E34 /* PayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CAEAA1BC5642600902E34 /* PayManager.swift */; settings = {ASSET_TAGS = (); }; };
@@ -422,6 +426,10 @@
 		100A54C51BB2B88900F974A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		100A54CB1BB37FF100F974A2 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		1052CCE01BCD067100DDDAA5 /* delete_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_disable@2x.png"; sourceTree = "<group>"; };
+		1052CCE11BCD067100DDDAA5 /* delete_disable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_disable@3x.png"; sourceTree = "<group>"; };
+		1052CCE21BCD067100DDDAA5 /* delete_enable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_enable@2x.png"; sourceTree = "<group>"; };
+		1052CCE31BCD067100DDDAA5 /* delete_enable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_enable@3x.png"; sourceTree = "<group>"; };
 		10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAndLoadTableView.swift; sourceTree = "<group>"; };
 		10854E691BC952E000EA4373 /* OrderEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderEditViewController.swift; sourceTree = "<group>"; };
 		108CAEAA1BC5642600902E34 /* PayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayManager.swift; sourceTree = "<group>"; };
@@ -1203,6 +1211,10 @@
 		10FE426F1BBACD5F00E37C76 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				1052CCE01BCD067100DDDAA5 /* delete_disable@2x.png */,
+				1052CCE11BCD067100DDDAA5 /* delete_disable@3x.png */,
+				1052CCE21BCD067100DDDAA5 /* delete_enable@2x.png */,
+				1052CCE31BCD067100DDDAA5 /* delete_enable@3x.png */,
 				10D4CE231BC9F56800565D59 /* add@2x.png */,
 				10D4CE241BC9F56800565D59 /* decrease@2x.png */,
 				10FE42701BBACD7200E37C76 /* shopping cart_empty@2x.png */,
@@ -2310,6 +2322,7 @@
 			files = (
 				2B5C1F491BA9530E00E770FC /* 1024x1024.png in Resources */,
 				2B5C1F211BA9530E00E770FC /* details@3x-03.png in Resources */,
+				1052CCE41BCD067100DDDAA5 /* delete_disable@2x.png in Resources */,
 				2B5C1F6A1BA9530E00E770FC /* @3x_ install-02.png in Resources */,
 				2B5C1F071BA9530E00E770FC /* @3x_home-13-3.png in Resources */,
 				2BDD17C01B05FDC900E65DE2 /* detailMapViewCell.xib in Resources */,
@@ -2326,9 +2339,11 @@
 				10D6AAC21BBC2D270010EF51 /* order_empty@2x.png in Resources */,
 				2B5C1F381BA9530E00E770FC /* discover@3x-09.png in Resources */,
 				2B5C1F751BA9530E00E770FC /* startpage5.jpg in Resources */,
+				1052CCE71BCD067100DDDAA5 /* delete_enable@3x.png in Resources */,
 				2B5C1F461BA9530E00E770FC /* logging@3x-06.png in Resources */,
 				10D6AABD1BBC1F520010EF51 /* check_nor@2x.png in Resources */,
 				2B5C1F661BA9530E00E770FC /* payment process@3x-11.png in Resources */,
+				1052CCE61BCD067100DDDAA5 /* delete_enable@2x.png in Resources */,
 				2B5C1F1C1BA9530E00E770FC /* @3x_home-13.png in Resources */,
 				2B5C1F401BA9530E00E770FC /* discover@3x-17.png in Resources */,
 				2B5C1F331BA9530E00E770FC /* discover@3x-04.png in Resources */,
@@ -2438,6 +2453,7 @@
 				2B5C1F191BA9530E00E770FC /* @3x_home-10.jpg in Resources */,
 				2B5C1F101BA9530E00E770FC /* tab@2x-06.png in Resources */,
 				2B5C1FBF1BA9582200E770FC /* CalendarPreviousMonth.png in Resources */,
+				1052CCE51BCD067100DDDAA5 /* delete_disable@3x.png in Resources */,
 				10FE42711BBACD7200E37C76 /* shopping cart_empty@2x.png in Resources */,
 				2B5C1F611BA9530E00E770FC /* payment process@3x-06.png in Resources */,
 				2BF208721B57A6D200AC5A23 /* PushConfig.plist in Resources */,
