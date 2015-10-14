@@ -18,11 +18,8 @@ enum PayMode: Int {
     optional func didAliPayComplete(manager: PayManager, success: Bool)
 }
 
-class PayManager: NSObject, WXApiDelegate, APOpenAPIDelegate {
+class PayManager: NSObject, WXApiDelegate {
     static let sharedPayManager = PayManager()
-    
-    let wechatHandler = WeChatHandler()
-    let alipayHandler = AliPayHandler()
     
     var isPaying = false
     weak var delegate: PayManagerDelegate?
@@ -32,19 +29,27 @@ class PayManager: NSObject, WXApiDelegate, APOpenAPIDelegate {
     }
     
     func handleOpenUrl(url: NSURL) -> Bool {
-        var success = WXApi.handleOpenURL(url, delegate: wechatHandler)
-        success = APOpenAPI.handleOpenURL(url, delegate: alipayHandler)
-        
-        return success
+        return WXApi.handleOpenURL(url, delegate: self)
     }
     
-    func pay(mode: PayMode, params: Dictionary<String, AnyObject>) {
+    func pay(mode: PayMode, params: Dictionary<String, AnyObject>?, order: AliPayOrder?) {
         switch mode {
         case .WeiXin:
-            payUsingWeChat(params)
+            if params == nil {
+                delegate?.didWeChatPayComplete?(self, success: false)
+                return
+            }
+            
+            payUsingWeChat(params!)
+            
             break
         case .ZhiFuBao:
-            payUsingZhiFuBao(params)
+            if order == nil {
+                delegate?.didAliPayComplete?(self, success: false)
+                return
+            }
+            payUsingZhiFuBao(order!)
+            
             break
         }
     }
@@ -61,30 +66,68 @@ class PayManager: NSObject, WXApiDelegate, APOpenAPIDelegate {
         WXApi.sendReq(req)
     }
     
-    func payUsingZhiFuBao(params: Dictionary<String, AnyObject>) {}
-}
-
-class WeChatHandler: NSObject, WXApiDelegate {
+    func payUsingZhiFuBao(order: AliPayOrder) {
+        let orderString = order.orderDescription()
+        // TODO: 支付宝支付
+    }
+    
     // MARK: - WXApiDelegate
     
     func onResp(resp: BaseResp!) {
         if resp is PayResp {
             if resp.errCode == WXSuccess.rawValue {
                 // 成功
-                PayManager.sharedInstance().delegate?.didWeChatPayComplete?(PayManager.sharedInstance(), success: true)
+                delegate?.didWeChatPayComplete?(self, success: true)
             }
             else {
                 // 失败
-                PayManager.sharedInstance().delegate?.didAliPayComplete?(PayManager.sharedInstance(), success: false)
+                delegate?.didAliPayComplete?(self, success: false)
             }
         }
     }
+    
 }
 
-class AliPayHandler: NSObject, APOpenAPIDelegate {
-    // MARK: AliPayDelegate
+class AliPayOrder: NSObject {
     
-    func onReq(req: APBaseReq!) {
+    let partener: String = ""
+    let seller: String = ""
+    let notifyUrl: String = ""
+    let service: String = "mobile.securitypay.pay"
+    let paymentType: String = "1"
+    let inputCharset: String = "utf-8"
+    let itBPay: String = "30m"
+    let showUrl: String = "m.alipay.com"
+    var orderNo: String?
+    var productName: String?
+    var productDescription: String?
+    var amount: String?
+    
+    func orderDescription() -> String {
+        var relString = ""
+        relString += "partner=\(partener)"
+        relString += "&seller_id=\(seller)"
+        relString += "&notify_url=\(notifyUrl)"
+        relString += "&service=\(service)"
+        relString += "&payment_type=\(paymentType)"
+        relString += "&_input_charset=\(inputCharset)"
+        relString += "&it_b_pay=\(itBPay)"
+        relString += "&show_url=\(showUrl)"
         
+        if orderNo != nil {
+            relString += "&out_trade_no=\(orderNo!)"
+        }
+        if (productName != nil) {
+            relString += "&subject=\(productName!)"
+        }
+        if (productDescription != nil) {
+            relString += "&body=\(productDescription!)"
+        }
+        if (amount != nil) {
+            relString += "&total_fee=\(amount!)"
+        }
+
+        return relString;
     }
+    
 }

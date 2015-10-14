@@ -68,7 +68,7 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBAction func clickConfirm(sender: AnyObject) {
         // TODO: 支付
-        PayManager.sharedInstance().pay(payMode, params: ["key": "value"])
+        PayManager.sharedInstance().pay(payMode, params: ["key": "value"], order: nil)
     }
     
     // MARK: - TableView
