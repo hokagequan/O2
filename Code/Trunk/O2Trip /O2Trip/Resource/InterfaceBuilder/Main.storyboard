@@ -3742,8 +3742,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7k3-1y-ykC">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="7k3-1y-ykC">
+                                <rect key="frame" x="0.0" y="54" width="320" height="514"/>
                                 <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -4120,7 +4120,7 @@
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="A8h-Hg-bXM" firstAttribute="top" secondItem="7k3-1y-ykC" secondAttribute="bottom" id="N7K-JQ-mT6"/>
-                            <constraint firstItem="7k3-1y-ykC" firstAttribute="top" secondItem="ZPv-Ep-DZY" secondAttribute="bottom" id="o7c-OU-HGI"/>
+                            <constraint firstItem="7k3-1y-ykC" firstAttribute="top" secondItem="ZPv-Ep-DZY" secondAttribute="bottom" constant="-10" id="o7c-OU-HGI"/>
                             <constraint firstItem="7k3-1y-ykC" firstAttribute="leading" secondItem="sfR-Oc-OfR" secondAttribute="leading" id="pfw-ez-35f"/>
                             <constraint firstAttribute="trailing" secondItem="7k3-1y-ykC" secondAttribute="trailing" id="sC3-ej-Dkh"/>
                         </constraints>

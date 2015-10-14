@@ -27,6 +27,8 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        payTableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 2), animated: false, scrollPosition: UITableViewScrollPosition.None)
+        
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         
@@ -65,7 +67,7 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // MARK: - Actions
     
     @IBAction func clickConfirm(sender: AnyObject) {
-        // TODO: 支付
+        PayManager.sharedInstance().pay(payMode)
     }
     
     // MARK: - TableView
@@ -101,7 +103,7 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
             }
         }
         
-        return 34.0
+        return 46.0
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -190,7 +192,7 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
             let personCount = item.tripPersonCount
             cell.numberLabel.text = "出行人数：\(personCount)人"
             let text = NSMutableAttributedString(string: "￥\(item.price) x\(personCount)", attributes: [NSFontAttributeName: UIFont.systemFontOfSize(8), NSForegroundColorAttributeName: UIColor(red: 102.0 / 255.0, green: 102.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)])
-            text.addAttributes([NSForegroundColorAttributeName: UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0)], range: NSMakeRange(0, "\(item.price)".characters.count + 1))
+            text.addAttributes([NSForegroundColorAttributeName: UIColor(red: 26 / 255.0, green: 188 / 255.0, blue: 156 / 255.0, alpha: 1.0), NSFontAttributeName: UIFont.systemFontOfSize(11.0)], range: NSMakeRange(0, "\(item.price)".characters.count + 1))
             cell.priceLabel.attributedText = text
             
             cell.iconImageView.sd_setImageWithURL(HttpReqManager.imageUrl(item.activityImageName))

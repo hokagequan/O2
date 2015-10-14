@@ -9,7 +9,7 @@
 import Foundation
 
 enum PayMode: Int {
-    case WeiXin
+    case WeiXin = 0
     case ZhiFuBao
 }
 

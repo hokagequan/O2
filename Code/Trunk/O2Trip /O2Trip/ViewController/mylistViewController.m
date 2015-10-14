@@ -166,17 +166,17 @@ typedef enum {
                 cell.detailTextLabel.text = @"";
                 break;
             case MyListRowsShoppingCart:
-                cell.imageView.image = [UIImage imageNamed:@""];
+                cell.imageView.image = [UIImage imageNamed:@"shoppingcart_nor"];
                 cell.textLabel.text = @"购物车";
                 cell.detailTextLabel.text = @"";
                 break;
             case MyListRowsOrders:
-                cell.imageView.image = [UIImage imageNamed:@""];
+                cell.imageView.image = [UIImage imageNamed:@"order_nor"];
                 cell.textLabel.text = @"订单中心";
                 cell.detailTextLabel.text = @"";
                 break;
             case MyListRowsContacts:
-                cell.imageView.image = [UIImage imageNamed:@""];
+                cell.imageView.image = [UIImage imageNamed:@"contacts"];
                 cell.textLabel.text = @"联系人";
                 cell.detailTextLabel.text = @"";
                 break;
