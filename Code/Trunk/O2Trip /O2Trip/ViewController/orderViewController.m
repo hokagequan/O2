@@ -10,7 +10,7 @@
 #include <sys/sysctl.h>
 #include <sys/socket.h>
 #include <net/if_dl.h>
-#include "Pingpp.h"
+//#include "Pingpp.h"
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 #import "AppDelegate.h"
@@ -170,12 +170,12 @@
 }
 -(void)pingPP:(NSString*)returnValue
 {
-    [Pingpp createPayment:returnValue viewController:self appURLScheme:kUrlScheme withCompletion:^(NSString *result, PingppError *error) {
-        NSLog(@"completion block: %@", result);
-        
-        NSLog(@"error==%@",error);
-        [self showAlertMessage:result];
-    }];
+//    [Pingpp createPayment:returnValue viewController:self appURLScheme:kUrlScheme withCompletion:^(NSString *result, PingppError *error) {
+//        NSLog(@"completion block: %@", result);
+//        
+//        NSLog(@"error==%@",error);
+//        [self showAlertMessage:result];
+//    }];
 
 }
 

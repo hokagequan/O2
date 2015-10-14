@@ -15,9 +15,9 @@
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
 #import "APService.h"
-#import "Pingpp.h"
+//#import "Pingpp.h"
 #import "orderViewController.h"
-#import "APOpenAPI.h"
+//#import "APOpenAPI.h"
 #import "O2Trip-Swift.h"
 
 @interface AppDelegate ()
@@ -86,19 +86,19 @@
 }
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
-        // result : success, fail, cancel, invalid
-        NSString *msg;
-        if (error == nil) {
-            NSLog(@"PingppError is nil");
-            msg = result;
-        } else {
-            NSLog(@"PingppError: code=%lu msg=%@", (unsigned long)error.code, [error getMsg]);
-            msg = [NSString stringWithFormat:@"result=%@ PingppError: code=%lu msg=%@", result, (unsigned long)error.code, [error getMsg]];
-        }
-        [(orderViewController*)self.viewController.visibleViewController showAlertMessage:msg];
-    }];
-    return  YES;
+//    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
+//        // result : success, fail, cancel, invalid
+//        NSString *msg;
+//        if (error == nil) {
+//            NSLog(@"PingppError is nil");
+//            msg = result;
+//        } else {
+//            NSLog(@"PingppError: code=%lu msg=%@", (unsigned long)error.code, [error getMsg]);
+//            msg = [NSString stringWithFormat:@"result=%@ PingppError: code=%lu msg=%@", result, (unsigned long)error.code, [error getMsg]];
+//        }
+//        [(orderViewController*)self.viewController.visibleViewController showAlertMessage:msg];
+//    }];
+//    return  YES;
 
     return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self];
   
