@@ -24,6 +24,9 @@
 		1052CCF01BCDEF5300DDDAA5 /* order_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCEB1BCDEF5300DDDAA5 /* order_nor@2x.png */; settings = {ASSET_TAGS = (); }; };
 		1052CCF11BCDEF5300DDDAA5 /* shoppingcart_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCEC1BCDEF5300DDDAA5 /* shoppingcart_nor@2x.png */; settings = {ASSET_TAGS = (); }; };
 		1052CCF21BCDEF5300DDDAA5 /* shoppingcart_notify@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCED1BCDEF5300DDDAA5 /* shoppingcart_notify@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1052CCFC1BCDFAF800DDDAA5 /* libAPOpenSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1052CCF61BCDFAF800DDDAA5 /* libAPOpenSdk.a */; settings = {ASSET_TAGS = (); }; };
+		1052CCFD1BCDFAF800DDDAA5 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1052CCF71BCDFAF800DDDAA5 /* README.md */; settings = {ASSET_TAGS = (); }; };
+		1052CCFE1BCDFAF800DDDAA5 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1052CCF91BCDFAF800DDDAA5 /* libWeChatSDK.a */; settings = {ASSET_TAGS = (); }; };
 		10854E681BC8153800EA4373 /* RefreshAndLoadTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */; settings = {ASSET_TAGS = (); }; };
 		10854E6A1BC952E000EA4373 /* OrderEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10854E691BC952E000EA4373 /* OrderEditViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		108CAEAB1BC5642600902E34 /* PayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108CAEAA1BC5642600902E34 /* PayManager.swift */; settings = {ASSET_TAGS = (); }; };
@@ -440,6 +443,13 @@
 		1052CCEB1BCDEF5300DDDAA5 /* order_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_nor@2x.png"; sourceTree = "<group>"; };
 		1052CCEC1BCDEF5300DDDAA5 /* shoppingcart_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shoppingcart_nor@2x.png"; sourceTree = "<group>"; };
 		1052CCED1BCDEF5300DDDAA5 /* shoppingcart_notify@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shoppingcart_notify@2x.png"; sourceTree = "<group>"; };
+		1052CCF41BCDFAF800DDDAA5 /* APOpenAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APOpenAPI.h; sourceTree = "<group>"; };
+		1052CCF51BCDFAF800DDDAA5 /* APOpenAPIObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APOpenAPIObject.h; sourceTree = "<group>"; };
+		1052CCF61BCDFAF800DDDAA5 /* libAPOpenSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAPOpenSdk.a; sourceTree = "<group>"; };
+		1052CCF71BCDFAF800DDDAA5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1052CCF91BCDFAF800DDDAA5 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		1052CCFA1BCDFAF800DDDAA5 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		1052CCFB1BCDFAF800DDDAA5 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		10854E671BC8153800EA4373 /* RefreshAndLoadTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAndLoadTableView.swift; sourceTree = "<group>"; };
 		10854E691BC952E000EA4373 /* OrderEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderEditViewController.swift; sourceTree = "<group>"; };
 		108CAEAA1BC5642600902E34 /* PayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayManager.swift; sourceTree = "<group>"; };
@@ -993,6 +1003,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1052CCFC1BCDFAF800DDDAA5 /* libAPOpenSdk.a in Frameworks */,
 				2B5DFC921BA1331600916CAD /* libsqlite3.0.dylib in Frameworks */,
 				2B5C21EF1BA9933700E770FC /* libpingpp+alipay.a in Frameworks */,
 				2B9B12A61AFA336100C1B308 /* libz.dylib in Frameworks */,
@@ -1006,6 +1017,7 @@
 				2B9B129E1AFA330E00C1B308 /* CoreGraphics.framework in Frameworks */,
 				2B9B128E1AFA2DB500C1B308 /* CoreTelephony.framework in Frameworks */,
 				2BF208701B57A55900AC5A23 /* CoreFoundation.framework in Frameworks */,
+				1052CCFE1BCDFAF800DDDAA5 /* libWeChatSDK.a in Frameworks */,
 				2BDC8E821B09A213000DDF2C /* libstdc++.6.0.9.dylib in Frameworks */,
 				2B9B12A01AFA331600C1B308 /* CoreLocation.framework in Frameworks */,
 				2BDC8E801B09A1CB000DDF2C /* OpenGLES.framework in Frameworks */,
@@ -1150,9 +1162,32 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		1052CCF31BCDFAF800DDDAA5 /* AliPay */ = {
+			isa = PBXGroup;
+			children = (
+				1052CCF41BCDFAF800DDDAA5 /* APOpenAPI.h */,
+				1052CCF51BCDFAF800DDDAA5 /* APOpenAPIObject.h */,
+				1052CCF61BCDFAF800DDDAA5 /* libAPOpenSdk.a */,
+				1052CCF71BCDFAF800DDDAA5 /* README.md */,
+			);
+			path = AliPay;
+			sourceTree = "<group>";
+		};
+		1052CCF81BCDFAF800DDDAA5 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				1052CCF91BCDFAF800DDDAA5 /* libWeChatSDK.a */,
+				1052CCFA1BCDFAF800DDDAA5 /* WXApi.h */,
+				1052CCFB1BCDFAF800DDDAA5 /* WXApiObject.h */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
 		108CAEAC1BC56B7B00902E34 /* ThirdPartys */ = {
 			isa = PBXGroup;
 			children = (
+				1052CCF31BCDFAF800DDDAA5 /* AliPay */,
+				1052CCF81BCDFAF800DDDAA5 /* WeChat */,
 				10D4CE0A1BC8974000565D59 /* RefreshControl */,
 			);
 			path = ThirdPartys;
@@ -2674,6 +2709,7 @@
 				2B5C21E71BA9933700E770FC /* AFNetworkReachabilityManager.m in Sources */,
 				2BDA67AF1B0DE30C00B78DFD /* destinationModel.m in Sources */,
 				758BF4A01AA42B5A0023A5A6 /* AppDelegate.m in Sources */,
+				1052CCFD1BCDFAF800DDDAA5 /* README.md in Sources */,
 				5A69E20A1B0B2A1300A708E3 /* SetUpTheViewController.m in Sources */,
 				758BF49D1AA42B5A0023A5A6 /* main.m in Sources */,
 				2B5C221B1BA9933700E770FC /* UIImage+GIF.m in Sources */,
@@ -2852,6 +2888,8 @@
 					"$(PROJECT_DIR)/library/Alipay/lib/Channels/Alipay",
 					"$(PROJECT_DIR)/library/Alipay/lib/Channels/Wx",
 					"$(PROJECT_DIR)/library/Alipay/lib",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/WeChat",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -2904,6 +2942,8 @@
 					"$(PROJECT_DIR)/library/Alipay/lib/Channels/Alipay",
 					"$(PROJECT_DIR)/library/Alipay/lib/Channels/Wx",
 					"$(PROJECT_DIR)/library/Alipay/lib",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/WeChat",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";

@@ -74,7 +74,14 @@
 
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return [ShareSDK handleOpenURL:url wxDelegate:self];
+    BOOL success = NO;
+    if ([PayManager sharedInstance].isPaying) {
+        success = [WXApi handleOpenURL:url delegate:[PayManager sharedInstance]];
+    }
+    else {
+        success = [ShareSDK handleOpenURL:url wxDelegate:self];
+    }
+    return success;
 }
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
