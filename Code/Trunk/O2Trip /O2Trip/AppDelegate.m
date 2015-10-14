@@ -17,6 +17,7 @@
 #import "APService.h"
 #import "Pingpp.h"
 #import "orderViewController.h"
+#import "APOpenAPI.h"
 #import "O2Trip-Swift.h"
 
 @interface AppDelegate ()
@@ -76,7 +77,7 @@
 {
     BOOL success = NO;
     if ([PayManager sharedInstance].isPaying) {
-        success = [WXApi handleOpenURL:url delegate:[PayManager sharedInstance]];
+        success = [[PayManager sharedInstance] handleOpenUrl:url];
     }
     else {
         success = [ShareSDK handleOpenURL:url wxDelegate:self];

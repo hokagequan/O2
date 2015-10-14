@@ -18,8 +18,11 @@ enum PayMode: Int {
     optional func didAliPayComplete(manager: PayManager, success: Bool)
 }
 
-class PayManager: NSObject, WXApiDelegate {
+class PayManager: NSObject, WXApiDelegate, APOpenAPIDelegate {
     static let sharedPayManager = PayManager()
+    
+    let wechatHandler = WeChatHandler()
+    let alipayHandler = AliPayHandler()
     
     var isPaying = false
     weak var delegate: PayManagerDelegate?
@@ -28,13 +31,20 @@ class PayManager: NSObject, WXApiDelegate {
         return sharedPayManager
     }
     
+    func handleOpenUrl(url: NSURL) -> Bool {
+        var success = WXApi.handleOpenURL(url, delegate: wechatHandler)
+        success = APOpenAPI.handleOpenURL(url, delegate: alipayHandler)
+        
+        return success
+    }
+    
     func pay(mode: PayMode, params: Dictionary<String, AnyObject>) {
         switch mode {
         case .WeiXin:
             payUsingWeChat(params)
             break
         case .ZhiFuBao:
-            payUsingZhiFuBao()
+            payUsingZhiFuBao(params)
             break
         }
     }
@@ -51,20 +61,30 @@ class PayManager: NSObject, WXApiDelegate {
         WXApi.sendReq(req)
     }
     
-    func payUsingZhiFuBao() {}
-    
+    func payUsingZhiFuBao(params: Dictionary<String, AnyObject>) {}
+}
+
+class WeChatHandler: NSObject, WXApiDelegate {
     // MARK: - WXApiDelegate
     
     func onResp(resp: BaseResp!) {
         if resp is PayResp {
             if resp.errCode == WXSuccess.rawValue {
                 // 成功
-                delegate?.didWeChatPayComplete?(self, success: true)
+                PayManager.sharedInstance().delegate?.didWeChatPayComplete?(PayManager.sharedInstance(), success: true)
             }
             else {
                 // 失败
-                delegate?.didAliPayComplete?(self, success: false)
+                PayManager.sharedInstance().delegate?.didAliPayComplete?(PayManager.sharedInstance(), success: false)
             }
         }
+    }
+}
+
+class AliPayHandler: NSObject, APOpenAPIDelegate {
+    // MARK: AliPayDelegate
+    
+    func onReq(req: APBaseReq!) {
+        
     }
 }

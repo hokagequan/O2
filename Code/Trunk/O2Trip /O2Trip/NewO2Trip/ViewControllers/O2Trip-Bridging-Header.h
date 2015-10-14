@@ -6,6 +6,7 @@
 #import "GiFHUD.h"
 #import "WXApi.h"
 #import "WXApiObject.h"
+#import "APOpenAPI.h"
 #import "RefreshControl.h"
 #import "CustomObjectUtil.h"
 #import "UIImageView+WebCache.h"
