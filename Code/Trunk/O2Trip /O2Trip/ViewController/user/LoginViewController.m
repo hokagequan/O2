@@ -62,9 +62,6 @@
                 [userDefaults setObject:account forKey:@"account"];
                 [userDefaults setObject:password forKey:@"password"];
                 [userDefaults setObject:um.loginUserId forKey:@"loginUserId"];
-                // FIXME: Test
-                [userDefaults setObject:@"b332b764-81fc-4ae9-bf6f-023e654af9d7" forKey:@"loginUserId"];
-                
                 [userDefaults setObject:um.key forKey:@"key"];
                 [userDefaults setObject:um.registerDate forKey:@"registerDate"];
                 [userDefaults setObject:um.nickName forKey:@"nickName"];
