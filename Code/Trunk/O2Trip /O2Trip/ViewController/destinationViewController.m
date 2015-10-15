@@ -22,7 +22,9 @@
 #import "searchresultViewController.h"
 #define ALERTVIEW(STRING) UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:STRING delegate:self cancelButtonTitle:nil  otherButtonTitles:@"确定", nil];\
 [alertView show];
-@interface destinationViewController (private)
+@interface destinationViewController ()<UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 -(void)reachabilityChanged:(NSNotification*)note;
 
@@ -53,25 +55,35 @@
 {
     [super viewDidLoad];
     
-    _textField=[[UITextField alloc]init];
-    _textField.frame=CGRectMake(16, 22, 288,22);
-    _textField.backgroundColor=[UIColor whiteColor];
-    _textField.borderStyle=UITextBorderStyleRoundedRect;
-    _textField.returnKeyType=UIReturnKeyDone;
-    _textField.textAlignment=NSTextAlignmentCenter;
-    _textField.textColor=[UIColor blackColor];
-    UILabel* placeLabel=[[UILabel alloc]initWithFrame:CGRectMake(95, 28, 120, 12)];
-    placeLabel.text=@"探索活动及目的地";
-    placeLabel.textAlignment=NSTextAlignmentCenter;
-    placeLabel.textColor=[UIColor grayColor];
-    placeLabel.font=[UIFont systemFontOfSize:10];
-    [self.view addSubview:_textField];
-     [self.view addSubview:placeLabel];
-    _imageView=[[UIImageView alloc]initWithFrame:CGRectMake(78, 28, 12, 12)];
-    _imageView.image=[UIImage imageNamed:@"discover@3x-15.png"];
-    [self.view addSubview:_imageView];
-    _textField.delegate=self;
-    _textField.tag=1;
+    self.searchBar.backgroundColor = [UIColor clearColor];
+    self.searchBar.barTintColor = [UIColor colorWithRed:240 / 255. green:240 / 255. blue:240 / 255. alpha:1.0];
+    self.searchBar.placeholder = @"探索活动及目的地";
+    
+//    _textField=[[UITextField alloc]init];
+//    _textField.frame=CGRectMake(16, 22, 288,22);
+//    _textField.backgroundColor=[UIColor whiteColor];
+//    _textField.borderStyle=UITextBorderStyleRoundedRect;
+//    _textField.returnKeyType=UIReturnKeyDone;
+//    _textField.textAlignment=NSTextAlignmentCenter;
+//    _textField.textColor=[UIColor blackColor];
+//    UILabel* placeLabel=[[UILabel alloc]initWithFrame:CGRectMake(95, 28, 120, 12)];
+//    placeLabel.text=@"探索活动及目的地";
+//    placeLabel.textAlignment=NSTextAlignmentCenter;
+//    placeLabel.textColor=[UIColor grayColor];
+//    placeLabel.font=[UIFont systemFontOfSize:10];
+//    [self.view addSubview:_textField];
+//    
+//    NSArray *HLC = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-16-[view]-16-|" options:0 metrics:nil views:@{@"view": _textField}];
+//    NSArray *VLC = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-22-[view(==22)]" options:0 metrics:nil views:@{@"view": _textField}];
+//    [self.view addConstraints:HLC];
+//    [self.view addConstraints:VLC];
+//    
+//     [self.view addSubview:placeLabel];
+//    _imageView=[[UIImageView alloc]initWithFrame:CGRectMake(78, 28, 12, 12)];
+//    _imageView.image=[UIImage imageNamed:@"discover@3x-15.png"];
+//    [self.view addSubview:_imageView];
+//    _textField.delegate=self;
+//    _textField.tag=1;
     [GiFHUD setGifWithImageName:@"loading.gif"];
     [GiFHUD show];
     self.deArray=[[NSMutableArray alloc]initWithCapacity:0];
@@ -172,42 +184,44 @@
     button.frame=_bgView.frame;
     [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [_bgView addSubview:button];
-    [self.view addSubview:_bgView];
+    [self.view insertSubview:_bgView belowSubview:self.searchBar];
     UILabel* label1=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
     label1.backgroundColor=[UIColor colorWithRed:229/255.0 green:229/255.0  blue:229/255.0  alpha:1];
     [_bgView addSubview:label1];
-    _textField1=[[UITextField alloc]initWithFrame:CGRectMake(16, 22, 258, 22)];
-    _textField1.backgroundColor=[UIColor whiteColor];
-    _textField1.borderStyle=UITextBorderStyleRoundedRect;
-    _textField1.returnKeyType=UIReturnKeySearch;
-    _textField1.textAlignment=NSTextAlignmentLeft;
-    _textField1.textColor=[UIColor blackColor];
-    [_bgView addSubview:_textField1];
-    _textField1.tag=2;
-    _textField1.delegate=self;
+//    _textField1=[[UITextField alloc]initWithFrame:CGRectMake(16, 22, 258, 22)];
+//    _textField1.backgroundColor=[UIColor whiteColor];
+//    _textField1.borderStyle=UITextBorderStyleRoundedRect;
+//    _textField1.returnKeyType=UIReturnKeySearch;
+//    _textField1.textAlignment=NSTextAlignmentLeft;
+//    _textField1.textColor=[UIColor blackColor];
+//    [_bgView addSubview:_textField1];
+//    _textField1.tag=2;
+//    _textField1.delegate=self;
 //    UIImageView* imageview=[[UIImageView alloc]initWithFrame:CGRectMake(18, 22, 15, 15)];
 //    imageview.image=[UIImage imageNamed:@"discover@3x-15.png"];
 //    [_bgView addSubview:imageview];
-    UIButton* cancelButton=[UIButton buttonWithType:UIButtonTypeCustom];
-    cancelButton.frame=CGRectMake(272, 24, 40, 20);
-    cancelButton.titleLabel.font=[UIFont systemFontOfSize:13];
-    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor colorWithRed:26/255.0 green:188/255.0 blue:156/255.0 alpha:1] forState:UIControlStateNormal];
-    [cancelButton addTarget:self action:@selector(cancelButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [_bgView addSubview:cancelButton];
+//    UIButton* cancelButton=[UIButton buttonWithType:UIButtonTypeCustom];
+//    cancelButton.frame=CGRectMake(272, 24, 40, 20);
+//    cancelButton.titleLabel.font=[UIFont systemFontOfSize:13];
+//    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+//    [cancelButton setTitleColor:[UIColor colorWithRed:26/255.0 green:188/255.0 blue:156/255.0 alpha:1] forState:UIControlStateNormal];
+//    [cancelButton addTarget:self action:@selector(cancelButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [_bgView addSubview:cancelButton];
     
     
 }
 //点击灰色地方返回
 -(void)buttonClick:(UIButton*)button
 {
-    _imageView.alpha=1;
-    _textField.alpha=1;
-    _textField.frame=CGRectMake(16, 22, 288, 22);
-    _textField1.text=@"";
-    _textField.text=@"";
-    [_textField resignFirstResponder];
-    [_bgView removeFromSuperview];
+//    _imageView.alpha=1;
+//    _textField.alpha=1;
+//    _textField.frame=CGRectMake(16, 22, 288, 22);
+//    _textField1.text=@"";
+//    _textField.text=@"";
+//    [_textField resignFirstResponder];
+//    [_bgView removeFromSuperview];
+    
+    [self cancelButtonClick:nil];
 }
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -255,6 +269,8 @@
     _textField.text=@"";
     [_textField resignFirstResponder];
     [_bgView removeFromSuperview];
+    [self.searchBar resignFirstResponder];
+    self.searchBar.showsCancelButton = NO;
 }
 -(void)reachabilityChanged:(NSNotification*)note
 {
@@ -268,6 +284,37 @@
     {
         
     }
+}
+
+#pragma mark - SearchBar
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [self creatshadow];
+    
+    searchBar.showsCancelButton = YES;
+    
+    for (UIView *subView in [(UIView *)[[searchBar subviews] firstObject] subviews]) {
+        if ([subView isKindOfClass:[UIButton class]]) {
+            UIButton *button = (UIButton *)subView;
+            [button setTitle:@"搜索" forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor colorWithRed:26 / 255.0 green:188 / 255.0 blue:156 / 255.0 alpha:1.0] forState:UIControlStateNormal];
+        }
+    }
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [self cancelButtonClick:nil];
+    [self connectInternet];
+}
+
+- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"])
+    {
+        [searchBar resignFirstResponder];
+        [self connectInternet];
+    }
+    
+    return YES;
 }
 
 #pragma mark - CoreLocation 代理
