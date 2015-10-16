@@ -215,9 +215,9 @@ typedef enum {
     if (userId.length!=0) {
         UIStoryboard* SB=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         myDataViewController* loginVc=[SB instantiateViewControllerWithIdentifier:@"myDataViewController"];
-        NSIndexPath* indexpath=[NSIndexPath indexPathForItem:button.tag inSection:1];
-        mylistCell2* cell=(mylistCell2*)[self.tableView  cellForRowAtIndexPath:indexpath];
-        cell.jiantouImage.image=[UIImage imageNamed:@"mine@3x-08.png"];
+//        NSIndexPath* indexpath=[NSIndexPath indexPathForItem:button.tag inSection:1];
+//        mylistCell2* cell=(mylistCell2*)[self.tableView  cellForRowAtIndexPath:indexpath];
+//        cell.jiantouImage.image=[UIImage imageNamed:@"mine@3x-08.png"];
         [self.navigationController pushViewController:loginVc animated:YES];
     }else
     {

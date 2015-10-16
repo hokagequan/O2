@@ -907,9 +907,6 @@
                                 <rect key="frame" x="0.0" y="333" width="320" height="235"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.97951839039999999" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="235" id="nHs-Kq-3O4"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -943,6 +940,7 @@
                             <constraint firstItem="xvg-qy-IEo" firstAttribute="leading" secondItem="2Bq-IP-XKA" secondAttribute="leading" id="VaR-ev-Ibc"/>
                             <constraint firstAttribute="trailing" secondItem="NCn-ad-fUB" secondAttribute="trailing" id="WBg-5P-TdQ"/>
                             <constraint firstItem="Oh7-EK-i0H" firstAttribute="leading" secondItem="2Bq-IP-XKA" secondAttribute="leading" id="XfK-bt-3BX"/>
+                            <constraint firstItem="SpY-8g-ZM9" firstAttribute="top" secondItem="NCn-ad-fUB" secondAttribute="bottom" id="YHi-jR-LgZ"/>
                             <constraint firstItem="OM0-cn-lDH" firstAttribute="top" secondItem="hrh-dG-RU3" secondAttribute="top" id="aDV-sO-Ihn"/>
                             <constraint firstItem="OM0-cn-lDH" firstAttribute="centerX" secondItem="2Bq-IP-XKA" secondAttribute="centerX" id="byp-si-Vg6"/>
                             <constraint firstItem="NfF-D3-JFk" firstAttribute="leading" secondItem="2Bq-IP-XKA" secondAttribute="leading" constant="16" id="cM7-b4-ujY"/>
@@ -6501,7 +6499,7 @@
         <image name="contact_wechat.png" width="12" height="12"/>
         <image name="decrease.png" width="12" height="12"/>
         <image name="delete_disable.png" width="15" height="15"/>
-        <image name="delete_nor" width="1242" height="2208"/>
+        <image name="delete_nor" width="30" height="30"/>
         <image name="details@3x-05.png" width="60" height="60"/>
         <image name="details@3x-06.png" width="60" height="60"/>
         <image name="discover@3x-01.png" width="52" height="52"/>
