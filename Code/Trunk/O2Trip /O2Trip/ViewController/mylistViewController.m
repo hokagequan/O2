@@ -271,9 +271,9 @@ typedef enum {
     _cell.jiantouImage2.image=[UIImage imageNamed:@"mine@3x-06.png"];
     UIStoryboard* SB=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     collectionViewController* detailVC=[SB instantiateViewControllerWithIdentifier:@"collectionViewController"];
-    NSIndexPath* indexpath=[NSIndexPath indexPathForItem:button.tag inSection:1];
-    mylistCell2* cell=(mylistCell2*)[self.tableView  cellForRowAtIndexPath:indexpath];
-    cell.jiantouImage2.image=[UIImage imageNamed:@"mine@3x-08.png"];
+//    NSIndexPath* indexpath=[NSIndexPath indexPathForItem:button.tag inSection:1];
+//    mylistCell2* cell=(mylistCell2*)[self.tableView  cellForRowAtIndexPath:indexpath];
+//    cell.jiantouImage2.image=[UIImage imageNamed:@"mine@3x-08.png"];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 -(void)loginButtonClick:(UIButton*)button
