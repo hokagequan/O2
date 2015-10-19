@@ -8,13 +8,13 @@
 
 import Foundation
 
-class HttpReqManager {
+class HttpReqManager: NSObject {
     
     static let httpUrl = "http://test.o2lx.com:9090/trip/ws/"
     static let imageUrl = "http://test.o2lx.com:9090/trip"
     
     // 获取购物车列表信息
-    class func httpRequestShoppingCart(userID: String, start: String, count: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestShoppingCart(userID: String, start: String, count: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         params["startPage"] = start
@@ -27,7 +27,7 @@ class HttpReqManager {
     }
     
     // 修改购物车
-    class func httpRequestEditShoppingCart(userID: String, goodID: String, activityID: String, date: String, time: String, adult: Int, young: Int, child: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestEditShoppingCart(userID: String, goodID: String, activityID: String, date: String, time: String, adult: Int, young: Int, child: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         params["goodsId"] = goodID
@@ -45,7 +45,7 @@ class HttpReqManager {
     }
     
     // 删除购物车
-    class func httpRequestDeleteShoppingCart(userID: String, goodIDs: Array<String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestDeleteShoppingCart(userID: String, goodIDs: Array<String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         params["goodsId"] = (goodIDs as NSArray).componentsJoinedByString(",")
@@ -57,7 +57,7 @@ class HttpReqManager {
     }
     
     // 获取订单列表
-    class func httpRequestOrders(userID: String, start: String, count: String, stat: OrderStat, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestOrders(userID: String, start: String, count: String, stat: OrderStat, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         params["status"] = stat.key()
@@ -71,7 +71,7 @@ class HttpReqManager {
     }
     
     // 取消订单
-    class func httpRequestCancelOrder(userID: String, orderID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestCancelOrder(userID: String, orderID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         params["orderId"] = orderID
@@ -83,7 +83,7 @@ class HttpReqManager {
     }
     
     // 确认订单
-    class func httpRequestConfirmOrder(userID: String, orderID: String, itemID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestConfirmOrder(userID: String, orderID: String, itemID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         params["orderId"] = orderID
@@ -96,7 +96,7 @@ class HttpReqManager {
     }
     
     // 获取联系人列表
-    class func httpRequestContacts(userID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestContacts(userID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         self.httpRequest("rest_contact/getContactList", params: params, completion: { (response) -> Void in
@@ -107,7 +107,7 @@ class HttpReqManager {
     }
     
     // 新增联系人
-    class func httpRequestAddContact(userID: String, contact:ContactItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestAddContact(userID: String, contact:ContactItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         params["firstName"] = contact.lastName
@@ -124,7 +124,7 @@ class HttpReqManager {
     }
     
     // 编辑联系人
-    class func httpRequestEditContact(userID: String, contact:ContactItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    class func httpRequestEditContact(userID: String, contact:ContactItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
         params["contactId"] = contact.identifier
@@ -135,6 +135,17 @@ class HttpReqManager {
         params["weChat"] = contact.weixin
         params["email"] = contact.email
         self.httpRequest("rest_contact/editContactItem", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
+    // 获取验证码
+    class func httpRequestGetVerifyCode(mobile: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["mobile"] = mobile
+        self.httpRequest("rest_login/getVerifyCode", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in
                 failure?(error)
@@ -153,7 +164,7 @@ class HttpReqManager {
     
     // MARK: - Private
     
-    private class func httpRequest(method: String, params: Dictionary<String, String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    private class func httpRequest(method: String, params: Dictionary<String, String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         do {
             let jsonData = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions())
             let jsonParams = String(data: jsonData, encoding: NSUTF8StringEncoding)
@@ -174,7 +185,12 @@ class HttpReqManager {
             })
         }
         catch let error {
-            failure?(error)
+            if error is NSError {
+                failure?(error as? NSError)
+            }
+            else {
+                failure?(nil)
+            }
         }
     }
 }

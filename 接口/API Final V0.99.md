@@ -43,6 +43,17 @@ Get参数形式:要进行URL编码，再进行GET提交 例子:
 
 ---
 
+---
+二. 接口修改，经过测试，文档和接口有修改的地方如下：     
+6.在点赞数最多的活动中按类型搜索      
+6.1文档增加 "accurateTag":””,程序返回结果原来就是正确的。   
+7. 点击活动进入详情页     
+7.1 更正文档错误	           	actiDesc:"",
+           	actiId:”” 到actiDay 到外面，原程序返回无误。   
+8. 加载评论    
+8.1 "userImage" : “", 统一修改为："userImg":""   
+
+---
 
 ---
 
@@ -258,18 +269,12 @@ GET
 ####返回参数
 |参数 |name|value	|
 |----|----|------|
-|活动|acti|
-|活动Id|actiId|
-|活动标题|actiTitle|
-|体力强度|physicalStrength|
-|活动类型|actiType|
-|活动距离|tripDistance|
-|活动天数|days|
-|评论数量|discussNum|
-|原价|origPrice|
-|特价|speciaNum|
-|点赞数|praiseNum|
-|活动图片|actiImage|
+|活动类型ID| typeId |
+|活动图片|typeImg |
+|活动名称| typeName |
+|国家ID| countryId |
+|国家图片| countryImg |
+|国家名称| countryName |
 
 #### JSON
 	{
@@ -297,7 +302,6 @@ GET
     		]	
        }
      }
-
 ---
 
 	5.根据国家ID搜索活动
@@ -384,6 +388,7 @@ GET
 |参数 |name|value	|
 |----|----|------|
 |活动|acti|
+|活动标签| accurateTag |  
 |活动Id|actiId|
 |活动标题|actiTitle|
 |体力强度|physicalStrength|
@@ -404,6 +409,7 @@ GET
         "acti": 
         [
             {
+                "accurateTag":"",
                 "actiId": "001",
                 "actiImage": [],
                 "actiTitle":"",
@@ -425,7 +431,8 @@ ___
 
 	7. 点击活动进入详情页
 
-/trip/ws/rest_acti/getActiInfo
+/trip/ws/rest_acti/getActiInfo?
+paramjson={"actiId":"4e04faf8-f6eb-424e-a6cc-181a6d98b268","userId":"e79b8efd-c834-4058-a9cf-377c92c2f381"}
 
 ---
 
@@ -523,9 +530,9 @@ ___
 			            		secnicImg:["",""]
 			            	}
 		            		...
-		            		actiDesc:"",
-		            		actiId:""
-		            	],
+		            	],	
+		            	actiDesc:"",
+		            	actiId:""
 		            	scenic:
 		            	[
 		            		{
@@ -672,7 +679,7 @@ ___
         {
             "userId" : "001",
             “userName” : "QHdf8",
-            "userImage" : "",
+            "userImg" : "",
             "disContent" : "",
             "dissDate" : "",
             "level":"",
@@ -744,7 +751,7 @@ GET
 
 	{
 		"err_code" : "200",
-		"msg" : "add success",
+		"msg" : "收藏成功",
 		"data": 
 		 {
 		   "flag" : "true" 

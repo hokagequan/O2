@@ -94,7 +94,7 @@ class OrderItem: Hashable {
     var totalPrice: Int = 0
     var stat: OrderStat = .All
     
-    func cancel(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    func cancel(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         HttpReqManager.httpRequestCancelOrder(userID as! String, orderID: identifier!, completion: { (response) -> Void in
             let success = (response["err_code"] as! String == "200")
@@ -109,7 +109,7 @@ class OrderItem: Hashable {
         }
     }
     
-    func confirm(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    func confirm(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         HttpReqManager.httpRequestConfirmOrder(userID as! String, orderID: identifier!, itemID: activityID!, completion: { (response) -> Void in
             let success = (response["err_code"] as! String == "200")
@@ -125,7 +125,7 @@ class OrderItem: Hashable {
         }
     }
     
-    func edit(adultCount: Int, youngCount: Int, childCount: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((ErrorType) -> Void)?) {
+    func edit(adultCount: Int, youngCount: Int, childCount: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
 //        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         // Test
         let userID = "b8a2597b-b6db-47ee-8175-33356558b726"

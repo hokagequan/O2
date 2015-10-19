@@ -10,6 +10,8 @@
 #import "RegisterViewController.h"
 #import "UserViewModel.h"
 #import "changeViewController.h"
+#import "O2Trip-Swift.h"
+
 #define ALERTVIEW(STRING) UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:STRING delegate:self cancelButtonTitle:nil  otherButtonTitles:@"sure", nil];\
     [alertView show];
 
@@ -17,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passWordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *verifyTextField;
+@property (weak, nonatomic) IBOutlet UIButton *verifyButton;
 
 @end
 
@@ -30,7 +34,7 @@
 }
 - (IBAction)registButtonClick:(id)sender {
 
-    
+    // TODO:
     NSString *email = self.emailTextField.text;
     NSString* password=self.passWordTextField.text;
 
@@ -82,6 +86,22 @@
 
      }
 
+- (IBAction)clickVerify:(id)sender {
+    // TODO:
+    if (![self isMobileNumber:self.emailTextField.text]) {
+        UIAlertView * alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"请输入正确的手机号" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alertView show];
+        
+        return;
+    }
+    
+    [HttpReqManager httpRequestGetVerifyCode:self.emailTextField.text completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
+        [self startCountingDownGetVerifyCode];
+    } failure:^(NSError * _Nonnull error) {
+        UIAlertView * alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"获取验证码失败，请重试" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }];
+}
 
 - (BOOL)isMobileNumber:(NSString *)mobileNum
 {
@@ -93,6 +113,8 @@
         return NO;
     }
 }
+
+- (void)startCountingDownGetVerifyCode {}
 
 - (IBAction)backButton:(id)sender
 {
