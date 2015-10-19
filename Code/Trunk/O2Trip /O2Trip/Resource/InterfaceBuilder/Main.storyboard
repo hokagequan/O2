@@ -290,7 +290,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBg" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-ww-D5D">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-ww-D5D">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                             </imageView>
@@ -717,7 +717,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GwJ-0r-C19" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1049" y="615"/>
+            <point key="canvasLocation" x="-977" y="659"/>
         </scene>
         <!--My Data View Controller-->
         <scene sceneID="XJs-wM-jPv">
@@ -5786,7 +5786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awV-wY-US5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-684" y="1237"/>
+            <point key="canvasLocation" x="-646" y="1238"/>
         </scene>
         <!--Reservation View Controller-->
         <scene sceneID="wO5-Os-JeR">
@@ -7003,8 +7003,8 @@
         <image name="shopping cart_empty.png" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6yf-me-hNE"/>
         <segue reference="gRI-iX-hP5"/>
         <segue reference="rB5-Wa-plr"/>
+        <segue reference="qyw-SV-Wzi"/>
     </inferredMetricsTieBreakers>
 </document>
