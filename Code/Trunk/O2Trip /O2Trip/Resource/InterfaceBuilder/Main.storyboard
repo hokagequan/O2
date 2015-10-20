@@ -3498,7 +3498,7 @@
         <!--新建联系人-->
         <scene sceneID="MMm-dj-VOq">
             <objects>
-                <viewController id="Lez-BD-X6T" customClass="NewContactViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Lez-BD-X6T" customClass="NewContactViewController" customModule="O2Trip" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LVr-e8-x5a"/>
                         <viewControllerLayoutGuide type="bottom" id="sMc-1d-wMb"/>
@@ -3507,17 +3507,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="34" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gsq-kE-FBY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="34" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gsq-kE-FBY">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactEditCell" id="Y35-sx-QtC" customClass="ContactEditCell" customModule="O2Trip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y35-sx-QtC" id="21a-oj-JZ7">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKW-Fb-CWT" userLabel="Title">
@@ -3540,15 +3540,26 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0a-Rk-0hu">
+                                                    <rect key="frame" x="56" y="33" width="264" height="1"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="N4p-ke-Ycu"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="MEq-Ts-wbt" firstAttribute="centerY" secondItem="21a-oj-JZ7" secondAttribute="centerY" id="8s5-2r-MOY"/>
                                                 <constraint firstItem="MEq-Ts-wbt" firstAttribute="leading" secondItem="gKW-Fb-CWT" secondAttribute="trailing" id="K1w-2I-scB"/>
+                                                <constraint firstItem="Z0a-Rk-0hu" firstAttribute="leading" secondItem="21a-oj-JZ7" secondAttribute="leading" constant="56" id="N6B-qm-gn8"/>
                                                 <constraint firstItem="MEq-Ts-wbt" firstAttribute="width" secondItem="gKW-Fb-CWT" secondAttribute="width" multiplier="3:1" id="Sbo-jQ-GV7"/>
                                                 <constraint firstItem="MEq-Ts-wbt" firstAttribute="leading" secondItem="gKW-Fb-CWT" secondAttribute="trailing" id="aNf-C8-bQR"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z0a-Rk-0hu" secondAttribute="trailing" id="i0x-oe-LaX"/>
                                                 <constraint firstItem="gKW-Fb-CWT" firstAttribute="leading" secondItem="21a-oj-JZ7" secondAttribute="leading" constant="15" id="mpv-0i-FPK"/>
                                                 <constraint firstItem="gKW-Fb-CWT" firstAttribute="centerY" secondItem="21a-oj-JZ7" secondAttribute="centerY" id="pfh-Rp-fLL"/>
+                                                <constraint firstAttribute="bottom" secondItem="Z0a-Rk-0hu" secondAttribute="bottom" id="sgl-nL-xDL"/>
                                                 <constraint firstAttribute="trailing" secondItem="MEq-Ts-wbt" secondAttribute="trailing" constant="15" id="yGo-3H-7Lo"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -3586,7 +3597,7 @@
                             <constraint firstItem="sMc-1d-wMb" firstAttribute="top" secondItem="hy7-LP-eJk" secondAttribute="bottom" constant="40" id="9Rc-m3-7wW"/>
                             <constraint firstItem="hy7-LP-eJk" firstAttribute="leading" secondItem="A9X-lJ-y1n" secondAttribute="leading" constant="15" id="9Yg-tE-s9l"/>
                             <constraint firstItem="Gsq-kE-FBY" firstAttribute="leading" secondItem="A9X-lJ-y1n" secondAttribute="leading" id="Sm2-qm-Ncl"/>
-                            <constraint firstItem="Gsq-kE-FBY" firstAttribute="top" secondItem="LVr-e8-x5a" secondAttribute="bottom" id="jOY-aK-ejv"/>
+                            <constraint firstItem="Gsq-kE-FBY" firstAttribute="top" secondItem="LVr-e8-x5a" secondAttribute="bottom" constant="13" id="jOY-aK-ejv"/>
                             <constraint firstItem="sMc-1d-wMb" firstAttribute="top" secondItem="Gsq-kE-FBY" secondAttribute="bottom" id="zBa-46-dhd"/>
                         </constraints>
                     </view>
