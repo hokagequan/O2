@@ -1391,9 +1391,6 @@ ___
 	     	"flag" :"true"
 	    }
 	}
-
-
-
 	
 ————
 
@@ -1512,7 +1509,7 @@ ___
 ___
 
 	27 设置默认联系人
-/trip/ws/rest_shopping/setDefaultContact?paramjson={"userId":"","contactId":""}
+/trip/ws/rest_shopping/setDefaultContact?paramjson={"userId":"","contactId":"32"}
 
 ___
 
@@ -1608,7 +1605,7 @@ ___
 |出行日期|date|
 |出行时间|time|
 |活动图片|actiImage|
-|订单状态|state||
+|订单状态|state|
 
 	{
 		"err_code":"200",
@@ -1676,8 +1673,6 @@ ___
 		}
 	}
 
-
-
 ___
 
 	31 对未付款订单进行支付
@@ -1694,7 +1689,7 @@ ___
 
 |参数|name|
 |----|----|
-|
+|  
 
 	{
 		"err_code":"200",
@@ -1941,7 +1936,6 @@ GET
 | flag | true/false | 退出成功或者失败|
 
 
-
 ####JSON代码
 	{
 		"err_code" :" 200" ,
@@ -1951,8 +1945,6 @@ GET
 			"flag":"true"
 		}
 	}
-
-
-
-
-
+	
+	
+	
