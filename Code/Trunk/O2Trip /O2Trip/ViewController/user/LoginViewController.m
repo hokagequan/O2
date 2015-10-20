@@ -57,7 +57,7 @@
             [SVProgressHUD dismiss];
             //成功登录后
             UserModel* um=returnValue;
-            if (um&&[um.status isEqualToString:@"1"]) {
+            if (um&&[um.status isEqualToString:@"200"]) {
                 NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                 [userDefaults setObject:account forKey:@"account"];
                 [userDefaults setObject:password forKey:@"password"];

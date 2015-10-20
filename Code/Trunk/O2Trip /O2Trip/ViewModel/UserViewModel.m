@@ -202,18 +202,18 @@
 {
     //对从后台获取的数据进行处理，然后传给ViewController层进行显示
     //  NSMutableArray *modelArray = [[NSMutableArray alloc] initWithCapacity:statuses.count];
-    
+    NSDictionary *dict = returnValue[@"data"];
     UserModel *userModel = [[UserModel alloc] init];
-    userModel.account= returnValue[@"user"][@"account"];
-    userModel.loginUserId= returnValue[@"user"][@"loginUserId"];
-    userModel.status=returnValue[@"status"];
-    userModel.userName=returnValue[@"user"][@"userName"];
-    userModel.key= returnValue[@"user"][@"session_id_key"];
-    userModel.registerDate=returnValue[@"user"][@"registerDate"];
-    userModel.nickName=returnValue[@"user"][@"nickName"];
-    userModel.phone=returnValue[@"user"][@"phone"];
-    userModel.sex=returnValue[@"user"][@"sex"];
-    userModel.image=returnValue[@"user"][@"image"];
+    userModel.account= dict[@"user"][@"account"];
+    userModel.loginUserId= dict[@"user"][@"loginUserId"];
+    userModel.status=returnValue[@"err_code"];
+    userModel.userName=dict[@"user"][@"userName"];
+    userModel.key= dict[@"user"][@"session_id_key"];
+    userModel.registerDate=dict[@"user"][@"registerDate"];
+    userModel.nickName=dict[@"user"][@"nickName"];
+    userModel.phone=dict[@"user"][@"phone"];
+    userModel.sex=dict[@"user"][@"sex"];
+    userModel.image=dict[@"user"][@"image"];
     //DDLog(@"%@", returnValue[@"user"][@"loginUserId"]);
     self.returnBlock(userModel);
 }

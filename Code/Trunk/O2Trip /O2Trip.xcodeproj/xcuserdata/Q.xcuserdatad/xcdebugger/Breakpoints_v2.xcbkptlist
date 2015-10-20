@@ -19,22 +19,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "O2Trip/ViewController/user/RegisterViewController.m"
-            timestampString = "467018909.931047"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-clickVerify:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
             timestampString = "467018960.464408"
             startingColumnNumber = "9223372036854775807"
@@ -42,54 +26,6 @@
             startingLineNumber = "148"
             endingLineNumber = "148"
             landmarkName = "httpRequestGetVerifyCode(_:completion:failure:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static O2Trip.HttpReqManager.httpRequestGetVerifyCode (O2Trip.HttpReqManager.Type)(Swift.String, completion : Swift.Optional&lt;(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; ()&gt;, failure : Swift.Optional&lt;(Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "O2Trip"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip%20/O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
-                  timestampString = "467020926.984118"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "325">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static O2Trip.HttpReqManager.(httpRequestGetVerifyCode (O2Trip.HttpReqManager.Type) -&gt; (Swift.String, completion : Swift.Optional&lt;(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; ()&gt;, failure : Swift.Optional&lt;(Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
-                  moduleName = "O2Trip"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip%20/O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
-                  timestampString = "467020926.984327"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
-            timestampString = "467019014.114163"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "httpRequest(_:params:completion:failure:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

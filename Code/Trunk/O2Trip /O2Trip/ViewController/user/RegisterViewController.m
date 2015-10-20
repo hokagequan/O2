@@ -58,7 +58,7 @@
              if ([returnValue isKindOfClass:[UserModel class]]) {
                  UserModel *um=returnValue;
                  //DDLog(@"%@",um.account);
-                 if([um.status isEqualToString:@"1"])
+                 if([um.status isEqualToString:@"200"])
                  {
                      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                      [userDefaults setObject:email forKey:@"account"];
