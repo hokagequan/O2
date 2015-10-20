@@ -20,6 +20,9 @@
 #import "GiFHUD.h"
 #import "Reachability.h"
 #import "searchresultViewController.h"
+
+#import "O2Trip-Swift.h"
+
 #define ALERTVIEW(STRING) UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:STRING delegate:self cancelButtonTitle:nil  otherButtonTitles:@"确定", nil];\
 [alertView show];
 @interface destinationViewController ()<UISearchBarDelegate>
@@ -105,26 +108,43 @@
     [self.locationManager startUpdatingLocation];
     self.geoCoder = [[CLGeocoder alloc] init];
     self.array=[[NSMutableArray alloc]initWithObjects:@"活动类型",@"目的地",nil];
-    UserViewModel* viewModel=[[UserViewModel alloc]init];
-    [viewModel getActivity];
-    [viewModel setBlockWithReturnBlock:^(id returnValue) {
-        self.bigarray=returnValue;
+    
+    [HttpReqManager httpRequestGetActivity:@"0" latitude:@"0" completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
+        self.bigarray = [self handleResponse:response];
         [GiFHUD dismiss];
-       [self.bigarray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-           if ([obj isKindOfClass:[activityModel class]]) {
-               [self.acArray addObject:obj];
-           }else
-           {
-               [self.deArray addObject:obj];
-           }
-       }];
+        [self.bigarray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if ([obj isKindOfClass:[activityModel class]]) {
+                [self.acArray addObject:obj];
+            }else
+            {
+                [self.deArray addObject:obj];
+            }
+        }];
         [self.tableView reloadData];
-        
-    } WithErrorBlock:^(id errorCode) {
-        
-    } WithFailureBlock:^{
+    } failure:^(NSError * _Nullable error) {
         
     }];
+    
+//    UserViewModel* viewModel=[[UserViewModel alloc]init];
+//    [viewModel getActivity];
+//    [viewModel setBlockWithReturnBlock:^(id returnValue) {
+//        self.bigarray=returnValue;
+//        [GiFHUD dismiss];
+//       [self.bigarray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//           if ([obj isKindOfClass:[activityModel class]]) {
+//               [self.acArray addObject:obj];
+//           }else
+//           {
+//               [self.deArray addObject:obj];
+//           }
+//       }];
+//        [self.tableView reloadData];
+//        
+//    } WithErrorBlock:^(id errorCode) {
+//        
+//    } WithFailureBlock:^{
+//        
+//    }];
   
        self.tableView.dataSource=self;
        self.tableView.delegate=self;
@@ -160,6 +180,25 @@
         
     }];
 
+}
+
+- (NSMutableArray *)handleResponse:(NSDictionary *)dict {
+    NSArray* array=[[NSArray alloc]init];
+    array=dict[@"data"][@"country"];
+    NSMutableArray* array1=[[NSMutableArray alloc]initWithCapacity:0];
+    for (NSDictionary* dic in array) {
+        activityModel* actiModel=[[activityModel alloc]initWithDictonary:dic];
+        [array1 addObject:actiModel];
+        
+    }
+    NSArray* array2=[[NSArray alloc]init];
+    array2=dict[@"data"][@"type"];
+    for (NSDictionary* dic in array2) {
+        smallDestinModel* smallModel=[[smallDestinModel alloc]initWithDictionary:dic];
+        [array1 addObject:smallModel];
+    }
+    
+    return array1;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
