@@ -52,6 +52,7 @@
 		10A689D71BC16DC400768482 /* pay_wechat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689D51BC16DC400768482 /* pay_wechat@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689D81BC16DC400768482 /* pay_zhifubao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689D61BC16DC400768482 /* pay_zhifubao@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689DA1BC1714200768482 /* ContactNoOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A689D91BC1714200768482 /* ContactNoOneCell.swift */; settings = {ASSET_TAGS = (); }; };
+		10C6B2331BD63EF300D38847 /* me_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B2321BD63EF300D38847 /* me_empty@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D4CE141BC8974000565D59 /* RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE0C1BC8974000565D59 /* RefreshControl.m */; settings = {ASSET_TAGS = (); }; };
 		10D4CE151BC8974000565D59 /* pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D4CE0E1BC8974000565D59 /* pull_refresh@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D4CE161BC8974000565D59 /* RefreshBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE101BC8974000565D59 /* RefreshBottomView.m */; settings = {ASSET_TAGS = (); }; };
@@ -493,6 +494,7 @@
 		10A689D51BC16DC400768482 /* pay_wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pay_wechat@2x.png"; sourceTree = "<group>"; };
 		10A689D61BC16DC400768482 /* pay_zhifubao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pay_zhifubao@2x.png"; sourceTree = "<group>"; };
 		10A689D91BC1714200768482 /* ContactNoOneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactNoOneCell.swift; sourceTree = "<group>"; };
+		10C6B2321BD63EF300D38847 /* me_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_empty@2x.png"; sourceTree = "<group>"; };
 		10D4CE0B1BC8974000565D59 /* RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshControl.h; sourceTree = "<group>"; };
 		10D4CE0C1BC8974000565D59 /* RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshControl.m; sourceTree = "<group>"; };
 		10D4CE0E1BC8974000565D59 /* pull_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull_refresh@2x.png"; sourceTree = "<group>"; };
@@ -1211,6 +1213,7 @@
 		10A689C91BC160D500768482 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				10C6B2321BD63EF300D38847 /* me_empty@2x.png */,
 				1052CD161BCE2E5D00DDDAA5 /* contact_check@3x.png */,
 				1052CD171BCE2E5D00DDDAA5 /* contact_email@3x.png */,
 				1052CD181BCE2E5D00DDDAA5 /* contact_name@3x.png */,
@@ -2484,6 +2487,7 @@
 				10A689D81BC16DC400768482 /* pay_zhifubao@2x.png in Resources */,
 				10D4CE261BC9F56800565D59 /* decrease@2x.png in Resources */,
 				2B5C1F641BA9530E00E770FC /* payment process@3x-09.png in Resources */,
+				10C6B2331BD63EF300D38847 /* me_empty@2x.png in Resources */,
 				1052CD101BCE2E4400DDDAA5 /* check_nor@3x.png in Resources */,
 				2B5C1FC31BA9582200E770FC /* CalendarRowBottom.png in Resources */,
 				10A689D71BC16DC400768482 /* pay_wechat@2x.png in Resources */,

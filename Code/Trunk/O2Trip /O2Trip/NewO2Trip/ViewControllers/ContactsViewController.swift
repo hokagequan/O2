@@ -11,6 +11,7 @@ import UIKit
 class ContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     var contactItems = [ContactItem]()
     
@@ -32,6 +33,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
             GiFHUD.dismiss()
             
             self.handleInfo(response)
+            self.layoutViews()
             self.tableView.reloadData()
             }) { (error) -> Void in
                 GiFHUD.dismiss()
@@ -53,6 +55,16 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
             contactItem.loadInfo(item)
             
             contactItems.append(contactItem)
+        }
+    }
+    
+    func layoutViews() {
+        let emptyAlpha: CGFloat = contactItems.count == 0 ? 1.0 : 0.0
+        let detailAlpha: CGFloat = emptyAlpha == 0.0 ? 1.0 : 0.0
+        
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.emptyView.alpha = emptyAlpha
+            self.tableView.alpha = detailAlpha
         }
     }
     
