@@ -76,7 +76,7 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.handleInfo(response)
             var indexPaths = [NSIndexPath]()
             for i in self.orderItems.count..<(self.orderItems.count + 10) {
-                indexPaths.append(NSIndexPath(forRow: i, inSection: 0))
+                indexPaths.append(NSIndexPath(forRow: i - 1, inSection: 0))
             }
             
             self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
@@ -104,7 +104,8 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
 //        GiFHUD.setGifWithImageName("loading.gif")
 //        GiFHUD.show()
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        var userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        userID = "b332b764-81fc-4ae9-bf6f-023e654af9d7"
         HttpReqManager.httpRequestOrders(userID as! String, start: "0", count: "10", stat: filter, completion: { (response) -> Void in
 //            GiFHUD.dismiss()
             self.tableView.refreshControl?.endRefreshing()

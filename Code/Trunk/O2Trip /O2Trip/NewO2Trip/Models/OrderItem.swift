@@ -37,6 +37,17 @@ enum OrderStat: Int {
         }
     }
     
+    init(code: String) {
+        switch code {
+        case "0":
+            self = .Unpay
+        case "1":
+            self = .Payed
+        default:
+            self = .All
+        }
+    }
+    
     func key() -> String {
         switch self {
         case .All:
@@ -202,7 +213,7 @@ class OrderItem: Hashable {
             stat = OrderStat.All
         }
         else {
-            stat = OrderStat(key: orderStat!)
+            stat = OrderStat(code: orderStat!)
         }
         var floatValue = details["adultPrice"] as! String
         var value = Float(floatValue)
