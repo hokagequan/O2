@@ -137,11 +137,7 @@ class OrderItem: Hashable {
     }
     
     func edit(adultCount: Int, youngCount: Int, childCount: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
-//        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        // Test
-        let userID = "b8a2597b-b6db-47ee-8175-33356558b726"
-        self.identifier = "1"
-        self.activityID = "e04e3016-7824-4858-bc3c-60f7bd5da9e6"
+        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
         
         HttpReqManager.httpRequestEditShoppingCart(userID as! String, goodID: self.identifier!, activityID: self.activityID!, date: self.tripDate!, time: self.tripTime!, adult: adultCount, young: youngCount, child: childCount, completion: { (response) -> Void in
             if response["err_code"] as! String == "200" {

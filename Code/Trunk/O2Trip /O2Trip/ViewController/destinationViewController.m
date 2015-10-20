@@ -55,9 +55,11 @@
 {
     [super viewDidLoad];
     
-    self.searchBar.backgroundColor = [UIColor clearColor];
-    self.searchBar.barTintColor = [UIColor colorWithRed:240 / 255. green:240 / 255. blue:240 / 255. alpha:1.0];
-    self.searchBar.placeholder = @"探索活动及目的地";
+    self.searchBar.layer.borderColor = [UIColor colorWithRed:240 / 255. green:240 / 255. blue:240 / 255. alpha:1.0].CGColor;
+    self.searchBar.layer.borderWidth = 1;
+    self.searchBar.placeholder = @"探索活动、目的地";
+    UITextField *txfSearchField = [_searchBar valueForKey:@"_searchField"];
+    txfSearchField.backgroundColor = [UIColor whiteColor];
     
 //    _textField=[[UITextField alloc]init];
 //    _textField.frame=CGRectMake(16, 22, 288,22);
