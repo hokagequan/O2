@@ -246,10 +246,10 @@
 //    self.textField.text=@"";
 //    [self.textField resignFirstResponder];
 //    [_bgView removeFromSuperview];
-    if (_textField1.text.length!=0) {
+    if (self.searchBar.text.length!=0) {
             UIStoryboard* SB=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
             searchresultViewController* searchVC=[SB instantiateViewControllerWithIdentifier:@"searchResultVC"];
-             searchVC.textFieldText=_textField1.text;
+             searchVC.textFieldText=self.searchBar.text;
             [self.navigationController pushViewController:searchVC animated:YES];
 
     }else
@@ -305,7 +305,6 @@
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    [self cancelButtonClick:nil];
     [self connectInternet];
 }
 
@@ -317,6 +316,10 @@
     }
     
     return YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self cancelButtonClick:nil];
 }
 
 #pragma mark - CoreLocation 代理
