@@ -28,7 +28,8 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+//        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        let userID = "b332b764-81fc-4ae9-bf6f-023e654af9d7"
         HttpReqManager.httpRequestContacts(userID as! String, completion: { (response) -> Void in
             GiFHUD.dismiss()
             
@@ -48,7 +49,8 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func handleInfo(info: Dictionary<String, AnyObject>) {
-        let items = info["data"] as! Array<Dictionary<String, String>>
+        let allItems = info["data"] as! Dictionary<String, AnyObject>
+        let items = allItems["contact"] as! Array<Dictionary<String, AnyObject>>
         
         for item in items {
             let contactItem = ContactItem()
@@ -83,6 +85,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.phoneLabel.text = item.phone
         cell.weixinLabel.text = item.weixin
         cell.emailLabel.text = item.email
+        cell.checkMarkImageView.hidden = !item.isDefalut
         
         return cell
     }

@@ -99,7 +99,7 @@ class HttpReqManager: NSObject {
     class func httpRequestContacts(userID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["userId"] = userID
-        self.httpRequest("rest_contact/getContactList", params: params, completion: { (response) -> Void in
+        self.httpRequest("rest_shopping/getContactList", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in
                 failure?(error)
