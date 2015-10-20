@@ -15,6 +15,7 @@
 
 - (IBAction)backButton:(id)sender;
 - (IBAction)registButtonClick:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *registLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *whiteBackgroundView;
 
 @end

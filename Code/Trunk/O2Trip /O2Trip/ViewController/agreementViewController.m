@@ -14,6 +14,12 @@
     [super viewDidLoad];
     
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.textView setContentOffset:CGPointMake(0, 0)];
+}
 //表的代理
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

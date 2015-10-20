@@ -23,6 +23,7 @@
 #import "deModel.h"
 #import "timeViewModel.h"
 #import "maxModel.h"
+#import "O2Trip-Swift.h"
 @implementation UserViewModel
 
 -(void) login:(NSString *) account setPassWord :(NSString *) password{
@@ -77,33 +78,38 @@
     
 }
 
--(void) register:(NSString *) email setPassWord :(NSString *) password{
-    
-    NSMutableString *paramjsonV=[NSMutableString stringWithCapacity:50];
-    [paramjsonV appendFormat:@"{"];
-    [paramjsonV appendFormat:@"\"email\":\"%@\",",email];
-    [paramjsonV appendFormat:@"\"password\":\"%@\"",password];
-    [paramjsonV appendFormat:@"}"];
-    
-    NSDictionary *parameter = @{PARAMJSON:paramjsonV};
-    
-    NSString *url=[NSString stringWithFormat:@"%@%@",REQUESTURL,@"rest_register_user/register"];
-    [NetRequestClass NetRequestGETWithRequestURL:url WithParameter:parameter WithReturnValeuBlock:^(id returnValue) {
-        
-        
-        
-        DDLog(@"%@", returnValue);
-        [self fetchValueSuccessWithDic:returnValue];
-      
-    } WithErrorCodeBlock:^(id errorCode) {
-        DDLog(@"%@", errorCode);
-        [self errorCodeWithDic:errorCode];
-        
-    } WithFailureBlock:^{
-        [self netFailure];
-        DDLog(@"网络异常");
-        
+-(void) register:(NSString *) email setPassWord :(NSString *) password code:(NSString *)code {
+    [HttpReqManager httpRequestSignUp:email password:password code:code completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
+        [self fetchValueSuccessWithDic:response];
+    } failure:^(NSError * _Nullable error) {
+        [self errorCodeWithDic:nil];
     }];
+    
+//    NSMutableString *paramjsonV=[NSMutableString stringWithCapacity:50];
+//    [paramjsonV appendFormat:@"{"];
+//    [paramjsonV appendFormat:@"\"email\":\"%@\",",email];
+//    [paramjsonV appendFormat:@"\"password\":\"%@\"",password];
+//    [paramjsonV appendFormat:@"}"];
+//    
+//    NSDictionary *parameter = @{PARAMJSON:paramjsonV};
+//    
+//    NSString *url=[NSString stringWithFormat:@"%@%@",REQUESTURL,@"rest_register_user/register"];
+//    [NetRequestClass NetRequestGETWithRequestURL:url WithParameter:parameter WithReturnValeuBlock:^(id returnValue) {
+//        
+//        
+//        
+//        DDLog(@"%@", returnValue);
+//        [self fetchValueSuccessWithDic:returnValue];
+//      
+//    } WithErrorCodeBlock:^(id errorCode) {
+//        DDLog(@"%@", errorCode);
+//        [self errorCodeWithDic:errorCode];
+//        
+//    } WithFailureBlock:^{
+//        [self netFailure];
+//        DDLog(@"网络异常");
+//        
+//    }];
 
 }
 -(void)getDetailDestination:(NSString*)countryName withlatitude:(double)latitude withLongtitude:(double)longitude withUseId:(NSString*)useId

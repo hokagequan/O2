@@ -11,5 +11,6 @@
 @interface agreementViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 - (IBAction)buttonClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end

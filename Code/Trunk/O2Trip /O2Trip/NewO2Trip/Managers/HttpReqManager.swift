@@ -152,6 +152,19 @@ class HttpReqManager: NSObject {
         }
     }
     
+    // 注册
+    class func httpRequestSignUp(mobile: String, password: String, code: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["account"] = mobile
+        params["passWord"] = password
+        params["verifyCode"] = code
+        self.httpRequest("rest_register_user/register", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
     class func imageUrl(imageName: String?) -> NSURL? {
         if imageName == nil {
             return nil

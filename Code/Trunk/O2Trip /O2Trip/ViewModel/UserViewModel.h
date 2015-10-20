@@ -6,7 +6,7 @@
 @interface UserViewModel : ViewModelClass
 
 -(void) login:(NSString *) userName setPassWord :(NSString *) passWord;
--(void) register:(NSString *) email setPassWord :(NSString *) passWord;
+-(void) register:(NSString *) email setPassWord :(NSString *) passWord code:(NSString *)code;
 -(void)exitLogin:(NSString*)key;
 -(void)getDetailDestination:(NSString*)countryName withlatitude:(double)latitude withLongtitude:(double)longitude withUseId:(NSString*)useId;
 -(void)getCollection:(NSString*)userID setPage:(NSString*)page setNum:(NSString*)num;
