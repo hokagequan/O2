@@ -72,8 +72,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestShoppingCart(userID as! String, start: "\(from)", count: "\(count)", completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestShoppingCart(userID, start: "\(from)", count: "\(count)", completion: { (response) -> Void in
             GiFHUD.dismiss()
             
             self.handleInfo(response)
@@ -91,8 +91,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func loadMore() {
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestShoppingCart(userID as! String, start: "\(items.count)", count: "10", completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestShoppingCart(userID, start: "\(items.count)", count: "10", completion: { (response) -> Void in
             self.tableView.endLoadMore()
             self.handleInfo(response)
             self.tableView.reloadData()
@@ -111,8 +111,8 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         
         self.tableView.refreshControl?.beginRefreshing()
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestShoppingCart(userID as! String, start: "0", count: "10", completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestShoppingCart(userID, start: "0", count: "10", completion: { (response) -> Void in
             GiFHUD.dismiss()
             self.tableView.refreshControl?.endRefreshing()
             self.handleInfo(response)
@@ -155,7 +155,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
             return
         }
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        let userID = ODataManager.sharedInstance().userID
         var goods = [String]()
         
         for index in selectedIndexes {
@@ -165,7 +165,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
-        HttpReqManager.httpRequestDeleteShoppingCart(userID as! String, goodIDs: goods, completion: { (response) -> Void in
+        HttpReqManager.httpRequestDeleteShoppingCart(userID, goodIDs: goods, completion: { (response) -> Void in
             GiFHUD.dismiss()
             if response["err_code"] as! String == "200" && response["flag"] as! String == "true" {
                 var toDelItems: Set<OrderItem> = Set()

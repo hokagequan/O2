@@ -28,9 +28,8 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         
-//        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        let userID = "b332b764-81fc-4ae9-bf6f-023e654af9d7"
-        HttpReqManager.httpRequestContacts(userID as! String, completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestContacts(userID, completion: { (response) -> Void in
             GiFHUD.dismiss()
             
             self.handleInfo(response)

@@ -82,9 +82,9 @@ class NewContactViewController: UIViewController, UITableViewDataSource, UITable
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        let userID = ODataManager.sharedInstance().userID
         if pageType == .Add {
-            HttpReqManager.httpRequestAddContact(userID as! String, contact: contactInfo!, completion: { (response) -> Void in
+            HttpReqManager.httpRequestAddContact(userID, contact: contactInfo!, completion: { (response) -> Void in
                 GiFHUD.dismiss()
                 self.navigationController?.popViewControllerAnimated(true)
                 }, failure: { (error) -> Void in
@@ -92,7 +92,7 @@ class NewContactViewController: UIViewController, UITableViewDataSource, UITable
             })
         }
         else if pageType == .Edit {
-            HttpReqManager.httpRequestEditContact(userID as! String, contact: contactInfo!, completion: { (response) -> Void in
+            HttpReqManager.httpRequestEditContact(userID, contact: contactInfo!, completion: { (response) -> Void in
                 GiFHUD.dismiss()
                 self.navigationController?.popViewControllerAnimated(true)
                 }, failure: { (error) -> Void in

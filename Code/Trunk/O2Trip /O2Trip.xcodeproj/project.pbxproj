@@ -53,6 +53,7 @@
 		10A689D81BC16DC400768482 /* pay_zhifubao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A689D61BC16DC400768482 /* pay_zhifubao@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10A689DA1BC1714200768482 /* ContactNoOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A689D91BC1714200768482 /* ContactNoOneCell.swift */; settings = {ASSET_TAGS = (); }; };
 		10C6B2331BD63EF300D38847 /* me_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B2321BD63EF300D38847 /* me_empty@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10C6B2351BD723E500D38847 /* ODataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6B2341BD723E500D38847 /* ODataManager.swift */; settings = {ASSET_TAGS = (); }; };
 		10D4CE141BC8974000565D59 /* RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE0C1BC8974000565D59 /* RefreshControl.m */; settings = {ASSET_TAGS = (); }; };
 		10D4CE151BC8974000565D59 /* pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D4CE0E1BC8974000565D59 /* pull_refresh@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D4CE161BC8974000565D59 /* RefreshBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE101BC8974000565D59 /* RefreshBottomView.m */; settings = {ASSET_TAGS = (); }; };
@@ -495,6 +496,7 @@
 		10A689D61BC16DC400768482 /* pay_zhifubao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pay_zhifubao@2x.png"; sourceTree = "<group>"; };
 		10A689D91BC1714200768482 /* ContactNoOneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactNoOneCell.swift; sourceTree = "<group>"; };
 		10C6B2321BD63EF300D38847 /* me_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_empty@2x.png"; sourceTree = "<group>"; };
+		10C6B2341BD723E500D38847 /* ODataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODataManager.swift; sourceTree = "<group>"; };
 		10D4CE0B1BC8974000565D59 /* RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshControl.h; sourceTree = "<group>"; };
 		10D4CE0C1BC8974000565D59 /* RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshControl.m; sourceTree = "<group>"; };
 		10D4CE0E1BC8974000565D59 /* pull_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull_refresh@2x.png"; sourceTree = "<group>"; };
@@ -1146,6 +1148,7 @@
 			children = (
 				100A54BE1BB1575400F974A2 /* HttpReqManager.swift */,
 				108CAEAA1BC5642600902E34 /* PayManager.swift */,
+				10C6B2341BD723E500D38847 /* ODataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -2669,6 +2672,7 @@
 				7574DF701ABE80D60070050A /* LoginViewController.m in Sources */,
 				10D4CE2D1BC9F8C000565D59 /* CustomObjectUtil.m in Sources */,
 				2B5C1FB91BA9582200E770FC /* RMCalendarController.m in Sources */,
+				10C6B2351BD723E500D38847 /* ODataManager.swift in Sources */,
 				2B5C21E81BA9933700E770FC /* AFSecurityPolicy.m in Sources */,
 				2B5C22101BA9933700E770FC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2B5C21FB1BA9933700E770FC /* UIViewController+REFrostedViewController.m in Sources */,

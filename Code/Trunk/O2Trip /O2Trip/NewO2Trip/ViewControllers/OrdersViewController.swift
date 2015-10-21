@@ -68,8 +68,8 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
 //        GiFHUD.setGifWithImageName("loading.gif")
 //        GiFHUD.show()
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestOrders(userID as! String, start: "\(orderItems.count)", count: "10", stat: filter, completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestOrders(userID, start: "\(orderItems.count)", count: "10", stat: filter, completion: { (response) -> Void in
 //            GiFHUD.dismiss()
             self.tableView.endLoadMore()
             
@@ -104,8 +104,8 @@ class OrdersViewController: UIViewController, UICollectionViewDataSource, UIColl
 //        GiFHUD.setGifWithImageName("loading.gif")
 //        GiFHUD.show()
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestOrders(userID as! String, start: "0", count: "10", stat: filter, completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestOrders(userID, start: "0", count: "10", stat: filter, completion: { (response) -> Void in
 //            GiFHUD.dismiss()
             self.tableView.refreshControl?.endRefreshing()
             

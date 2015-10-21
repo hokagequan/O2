@@ -32,8 +32,8 @@ class PayViewController: UIViewController, UITableViewDataSource, UITableViewDel
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestContacts(userID as! String, completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestContacts(userID, completion: { (response) -> Void in
             GiFHUD.dismiss()
             self.handleContactInfo(response)
             

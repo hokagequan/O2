@@ -106,8 +106,8 @@ class OrderItem: Hashable {
     var stat: OrderStat = .All
     
     func cancel(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestCancelOrder(userID as! String, orderID: identifier!, completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestCancelOrder(userID, orderID: identifier!, completion: { (response) -> Void in
             let success = (response["err_code"] as! String == "200")
             if success == true {
                 completion?(response)
@@ -121,8 +121,8 @@ class OrderItem: Hashable {
     }
     
     func confirm(completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
-        HttpReqManager.httpRequestConfirmOrder(userID as! String, orderID: identifier!, itemID: activityID!, completion: { (response) -> Void in
+        let userID = ODataManager.sharedInstance().userID
+        HttpReqManager.httpRequestConfirmOrder(userID, orderID: identifier!, itemID: activityID!, completion: { (response) -> Void in
             let success = (response["err_code"] as! String == "200")
             if success == true {
                 self.stat = OrderStat.Confirmed
@@ -137,9 +137,9 @@ class OrderItem: Hashable {
     }
     
     func edit(adultCount: Int, youngCount: Int, childCount: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
-        let userID = NSUserDefaults.standardUserDefaults().objectForKey("loginUserId")
+        let userID = ODataManager.sharedInstance().userID
         
-        HttpReqManager.httpRequestEditShoppingCart(userID as! String, goodID: self.identifier!, activityID: self.activityID!, date: self.tripDate!, time: self.tripTime!, adult: adultCount, young: youngCount, child: childCount, completion: { (response) -> Void in
+        HttpReqManager.httpRequestEditShoppingCart(userID, goodID: self.identifier!, activityID: self.activityID!, date: self.tripDate!, time: self.tripTime!, adult: adultCount, young: youngCount, child: childCount, completion: { (response) -> Void in
             if response["err_code"] as! String == "200" {
                 self.adultCount = adultCount
                 self.youngCount = youngCount
