@@ -211,7 +211,7 @@
     _tipeLabel.font=[UIFont fontWithName:@"FZLanTingHeiS-EL-GB" size:8.5];;
     _tipeLabel.textColor=[UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1];
     [_smallView addSubview:_tipeLabel];
-    cancelButton.backgroundColor=[UIColor whiteColor];
+    cancelButton.backgroundColor=[UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1];
     [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     cancelButton.titleLabel.font=[UIFont fontWithName:@"FZLanTingHeiS-EL-GB" size:13];
     [cancelButton setTitleColor:[UIColor colorWithRed:48/255.0 green:48/255.0 blue:48/255.0 alpha:1] forState:UIControlStateNormal];
@@ -224,7 +224,7 @@
     [_smallView addSubview:cancelButton];
     UIButton* sureButton=[UIButton buttonWithType:UIButtonTypeCustom];
     sureButton.frame=CGRectMake(_smallView.frame.size.width/2, 115, _smallView.frame.size.width/2, 45);
-    sureButton.backgroundColor=[UIColor whiteColor];
+    sureButton.backgroundColor=[UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1];
     sureButton.layer.borderWidth=0.5;
     sureButton.layer.borderColor =borderColorRef;
     [sureButton setTitle:@"确定" forState:UIControlStateNormal];
