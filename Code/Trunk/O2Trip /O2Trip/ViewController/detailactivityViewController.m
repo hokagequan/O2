@@ -1303,7 +1303,8 @@
 
 - (IBAction)clickAddToShoppingCart:(id)sender {
     actiDetailModel* actiModel = [self.bigArray lastObject];
-    ShoppingCartItem *item = [self converModel:actiModel];
+    ShoppingCartItem *item = [[ShoppingCartItem alloc] init];
+    [item loadInfoFromModel:actiModel];
     [HttpReqManager httpRequestAddShoppingCart:[ODataManager sharedInstance].userID
                               shoppingCartItem:item
                                     completion:^(NSDictionary<NSString *,id> * _Nonnull response) {

@@ -41,4 +41,19 @@ class ShoppingCartItem: NSObject {
         youngPrice = info["youthPrice"] as! Int
         totalPrice = price * adultCount + youngPrice * youngCount + childPrice * childCount
     }
+    
+    func loadInfoFromModel(model: actiDetailModel) {
+        self.activityID = model.actiId
+        self.activityTitle = model.actiTitle
+        self.tripDate = model.startDate
+        self.tripTime = "00:00"
+        self.adultCount = 1
+        self.youngCount = 0
+        self.childCount = 0
+        let intPrice = Int(model.actiPrice)
+        self.price = intPrice ?? 0
+        self.youngPrice = self.price
+        self.childPrice = self.price
+        self.totalPrice = self.price * self.adultCount + self.youngPrice * self.youngCount + self.childPrice * self.childCount
+    }
 }

@@ -10,3 +10,4 @@
 #import "CustomObjectUtil.h"
 #import "UIImageView+WebCache.h"
 #import "AlipaySDK.h"
+#import "actiDetailModel.h"

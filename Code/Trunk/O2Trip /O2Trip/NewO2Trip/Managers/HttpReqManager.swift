@@ -213,11 +213,23 @@ class HttpReqManager: NSObject {
     }
     
     // 获取活动
-    class func httpRequestGetActivity(longitude: String, latitude: String,  completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+    class func httpRequestGetActivity(longitude: String, latitude: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
         params["longitude"] = longitude
         params["latitude"] = latitude
         self.httpRequest("rest_acti/getCountryAndType", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
+    // 活动详情
+    class func httpRequestActivityDetail(userID: String, activityID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["actiId"] = activityID
+        self.httpRequest("rest_acti/getActiInfo", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in
                 failure?(error)

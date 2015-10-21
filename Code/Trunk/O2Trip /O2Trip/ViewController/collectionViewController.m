@@ -18,6 +18,9 @@
 #import "Reachability.h"
 #import "LoginViewController.h"
 #import "SVPullToRefresh.h"
+
+#import "O2Trip-Swift.h"
+
 #define ALERTVIEW(STRING) UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:STRING delegate:self cancelButtonTitle:nil  otherButtonTitles:@"确定", nil];\
 [alertView show];
 @interface collectionViewController ()
@@ -355,8 +358,42 @@
 #pragma mark - Actions
 
 - (IBAction)clickAddShoppingCart:(id)sender {
-    // TODO: 加入购物车
+    if (self.selectIndexes.count == 0) {
+        ALERTVIEW(@"请选择一个活动添加");
+        
+        return;
+    }
     
+    if (self.selectIndexes.count > 1) {
+        ALERTVIEW(@"请单个添加");
+        
+        return;
+    }
+    
+    collectionModel *model = self.array[self.selectIndexes.firstIndex];
+    [HttpReqManager httpRequestActivityDetail:[ODataManager sharedInstance].userID activityID:model.actiId completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
+        if ([response[@"err_code"] isEqualToString:@"200"]) {
+            NSDictionary *dic = response[@"data"][@"actiInfo"];
+            actiDetailModel* detailModel = [[actiDetailModel alloc] initWithDic:dic];
+            ShoppingCartItem *item = [[ShoppingCartItem alloc] init];
+            [item loadInfoFromModel:detailModel];
+            [HttpReqManager httpRequestAddShoppingCart:[ODataManager sharedInstance].userID shoppingCartItem:item completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
+                if ([response[@"err_code"] isEqualToString:@"200"]) {
+                    ALERTVIEW(@"添加成功");
+                }
+                else {
+                    ALERTVIEW(@"添加失败");
+                }
+            } failure:^(NSError * _Nullable error) {
+                ALERTVIEW(@"添加失败");
+            }];
+        }
+        else {
+            ALERTVIEW(@"添加失败");
+        }
+    } failure:^(NSError * _Nullable error) {
+        ALERTVIEW(@"添加失败");
+    }];
 }
 
 - (IBAction)clickDelete:(id)sender {
