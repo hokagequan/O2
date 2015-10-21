@@ -117,7 +117,7 @@ class HttpReqManager: NSObject {
         params["weChat"] = contact.weixin
         params["email"] = contact.email
         params["sex"] = "\(contact.intGender)"
-        self.httpRequest("rest_shopping/addContactItem", params: params, completion: { (response) -> Void in
+        self.httpPostRequest("rest_shopping/addContactItem", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in
                 failure?(error)
@@ -219,5 +219,35 @@ class HttpReqManager: NSObject {
                 failure?(nil)
             }
         }
+    }
+    
+    private class func httpPostRequest(method: String, params: Dictionary<String, String>, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+//        do {
+//            let jsonData = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions())
+//            let jsonParams = String(data: jsonData, encoding: NSUTF8StringEncoding)
+            let url = "\(httpUrl)\(method)"
+            
+            let afManager = AFHTTPRequestOperationManager()
+            afManager.responseSerializer.acceptableContentTypes = NSSet(array: ["text/json", "text/plain"]) as Set<NSObject>
+            afManager.POST(url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding), parameters: params, success: { (operation, response) -> Void in
+                let rep = response["err_code"] as! String
+                if rep == "200" {
+                    completion?(response as! Dictionary<String, AnyObject>)
+                }
+                else {
+                    failure?(NSError(domain: response["msg"] as! String, code: 404, userInfo: nil))
+                }
+                }, failure: { (operation, error) -> Void in
+                    failure?(error)
+            })
+//        }
+//        catch let error {
+//            if error is NSError {
+//                failure?(error as? NSError)
+//            }
+//            else {
+//                failure?(nil)
+//            }
+//        }
     }
 }
