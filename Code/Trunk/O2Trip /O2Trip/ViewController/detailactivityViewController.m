@@ -1294,7 +1294,6 @@
     item.price = [model.actiPrice integerValue];
     item.youngPrice = item.price;
     item.childPrice = item.price;
-    item.totalPrice = item.price * item.adultCount + item.youngPrice * item.youngCount + item.childPrice * item.childCount;
     
     return item;
 }
@@ -1305,18 +1304,13 @@
     actiDetailModel* actiModel = [self.bigArray lastObject];
     ShoppingCartItem *item = [[ShoppingCartItem alloc] init];
     [item loadInfoFromModel:actiModel];
-    [HttpReqManager httpRequestAddShoppingCart:[ODataManager sharedInstance].userID
-                              shoppingCartItem:item
-                                    completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
-                                        if ([response[@"err_code"] isEqualToString:@"200"]) {
-                                            ALERTVIEW(@"添加成功");
-                                        }
-                                        else {
-                                            ALERTVIEW(@"添加失败");
-                                        }
-                                    } failure:^(NSError * _Nullable error) {
-                                        ALERTVIEW(@"添加失败");
-                                    }];
+    
+    AddShoppingCartView *view = [AddShoppingCartView loadFromNib];
+    view.shoppingCartItem.adultCount = 2;
+    view.shoppingCartItem.youngCount = 2;
+    view.shoppingCartItem.childCount = 2;
+    [view refreshInfo];
+    [view showInView:self.view];
 }
 
 

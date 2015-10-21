@@ -13,6 +13,18 @@ class OrderEditNormalCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     
+    class func loadFromNib() -> OrderEditNormalCell? {
+        let views = NSBundle.mainBundle().loadNibNamed("OrderEditNormalCell", owner: nil, options: nil)
+        
+        for view in views {
+            if view is OrderEditNormalCell {
+                return view as? OrderEditNormalCell
+            }
+        }
+        
+        return nil
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

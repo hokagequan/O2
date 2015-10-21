@@ -23,7 +23,11 @@ class ShoppingCartItem: NSObject {
     var price: Int = 0
     var youngPrice: Int = 0
     var childPrice: Int = 0
-    var totalPrice: Int = 0
+    var totalPrice: Int {
+        get {
+            return price * adultCount + youngPrice * youngCount + childPrice * childCount
+        }
+    }
     
     func loadInfo(info: Dictionary<String, AnyObject>) {
         identifier = info["id"] as? String
@@ -39,12 +43,12 @@ class ShoppingCartItem: NSObject {
         price = info["adultPrice"] as! Int
         childPrice = info["childrenPrice"] as! Int
         youngPrice = info["youthPrice"] as! Int
-        totalPrice = price * adultCount + youngPrice * youngCount + childPrice * childCount
     }
     
     func loadInfoFromModel(model: actiDetailModel) {
         self.activityID = model.actiId
         self.activityTitle = model.actiTitle
+        self.activityImageName = model.actiImg.firstObject as? String
         self.tripDate = model.startDate
         self.tripTime = "00:00"
         self.adultCount = 1
@@ -54,6 +58,5 @@ class ShoppingCartItem: NSObject {
         self.price = intPrice ?? 0
         self.youngPrice = self.price
         self.childPrice = self.price
-        self.totalPrice = self.price * self.adultCount + self.youngPrice * self.youngCount + self.childPrice * self.childCount
     }
 }

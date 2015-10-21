@@ -37,11 +37,25 @@ class OrderEditCell: UITableViewCell {
         }
     }
     
+    class func loadFromNib() -> OrderEditCell? {
+        let views = NSBundle.mainBundle().loadNibNamed("OrderEditCell", owner: self, options: nil)
+        
+        for view in views {
+            if view is OrderEditCell {
+                return view as? OrderEditCell
+            }
+        }
+        
+        return nil
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         CustomObjectUtil.customObject([decreaseButton, numberLabel, addButton], backgroundColor: UIColor.clearColor(), borderWith: 1.0, borderColor: grayColor, corner: 0.0)
+        
+        numberLabel.text = "2"
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

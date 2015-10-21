@@ -56,6 +56,15 @@
 		10C6B2351BD723E500D38847 /* ODataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6B2341BD723E500D38847 /* ODataManager.swift */; settings = {ASSET_TAGS = (); }; };
 		10C6B2391BD772B900D38847 /* favorite_mark_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B2371BD772B900D38847 /* favorite_mark_nor@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10C6B23A1BD772B900D38847 /* favorite_mark_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B2381BD772B900D38847 /* favorite_mark_sel@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10C6B23C1BD7986A00D38847 /* NewMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B23B1BD7986A00D38847 /* NewMain.storyboard */; settings = {ASSET_TAGS = (); }; };
+		10C6B23E1BD7989B00D38847 /* AddShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6B23D1BD7989B00D38847 /* AddShoppingCartView.swift */; settings = {ASSET_TAGS = (); }; };
+		10C6B2401BD798C400D38847 /* AddShoppingCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B23F1BD798C400D38847 /* AddShoppingCartView.xib */; settings = {ASSET_TAGS = (); }; };
+		10C6B2421BD79A0000D38847 /* o2_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B2411BD79A0000D38847 /* o2_close@2x.png */; settings = {ASSET_TAGS = (); }; };
+		10C6B2441BD79EBB00D38847 /* OrderEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B2431BD79EBB00D38847 /* OrderEditCell.xib */; settings = {ASSET_TAGS = (); }; };
+		10C6B2461BD7A50900D38847 /* OrderEditNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B2451BD7A50900D38847 /* OrderEditNormalCell.xib */; settings = {ASSET_TAGS = (); }; };
+		10C6B2491BD7A57000D38847 /* OrderCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6B2471BD7A57000D38847 /* OrderCalendarCell.swift */; settings = {ASSET_TAGS = (); }; };
+		10C6B24A1BD7A57000D38847 /* OrderCalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B2481BD7A57000D38847 /* OrderCalendarCell.xib */; settings = {ASSET_TAGS = (); }; };
+		10C6B24C1BD7A76600D38847 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C6B24B1BD7A76600D38847 /* calendar@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D4CE141BC8974000565D59 /* RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE0C1BC8974000565D59 /* RefreshControl.m */; settings = {ASSET_TAGS = (); }; };
 		10D4CE151BC8974000565D59 /* pull_refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D4CE0E1BC8974000565D59 /* pull_refresh@2x.png */; settings = {ASSET_TAGS = (); }; };
 		10D4CE161BC8974000565D59 /* RefreshBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D4CE101BC8974000565D59 /* RefreshBottomView.m */; settings = {ASSET_TAGS = (); }; };
@@ -501,6 +510,15 @@
 		10C6B2341BD723E500D38847 /* ODataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODataManager.swift; sourceTree = "<group>"; };
 		10C6B2371BD772B900D38847 /* favorite_mark_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite_mark_nor@2x.png"; sourceTree = "<group>"; };
 		10C6B2381BD772B900D38847 /* favorite_mark_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite_mark_sel@2x.png"; sourceTree = "<group>"; };
+		10C6B23B1BD7986A00D38847 /* NewMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewMain.storyboard; sourceTree = "<group>"; };
+		10C6B23D1BD7989B00D38847 /* AddShoppingCartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShoppingCartView.swift; sourceTree = "<group>"; };
+		10C6B23F1BD798C400D38847 /* AddShoppingCartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddShoppingCartView.xib; sourceTree = "<group>"; };
+		10C6B2411BD79A0000D38847 /* o2_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "o2_close@2x.png"; sourceTree = "<group>"; };
+		10C6B2431BD79EBB00D38847 /* OrderEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderEditCell.xib; sourceTree = "<group>"; };
+		10C6B2451BD7A50900D38847 /* OrderEditNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderEditNormalCell.xib; sourceTree = "<group>"; };
+		10C6B2471BD7A57000D38847 /* OrderCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCalendarCell.swift; sourceTree = "<group>"; };
+		10C6B2481BD7A57000D38847 /* OrderCalendarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCalendarCell.xib; sourceTree = "<group>"; };
+		10C6B24B1BD7A76600D38847 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		10D4CE0B1BC8974000565D59 /* RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshControl.h; sourceTree = "<group>"; };
 		10D4CE0C1BC8974000565D59 /* RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshControl.m; sourceTree = "<group>"; };
 		10D4CE0E1BC8974000565D59 /* pull_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull_refresh@2x.png"; sourceTree = "<group>"; };
@@ -1120,6 +1138,7 @@
 		100A54B41BB14AD700F974A2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				10C6B23B1BD7986A00D38847 /* NewMain.storyboard */,
 				100A54B61BB14B2300F974A2 /* ShoppingCartViewController.swift */,
 				100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */,
 				10FE425C1BB42E2900E37C76 /* ContactsViewController.swift */,
@@ -1142,7 +1161,13 @@
 				10FE426C1BB828D500E37C76 /* PayModeCell.swift */,
 				10A689D91BC1714200768482 /* ContactNoOneCell.swift */,
 				10D4CE271BC9F6FD00565D59 /* OrderEditNormalCell.swift */,
+				10C6B2451BD7A50900D38847 /* OrderEditNormalCell.xib */,
 				10D4CE291BC9F71100565D59 /* OrderEditCell.swift */,
+				10C6B2431BD79EBB00D38847 /* OrderEditCell.xib */,
+				10C6B23D1BD7989B00D38847 /* AddShoppingCartView.swift */,
+				10C6B23F1BD798C400D38847 /* AddShoppingCartView.xib */,
+				10C6B2471BD7A57000D38847 /* OrderCalendarCell.swift */,
+				10C6B2481BD7A57000D38847 /* OrderCalendarCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1312,6 +1337,8 @@
 		10FE426F1BBACD5F00E37C76 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				10C6B24B1BD7A76600D38847 /* calendar@2x.png */,
+				10C6B2411BD79A0000D38847 /* o2_close@2x.png */,
 				1052CD0A1BCE2E4400DDDAA5 /* add@3x.png */,
 				1052CD0B1BCE2E4400DDDAA5 /* check_nor@3x.png */,
 				1052CD0C1BCE2E4400DDDAA5 /* check_sel@3x.png */,
@@ -2404,6 +2431,7 @@
 				1052CCE61BCD067100DDDAA5 /* delete_enable@2x.png in Resources */,
 				1052CD1D1BCE2E5D00DDDAA5 /* contact_name@3x.png in Resources */,
 				2B5C1F1C1BA9530E00E770FC /* @3x_home-13.png in Resources */,
+				10C6B2461BD7A50900D38847 /* OrderEditNormalCell.xib in Resources */,
 				2B5C1F401BA9530E00E770FC /* discover@3x-17.png in Resources */,
 				2B5C1F331BA9530E00E770FC /* discover@3x-04.png in Resources */,
 				2B5C1F391BA9530E00E770FC /* discover@3x-10.png in Resources */,
@@ -2448,11 +2476,13 @@
 				2B5C1F741BA9530E00E770FC /* startpage4.jpg in Resources */,
 				2B5C1F221BA9530E00E770FC /* details@3x-04.png in Resources */,
 				2B5C1F321BA9530E00E770FC /* discover@3x-03.png in Resources */,
+				10C6B2421BD79A0000D38847 /* o2_close@2x.png in Resources */,
 				2B5C1F411BA9530E00E770FC /* logging@3x-01.png in Resources */,
 				1052CD151BCE2E5200DDDAA5 /* order_empty@3x.png in Resources */,
 				2B5C1F041BA9530E00E770FC /* @3x_home-10.png in Resources */,
 				2B5C1F431BA9530E00E770FC /* logging@3x-03.png in Resources */,
 				2B5C1F051BA9530E00E770FC /* @3x_home-11-2.png in Resources */,
+				10C6B23C1BD7986A00D38847 /* NewMain.storyboard in Resources */,
 				2B5C1FC21BA9582200E770FC /* CalendarRow@2x.png in Resources */,
 				10C6B2391BD772B900D38847 /* favorite_mark_nor@2x.png in Resources */,
 				2B5C1F631BA9530E00E770FC /* payment process@3x-08.png in Resources */,
@@ -2468,6 +2498,7 @@
 				2B5C1F761BA9530E00E770FC /* startpage6.jpg in Resources */,
 				2B5C1F091BA9530E00E770FC /* @3x_home-15.jpg in Resources */,
 				2B5C1F711BA9530E00E770FC /* collect@3x-03.png in Resources */,
+				10C6B24C1BD7A76600D38847 /* calendar@2x.png in Resources */,
 				2B5C1F1B1BA9530E00E770FC /* @3x_home-12.png in Resources */,
 				2B5C1F651BA9530E00E770FC /* payment process@3x-10.png in Resources */,
 				2B5C1F561BA9530E00E770FC /* mine@3x-07.png in Resources */,
@@ -2496,6 +2527,7 @@
 				10D4CE251BC9F56800565D59 /* add@2x.png in Resources */,
 				2B5C1F1D1BA9530E00E770FC /* @3x_home-14.png in Resources */,
 				2B5C1F181BA9530E00E770FC /* @3x_home-09.png in Resources */,
+				10C6B24A1BD7A57000D38847 /* OrderCalendarCell.xib in Resources */,
 				2B5C1F621BA9530E00E770FC /* payment process@3x-07.png in Resources */,
 				1052CCEE1BCDEF5300DDDAA5 /* contacts@2x.png in Resources */,
 				2B5C1F241BA9530E00E770FC /* details@3x-06.png in Resources */,
@@ -2542,7 +2574,9 @@
 				1052CCF01BCDEF5300DDDAA5 /* order_nor@2x.png in Resources */,
 				1052CD1C1BCE2E5D00DDDAA5 /* contact_email@3x.png in Resources */,
 				1052CD231BCE2E6900DDDAA5 /* pay_zhifubao@3x.png in Resources */,
+				10C6B2401BD798C400D38847 /* AddShoppingCartView.xib in Resources */,
 				2B5C1F541BA9530E00E770FC /* mine@3x-05.png in Resources */,
+				10C6B2441BD79EBB00D38847 /* OrderEditCell.xib in Resources */,
 				2B5C1FC01BA9582200E770FC /* CalendarPreviousMonth@2x.png in Resources */,
 				2B5C1F601BA9530E00E770FC /* payment process@3x-05.png in Resources */,
 				2B5C1F231BA9530E00E770FC /* details@3x-05.png in Resources */,
@@ -2590,6 +2624,7 @@
 				2B5C22251BA9933700E770FC /* UIProgressView+AFNetworking.m in Sources */,
 				2B5C1FBC1BA9582200E770FC /* TicketModel.m in Sources */,
 				2B5C22191BA9933700E770FC /* SDWebImagePrefetcher.m in Sources */,
+				10C6B23E1BD7989B00D38847 /* AddShoppingCartView.swift in Sources */,
 				2B9532991B68DE980055FF0B /* FZLTXHJW.TTF in Sources */,
 				2B5C21E41BA9933700E770FC /* AFHTTPRequestOperation.m in Sources */,
 				10D4CE281BC9F6FD00565D59 /* OrderEditNormalCell.swift in Sources */,
@@ -2682,6 +2717,7 @@
 				2B5C221E1BA9933700E770FC /* UIImageView+HighlightedWebCache.m in Sources */,
 				2B5C22161BA9933700E770FC /* SDWebImageDownloader.m in Sources */,
 				2B47157B1B01AC65009F015F /* destinationViewController.m in Sources */,
+				10C6B2491BD7A57000D38847 /* OrderCalendarCell.swift in Sources */,
 				2B4715811B01C03F009F015F /* activityCell.m in Sources */,
 				2B4715781B0196D2009F015F /* agreementViewController.m in Sources */,
 				2B79050A1B749ED000D51E83 /* webViewController.m in Sources */,
