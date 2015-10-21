@@ -510,17 +510,19 @@
 }
 -(void)homeXQSucess:(NSDictionary*)returnValue
 {
-    NSDictionary*dic=[[NSDictionary alloc]init];
-    dic=returnValue[@"data"][@"actiInfo"];
+    NSDictionary *dic=returnValue[@"data"][@"actiInfo"];
     //NSLog(@"dic===%@",dic);
     NSMutableArray* array=[[NSMutableArray alloc]initWithCapacity:0];
+    
     actiDetailModel* detailModel=[[actiDetailModel alloc]initWithDic:dic];
     [array addObject:detailModel];
-    NSDictionary* dic1=[[NSDictionary alloc]init];
-    dic1=returnValue[@"data"][@"priceTime"];
+    
+    NSArray *dic1=returnValue[@"data"][@"priceTime"];
     //NSLog(@"dic1===%@",dic1);
-    timeModel* tiModel=[[timeModel alloc]initWithDictionary:dic1];
-    [array addObject:tiModel];
+    for (NSDictionary *dict in dic1) {
+        timeModel* tiModel=[[timeModel alloc]initWithDictionary:dict];
+        [array addObject:tiModel];
+    }
    
     self.returnBlock(array);
     

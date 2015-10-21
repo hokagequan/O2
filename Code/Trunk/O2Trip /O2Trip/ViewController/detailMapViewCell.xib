@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,26 +11,50 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QxP-Ra-Y1J" id="Gzs-me-IkF">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM8-fH-vjF">
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM8-fH-vjF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-YH-WqG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-YH-WqG">
                                 <rect key="frame" x="260" y="10" width="24" height="22"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="7Re-pq-zPP"/>
+                                    <constraint firstAttribute="height" constant="22" id="Uah-Z6-ZdT"/>
+                                </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCs-Ah-qz9">
-                                <rect key="frame" x="8" y="0.0" width="285" height="160"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCs-Ah-qz9">
+                                <rect key="frame" x="8" y="0.0" width="304" height="158"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OCs-Ah-qz9" secondAttribute="bottom" id="0vu-xC-cB1"/>
+                            <constraint firstAttribute="trailing" secondItem="dyJ-YH-WqG" secondAttribute="trailing" constant="36" id="PNX-sk-hCP"/>
+                            <constraint firstItem="OCs-Ah-qz9" firstAttribute="top" secondItem="GM8-fH-vjF" secondAttribute="top" id="RHB-As-Q0Z"/>
+                            <constraint firstItem="OCs-Ah-qz9" firstAttribute="leading" secondItem="GM8-fH-vjF" secondAttribute="leading" constant="8" id="l28-5d-W7z"/>
+                            <constraint firstItem="dyJ-YH-WqG" firstAttribute="top" secondItem="GM8-fH-vjF" secondAttribute="top" constant="10" id="nNG-5l-gIO"/>
+                            <constraint firstAttribute="trailing" secondItem="OCs-Ah-qz9" secondAttribute="trailing" constant="8" id="rse-bK-mC8"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="GM8-fH-vjF" firstAttribute="leading" secondItem="Gzs-me-IkF" secondAttribute="leading" id="7mv-AX-8sS"/>
+                    <constraint firstAttribute="bottom" secondItem="GM8-fH-vjF" secondAttribute="bottom" constant="1" id="CUa-9M-9W6"/>
+                    <constraint firstAttribute="trailing" secondItem="GM8-fH-vjF" secondAttribute="trailing" id="L6K-f1-Ifl"/>
+                    <constraint firstItem="GM8-fH-vjF" firstAttribute="top" secondItem="Gzs-me-IkF" secondAttribute="top" id="bRM-Pv-yHz"/>
+                </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="bigmapButton" destination="dyJ-YH-WqG" id="o8U-aR-WjJ"/>
                 <outlet property="mapview" destination="OCs-Ah-qz9" id="YQ9-Pg-82n"/>

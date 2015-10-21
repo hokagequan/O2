@@ -637,7 +637,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WAS-m4-Hib">
-                                <rect key="frame" x="0.0" y="-22" width="320" height="543"/>
+                                <rect key="frame" x="0.0" y="-22" width="320" height="541"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -677,34 +677,53 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXB-TZ-qHL">
-                                <rect key="frame" x="16" y="526" width="288" height="36"/>
+                                <rect key="frame" x="107" y="519" width="213" height="49"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.69019607839999997" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="e7H-og-Smc"/>
-                                    <constraint firstAttribute="height" constant="36" id="pXt-s3-Znx"/>
+                                    <constraint firstAttribute="height" constant="49" id="7oM-I0-KiO"/>
                                 </constraints>
-                                <state key="normal" title="立即预定" backgroundImage="payment process@3x-05.png">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="立即预定">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="callButton:" destination="Jlo-fq-C8j" eventType="touchUpInside" id="AK7-iC-lKk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Saw-Ik-6za">
+                                <rect key="frame" x="0.0" y="519" width="107" height="49"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="0vZ-he-jLP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="加入购物车">
+                                    <color key="titleColor" red="0.12549019610000001" green="0.69019607839999997" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickAddToShoppingCart:" destination="Jlo-fq-C8j" eventType="touchUpInside" id="k7g-Y8-6c8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OXB-TZ-qHL" firstAttribute="leading" secondItem="PHx-HU-bjS" secondAttribute="leadingMargin" id="2pa-r9-Rwg"/>
+                            <constraint firstItem="OXB-TZ-qHL" firstAttribute="top" secondItem="WAS-m4-Hib" secondAttribute="bottom" id="3vt-YX-rt2"/>
                             <constraint firstItem="hvO-UO-Yc0" firstAttribute="leading" secondItem="PHx-HU-bjS" secondAttribute="leadingMargin" constant="-8" id="5hw-Mn-hzx"/>
                             <constraint firstItem="WAS-m4-Hib" firstAttribute="top" secondItem="PHx-HU-bjS" secondAttribute="topMargin" constant="-22" id="Fa3-PL-Vaj"/>
                             <constraint firstItem="hvO-UO-Yc0" firstAttribute="top" secondItem="OkN-Ew-Zdb" secondAttribute="bottom" constant="5" id="Jii-Er-VPp"/>
-                            <constraint firstItem="OXB-TZ-qHL" firstAttribute="top" secondItem="WAS-m4-Hib" secondAttribute="bottom" constant="5" id="WvP-fG-WUv"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="OXB-TZ-qHL" secondAttribute="bottom" constant="6" id="a2Z-SN-wOl"/>
+                            <constraint firstItem="OXB-TZ-qHL" firstAttribute="leading" secondItem="Saw-Ik-6za" secondAttribute="trailing" id="Ltm-iF-LBs"/>
+                            <constraint firstItem="OXB-TZ-qHL" firstAttribute="width" secondItem="Saw-Ik-6za" secondAttribute="width" multiplier="2:1" id="NBr-dr-RMy"/>
+                            <constraint firstItem="o2a-gr-CXl" firstAttribute="top" secondItem="OXB-TZ-qHL" secondAttribute="bottom" id="NsI-3a-cSB"/>
+                            <constraint firstItem="OXB-TZ-qHL" firstAttribute="leading" secondItem="Saw-Ik-6za" secondAttribute="trailing" id="NxT-FZ-ewZ"/>
                             <constraint firstItem="WAS-m4-Hib" firstAttribute="leading" secondItem="PHx-HU-bjS" secondAttribute="leadingMargin" constant="-16" id="aIG-e4-wTz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WAS-m4-Hib" secondAttribute="trailing" constant="-16" id="bZ7-Ut-UvE"/>
                             <constraint firstItem="hgt-gK-Uej" firstAttribute="trailing" secondItem="PHx-HU-bjS" secondAttribute="trailingMargin" id="hS7-ya-7Hg"/>
                             <constraint firstItem="hgt-gK-Uej" firstAttribute="top" secondItem="OkN-Ew-Zdb" secondAttribute="bottom" constant="5" id="lcx-E3-3XN"/>
-                            <constraint firstItem="OXB-TZ-qHL" firstAttribute="trailing" secondItem="PHx-HU-bjS" secondAttribute="trailingMargin" id="stF-mm-674"/>
+                            <constraint firstItem="Saw-Ik-6za" firstAttribute="leading" secondItem="PHx-HU-bjS" secondAttribute="leading" id="oA6-VB-Kn9"/>
+                            <constraint firstItem="o2a-gr-CXl" firstAttribute="top" secondItem="Saw-Ik-6za" secondAttribute="bottom" id="snx-Ea-KUN"/>
+                            <constraint firstAttribute="trailing" secondItem="OXB-TZ-qHL" secondAttribute="trailing" id="wb0-HD-1DD"/>
                         </constraints>
                     </view>
                     <connections>

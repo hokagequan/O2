@@ -13,6 +13,14 @@
 }
 @end
 @implementation detailIntroduceViewCell
+
+- (void)awakeFromNib {
+    CAGradientLayer* layer=[CAGradientLayer layer];
+    layer.frame=CGRectMake(0,0, self.bgLabel.frame.size.width, self.bgLabel.frame.size.height);
+    layer.colors=[NSArray arrayWithObjects:(id)[UIColor clearColor].CGColor,(id)[UIColor blackColor].CGColor, nil];
+    [self.bgLabel.layer insertSublayer:layer atIndex:0];
+}
+
 //- (void)setScrollV:(UIScrollView *)scrollV
 //{
 //    scrollV.backgroundColor = [UIColor whiteColor];

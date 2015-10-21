@@ -1278,6 +1278,14 @@
     }
    
 }
+
+#pragma mark - Actions
+
+- (IBAction)clickAddToShoppingCart:(id)sender {
+    // TODO: 加入购物车
+}
+
+
 -(void)dealloc
 {
      [[NSNotificationCenter defaultCenter] removeObserver:self];

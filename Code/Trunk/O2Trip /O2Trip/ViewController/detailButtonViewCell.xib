@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,10 +11,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="18"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FH0-L3-sjo" id="7xk-0k-aey">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="17"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLn-Rz-o6f">
                         <rect key="frame" x="152" y="0.0" width="16" height="16"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="Yj2-1M-Foh"/>
                         </constraints>
@@ -23,12 +25,14 @@
                         </state>
                     </button>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="YLn-Rz-o6f" firstAttribute="centerX" secondItem="7xk-0k-aey" secondAttribute="centerX" id="JMw-Yx-KUk"/>
                     <constraint firstItem="YLn-Rz-o6f" firstAttribute="top" secondItem="7xk-0k-aey" secondAttribute="top" id="Jdr-YQ-8Mk"/>
                     <constraint firstItem="YLn-Rz-o6f" firstAttribute="centerY" secondItem="7xk-0k-aey" secondAttribute="centerY" id="vSQ-Yp-oBa"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="strechButton" destination="YLn-Rz-o6f" id="Al0-wt-3eW"/>
             </connections>
