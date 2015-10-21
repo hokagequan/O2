@@ -112,11 +112,12 @@ class HttpReqManager: NSObject {
         params["userId"] = userID
         params["firstName"] = contact.lastName
         params["lastName"] = contact.firstName
-        params["py"] = contact.pinyin
+        params["pym"] = contact.pinyin
         params["mobile"] = contact.phone
         params["weChat"] = contact.weixin
         params["email"] = contact.email
-        self.httpRequest("rest_contact/addContactItem", params: params, completion: { (response) -> Void in
+        params["sex"] = "\(contact.intGender)"
+        self.httpRequest("rest_shopping/addContactItem", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in
                 failure?(error)
@@ -134,6 +135,7 @@ class HttpReqManager: NSObject {
         params["mobile"] = contact.phone
         params["weChat"] = contact.weixin
         params["email"] = contact.email
+        params["sex"] = "\(contact.intGender)"
         self.httpRequest("rest_contact/editContactItem", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in

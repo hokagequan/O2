@@ -76,11 +76,46 @@ class NewContactViewController: UIViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
+    func makeContact() {
+        for i in 0..<ContactDetailRow.Max.rawValue {
+            let indexPath = NSIndexPath(forRow: i, inSection: 0)
+            guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? ContactEditCell else {
+                continue
+            }
+            
+            let text = cell.detailTextField.text!
+            switch i {
+            case ContactDetailRow.LastName.rawValue:
+                contactInfo?.lastName = text
+                break
+            case ContactDetailRow.FirstName.rawValue:
+                contactInfo?.firstName = text
+                break
+            case ContactDetailRow.PinYin.rawValue:
+                contactInfo?.pinyin = text
+                break
+            case ContactDetailRow.Phone.rawValue:
+                contactInfo?.phone = text
+                break
+            case ContactDetailRow.Weixin.rawValue:
+                contactInfo?.weixin = text
+                break
+            case ContactDetailRow.Email.rawValue:
+                contactInfo?.email = text
+                break
+            default:
+                break
+            }
+        }
+    }
+    
     // MARK: Actions
     
     @IBAction func clickSave(sender: AnyObject) {
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
+        
+        self.makeContact()
         
         let userID = ODataManager.sharedInstance().userID
         if pageType == .Add {

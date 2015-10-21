@@ -13,7 +13,9 @@ class ODataManager: NSObject {
     
     var userID: String {
         get {
-            return NSUserDefaults.standardUserDefaults().objectForKey("loginUserId") as! String
+            // FIXME: Test
+            return "b332b764-81fc-4ae9-bf6f-023e654af9d7"
+//            return NSUserDefaults.standardUserDefaults().objectForKey("loginUserId") as! String
         }
     }
     

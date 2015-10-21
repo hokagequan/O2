@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
-            timestampString = "467018960.464408"
+            timestampString = "467088512.671225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "httpRequestGetVerifyCode(_:completion:failure:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,7 +100,7 @@
                   moduleName = "O2Trip"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip%20/O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
-                  timestampString = "467084197.493884"
+                  timestampString = "467088765.852376"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
@@ -115,7 +115,7 @@
                   moduleName = "O2Trip"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip%20/O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
-                  timestampString = "467084197.494177"
+                  timestampString = "467088765.852597"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "41"
@@ -139,6 +139,102 @@
             endingLineNumber = "60"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
+            timestampString = "467088512.671225"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "httpRequestAddContact(_:contact:completion:failure:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static O2Trip.HttpReqManager.httpRequestAddContact (O2Trip.HttpReqManager.Type)(Swift.String, contact : O2Trip.ContactItem, completion : Swift.Optional&lt;(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; ()&gt;, failure : Swift.Optional&lt;(Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "O2Trip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip%20/O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
+                  timestampString = "467088765.854561"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "2028">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static O2Trip.HttpReqManager.(httpRequestAddContact (O2Trip.HttpReqManager.Type) -&gt; (Swift.String, contact : O2Trip.ContactItem, completion : Swift.Optional&lt;(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; ()&gt;, failure : Swift.Optional&lt;(Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "O2Trip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip%20/O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
+                  timestampString = "467088765.854786"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
+            timestampString = "467088512.671225"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "httpRequestAddContact(_:contact:completion:failure:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "O2Trip/NewO2Trip/Managers/HttpReqManager.swift"
+            timestampString = "467088512.671225"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "httpRequestAddContact(_:contact:completion:failure:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "O2Trip/NewO2Trip/Models/ContactItem.swift"
+            timestampString = "467088748.405653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "ContactItem"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
