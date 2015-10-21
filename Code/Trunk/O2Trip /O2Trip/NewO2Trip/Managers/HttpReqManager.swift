@@ -26,6 +26,27 @@ class HttpReqManager: NSObject {
         }
     }
     
+    // 添加购物车
+    class func httpRequestAddShoppingCart(userID: String, shoppingCartItem: ShoppingCartItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["actiId"] = shoppingCartItem.activityID
+        params["adultNumber"] = "\(shoppingCartItem.adultCount)"
+        params["youthNumber"] = "\(shoppingCartItem.youngCount)"
+        params["childrenNumber"] = "\(shoppingCartItem.childCount)"
+        params["adultPrice"] = "\(shoppingCartItem.price)"
+        params["youthPrice"] = "\(shoppingCartItem.youngPrice)"
+        params["childrenPrice"] = "\(shoppingCartItem.childPrice)"
+        params["date"] = "\(shoppingCartItem.tripDate)"
+        params["time"] = "\(shoppingCartItem.tripTime)"
+        params["totalPay"] = "\(shoppingCartItem.totalPrice)"
+        self.httpPostRequest("rest_shopping/addToShoppingCart", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
     // 修改购物车
     class func httpRequestEditShoppingCart(userID: String, goodID: String, activityID: String, date: String, time: String, adult: Int, young: Int, child: Int, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
         var params = Dictionary<String, String>()
@@ -37,7 +58,7 @@ class HttpReqManager: NSObject {
         params["adultNum"] = "\(adult)"
         params["youthNum"] = "\(young)"
         params["childrenNum"] = "\(child)"
-        self.httpRequest("rest_shopping/editShoppingItem", params: params, completion: { (response) -> Void in
+        self.httpPostRequest("rest_shopping/editShoppingItem", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in
                 failure?(error)
@@ -137,6 +158,30 @@ class HttpReqManager: NSObject {
         params["email"] = contact.email
         params["sex"] = "\(contact.intGender)"
         self.httpPostRequest("rest_shopping/editContactItem", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
+    // 删除联系人
+    class func httpReqeustDeleteContact(userID: String, contact:ContactItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["contactId"] = contact.identifier
+        self.httpRequest("rest_shopping/delContactItem", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
+    // 设置默认联系人
+    class func httpRequestSetDefaultContact(userID: String, contact:ContactItem, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["contactId"] = contact.identifier
+        self.httpRequest("rest_shopping/setDefaultContact", params: params, completion: { (response) -> Void in
             completion?(response)
             }) { (error) -> Void in
                 failure?(error)

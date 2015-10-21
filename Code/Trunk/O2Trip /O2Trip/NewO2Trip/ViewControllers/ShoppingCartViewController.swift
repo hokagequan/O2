@@ -167,7 +167,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         GiFHUD.show()
         HttpReqManager.httpRequestDeleteShoppingCart(userID, goodIDs: goods, completion: { (response) -> Void in
             GiFHUD.dismiss()
-            if response["err_code"] as! String == "200" && response["flag"] as! String == "true" {
+            if response["err_code"] as! String == "200" && (response["data"] as! Dictionary<String, AnyObject>)["flag"] as! String == "true" {
                 var toDelItems: Set<OrderItem> = Set()
                 for index in self.selectedIndexes {
                     toDelItems.insert(self.items[index])

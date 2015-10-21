@@ -147,6 +147,7 @@ class OrderItem: Hashable {
                 self.tripPersonCount = adultCount + youngCount + childCount
                 
                 self.totalPrice = self.price * adultCount + self.youngPrice * youngCount + self.childPrice * childCount
+                completion?(response)
             }
             else {
                 failure?(NSError(domain: response["msg"] as! String, code: 404, userInfo: nil))
