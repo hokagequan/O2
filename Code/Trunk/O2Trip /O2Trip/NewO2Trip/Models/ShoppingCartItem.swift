@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ShoppingCartItem {
+class ShoppingCartItem: NSObject {
     
     var identifier: String?
     var activityID: String?

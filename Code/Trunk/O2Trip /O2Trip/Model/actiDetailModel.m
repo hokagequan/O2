@@ -38,7 +38,7 @@
         self.label=[dic objectForKey:@"label"];
         self.prompt=[dic objectForKey:@"prompt"];
         self.accurateTag=[dic objectForKey:@"accurateTag"];
-        
+        self.startDate = dic[@"startTime"];
     }
     return self;
 }

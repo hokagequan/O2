@@ -34,5 +34,6 @@
 @property(nonatomic,strong)NSString* label;
 @property(nonatomic,strong)NSString* prompt;
 @property(nonatomic,strong)NSString* accurateTag;
+@property(nonatomic,strong)NSString *startDate;
 -(id)initWithDic:(NSDictionary*)dic;
 @end

@@ -32,6 +32,9 @@
 #import "timeViewModel.h"
 #import "yearModel.h"
 #import "middleViewController.h"
+
+#import "O2Trip-Swift.h"
+
 #define ALERTVIEW(STRING) UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:STRING delegate:self cancelButtonTitle:nil  otherButtonTitles:@"确定", nil];\
 [alertView show];
 #define STRING_SIZE(TEXT,FONT) CGSize size = [TEXT boundingRectWithSize:CGSizeMake(262, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:FONT]} context:nil].size;
@@ -1279,10 +1282,40 @@
    
 }
 
+- (ShoppingCartItem *)converModel:(actiDetailModel *)model {
+    ShoppingCartItem *item = [[ShoppingCartItem alloc] init];
+    item.activityID = model.actiId;
+    item.activityTitle = model.actiTitle;
+    item.tripDate = model.startDate;
+    item.tripTime = @"00:00";
+    item.adultCount = 1;
+    item.youngCount = 0;
+    item.childCount = 0;
+    item.price = [model.actiPrice integerValue];
+    item.youngPrice = item.price;
+    item.childPrice = item.price;
+    item.totalPrice = item.price * item.adultCount + item.youngPrice * item.youngCount + item.childPrice * item.childCount;
+    
+    return item;
+}
+
 #pragma mark - Actions
 
 - (IBAction)clickAddToShoppingCart:(id)sender {
-    // TODO: 加入购物车
+    actiDetailModel* actiModel = [self.bigArray lastObject];
+    ShoppingCartItem *item = [self converModel:actiModel];
+    [HttpReqManager httpRequestAddShoppingCart:[ODataManager sharedInstance].userID
+                              shoppingCartItem:item
+                                    completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
+                                        if ([response[@"err_code"] isEqualToString:@"200"]) {
+                                            ALERTVIEW(@"添加成功");
+                                        }
+                                        else {
+                                            ALERTVIEW(@"添加失败");
+                                        }
+                                    } failure:^(NSError * _Nullable error) {
+                                        ALERTVIEW(@"添加失败");
+                                    }];
 }
 
 
