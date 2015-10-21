@@ -14,6 +14,8 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var emptyView: UIView!
     
     var contactItems = [ContactItem]()
+    var selectItem: ContactItem? = nil
+    var isToEdit: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,15 +90,31 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectItem = contactItems[indexPath.row]
+        isToEdit = true
+        self.performSegueWithIdentifier("ContactEditSegue", sender: self)
+    }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ContactEditSegue" {
+            let viewController = segue.destinationViewController as! NewContactViewController
+            
+            if isToEdit {
+                viewController.contactInfo = selectItem
+                viewController.pageType = ContactPageType.Edit
+                isToEdit = false
+            }
+            else {
+                viewController.pageType = ContactPageType.Add
+            }
+        }
     }
-    */
 
 }

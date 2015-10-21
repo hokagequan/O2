@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum ContactPageType {
+    case Add
+    case Edit
+}
+
 class NewContactViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -15,11 +20,6 @@ class NewContactViewController: UIViewController, UITableViewDataSource, UITable
     
     var contactInfo: ContactItem? = nil
     var pageType: ContactPageType = .Add
-    
-    enum ContactPageType {
-        case Add
-        case Edit
-    }
     
     enum ContactDetailRow: Int {
         case LastName = 0
@@ -102,6 +102,9 @@ class NewContactViewController: UIViewController, UITableViewDataSource, UITable
                 break
             case ContactDetailRow.Email.rawValue:
                 contactInfo?.email = text
+                break
+            case ContactDetailRow.Gender.rawValue:
+                contactInfo?.gender = text
                 break
             default:
                 break
