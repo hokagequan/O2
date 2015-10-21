@@ -20,7 +20,11 @@
 #import "SVPullToRefresh.h"
 #define ALERTVIEW(STRING) UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:STRING delegate:self cancelButtonTitle:nil  otherButtonTitles:@"确定", nil];\
 [alertView show];
-@interface collectionViewController (private)
+@interface collectionViewController ()
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolBottomLC;
+
+@property (strong, nonatomic) NSMutableIndexSet *selectIndexes;
 
 -(void)reachabilityChanged:(NSNotification*)note;
 
@@ -51,10 +55,14 @@
     self.tableView.dataSource=self;
     self.tableView.backgroundColor=[UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1];
   }
- -(void)viewDidLoad
+
+-(void)viewDidLoad
 {
     
     [super viewDidLoad];
+    
+    self.toolBottomLC.constant = -49;
+    
     self.cellArray=[[NSMutableArray alloc]initWithCapacity:0];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor=[UIColor grayColor];
@@ -109,6 +117,8 @@
         [self setBgView];
         isclip=YES;
         
+        [self showToolBar:YES];
+        
     }else
     {
         [button setTitle:@"编辑" forState:UIControlStateNormal];
@@ -120,6 +130,8 @@
         _cell.bgView.userInteractionEnabled=YES;
         isEdting=NO;
         isclip=NO;
+        
+        [self showToolBar:NO];
     }
 
 }
@@ -137,6 +149,15 @@
 -(void)showjuhua
 {
    [GiFHUD dismiss];
+}
+
+- (void)showToolBar:(BOOL)show {
+    CGFloat distance = show ? 0 : -49;
+    self.toolBottomLC.constant = distance;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -176,14 +197,14 @@
    [_cell.mImageView sd_setImageWithURL:url];
     _indexpah=indexPath.row;
     if (isEdting==YES) {
-        _cell.cancelLabel.alpha=1;
+//        _cell.cancelLabel.alpha=1;
         _cell.cancelButton.alpha=1;
-        _cell.bgView.alpha=0.5;
+//        _cell.bgView.alpha=0.5;
     }else
     {
         _cell.cancelButton.alpha=0;
-        _cell.cancelLabel.alpha=0;
-        _cell.bgView.alpha=0;
+//        _cell.cancelLabel.alpha=0;
+//        _cell.bgView.alpha=0;
 
     }
    
@@ -252,32 +273,44 @@
     }
 
 }
-//取消收藏
--(void)cancelButtonClick:(UIButton*)button
-{
-   
-    collectionModel* collectModel=[self.array objectAtIndex:button.tag];
-    UserViewModel* userModel=[[UserViewModel alloc]init];
-    NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
-    NSString* useId=[userDefaults objectForKey:@"loginUserId"];
-    [userModel cancelCollection:useId withactiId:collectModel.actiId];
-    [userModel setBlockWithReturnBlock:^(id returnValue) {
-        cancelModel* cancel=returnValue;
-        if ([cancel.flag isEqualToString:@"true"]) {
-            ALERTVIEW(@"删除成功");
-            alertView.delegate=self;
-            [self.array removeObjectAtIndex:button.tag];
-            [self.tableView reloadData];
-            [self collectionView];
 
-        }
-    } WithErrorBlock:^(id errorCode) {
-        
-    } WithFailureBlock:^{
-        
-    }];
+-(void)cancelButtonClick:(UIButton*)button {
+//    collectionModel* collectModel=[self.array objectAtIndex:button.tag];
+//    UserViewModel* userModel=[[UserViewModel alloc]init];
+//    NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+//    NSString* useId=[userDefaults objectForKey:@"loginUserId"];
+//    [userModel cancelCollection:useId withactiId:collectModel.actiId];
+//    [userModel setBlockWithReturnBlock:^(id returnValue) {
+//        cancelModel* cancel=returnValue;
+//        if ([cancel.flag isEqualToString:@"true"]) {
+//            ALERTVIEW(@"删除成功");
+//            alertView.delegate=self;
+//            [self.array removeObjectAtIndex:button.tag];
+//            [self.tableView reloadData];
+//            [self collectionView];
+//
+//        }
+//    } WithErrorBlock:^(id errorCode) {
+//        
+//    } WithFailureBlock:^{
+//        
+//    }];
 
+    button.selected = !button.selected;
     
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:button.tag inSection:0];
+    collectionCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    if ([self.selectIndexes containsIndex:button.tag]) {
+        // 取消选择
+        [self.selectIndexes removeIndex:button.tag];
+        cell.bgView.alpha = 0.0;
+    }
+    else {
+        // 选择
+        [self.selectIndexes addIndex:button.tag];
+        cell.bgView.alpha = 0.5;
+    }
 }
 
 //设置是否可以点击
@@ -318,4 +351,26 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
+
+#pragma mark - Actions
+
+- (IBAction)clickAddShoppingCart:(id)sender {
+    // TODO: 加入购物车
+    
+}
+
+- (IBAction)clickDelete:(id)sender {
+    // TODO: 删除收藏
+}
+
+#pragma mark - Property
+
+- (NSMutableIndexSet *)selectIndexes {
+    if (!_selectIndexes) {
+        _selectIndexes = [NSMutableIndexSet indexSet];
+    }
+    
+    return _selectIndexes;
+}
+
 @end

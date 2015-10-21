@@ -2819,9 +2819,10 @@
                                                                 <constraint firstAttribute="height" constant="16" id="Hnz-NS-WCf"/>
                                                                 <constraint firstAttribute="width" constant="16" id="uUG-BG-B3d"/>
                                                             </constraints>
-                                                            <state key="normal" backgroundImage="collect@3x-03.png">
+                                                            <state key="normal" backgroundImage="favorite_mark_nor.png">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <state key="selected" backgroundImage="favorite_mark_sel.png"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取消收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39P-pZ-Ds9">
                                                             <rect key="frame" x="139" y="175" width="42" height="21"/>
@@ -2953,6 +2954,51 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDv-dP-SDm" userLabel="Tool">
+                                <rect key="frame" x="0.0" y="568" width="320" height="49"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvq-1f-gmm">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="49"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="加入购物车"/>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.12549019610000001" green="0.69019607839999997" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickAddShoppingCart:" destination="9T6-9Y-hdB" eventType="touchUpInside" id="W9p-ws-q8q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7y-B7-BTA">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="49"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="删除" image="delete_disable.png"/>
+                                        <state key="highlighted" image="delete_enable.png">
+                                            <color key="titleColor" red="0.12549019610000001" green="0.69019607839999997" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickDelete:" destination="9T6-9Y-hdB" eventType="touchUpInside" id="ski-4N-PHL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="J7y-B7-BTA" firstAttribute="top" secondItem="eDv-dP-SDm" secondAttribute="top" id="1xo-2H-bIz"/>
+                                    <constraint firstItem="Xvq-1f-gmm" firstAttribute="leading" secondItem="eDv-dP-SDm" secondAttribute="leading" id="55v-5O-scQ"/>
+                                    <constraint firstItem="J7y-B7-BTA" firstAttribute="width" secondItem="Xvq-1f-gmm" secondAttribute="width" id="9bY-Km-hcb"/>
+                                    <constraint firstAttribute="bottom" secondItem="J7y-B7-BTA" secondAttribute="bottom" id="PjR-X0-V31"/>
+                                    <constraint firstAttribute="trailing" secondItem="J7y-B7-BTA" secondAttribute="trailing" id="WM6-8U-Xnt"/>
+                                    <constraint firstItem="J7y-B7-BTA" firstAttribute="leading" secondItem="Xvq-1f-gmm" secondAttribute="trailing" id="aNt-4O-ywz"/>
+                                    <constraint firstItem="Xvq-1f-gmm" firstAttribute="top" secondItem="eDv-dP-SDm" secondAttribute="top" id="dtl-JB-fUI"/>
+                                    <constraint firstAttribute="height" constant="49" id="fGK-og-41d"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xvq-1f-gmm" secondAttribute="bottom" id="vN1-gi-bYt"/>
+                                    <constraint firstItem="J7y-B7-BTA" firstAttribute="leading" secondItem="Xvq-1f-gmm" secondAttribute="trailing" id="x0h-Eb-x6c"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2963,11 +3009,13 @@
                             <constraint firstItem="THG-mc-gqe" firstAttribute="top" secondItem="3pe-2i-SjI" secondAttribute="bottom" id="Bsx-FJ-hyU"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4AV-cH-LjT" secondAttribute="bottom" id="CrL-qi-vd5"/>
                             <constraint firstItem="dnx-yP-Gii" firstAttribute="leading" secondItem="5dG-Ei-hiX" secondAttribute="leadingMargin" constant="-16" id="EtI-Nz-ADb"/>
+                            <constraint firstItem="k1V-Lo-JNE" firstAttribute="top" secondItem="eDv-dP-SDm" secondAttribute="bottom" constant="-49" id="MA8-bq-Lmg"/>
                             <constraint firstItem="IOD-Gh-4oW" firstAttribute="leading" secondItem="5dG-Ei-hiX" secondAttribute="leading" constant="20" id="NDG-NN-9NG"/>
                             <constraint firstItem="k1V-Lo-JNE" firstAttribute="top" secondItem="4AV-cH-LjT" secondAttribute="bottom" id="Qj2-lc-oy2"/>
                             <constraint firstItem="Rxi-ZX-dci" firstAttribute="leading" secondItem="5dG-Ei-hiX" secondAttribute="leading" constant="7" id="Qoz-nq-KE1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4AV-cH-LjT" secondAttribute="trailing" constant="-16" id="S0h-D2-cca"/>
                             <constraint firstItem="4AV-cH-LjT" firstAttribute="leading" secondItem="5dG-Ei-hiX" secondAttribute="leading" id="Xpr-1R-j4n"/>
+                            <constraint firstItem="eDv-dP-SDm" firstAttribute="leading" secondItem="5dG-Ei-hiX" secondAttribute="leading" id="Xuh-c6-qNV"/>
                             <constraint firstItem="Rxi-ZX-dci" firstAttribute="top" secondItem="jT8-Hq-QvE" secondAttribute="bottom" constant="5" id="bLP-Ie-hyj"/>
                             <constraint firstItem="k1V-Lo-JNE" firstAttribute="top" secondItem="THG-mc-gqe" secondAttribute="bottom" id="cir-a5-EQ6"/>
                             <constraint firstAttribute="trailing" secondItem="dnx-yP-Gii" secondAttribute="trailing" id="fe1-TB-DnY"/>
@@ -2982,6 +3030,7 @@
                             <constraint firstItem="dnx-yP-Gii" firstAttribute="leading" secondItem="5dG-Ei-hiX" secondAttribute="leading" id="nd6-0G-nWI"/>
                             <constraint firstItem="dnx-yP-Gii" firstAttribute="top" secondItem="5dG-Ei-hiX" secondAttribute="top" id="rGU-nk-VIY"/>
                             <constraint firstAttribute="trailing" secondItem="THG-mc-gqe" secondAttribute="trailing" id="rS7-bw-45G"/>
+                            <constraint firstAttribute="trailing" secondItem="eDv-dP-SDm" secondAttribute="trailing" id="tIU-7f-H3l"/>
                             <constraint firstItem="THG-mc-gqe" firstAttribute="leading" secondItem="5dG-Ei-hiX" secondAttribute="leading" id="vXQ-I6-vCF"/>
                             <constraint firstAttribute="trailing" secondItem="4AV-cH-LjT" secondAttribute="trailing" id="x3o-3k-SJ6"/>
                         </constraints>
@@ -2991,6 +3040,7 @@
                         <outlet property="bgView" destination="THG-mc-gqe" id="VPb-xy-57u"/>
                         <outlet property="bianji" destination="3pe-2i-SjI" id="Ewg-UU-guA"/>
                         <outlet property="tableView" destination="4AV-cH-LjT" id="t9M-fc-cwb"/>
+                        <outlet property="toolBottomLC" destination="MA8-bq-Lmg" id="Ac1-Cx-vOb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOD-tx-Y6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -7098,7 +7148,6 @@
         <image name="add.png" width="12" height="12"/>
         <image name="check_nor.png" width="14" height="14"/>
         <image name="check_sel.png" width="16" height="16"/>
-        <image name="collect@3x-03.png" width="60" height="60"/>
         <image name="contact_check.png" width="11" height="11"/>
         <image name="contact_email.png" width="12" height="12"/>
         <image name="contact_name.png" width="12" height="12"/>
@@ -7106,9 +7155,12 @@
         <image name="contact_wechat.png" width="12" height="12"/>
         <image name="decrease.png" width="12" height="12"/>
         <image name="delete_disable.png" width="15" height="15"/>
+        <image name="delete_enable.png" width="15" height="15"/>
         <image name="details@3x-05.png" width="60" height="60"/>
         <image name="details@3x-06.png" width="60" height="60"/>
         <image name="discover@3x-01.png" width="52" height="52"/>
+        <image name="favorite_mark_nor.png" width="21" height="21"/>
+        <image name="favorite_mark_sel.png" width="21" height="21"/>
         <image name="home@3x-01-01.png" width="38" height="38"/>
         <image name="install@3x-05-01.png" width="1120" height="140"/>
         <image name="logging@3x-01.png" width="383" height="383"/>
@@ -7134,8 +7186,8 @@
         <image name="shopping cart_empty.png" width="52" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WGx-Ii-LWR"/>
         <segue reference="oSK-Jd-rUA"/>
+        <segue reference="gRI-iX-hP5"/>
         <segue reference="qyw-SV-Wzi"/>
     </inferredMetricsTieBreakers>
 </document>
