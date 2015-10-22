@@ -12,7 +12,7 @@ import UIKit
     optional func didCompletionSelectDate(calendarView: CalendarView, date: String?, time: String?)
 }
 
-class CalendarView: UIView, VRGCalendarViewDelegate {
+class CalendarView: UIView, VRGCalendarViewDelegate, TimePickerViewDelegate {
 
     @IBOutlet weak var calendarContainerView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
@@ -103,6 +103,9 @@ class CalendarView: UIView, VRGCalendarViewDelegate {
     }
     
     @IBAction func clickEditTime(sender: AnyObject) {
+        let timePickerView = TimePickerView.loadFromNib()
+        timePickerView!.delegate = self
+        timePickerView!.showInView(self.superview!)
     }
     
     // MARK: - VRGCalendarViewDelegate
@@ -119,6 +122,13 @@ class CalendarView: UIView, VRGCalendarViewDelegate {
     
     func calendarView(calendarView: VRGCalendarView!, switchedToMonth month: Int32, targetHeight: Float, animated: Bool) {
         calendarDateLabel.text = "\(calendarView.currentMonth.year())年\(calendarView.currentMonth.month())月"
+    }
+    
+    // MARK: TimePickerViewDelegate
+    
+    func didCompleteChoose(time: String, timeString: String) {
+        calendarTime = time
+        dateLabel.text = timeString
     }
 
 }

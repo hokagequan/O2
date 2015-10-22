@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TimePickerView" customModule="O2Trip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwq-bU-lQo">
+                    <rect key="frame" x="0.0" y="421" width="600" height="179"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpS-bI-aoZ" userLabel="Selected Mark">
+                            <rect key="frame" x="0.0" y="78" width="600" height="34"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="9DC-WM-ToH"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mU0-zb-4kM" userLabel="Background">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6R0-Zu-Oga">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="JiH-B6-wde"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="取消">
+                                        <color key="titleColor" red="0.12549019610000001" green="0.69019607839999997" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clickCancel:" destination="iN0-l3-epB" eventType="touchUpInside" id="oDf-e2-Feh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mQ-ta-vMM">
+                                    <rect key="frame" x="540" y="0.0" width="60" height="44"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="8ul-JE-xaH"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="完成">
+                                        <color key="titleColor" red="0.12549019610000001" green="0.69019607839999997" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clickDone:" destination="iN0-l3-epB" eventType="touchUpInside" id="6f3-R3-Chg"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择活动时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bh-V2-pcT">
+                                    <rect key="frame" x="70" y="0.0" width="460" height="44"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="7bh-V2-pcT" firstAttribute="top" secondItem="mU0-zb-4kM" secondAttribute="top" id="0fh-jz-Kac"/>
+                                <constraint firstItem="0mQ-ta-vMM" firstAttribute="leading" secondItem="7bh-V2-pcT" secondAttribute="trailing" constant="10" id="K6L-mc-UFD"/>
+                                <constraint firstAttribute="height" constant="44" id="QIi-5l-1hl"/>
+                                <constraint firstItem="0mQ-ta-vMM" firstAttribute="top" secondItem="mU0-zb-4kM" secondAttribute="top" id="QTD-2N-JfU"/>
+                                <constraint firstAttribute="bottom" secondItem="6R0-Zu-Oga" secondAttribute="bottom" id="XbM-Xb-zvJ"/>
+                                <constraint firstAttribute="bottom" secondItem="7bh-V2-pcT" secondAttribute="bottom" id="bfm-s2-Z0P"/>
+                                <constraint firstItem="7bh-V2-pcT" firstAttribute="leading" secondItem="6R0-Zu-Oga" secondAttribute="trailing" constant="10" id="h0f-fD-kkD"/>
+                                <constraint firstAttribute="trailing" secondItem="0mQ-ta-vMM" secondAttribute="trailing" id="j2q-Z5-2Eq"/>
+                                <constraint firstItem="6R0-Zu-Oga" firstAttribute="leading" secondItem="mU0-zb-4kM" secondAttribute="leading" id="pFp-KI-vdQ"/>
+                                <constraint firstAttribute="bottom" secondItem="0mQ-ta-vMM" secondAttribute="bottom" id="puz-LC-fPj"/>
+                                <constraint firstItem="6R0-Zu-Oga" firstAttribute="top" secondItem="mU0-zb-4kM" secondAttribute="top" id="wum-yR-px6"/>
+                            </constraints>
+                        </view>
+                        <pickerView contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gox-pb-sjM">
+                            <rect key="frame" x="0.0" y="44" width="600" height="135"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="135" id="XqJ-PG-gTM"/>
+                            </constraints>
+                        </pickerView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="gox-pb-sjM" secondAttribute="trailing" id="TkO-6G-t33"/>
+                        <constraint firstAttribute="trailing" secondItem="vpS-bI-aoZ" secondAttribute="trailing" id="XsY-Ur-gEc"/>
+                        <constraint firstItem="vpS-bI-aoZ" firstAttribute="top" secondItem="mU0-zb-4kM" secondAttribute="bottom" constant="34" id="YEY-hU-FBK"/>
+                        <constraint firstItem="mU0-zb-4kM" firstAttribute="leading" secondItem="Jwq-bU-lQo" secondAttribute="leading" id="cnN-A4-bID"/>
+                        <constraint firstItem="gox-pb-sjM" firstAttribute="leading" secondItem="Jwq-bU-lQo" secondAttribute="leading" id="i4t-uL-MUX"/>
+                        <constraint firstItem="vpS-bI-aoZ" firstAttribute="leading" secondItem="Jwq-bU-lQo" secondAttribute="leading" id="j91-X0-sGY"/>
+                        <constraint firstAttribute="bottom" secondItem="gox-pb-sjM" secondAttribute="bottom" id="lmf-RR-oWj"/>
+                        <constraint firstAttribute="trailing" secondItem="mU0-zb-4kM" secondAttribute="trailing" id="pmL-DC-QxV"/>
+                        <constraint firstAttribute="height" constant="179" id="w5e-ga-NaL"/>
+                        <constraint firstItem="mU0-zb-4kM" firstAttribute="top" secondItem="Jwq-bU-lQo" secondAttribute="top" id="wqf-No-9gR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Jwq-bU-lQo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UG9-PF-dnL"/>
+                <constraint firstAttribute="bottom" secondItem="Jwq-bU-lQo" secondAttribute="bottom" id="gSV-uT-BAq"/>
+                <constraint firstAttribute="trailing" secondItem="Jwq-bU-lQo" secondAttribute="trailing" id="qMu-fp-Zme"/>
+            </constraints>
+            <connections>
+                <outlet property="pickerView" destination="gox-pb-sjM" id="fFU-N4-g76"/>
+            </connections>
+            <point key="canvasLocation" x="306" y="344"/>
+        </view>
+    </objects>
+</document>
