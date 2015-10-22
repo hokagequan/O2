@@ -1306,6 +1306,7 @@
     [item loadInfoFromModel:actiModel];
     
     AddShoppingCartView *view = [AddShoppingCartView loadFromNib];
+    view.shoppingCartItem = item;
     view.shoppingCartItem.adultCount = 2;
     view.shoppingCartItem.youngCount = 2;
     view.shoppingCartItem.childCount = 2;

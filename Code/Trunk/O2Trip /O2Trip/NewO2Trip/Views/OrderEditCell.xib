@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzT-TR-bAk" userLabel="Border">
-                        <rect key="frame" x="2" y="32" width="316" height="1"/>
+                        <rect key="frame" x="15" y="32" width="290" height="1"/>
                         <animations/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -86,7 +86,7 @@
                     <constraint firstAttribute="trailing" secondItem="AjU-nm-e4s" secondAttribute="trailing" constant="15" id="KfK-bT-Kex"/>
                     <constraint firstItem="9wn-Sv-VLa" firstAttribute="leading" secondItem="yXg-hR-W3J" secondAttribute="leading" constant="15" id="MDy-Gd-7ro"/>
                     <constraint firstAttribute="bottom" secondItem="qzT-TR-bAk" secondAttribute="bottom" id="MtU-Zf-2dM"/>
-                    <constraint firstAttribute="trailing" secondItem="qzT-TR-bAk" secondAttribute="trailing" constant="2" id="Unv-ET-L9P"/>
+                    <constraint firstAttribute="trailing" secondItem="qzT-TR-bAk" secondAttribute="trailing" constant="15" id="Unv-ET-L9P"/>
                     <constraint firstItem="AjU-nm-e4s" firstAttribute="leading" secondItem="vQZ-Ua-hJr" secondAttribute="trailing" constant="-1" id="XJb-gw-D3H"/>
                     <constraint firstItem="9wn-Sv-VLa" firstAttribute="centerY" secondItem="yXg-hR-W3J" secondAttribute="centerY" id="dE7-fK-BkA"/>
                     <constraint firstItem="Rhl-ZJ-AQU" firstAttribute="leading" secondItem="KVh-EL-Pcl" secondAttribute="trailing" constant="47" id="e9f-G1-fht"/>
@@ -96,7 +96,7 @@
                     <constraint firstItem="Rhl-ZJ-AQU" firstAttribute="centerY" secondItem="yXg-hR-W3J" secondAttribute="centerY" id="sKY-dM-TMb"/>
                     <constraint firstItem="AjU-nm-e4s" firstAttribute="width" secondItem="vQZ-Ua-hJr" secondAttribute="width" id="soZ-zf-7yZ"/>
                     <constraint firstItem="AjU-nm-e4s" firstAttribute="height" secondItem="vQZ-Ua-hJr" secondAttribute="height" id="txn-6H-4kp"/>
-                    <constraint firstItem="qzT-TR-bAk" firstAttribute="leading" secondItem="yXg-hR-W3J" secondAttribute="leading" constant="2" id="wAX-cC-cr3"/>
+                    <constraint firstItem="qzT-TR-bAk" firstAttribute="leading" secondItem="yXg-hR-W3J" secondAttribute="leading" constant="15" id="wAX-cC-cr3"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

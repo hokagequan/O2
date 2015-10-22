@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85H-0t-8OP">
-                        <rect key="frame" x="162" y="10" width="124" height="24"/>
+                        <rect key="frame" x="181" y="10" width="124" height="24"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbI-HW-73T" userLabel="Border">
                                 <rect key="frame" x="35" y="0.0" width="1" height="24"/>
@@ -89,7 +89,7 @@
                     <constraint firstItem="YR9-Qo-RBj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Iap-3v-JYm"/>
                     <constraint firstItem="YR9-Qo-RBj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U4V-ih-sUh"/>
                     <constraint firstAttribute="trailing" secondItem="xZM-Vb-v9R" secondAttribute="trailing" constant="15" id="Uao-Ff-SSj"/>
-                    <constraint firstAttribute="trailing" secondItem="85H-0t-8OP" secondAttribute="trailing" constant="34" id="XIO-oM-LoQ"/>
+                    <constraint firstAttribute="trailing" secondItem="85H-0t-8OP" secondAttribute="trailing" constant="15" id="XIO-oM-LoQ"/>
                     <constraint firstItem="xZM-Vb-v9R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rOs-sl-Vqn"/>
                     <constraint firstAttribute="bottom" secondItem="xZM-Vb-v9R" secondAttribute="bottom" id="ujR-Xk-fkm"/>
                 </constraints>
@@ -97,6 +97,7 @@
             <animations/>
             <connections>
                 <outlet property="calendarLabel" destination="lDi-2P-nYE" id="gnT-tf-qAk"/>
+                <outlet property="calendarView" destination="85H-0t-8OP" id="uE8-iF-ty4"/>
                 <outlet property="titleLabel" destination="YR9-Qo-RBj" id="hC4-he-1Bw"/>
             </connections>
             <point key="canvasLocation" x="431" y="298"/>

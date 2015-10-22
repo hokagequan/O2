@@ -16,6 +16,7 @@ class OrderCalendarCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var calendarLabel: UILabel!
+    @IBOutlet weak var calendarView: UIView!
     
     weak var delegate: OrderCalendarCellDelegate? = nil
     
@@ -34,6 +35,13 @@ class OrderCalendarCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        CustomObjectUtil.customObject([self.calendarView], backgroundColor: UIColor.clearColor(), borderWith: 1, borderColor: grayColor, corner: 2.0)
+        
+        let curDate = NSDate()
+        let format = NSDateFormatter()
+        format.dateFormat = "yyyy-MM-dd"
+        let stringDate = format.stringFromDate(curDate)
+        self.calendarLabel.text = stringDate
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
