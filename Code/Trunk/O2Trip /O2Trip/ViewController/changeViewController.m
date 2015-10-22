@@ -22,6 +22,9 @@
 #import "NetRequestClass.h"
 #import "Reachability.h"
 #import "LoginViewController.h"
+
+#import "O2Trip-Swift.h"
+
 #define ALERTVIEW(STRING) UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:STRING delegate:self cancelButtonTitle:nil  otherButtonTitles:@"确定", nil];\
 [alertView show];
 @interface changeViewController (private)
@@ -64,7 +67,9 @@
     [super viewWillAppear:YES];
     self.navigationController.navigationBarHidden=YES;
   
-   
+   // FIXME: Test
+    CalendarView *view = [CalendarView loadFromNib];
+    [view showInView:self.view];
 }
 -(void)textHeight
 {

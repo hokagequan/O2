@@ -15,6 +15,20 @@
 		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		100A54CC1BB37FF100F974A2 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54CB1BB37FF100F974A2 /* OrderItem.swift */; settings = {ASSET_TAGS = (); }; };
+		1039391C1BD896500089F06A /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1039391A1BD8964F0089F06A /* arrow_left@2x.png */; settings = {ASSET_TAGS = (); }; };
+		1039391D1BD896500089F06A /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1039391B1BD8964F0089F06A /* arrow_right@2x.png */; settings = {ASSET_TAGS = (); }; };
+		103939211BD898750089F06A /* calendar_mark_nostock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1039391E1BD898750089F06A /* calendar_mark_nostock@2x.png */; settings = {ASSET_TAGS = (); }; };
+		103939221BD898750089F06A /* calendar_mark_stock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1039391F1BD898750089F06A /* calendar_mark_stock@2x.png */; settings = {ASSET_TAGS = (); }; };
+		103939231BD898750089F06A /* calendar_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 103939201BD898750089F06A /* calendar_select@2x.png */; settings = {ASSET_TAGS = (); }; };
+		103939251BD8B30F0089F06A /* GridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103939241BD8B30F0089F06A /* GridView.xib */; settings = {ASSET_TAGS = (); }; };
+		103939281BD8B4ED0089F06A /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 103939271BD8B4ED0089F06A /* GridView.m */; settings = {ASSET_TAGS = (); }; };
+		104A32B21BD878CD00F86C49 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A32A91BD878CD00F86C49 /* NSDate+convenience.m */; settings = {ASSET_TAGS = (); }; };
+		104A32B31BD878CD00F86C49 /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A32AB1BD878CD00F86C49 /* NSMutableArray+convenience.m */; settings = {ASSET_TAGS = (); }; };
+		104A32B41BD878CD00F86C49 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A32AD1BD878CD00F86C49 /* UIColor+expanded.m */; settings = {ASSET_TAGS = (); }; };
+		104A32B51BD878CD00F86C49 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A32AF1BD878CD00F86C49 /* UIView+convenience.m */; settings = {ASSET_TAGS = (); }; };
+		104A32B61BD878CD00F86C49 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A32B11BD878CD00F86C49 /* VRGCalendarView.m */; settings = {ASSET_TAGS = (); }; };
+		104A32B81BD8798F00F86C49 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104A32B71BD8798F00F86C49 /* CalendarView.swift */; settings = {ASSET_TAGS = (); }; };
+		104A32BA1BD87B0F00F86C49 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104A32B91BD87B0F00F86C49 /* CalendarView.xib */; settings = {ASSET_TAGS = (); }; };
 		1052CCE41BCD067100DDDAA5 /* delete_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCE01BCD067100DDDAA5 /* delete_disable@2x.png */; settings = {ASSET_TAGS = (); }; };
 		1052CCE51BCD067100DDDAA5 /* delete_disable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCE11BCD067100DDDAA5 /* delete_disable@3x.png */; settings = {ASSET_TAGS = (); }; };
 		1052CCE61BCD067100DDDAA5 /* delete_enable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1052CCE21BCD067100DDDAA5 /* delete_enable@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -468,6 +482,26 @@
 		100A54C51BB2B88900F974A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		100A54CB1BB37FF100F974A2 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		1039391A1BD8964F0089F06A /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
+		1039391B1BD8964F0089F06A /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
+		1039391E1BD898750089F06A /* calendar_mark_nostock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_mark_nostock@2x.png"; sourceTree = "<group>"; };
+		1039391F1BD898750089F06A /* calendar_mark_stock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_mark_stock@2x.png"; sourceTree = "<group>"; };
+		103939201BD898750089F06A /* calendar_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_select@2x.png"; sourceTree = "<group>"; };
+		103939241BD8B30F0089F06A /* GridView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridView.xib; sourceTree = "<group>"; };
+		103939261BD8B4ED0089F06A /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		103939271BD8B4ED0089F06A /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
+		104A32A81BD878CD00F86C49 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
+		104A32A91BD878CD00F86C49 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
+		104A32AA1BD878CD00F86C49 /* NSMutableArray+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+convenience.h"; sourceTree = "<group>"; };
+		104A32AB1BD878CD00F86C49 /* NSMutableArray+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+convenience.m"; sourceTree = "<group>"; };
+		104A32AC1BD878CD00F86C49 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+expanded.h"; sourceTree = "<group>"; };
+		104A32AD1BD878CD00F86C49 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+expanded.m"; sourceTree = "<group>"; };
+		104A32AE1BD878CD00F86C49 /* UIView+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+convenience.h"; sourceTree = "<group>"; };
+		104A32AF1BD878CD00F86C49 /* UIView+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+convenience.m"; sourceTree = "<group>"; };
+		104A32B01BD878CD00F86C49 /* VRGCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGCalendarView.h; sourceTree = "<group>"; };
+		104A32B11BD878CD00F86C49 /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
+		104A32B71BD8798F00F86C49 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		104A32B91BD87B0F00F86C49 /* CalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		1052CCE01BCD067100DDDAA5 /* delete_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_disable@2x.png"; sourceTree = "<group>"; };
 		1052CCE11BCD067100DDDAA5 /* delete_disable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_disable@3x.png"; sourceTree = "<group>"; };
 		1052CCE21BCD067100DDDAA5 /* delete_enable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_enable@2x.png"; sourceTree = "<group>"; };
@@ -1168,6 +1202,8 @@
 				10C6B23F1BD798C400D38847 /* AddShoppingCartView.xib */,
 				10C6B2471BD7A57000D38847 /* OrderCalendarCell.swift */,
 				10C6B2481BD7A57000D38847 /* OrderCalendarCell.xib */,
+				104A32B71BD8798F00F86C49 /* CalendarView.swift */,
+				104A32B91BD87B0F00F86C49 /* CalendarView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1199,6 +1235,38 @@
 				10D4CE2C1BC9F8C000565D59 /* CustomObjectUtil.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		103939191BD8964F0089F06A /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1039391E1BD898750089F06A /* calendar_mark_nostock@2x.png */,
+				1039391F1BD898750089F06A /* calendar_mark_stock@2x.png */,
+				103939201BD898750089F06A /* calendar_select@2x.png */,
+				1039391A1BD8964F0089F06A /* arrow_left@2x.png */,
+				1039391B1BD8964F0089F06A /* arrow_right@2x.png */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		104A32A71BD878CD00F86C49 /* VRGCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				104A32A81BD878CD00F86C49 /* NSDate+convenience.h */,
+				104A32A91BD878CD00F86C49 /* NSDate+convenience.m */,
+				104A32AA1BD878CD00F86C49 /* NSMutableArray+convenience.h */,
+				104A32AB1BD878CD00F86C49 /* NSMutableArray+convenience.m */,
+				104A32AC1BD878CD00F86C49 /* UIColor+expanded.h */,
+				104A32AD1BD878CD00F86C49 /* UIColor+expanded.m */,
+				104A32AE1BD878CD00F86C49 /* UIView+convenience.h */,
+				104A32AF1BD878CD00F86C49 /* UIView+convenience.m */,
+				104A32B01BD878CD00F86C49 /* VRGCalendarView.h */,
+				104A32B11BD878CD00F86C49 /* VRGCalendarView.m */,
+				103939261BD8B4ED0089F06A /* GridView.h */,
+				103939271BD8B4ED0089F06A /* GridView.m */,
+				103939241BD8B30F0089F06A /* GridView.xib */,
+			);
+			path = VRGCalendar;
 			sourceTree = "<group>";
 		};
 		1052CCE81BCDEF5300DDDAA5 /* Mine */ = {
@@ -1235,6 +1303,7 @@
 		108CAEAC1BC56B7B00902E34 /* ThirdPartys */ = {
 			isa = PBXGroup;
 			children = (
+				104A32A71BD878CD00F86C49 /* VRGCalendar */,
 				1052CD021BCE17ED00DDDAA5 /* AliPay */,
 				1052CCF81BCDFAF800DDDAA5 /* WeChat */,
 				10D4CE0A1BC8974000565D59 /* RefreshControl */,
@@ -1324,6 +1393,7 @@
 		10FE426E1BBACD5F00E37C76 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				103939191BD8964F0089F06A /* Calendar */,
 				10C6B2361BD772B900D38847 /* Favorites */,
 				1052CCE81BCDEF5300DDDAA5 /* Mine */,
 				10A689D41BC16DC400768482 /* Pay */,
@@ -2413,6 +2483,7 @@
 				2BDD17C01B05FDC900E65DE2 /* detailMapViewCell.xib in Resources */,
 				2B5C1F261BA9530E00E770FC /* details@3x-09.png in Resources */,
 				2B5DC4D51B4D353300BFD0AF /* FZLTXHJW.TTF in Resources */,
+				103939211BD898750089F06A /* calendar_mark_nostock@2x.png in Resources */,
 				2B5C1F421BA9530E00E770FC /* logging@3x-02.png in Resources */,
 				2B5C1F591BA9530E00E770FC /* @3x_personal-02.png in Resources */,
 				2B5C1F6D1BA9530E00E770FC /* @3x_ install-05.png in Resources */,
@@ -2448,6 +2519,7 @@
 				2B5C1F2F1BA9530E00E770FC /* collect1@2x.jpg in Resources */,
 				2B5C1F681BA9530E00E770FC /* payment process@3x-13.png in Resources */,
 				2B5C1F311BA9530E00E770FC /* discover@3x-02.png in Resources */,
+				1039391D1BD896500089F06A /* arrow_right@2x.png in Resources */,
 				2B5C1F3D1BA9530E00E770FC /* discover@3x-14.png in Resources */,
 				1052CD221BCE2E6900DDDAA5 /* pay_wechat@3x.png in Resources */,
 				10A689D21BC160D500768482 /* contact_phone@2x.png in Resources */,
@@ -2488,6 +2560,7 @@
 				2B5C1F631BA9530E00E770FC /* payment process@3x-08.png in Resources */,
 				2B5C1F6B1BA9530E00E770FC /* @3x_ install-03.png in Resources */,
 				1052CD1F1BCE2E5D00DDDAA5 /* contact_wechat@3x.png in Resources */,
+				103939231BD898750089F06A /* calendar_select@2x.png in Resources */,
 				2B5C1F0F1BA9530E00E770FC /* tab@2x-05.png in Resources */,
 				2BDD17C61B05FDC900E65DE2 /* detailCostnotesViewCell.xib in Resources */,
 				2BDCC3611AFB101A00B758BA /* ShareSDKLocalizable.strings in Resources */,
@@ -2532,11 +2605,13 @@
 				1052CCEE1BCDEF5300DDDAA5 /* contacts@2x.png in Resources */,
 				2B5C1F241BA9530E00E770FC /* details@3x-06.png in Resources */,
 				2B5C1F3C1BA9530E00E770FC /* discover@3x-13.png in Resources */,
+				103939251BD8B30F0089F06A /* GridView.xib in Resources */,
 				2BDCC3621AFB101A00B758BA /* Resource.bundle in Resources */,
 				2B5C1F5F1BA9530E00E770FC /* payment process@3x-02.png in Resources */,
 				10A689D81BC16DC400768482 /* pay_zhifubao@2x.png in Resources */,
 				10D4CE261BC9F56800565D59 /* decrease@2x.png in Resources */,
 				2B5C1F641BA9530E00E770FC /* payment process@3x-09.png in Resources */,
+				1039391C1BD896500089F06A /* arrow_left@2x.png in Resources */,
 				10C6B2331BD63EF300D38847 /* me_empty@2x.png in Resources */,
 				1052CD101BCE2E4400DDDAA5 /* check_nor@3x.png in Resources */,
 				2B5C1FC31BA9582200E770FC /* CalendarRowBottom.png in Resources */,
@@ -2545,6 +2620,7 @@
 				2B5C1F0C1BA9530E00E770FC /* tab@2x-02.png in Resources */,
 				2B5C1F5E1BA9530E00E770FC /* payment process@3x-01.png in Resources */,
 				2B5C1F671BA9530E00E770FC /* payment process@3x-12.png in Resources */,
+				104A32BA1BD87B0F00F86C49 /* CalendarView.xib in Resources */,
 				2BDCC36B1AFB101A00B758BA /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				2B5C1F501BA9530E00E770FC /* mine@3x-01.png in Resources */,
 				758BF4A81AA42B5A0023A5A6 /* Images.xcassets in Resources */,
@@ -2595,6 +2671,7 @@
 				1052CD051BCE17ED00DDDAA5 /* AlipaySDK.bundle in Resources */,
 				2B5C1F441BA9530E00E770FC /* logging@3x-04.png in Resources */,
 				2B5C1F351BA9530E00E770FC /* discover@3x-06.png in Resources */,
+				103939221BD898750089F06A /* calendar_mark_stock@2x.png in Resources */,
 				2B5C1F291BA9530E00E770FC /* details@3x-12.png in Resources */,
 				2B5C1FC61BA9582200E770FC /* CalendarSelectedDate@2x.png in Resources */,
 				2B5C1F3E1BA9530E00E770FC /* discover@3x-15.png in Resources */,
@@ -2653,6 +2730,7 @@
 				2BDD17A51B05F79500E65DE2 /* mudidiCell.m in Sources */,
 				2B5C22231BA9933700E770FC /* UIButton+AFNetworking.m in Sources */,
 				2B5C21F91BA9933700E770FC /* UIImage+REFrostedViewController.m in Sources */,
+				104A32B61BD878CD00F86C49 /* VRGCalendarView.m in Sources */,
 				7554FA5E1AB136A4005ED311 /* CenterViewModel.m in Sources */,
 				2B595CF81B7AECD500C5C8DB /* agreementCell.m in Sources */,
 				2BD2743D1B03742A001949C1 /* detailCell.m in Sources */,
@@ -2685,6 +2763,7 @@
 				2B5C21F81BA9933700E770FC /* REFrostedViewController.m in Sources */,
 				2B5C1FD21BA9582200E770FC /* MJConst.m in Sources */,
 				2B5C1FD41BA9582200E770FC /* MJProperty.m in Sources */,
+				104A32B51BD878CD00F86C49 /* UIView+convenience.m in Sources */,
 				10FE425D1BB42E2900E37C76 /* ContactsViewController.swift in Sources */,
 				2B4715C31B021BDA009F015F /* mylistViewController.m in Sources */,
 				2B9B12831AFA247B00C1B308 /* MKtripAnnotation.m in Sources */,
@@ -2694,6 +2773,7 @@
 				2B3463971B43FBC9006FA9A5 /* MJAnnotation.m in Sources */,
 				2B5C21EB1BA9933700E770FC /* AFURLResponseSerialization.m in Sources */,
 				7554FA6B1AB14220005ED311 /* NetRequestClass.m in Sources */,
+				104A32B31BD878CD00F86C49 /* NSMutableArray+convenience.m in Sources */,
 				2B5C1FBB1BA9582200E770FC /* RMCalendarModel.m in Sources */,
 				2B5C1FD81BA9582200E770FC /* NSObject+MJProperty.m in Sources */,
 				2B4715BE1B01EC2D009F015F /* moreCell.m in Sources */,
@@ -2703,6 +2783,7 @@
 				2B50B70E1B5FA4C300E3840C /* aboutViewController.m in Sources */,
 				2B47FCFB1B15D66600B99699 /* actiDetailModel.m in Sources */,
 				2B513AC91B4A4AC80011EA28 /* questionViewController.m in Sources */,
+				104A32B41BD878CD00F86C49 /* UIColor+expanded.m in Sources */,
 				2B5C21EC1BA9933700E770FC /* AFURLSessionManager.m in Sources */,
 				2BDA336B1B145C6E001C9334 /* cancelModel.m in Sources */,
 				2B5C22241BA9933700E770FC /* UIImageView+AFNetworking.m in Sources */,
@@ -2710,6 +2791,7 @@
 				2B5C21F41BA9933700E770FC /* GiFHUD.m in Sources */,
 				2B5C22221BA9933700E770FC /* UIAlertView+AFNetworking.m in Sources */,
 				10854E6A1BC952E000EA4373 /* OrderEditViewController.swift in Sources */,
+				103939281BD8B4ED0089F06A /* GridView.m in Sources */,
 				2BDE8B961B0451F800C09985 /* changeViewController.m in Sources */,
 				2B5DFC951BA1370000916CAD /* maxModel.m in Sources */,
 				758A226A1AB5C76C00801878 /* UserModel.m in Sources */,
@@ -2735,6 +2817,7 @@
 				10FE42671BB5902700E37C76 /* ContactEditCell.swift in Sources */,
 				2BDE8C471B04BCAB00C09985 /* collectionCell.m in Sources */,
 				100A54C11BB22C3900F974A2 /* ShoppingCartItem.swift in Sources */,
+				104A32B21BD878CD00F86C49 /* NSDate+convenience.m in Sources */,
 				10FE425F1BB42FA300E37C76 /* ContactCell.swift in Sources */,
 				2B5C22111BA9933700E770FC /* MKAnnotationView+WebCache.m in Sources */,
 				10D4CE161BC8974000565D59 /* RefreshBottomView.m in Sources */,
@@ -2768,6 +2851,7 @@
 				10FE42631BB58C3800E37C76 /* NewContactViewController.swift in Sources */,
 				2B5C22211BA9933700E770FC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2B5C22141BA9933700E770FC /* SDWebImageCompat.m in Sources */,
+				104A32B81BD8798F00F86C49 /* CalendarView.swift in Sources */,
 				758A226D1AB5E3D500801878 /* UserViewModel.m in Sources */,
 				2BDD17BD1B05FDC900E65DE2 /* detailIntroduceViewCell.m in Sources */,
 				2BD59F721B159237001D807F /* detailButtonViewCell.m in Sources */,

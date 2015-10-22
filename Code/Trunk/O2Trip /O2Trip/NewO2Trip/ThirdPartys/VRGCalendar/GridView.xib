@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GridView">
+            <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_mark_nostock.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Z5-JH-G3v">
+                    <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqV-KR-Q73">
+                    <rect key="frame" x="5" y="0.0" width="36" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="svb-Ly-Cxq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1M-sN-Uhd">
+                    <rect key="frame" x="0.0" y="23" width="37" height="18"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="9qq-Tc-6eo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="g1M-sN-Uhd" secondAttribute="trailing" constant="4" id="GZE-dZ-aHr"/>
+                <constraint firstItem="XqV-KR-Q73" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ljn-Lt-RaJ"/>
+                <constraint firstItem="5Z5-JH-G3v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Olq-1q-Kte"/>
+                <constraint firstAttribute="trailing" secondItem="XqV-KR-Q73" secondAttribute="trailing" id="Uvo-LK-JtP"/>
+                <constraint firstAttribute="bottom" secondItem="g1M-sN-Uhd" secondAttribute="bottom" id="d81-nH-A3k"/>
+                <constraint firstItem="g1M-sN-Uhd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dLq-Dl-ePB"/>
+                <constraint firstAttribute="trailing" secondItem="5Z5-JH-G3v" secondAttribute="trailing" id="ecV-Ai-HAY"/>
+                <constraint firstItem="XqV-KR-Q73" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="fpW-3Q-mkB"/>
+                <constraint firstAttribute="bottom" secondItem="5Z5-JH-G3v" secondAttribute="bottom" id="xLB-bo-ttY"/>
+                <constraint firstItem="5Z5-JH-G3v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yiM-ky-lpg"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="daylabel" destination="XqV-KR-Q73" id="owu-aj-kAQ"/>
+                <outlet property="markImageView" destination="5Z5-JH-G3v" id="H3E-oI-ZfB"/>
+                <outlet property="quantityLabel" destination="g1M-sN-Uhd" id="IQr-ec-PKc"/>
+            </connections>
+            <point key="canvasLocation" x="356" y="390"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="calendar_mark_nostock.png" width="41" height="41"/>
+    </resources>
+</document>

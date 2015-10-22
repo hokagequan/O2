@@ -53,7 +53,7 @@ class OrderCalendarCell: UITableViewCell {
     // MARK: - Actions
     
     @IBAction func clickCalendar(sender: AnyObject) {
-        // TODO:
+        delegate?.didClickCalendar?(self)
     }
     
 }

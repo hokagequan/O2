@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddShoppingCartView: UIView, UITableViewDelegate, UITableViewDataSource, OrderCalendarCellDelegate, OrderEditCellDelegate {
+class AddShoppingCartView: UIView, UITableViewDelegate, UITableViewDataSource, OrderCalendarCellDelegate, OrderEditCellDelegate, CalendarViewDelegate {
     
     enum AddShoppingCartRow: Int {
         case Calendar = 0
@@ -138,6 +138,16 @@ class AddShoppingCartView: UIView, UITableViewDelegate, UITableViewDataSource, O
         })]
     }
     
+    // MARK: - CalendarViewDelegate
+    
+    func didCompletionSelectDate(calendarView: CalendarView, date: String?, time: String?) {
+        self.alpha = 1.0
+        shoppingCartItem.tripDate = date
+        shoppingCartItem.tripTime = time
+        
+        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: AddShoppingCartRow.Calendar.rawValue, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
+    }
+    
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -180,7 +190,9 @@ class AddShoppingCartView: UIView, UITableViewDelegate, UITableViewDataSource, O
     // MARK: - CellDelegate
     
     func didClickCalendar(cell: OrderCalendarCell) {
-        // TODO: 点击日历
+        let calendar = CalendarView.loadFromNib()
+        calendar?.showInView(self.superview!)
+        self.alpha = 0
     }
     
     func didChangeCount(cell: OrderEditCell, adding: Bool) {
