@@ -724,13 +724,6 @@
 - (NSArray *)infos {
     if (!_infos) {
         _infos = [NSArray array];
-        
-        // FIXME: Test
-        VRGCalendarMarkInfo *info = [[VRGCalendarMarkInfo alloc] init];
-        info.day = 30;
-        info.month = 10;
-        info.stock = 1000;
-        _infos = @[info];
     }
     
     return _infos;

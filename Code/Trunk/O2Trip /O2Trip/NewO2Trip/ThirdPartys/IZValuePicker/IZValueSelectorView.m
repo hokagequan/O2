@@ -104,7 +104,9 @@
     _contentTableView.showsHorizontalScrollIndicator = NO;
 
     [self addSubview:_contentTableView];
-    [self addSubview:selectionImageView];    
+    [self addSubview:selectionImageView];
+    
+    [self scrollToTheSelectedCell];
 }
 
 /*

@@ -191,6 +191,7 @@ class AddShoppingCartView: UIView, UITableViewDelegate, UITableViewDataSource, O
     
     func didClickCalendar(cell: OrderCalendarCell) {
         let calendar = CalendarView.loadFromNib()
+        calendar?.delegate = self
         calendar?.showInView(self.superview!)
         self.alpha = 0
     }

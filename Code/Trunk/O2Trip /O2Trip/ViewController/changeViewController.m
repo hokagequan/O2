@@ -66,10 +66,6 @@
 {
     [super viewWillAppear:YES];
     self.navigationController.navigationBarHidden=YES;
-  
-   // FIXME: Test
-    CalendarView *view = [CalendarView loadFromNib];
-    [view showInView:self.view];
 }
 -(void)textHeight
 {
