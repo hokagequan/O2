@@ -12,9 +12,9 @@ import UIKit
     optional func didCompleteChoose(time: String, timeString: String)
 }
 
-class TimePickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
+class TimePickerView: UIView, IZValueSelectorViewDataSource, IZValueSelectorViewDelegate {
     
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var pickerView: IZValueSelectorView!
     
     weak var delegate: TimePickerViewDelegate? = nil
     
@@ -47,7 +47,6 @@ class TimePickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     func prepare() {
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerView.showsSelectionIndicator = false
     }
     
     func showInView(view: UIView) {
@@ -73,16 +72,18 @@ class TimePickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - PickerViewDelegate
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func numberOfRowsInSelector(valueSelector: IZValueSelectorView!) -> Int {
         return 17
     }
     
-    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let start = 7 + row
+    func rowHeightInSelector(valueSelector: IZValueSelectorView!) -> CGFloat {
+        return 34
+    }
+    
+    func selector(valueSelector: IZValueSelectorView!, viewForRowAtIndex index: Int) -> UIView! {
+        let label = UILabel(frame: CGRectMake(0, 0, self.pickerView.frame.size.width, 34))
+        
+        let start = 7 + index
         var time = start
         var header = "上午"
         if start > 12 {
@@ -91,12 +92,32 @@ class TimePickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         }
         
         let oString = "\(header) \(time):00"
+        label.text = oString
+        label.textAlignment = NSTextAlignment.Center
+        label.backgroundColor = UIColor.clearColor()
+        label.textColor = lightGrayColor
         
-        return NSMutableAttributedString(string: oString, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(15)])
+        return label
     }
     
-    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 34
+    func rectForSelectionInSelector(valueSelector: IZValueSelectorView!) -> CGRect {
+        return CGRectMake(0, 34, valueSelector.bounds.size.width, 34)
+    }
+    
+    func rowWidthInSelector(valueSelector: IZValueSelectorView!) -> CGFloat {
+        return 100
+    }
+    
+    func highlightTextColorSelector(valueSelector: IZValueSelectorView!) -> UIColor! {
+        return UIColor.blackColor()
+    }
+    
+    func normalTextColorSelector(valueSelector: IZValueSelectorView!) -> UIColor! {
+        return lightGrayColor
+    }
+    
+    func selector(valueSelector: IZValueSelectorView!, didSelectRowAtIndex index: Int) {
+        
     }
 
 }

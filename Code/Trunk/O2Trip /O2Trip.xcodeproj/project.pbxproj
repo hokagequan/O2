@@ -26,6 +26,7 @@
 		1039392F1BD8D7C40089F06A /* TimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1039392E1BD8D7C40089F06A /* TimePickerView.xib */; settings = {ASSET_TAGS = (); }; };
 		103939321BD8DB4C0089F06A /* TimePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103939301BD8DB4C0089F06A /* TimePickerCell.swift */; settings = {ASSET_TAGS = (); }; };
 		103939331BD8DB4C0089F06A /* TimePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103939311BD8DB4C0089F06A /* TimePickerCell.xib */; settings = {ASSET_TAGS = (); }; };
+		103939371BD8F3C40089F06A /* IZValueSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 103939361BD8F3C40089F06A /* IZValueSelectorView.m */; settings = {ASSET_TAGS = (); }; };
 		104A32B21BD878CD00F86C49 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A32A91BD878CD00F86C49 /* NSDate+convenience.m */; settings = {ASSET_TAGS = (); }; };
 		104A32B31BD878CD00F86C49 /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A32AB1BD878CD00F86C49 /* NSMutableArray+convenience.m */; settings = {ASSET_TAGS = (); }; };
 		104A32B41BD878CD00F86C49 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 104A32AD1BD878CD00F86C49 /* UIColor+expanded.m */; settings = {ASSET_TAGS = (); }; };
@@ -498,6 +499,8 @@
 		1039392E1BD8D7C40089F06A /* TimePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePickerView.xib; sourceTree = "<group>"; };
 		103939301BD8DB4C0089F06A /* TimePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerCell.swift; sourceTree = "<group>"; };
 		103939311BD8DB4C0089F06A /* TimePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePickerCell.xib; sourceTree = "<group>"; };
+		103939351BD8F3C40089F06A /* IZValueSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IZValueSelectorView.h; sourceTree = "<group>"; };
+		103939361BD8F3C40089F06A /* IZValueSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IZValueSelectorView.m; sourceTree = "<group>"; };
 		104A32A81BD878CD00F86C49 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
 		104A32A91BD878CD00F86C49 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
 		104A32AA1BD878CD00F86C49 /* NSMutableArray+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+convenience.h"; sourceTree = "<group>"; };
@@ -1261,6 +1264,15 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		103939341BD8F3C40089F06A /* IZValuePicker */ = {
+			isa = PBXGroup;
+			children = (
+				103939351BD8F3C40089F06A /* IZValueSelectorView.h */,
+				103939361BD8F3C40089F06A /* IZValueSelectorView.m */,
+			);
+			path = IZValuePicker;
+			sourceTree = "<group>";
+		};
 		104A32A71BD878CD00F86C49 /* VRGCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1315,6 +1327,7 @@
 		108CAEAC1BC56B7B00902E34 /* ThirdPartys */ = {
 			isa = PBXGroup;
 			children = (
+				103939341BD8F3C40089F06A /* IZValuePicker */,
 				104A32A71BD878CD00F86C49 /* VRGCalendar */,
 				1052CD021BCE17ED00DDDAA5 /* AliPay */,
 				1052CCF81BCDFAF800DDDAA5 /* WeChat */,
@@ -2774,6 +2787,7 @@
 				10FE426B1BB8280A00E37C76 /* PayTotalCell.swift in Sources */,
 				2B5C1FCF1BA9582200E770FC /* RMCalendarCollectionViewLayout.m in Sources */,
 				2B729B8C1B79F6D900E39376 /* middleViewController.m in Sources */,
+				103939371BD8F3C40089F06A /* IZValueSelectorView.m in Sources */,
 				2B5C21F81BA9933700E770FC /* REFrostedViewController.m in Sources */,
 				2B5C1FD21BA9582200E770FC /* MJConst.m in Sources */,
 				2B5C1FD41BA9582200E770FC /* MJProperty.m in Sources */,

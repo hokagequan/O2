@@ -77,25 +77,26 @@
                                 <constraint firstItem="6R0-Zu-Oga" firstAttribute="top" secondItem="mU0-zb-4kM" secondAttribute="top" id="wum-yR-px6"/>
                             </constraints>
                         </view>
-                        <pickerView contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gox-pb-sjM">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17I-a4-scD" customClass="IZValueSelectorView">
                             <rect key="frame" x="0.0" y="44" width="600" height="135"/>
                             <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="135" id="XqJ-PG-gTM"/>
+                                <constraint firstAttribute="height" constant="135" id="RId-tg-FeF"/>
                             </constraints>
-                        </pickerView>
+                        </view>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="gox-pb-sjM" secondAttribute="trailing" id="TkO-6G-t33"/>
+                        <constraint firstItem="17I-a4-scD" firstAttribute="leading" secondItem="Jwq-bU-lQo" secondAttribute="leading" id="DaG-MX-427"/>
                         <constraint firstAttribute="trailing" secondItem="vpS-bI-aoZ" secondAttribute="trailing" id="XsY-Ur-gEc"/>
                         <constraint firstItem="vpS-bI-aoZ" firstAttribute="top" secondItem="mU0-zb-4kM" secondAttribute="bottom" constant="34" id="YEY-hU-FBK"/>
+                        <constraint firstAttribute="bottom" secondItem="17I-a4-scD" secondAttribute="bottom" id="chb-hv-336"/>
                         <constraint firstItem="mU0-zb-4kM" firstAttribute="leading" secondItem="Jwq-bU-lQo" secondAttribute="leading" id="cnN-A4-bID"/>
-                        <constraint firstItem="gox-pb-sjM" firstAttribute="leading" secondItem="Jwq-bU-lQo" secondAttribute="leading" id="i4t-uL-MUX"/>
                         <constraint firstItem="vpS-bI-aoZ" firstAttribute="leading" secondItem="Jwq-bU-lQo" secondAttribute="leading" id="j91-X0-sGY"/>
-                        <constraint firstAttribute="bottom" secondItem="gox-pb-sjM" secondAttribute="bottom" id="lmf-RR-oWj"/>
                         <constraint firstAttribute="trailing" secondItem="mU0-zb-4kM" secondAttribute="trailing" id="pmL-DC-QxV"/>
+                        <constraint firstAttribute="trailing" secondItem="17I-a4-scD" secondAttribute="trailing" id="tva-78-4HX"/>
                         <constraint firstAttribute="height" constant="179" id="w5e-ga-NaL"/>
                         <constraint firstItem="mU0-zb-4kM" firstAttribute="top" secondItem="Jwq-bU-lQo" secondAttribute="top" id="wqf-No-9gR"/>
                     </constraints>
@@ -109,7 +110,7 @@
                 <constraint firstAttribute="trailing" secondItem="Jwq-bU-lQo" secondAttribute="trailing" id="qMu-fp-Zme"/>
             </constraints>
             <connections>
-                <outlet property="pickerView" destination="gox-pb-sjM" id="fFU-N4-g76"/>
+                <outlet property="pickerView" destination="17I-a4-scD" id="3nc-8U-QxQ"/>
             </connections>
             <point key="canvasLocation" x="306" y="344"/>
         </view>
