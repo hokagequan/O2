@@ -236,6 +236,22 @@ class HttpReqManager: NSObject {
         }
     }
     
+    // 搜索
+    class func httpRequestSearch(userID: String, keyword: String, latitude: String, longtitude: String, startPage: String, count: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["keyWord"] = keyword
+        params["latitude"] = latitude
+        params["longtitude"] = longtitude
+        params["startPage"] = startPage
+        params["pageSize"] = count
+        self.httpRequest("rest_acti/searchActi", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
     class func imageUrl(imageName: String?) -> NSURL? {
         if imageName == nil {
             return nil

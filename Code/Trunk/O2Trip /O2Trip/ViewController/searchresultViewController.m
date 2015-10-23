@@ -18,6 +18,9 @@
 #import "deModel.h"
 #import "LoginViewController.h"
 #import "detailactivityViewController.h"
+
+#import "O2Trip-Swift.h"
+
 @interface searchresultViewController ()
 {
     CLLocationDegrees _Latitude;
@@ -52,36 +55,79 @@
     self.tableView.separatorColor=[UIColor grayColor];
     self.acArray=[[NSMutableArray alloc]initWithCapacity:0];
     self.deArray=[[NSMutableArray alloc]initWithCapacity:0];
-        UserViewModel* userModel=[[UserViewModel alloc]init];
-        NSUserDefaults* userDefaults =[NSUserDefaults standardUserDefaults];
-        NSString* user_id=[userDefaults objectForKey:@"loginUserId"];
-        [userModel searchActivity:self.textFieldText withUserId:user_id withLatitude:30.00 withLongtitude:40.00];
-       [userModel setBlockWithReturnBlock:^(id returnValue) {
-           self.bigarray=returnValue;
-           [GiFHUD dismiss];
-          
-           [self.bigarray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-               if ([obj isKindOfClass:[acModel class]]) {
-                   [self.acArray addObject:obj];
-               }else
-               {
-                   [self.deArray addObject:obj];
-               }
-           }];
-           if (self.acArray.count==0) {
-               [self creatNoSearchResultView];
-           }
-           [self.tableView reloadData];
-
-       } WithErrorBlock:^(id errorCode) {
-           
-       } WithFailureBlock:^{
-           
-       }];
+    
+    [HttpReqManager httpRequestSearch:[ODataManager sharedInstance].userID keyword:self.textFieldText latitude:@"1" longtitude:@"1" startPage:@"1" count:@"5" completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
+        self.bigarray=[self searchACtivitySuccess:response];
+        [GiFHUD dismiss];
+        
+        [self.bigarray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if ([obj isKindOfClass:[acModel class]]) {
+                [self.acArray addObject:obj];
+            }else
+            {
+                [self.deArray addObject:obj];
+            }
+        }];
+        if (self.acArray.count==0) {
+            [self creatNoSearchResultView];
+        }
+        [self.tableView reloadData];
+    } failure:^(NSError * _Nullable error) {
+        
+    }];
+    
+//        UserViewModel* userModel=[[UserViewModel alloc]init];
+//        NSUserDefaults* userDefaults =[NSUserDefaults standardUserDefaults];
+//        NSString* user_id=[userDefaults objectForKey:@"loginUserId"];
+//        [userModel searchActivity:self.textFieldText withUserId:user_id withLatitude:30.00 withLongtitude:40.00];
+//       [userModel setBlockWithReturnBlock:^(id returnValue) {
+//           self.bigarray=returnValue;
+//           [GiFHUD dismiss];
+//          
+//           [self.bigarray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//               if ([obj isKindOfClass:[acModel class]]) {
+//                   [self.acArray addObject:obj];
+//               }else
+//               {
+//                   [self.deArray addObject:obj];
+//               }
+//           }];
+//           if (self.acArray.count==0) {
+//               [self creatNoSearchResultView];
+//           }
+//           [self.tableView reloadData];
+//
+//       } WithErrorBlock:^(id errorCode) {
+//           
+//       } WithFailureBlock:^{
+//           
+//       }];
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
     // Do any additional setup after loading the view.
 }
+
+-(NSMutableArray *)searchACtivitySuccess:(NSDictionary*)returnValue
+{
+    NSArray* array=[[NSArray alloc]init];
+    array=returnValue[@"data"][@"acti"];
+    //NSLog(@"%@",array);
+    NSMutableArray* array1=[[NSMutableArray alloc]initWithCapacity:0];
+    for (NSDictionary* dic in array) {
+        acModel* aModel=[[acModel alloc]initWithDictionanry:dic];
+        [array1 addObject:aModel];
+        
+    }
+    NSArray* array2=[[NSArray alloc]init];
+    array2=returnValue[@"data"][@"destination"];
+    for (NSDictionary* dic in array2) {
+        deModel* dModel=[[deModel alloc]initWithDictionary:dic];
+        [array1 addObject:dModel];
+    }
+    
+    return array1;
+}
+
 #pragma mark - CoreLocation 代理
 #pragma mark 跟踪定位代理方法，每次位置发生变化即会执行（只要定位到相应位置）
 //此方法会调用多次 来进行更为精准的定位
