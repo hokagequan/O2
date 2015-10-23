@@ -347,6 +347,27 @@
     
 }
 
+- (NSArray *)loadInfo:(NSArray *)array {
+    NSMutableArray *relArray = [NSMutableArray array];
+    
+    for (NSDictionary *dict in array) {
+        NSString *date = dict[@"date"];
+        int year = [[date substringToIndex:4] intValue];
+        int month = [[date substringWithRange:NSMakeRange(5, 2)] intValue];
+        int day = [[date substringFromIndex:8] intValue];
+        VRGCalendarMarkInfo *info = [[VRGCalendarMarkInfo alloc] init];
+        info.year = year;
+        info.month = month;
+        info.day = day;
+        info.stock = [[dict objectForKey:@"stock"] intValue];
+        info.price = [[dict objectForKey:@"prices"] intValue];
+        
+        [relArray addObject:info];
+    }
+    
+    return relArray;
+}
+
 #pragma mark - Actions
 
 - (IBAction)clickAddShoppingCart:(id)sender {
@@ -366,19 +387,18 @@
     [HttpReqManager httpRequestActivityDetail:[ODataManager sharedInstance].userID activityID:model.actiId completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
         if ([response[@"err_code"] isEqualToString:@"200"]) {
             NSDictionary *dic = response[@"data"][@"actiInfo"];
-            actiDetailModel* detailModel = [[actiDetailModel alloc] initWithDic:dic];
+            actiDetailModel* actiModel = [[actiDetailModel alloc] initWithDic:dic];
             ShoppingCartItem *item = [[ShoppingCartItem alloc] init];
-            [item loadInfoFromModel:detailModel];
-            [HttpReqManager httpRequestAddShoppingCart:[ODataManager sharedInstance].userID shoppingCartItem:item completion:^(NSDictionary<NSString *,id> * _Nonnull response) {
-                if ([response[@"err_code"] isEqualToString:@"200"]) {
-                    ALERTVIEW(@"添加成功");
-                }
-                else {
-                    ALERTVIEW(@"添加失败");
-                }
-            } failure:^(NSError * _Nullable error) {
-                ALERTVIEW(@"添加失败");
-            }];
+            [item loadInfoFromModel:actiModel];
+            
+            AddShoppingCartView *view = [AddShoppingCartView loadFromNib];
+            view.shoppingCartItem = item;
+            view.shoppingCartItem.adultCount = 2;
+            view.shoppingCartItem.youngCount = 2;
+            view.shoppingCartItem.childCount = 2;
+            view.stocks = [self loadInfo:response[@"data"][@"priceTime"]];
+            [view refreshInfo];
+            [view showInView:self.view];
         }
         else {
             ALERTVIEW(@"添加失败");
