@@ -252,6 +252,18 @@ class HttpReqManager: NSObject {
         }
     }
     
+    // 删除收藏
+    class func httpRequestDeleteFavorite(userID: String, activityID: String, completion: ((Dictionary<String, AnyObject>) -> Void)?, failure: ((NSError?) -> Void)?) {
+        var params = Dictionary<String, String>()
+        params["userId"] = userID
+        params["actiId"] = activityID
+        self.httpRequest("rest_user/cancelFavourite", params: params, completion: { (response) -> Void in
+            completion?(response)
+            }) { (error) -> Void in
+                failure?(error)
+        }
+    }
+    
     class func imageUrl(imageName: String?) -> NSURL? {
         if imageName == nil {
             return nil

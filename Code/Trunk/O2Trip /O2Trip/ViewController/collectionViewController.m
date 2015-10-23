@@ -389,7 +389,10 @@
 }
 
 - (IBAction)clickDelete:(id)sender {
-    // TODO: 删除收藏
+    [self.selectIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        collectionModel *model = self.array[idx];
+        [HttpReqManager httpRequestDeleteFavorite:[ODataManager sharedInstance].userID activityID:model.actiId completion:nil failure:nil];
+    }];
 }
 
 #pragma mark - Property
