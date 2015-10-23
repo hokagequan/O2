@@ -117,7 +117,6 @@
     if (isclip==NO) {
         [button setTitle:@"取消" forState:UIControlStateNormal];
         isEdting=YES;
-        [self setBgView];
         isclip=YES;
         
         [self showToolBar:YES];
@@ -136,18 +135,10 @@
         
         [self showToolBar:NO];
     }
-
-}
-
-//编辑状态
--(void)setBgView
-{
-
+    
     [self.tableView reloadData];
-    
-    
-}
 
+}
 
 -(void)showjuhua
 {
@@ -206,6 +197,7 @@
     }else
     {
         _cell.cancelButton.alpha=0;
+        _cell.cancelButton.selected = NO;
 //        _cell.cancelLabel.alpha=0;
 //        _cell.bgView.alpha=0;
 
