@@ -260,7 +260,13 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func didClickImage(cell: ShoppingCartCell) {
-        // TODO: 进入商品详情
+        let indexPath = tableView.indexPathForCell(cell)!
+        let shoppingCartItem = items[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewControllerWithIdentifier("detailactivityViewController") as! detailactivityViewController
+        viewController.actiId = shoppingCartItem.activityID;
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 
     // MARK: - Navigation

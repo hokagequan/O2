@@ -14,3 +14,4 @@
 #import "VRGCalendarView.h"
 #import "NSDate+convenience.h"
 #import "IZValueSelectorView.h"
+#import "detailactivityViewController.h"
