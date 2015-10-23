@@ -533,7 +533,7 @@
     NSString *url=[NSString stringWithFormat:@"%@%@",REQUESTURL,@"rest_acti/addfavoriteActi"];
     NSMutableString *paramjsonV=[NSMutableString stringWithCapacity:50];
     [paramjsonV appendFormat:@"{"];
-    [paramjsonV appendFormat:@"\"loginUserId\":\"%@\",",loginUserId];
+    [paramjsonV appendFormat:@"\"userId\":\"%@\",",loginUserId];
     [paramjsonV appendFormat:@"\"actiId\":\"%@\"",actiId];
     [paramjsonV appendFormat:@"}"];
     
