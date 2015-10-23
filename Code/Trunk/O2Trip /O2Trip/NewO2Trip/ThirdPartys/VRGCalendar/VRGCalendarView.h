@@ -18,9 +18,11 @@
 
 @interface VRGCalendarMarkInfo : NSObject
 
+@property (nonatomic) int year;
 @property (nonatomic) int month;
 @property (nonatomic) int day;
 @property (nonatomic) int stock;
+@property (nonatomic) int price;
 
 - (UIView *)gridView:(CGPoint)position size:(CGSize)size;
 
@@ -54,6 +56,8 @@
 @property (nonatomic, retain) NSArray *markedColors;
 @property (nonatomic, getter = calendarHeight) float calendarHeight;
 @property (nonatomic, retain, getter = selectedDate) NSDate *selectedDate;
+
+@property (strong, nonatomic) NSArray *infos;
 
 -(void)selectDate:(int)date;
 -(void)reset;

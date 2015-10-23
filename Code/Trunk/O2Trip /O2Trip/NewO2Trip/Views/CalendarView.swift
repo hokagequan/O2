@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol CalendarViewDelegate {
     optional func didCompletionSelectDate(calendarView: CalendarView, date: String?, time: String?)
+    optional func didCancelSelectDate(calendarView: CalendarView)
 }
 
 class CalendarView: UIView, VRGCalendarViewDelegate, TimePickerViewDelegate {
@@ -22,6 +23,14 @@ class CalendarView: UIView, VRGCalendarViewDelegate, TimePickerViewDelegate {
     var calendarDate: String? = nil
     var calendarTime: String = "8:00"
     var selectedDate: NSDate? = nil
+    var stockInfos: Array<VRGCalendarMarkInfo> {
+        get {
+            return calendarView.infos as! Array<VRGCalendarMarkInfo>
+        }
+        set {
+            calendarView.infos = newValue
+        }
+    }
     
     weak var delegate: CalendarViewDelegate? = nil
     
@@ -86,6 +95,7 @@ class CalendarView: UIView, VRGCalendarViewDelegate, TimePickerViewDelegate {
     // MARK: - Actions
     
     @IBAction func clickClose(sender: AnyObject) {
+        delegate?.didCancelSelectDate?(self)
         self.dismiss()
     }
     

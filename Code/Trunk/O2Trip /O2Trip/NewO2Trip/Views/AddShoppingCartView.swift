@@ -57,6 +57,8 @@ class AddShoppingCartView: UIView, UITableViewDelegate, UITableViewDataSource, O
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    var stocks = [VRGCalendarMarkInfo]()
+    
     var personCount = 6
     
     lazy var shoppingCartItem = ShoppingCartItem()
@@ -148,6 +150,10 @@ class AddShoppingCartView: UIView, UITableViewDelegate, UITableViewDataSource, O
         tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: AddShoppingCartRow.Calendar.rawValue, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
     }
     
+    func didCancelSelectDate(calendarView: CalendarView) {
+        self.alpha = 1.0
+    }
+    
     // MARK: - TableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -192,6 +198,7 @@ class AddShoppingCartView: UIView, UITableViewDelegate, UITableViewDataSource, O
     func didClickCalendar(cell: OrderCalendarCell) {
         let calendar = CalendarView.loadFromNib()
         calendar?.delegate = self
+        calendar?.stockInfos = stocks
         calendar?.showInView(self.superview!)
         self.alpha = 0
     }

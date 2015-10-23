@@ -14,8 +14,8 @@
     self=[super init];
     if (self) {
         self.dayNoArray=[dic objectForKey:@"date"];
-        self.dayWeekArray=[dic objectForKey:@"stock"];
-        self.priceArray=[dic objectForKey:@"prices"];
+        self.dayWeekArray=[[dic objectForKey:@"stock"] intValue];
+        self.priceArray=[[dic objectForKey:@"prices"] intValue];
     }
     return self;
 }

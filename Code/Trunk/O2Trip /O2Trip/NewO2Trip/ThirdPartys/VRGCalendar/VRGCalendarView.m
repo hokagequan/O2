@@ -28,6 +28,7 @@
     view.markImageView.image = [UIImage imageNamed:name];
     view.daylabel.text = [NSString stringWithFormat:@"%ld", (long)self.day];
     view.frame = CGRectMake(position.x, position.y, size.width, size.height);
+    NSLog(@"year: %d  month: %d  day: %d  text: %@", self.year, self.month, self.day, view.daylabel.text);
     
     return view;
 }
@@ -40,7 +41,6 @@
 @property (strong, nonatomic) UIButton *rightArrowButton;
 
 @property (strong, nonatomic) NSMutableArray *markViews;
-@property (strong, nonatomic) NSArray *infos;
 @property (strong, nonatomic) UIImageView *selectedMarkImageView;
 
 @end

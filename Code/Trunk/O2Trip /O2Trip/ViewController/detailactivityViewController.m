@@ -1298,6 +1298,26 @@
     return item;
 }
 
+- (NSArray *)loadTimeModels:(NSArray *)array {
+    NSMutableArray *relArray = [NSMutableArray array];
+    
+    for (timeModel *model in array) {
+        int year = [[model.dayNoArray substringToIndex:4] intValue];
+        int month = [[model.dayNoArray substringWithRange:NSMakeRange(5, 2)] intValue];
+        int day = [[model.dayNoArray substringFromIndex:8] intValue];
+        VRGCalendarMarkInfo *info = [[VRGCalendarMarkInfo alloc] init];
+        info.year = year;
+        info.month = month;
+        info.day = day;
+        info.stock = model.dayWeekArray;
+        info.price = model.priceArray;
+        
+        [relArray addObject:info];
+    }
+    
+    return relArray;
+}
+
 #pragma mark - Actions
 
 - (IBAction)clickAddToShoppingCart:(id)sender {
@@ -1310,6 +1330,7 @@
     view.shoppingCartItem.adultCount = 2;
     view.shoppingCartItem.youngCount = 2;
     view.shoppingCartItem.childCount = 2;
+    view.stocks = [self loadTimeModels:self.smallArray];
     [view refreshInfo];
     [view showInView:self.view];
 }

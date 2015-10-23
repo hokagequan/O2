@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface timeModel : NSObject
-@property(nonatomic,strong)NSMutableArray* dayNoArray;
-@property(nonatomic,strong)NSMutableArray* dayWeekArray;
-@property(nonatomic,strong)NSMutableArray* priceArray;
+@property(nonatomic,strong)NSString* dayNoArray;
+@property(nonatomic)int dayWeekArray;
+@property(nonatomic)int priceArray;
 -(id)initWithDictionary:(NSDictionary*)dic;
 @end
