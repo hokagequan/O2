@@ -112,7 +112,7 @@ class ShoppingCartViewController: UIViewController, UITableViewDataSource, UITab
         self.tableView.refreshControl?.beginRefreshing()
         
         let userID = ODataManager.sharedInstance().userID
-        HttpReqManager.httpRequestShoppingCart(userID, start: "0", count: "10", completion: { (response) -> Void in
+        HttpReqManager.httpRequestShoppingCart(userID, start: "1", count: "10", completion: { (response) -> Void in
             GiFHUD.dismiss()
             self.tableView.refreshControl?.endRefreshing()
             self.handleInfo(response)
