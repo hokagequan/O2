@@ -1250,10 +1250,10 @@
             </objects>
             <point key="canvasLocation" x="875" y="-16"/>
         </scene>
-        <!--Feedback View Controller-->
+        <!--意见反馈-->
         <scene sceneID="bhu-Qk-oUg">
             <objects>
-                <viewController storyboardIdentifier="feedbackViewController" id="NmZ-Rw-rwz" customClass="feedbackViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="feedbackViewController" title="意见反馈" id="NmZ-Rw-rwz" customClass="feedbackViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G6y-ch-Ch2"/>
                         <viewControllerLayoutGuide type="bottom" id="QCs-mZ-EPb"/>
@@ -1262,7 +1262,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOr-Ar-Z1o">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOr-Ar-Z1o">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1273,7 +1273,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iT2-QM-ndN">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iT2-QM-ndN">
                                 <rect key="frame" x="7" y="25" width="16" height="16"/>
                                 <animations/>
                                 <constraints>
@@ -1287,7 +1287,7 @@
                                     <action selector="backButtonClick:" destination="NmZ-Rw-rwz" eventType="touchUpInside" id="vwc-od-qGy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQq-kA-6iD">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQq-kA-6iD">
                                 <rect key="frame" x="20" y="19" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -1303,7 +1303,7 @@
                                     <action selector="backButtonClick:" destination="NmZ-Rw-rwz" eventType="touchUpInside" id="Fkp-CO-hUM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="意见反馈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rW-hv-xNS">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="意见反馈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rW-hv-xNS">
                                 <rect key="frame" x="116" y="23" width="75" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -1357,7 +1357,7 @@
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBC-PI-shq">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBC-PI-shq">
                                 <rect key="frame" x="267" y="19" width="37" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -1416,6 +1416,13 @@
                             <constraint firstItem="xnm-YG-oih" firstAttribute="bottom" secondItem="bad-Mw-aHl" secondAttribute="bottom" id="yj9-vA-SoF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="意见反馈" id="Fn0-tZ-bkN" userLabel="Ich">
+                        <barButtonItem key="rightBarButtonItem" title="提交" id="CvC-cm-dBx">
+                            <connections>
+                                <action selector="submitButtonClick:" destination="NmZ-Rw-rwz" id="uj6-15-pEc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backLabel" destination="bad-Mw-aHl" id="rPE-6T-Zjv"/>
                         <outlet property="bgLabel" destination="eNS-3B-sQA" id="MFp-xB-Tdz"/>
@@ -1426,7 +1433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukS-rD-X7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="-220"/>
+            <point key="canvasLocation" x="740" y="-874"/>
         </scene>
         <!--联系我们-->
         <scene sceneID="8gx-dr-beM">
