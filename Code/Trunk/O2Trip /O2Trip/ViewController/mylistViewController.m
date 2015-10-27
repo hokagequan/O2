@@ -40,7 +40,7 @@ typedef enum {
 {
     [super viewWillAppear:YES];
     
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
     
     [self.tableView reloadData];
     
@@ -54,7 +54,7 @@ typedef enum {
     [GiFHUD setGifWithImageName:@"loading.gif"];
     [GiFHUD show];
     [self performSelector:@selector(showjuhua) withObject:nil afterDelay:0.1f];
-     self.navigationController.navigationBarHidden=YES;
+//     self.navigationController.navigationBarHidden=YES;
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 }
 -(void)showjuhua

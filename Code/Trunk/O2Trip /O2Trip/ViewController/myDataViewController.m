@@ -28,6 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    self.navigationController.navigationBarHidden = NO;
+    self.title = @"个人资料";
+    
     NSUserDefaults* userDefaults=[NSUserDefaults standardUserDefaults];
     NSString* nickName=[userDefaults objectForKey:@"nickName"];
     NSString* sex=[userDefaults objectForKey:@"sex"];
