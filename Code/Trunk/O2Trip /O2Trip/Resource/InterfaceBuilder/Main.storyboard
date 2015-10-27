@@ -738,10 +738,10 @@
             </objects>
             <point key="canvasLocation" x="-977" y="659"/>
         </scene>
-        <!--My Data View Controller-->
+        <!--个人资料-->
         <scene sceneID="XJs-wM-jPv">
             <objects>
-                <viewController storyboardIdentifier="myDataViewController" hidesBottomBarWhenPushed="YES" id="z4M-Xv-81o" customClass="myDataViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myDataViewController" title="个人资料" hidesBottomBarWhenPushed="YES" id="z4M-Xv-81o" customClass="myDataViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A3O-m3-QGh"/>
                         <viewControllerLayoutGuide type="bottom" id="SpY-8g-ZM9"/>
@@ -761,7 +761,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqs-rv-seq">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqs-rv-seq">
                                 <rect key="frame" x="8" y="26" width="16" height="16"/>
                                 <animations/>
                                 <constraints>
@@ -775,7 +775,7 @@
                                     <action selector="backButtonClick:" destination="z4M-Xv-81o" eventType="touchUpInside" id="kJa-Xb-wkG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMa-TX-ghV">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMa-TX-ghV">
                                 <rect key="frame" x="16" y="19" width="50" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -791,7 +791,7 @@
                                     <action selector="backButtonClick:" destination="z4M-Xv-81o" eventType="touchUpInside" id="Hv4-lw-zqn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="个人资料" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-yg-vdC">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人资料" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmo-yg-vdC">
                                 <rect key="frame" x="123" y="23" width="75" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -1042,7 +1042,6 @@
                             <constraint firstItem="bNZ-A2-v9J" firstAttribute="leading" secondItem="2Bq-IP-XKA" secondAttribute="leading" id="y0q-Hc-Yck"/>
                         </constraints>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="headImage" destination="hrh-dG-RU3" id="eDd-v9-bjc"/>
                         <outlet property="nickNameLabel" destination="22s-dS-9YG" id="2Sk-6A-oMU"/>
@@ -2683,7 +2682,7 @@
             </objects>
             <point key="canvasLocation" x="-2064" y="-16"/>
         </scene>
-        <!--个人资料-->
+        <!--收藏列表-->
         <scene sceneID="nAx-50-xAo">
             <objects>
                 <viewController storyboardIdentifier="collectionViewController" hidesBottomBarWhenPushed="YES" id="9T6-9Y-hdB" customClass="collectionViewController" sceneMemberID="viewController">
@@ -2695,7 +2694,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnx-yP-Gii">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnx-yP-Gii">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2706,7 +2705,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNx-3P-Orm">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNx-3P-Orm">
                                 <rect key="frame" x="120" y="23" width="80" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -2932,7 +2931,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxi-ZX-dci">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxi-ZX-dci">
                                 <rect key="frame" x="7" y="25" width="16" height="16"/>
                                 <animations/>
                                 <constraints>
@@ -2946,7 +2945,7 @@
                                     <action selector="backButtonClick:" destination="9T6-9Y-hdB" eventType="touchUpInside" id="aNX-47-YGh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOD-Gh-4oW">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOD-Gh-4oW">
                                 <rect key="frame" x="20" y="18" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -2962,7 +2961,7 @@
                                     <action selector="backButtonClick:" destination="9T6-9Y-hdB" eventType="touchUpInside" id="Di5-cP-fEq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pe-2i-SjI">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pe-2i-SjI">
                                 <rect key="frame" x="274" y="19" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -3056,7 +3055,13 @@
                             <constraint firstAttribute="trailing" secondItem="4AV-cH-LjT" secondAttribute="trailing" id="x3o-3k-SJ6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="个人资料" id="8cq-l9-qhy"/>
+                    <navigationItem key="navigationItem" title="收藏列表" id="8cq-l9-qhy">
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="ehk-VD-9rJ">
+                            <connections>
+                                <action selector="bianjiButtonClick:" destination="9T6-9Y-hdB" id="dxz-Up-kpa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bgView" destination="THG-mc-gqe" id="VPb-xy-57u"/>
                         <outlet property="bianji" destination="3pe-2i-SjI" id="Ewg-UU-guA"/>

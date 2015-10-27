@@ -71,7 +71,7 @@
     self.tableView.separatorColor=[UIColor grayColor];
     [self performSelector:@selector(showjuhua) withObject:nil afterDelay:0.1f];
     self.navigationController.automaticallyAdjustsScrollViewInsets=NO;
-    self.navigationController.navigationBarHidden=YES;
+//    self.navigationController.navigationBarHidden=YES;
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [self.bianji addTarget:self action:@selector(bianjiButtonClick:) forControlEvents:UIControlEventTouchUpInside];
    [self.tableView addPullToRefreshWithActionHandler:^{
@@ -111,11 +111,13 @@
     
 
 }
--(void)bianjiButtonClick:(UIButton*)button
+-(IBAction)bianjiButtonClick:(id)button
 {
+    UIBarButtonItem *item = (UIBarButtonItem *)button;
     isNil=!isNil;
     if (isclip==NO) {
-        [button setTitle:@"取消" forState:UIControlStateNormal];
+//        [button setTitle:@"取消" forState:UIControlStateNormal];
+        item.title = @"取消";
         isEdting=YES;
         isclip=YES;
         
@@ -123,7 +125,8 @@
         
     }else
     {
-        [button setTitle:@"编辑" forState:UIControlStateNormal];
+//        [button setTitle:@"编辑" forState:UIControlStateNormal];
+        item.title = @"编辑";
         for (collectionCell* cell in self.cellArray) {
             cell.cancelLabel.alpha=0;
             cell.bgView.alpha=0;
