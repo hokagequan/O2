@@ -1428,10 +1428,10 @@
             </objects>
             <point key="canvasLocation" x="282" y="-220"/>
         </scene>
-        <!--Contact View Controller-->
+        <!--联系我们-->
         <scene sceneID="8gx-dr-beM">
             <objects>
-                <viewController storyboardIdentifier="contactViewController" id="ow1-Fp-IhI" customClass="contactViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="contactViewController" title="联系我们" id="ow1-Fp-IhI" customClass="contactViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1aQ-hY-DAh"/>
                         <viewControllerLayoutGuide type="bottom" id="ZtX-Gi-HcH"/>
@@ -1440,7 +1440,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFZ-1U-BYb">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFZ-1U-BYb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1451,7 +1451,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fai-VX-uvY">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fai-VX-uvY">
                                 <rect key="frame" x="7" y="25" width="16" height="16"/>
                                 <animations/>
                                 <constraints>
@@ -1465,7 +1465,7 @@
                                     <action selector="backButtonClick:" destination="ow1-Fp-IhI" eventType="touchUpInside" id="jHj-5L-Vci"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFS-dY-aCg">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFS-dY-aCg">
                                 <rect key="frame" x="20" y="19" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -1481,7 +1481,7 @@
                                     <action selector="backButtonClick:" destination="ow1-Fp-IhI" eventType="touchUpInside" id="M8M-4o-eZe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="联系我们" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fz-vN-Zd3">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="联系我们" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fz-vN-Zd3">
                                 <rect key="frame" x="123" y="23" width="75" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -5335,7 +5335,7 @@
             </objects>
             <point key="canvasLocation" x="-1373" y="659"/>
         </scene>
-        <!--Set Up The View Controller-->
+        <!--设置-->
         <scene sceneID="dId-Bd-kNZ">
             <objects>
                 <viewController storyboardIdentifier="SetUpTheViewController" hidesBottomBarWhenPushed="YES" id="HyG-Oy-yjj" customClass="SetUpTheViewController" sceneMemberID="viewController">
@@ -5350,7 +5350,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8V-pn-8W0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-Fe-h0b">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnf-Fe-h0b">
                                         <rect key="frame" x="8" y="26" width="16" height="16"/>
                                         <animations/>
                                         <constraints>
@@ -5364,7 +5364,18 @@
                                             <action selector="backButtonClick:" destination="HyG-Oy-yjj" eventType="touchUpInside" id="3zI-La-Xnh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RX-Ch-jO1">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slp-Zl-cQU">
+                                        <rect key="frame" x="123" y="23" width="75" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="Jnf-eN-bVh"/>
+                                            <constraint firstAttribute="height" constant="21" id="OnE-qd-dzG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FZLTXHJW--GB1-0" family="FZLanTingHeiS-EL-GB" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RX-Ch-jO1">
                                         <rect key="frame" x="20" y="19" width="46" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -5380,17 +5391,6 @@
                                             <action selector="backButtonClick:" destination="HyG-Oy-yjj" eventType="touchUpInside" id="A97-cw-oeY"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slp-Zl-cQU">
-                                        <rect key="frame" x="123" y="23" width="75" height="21"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="Jnf-eN-bVh"/>
-                                            <constraint firstAttribute="height" constant="21" id="OnE-qd-dzG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="FZLTXHJW--GB1-0" family="FZLanTingHeiS-EL-GB" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -5583,7 +5583,7 @@
                             <constraint firstItem="FlA-pA-5ak" firstAttribute="leading" secondItem="Dul-Xl-bDq" secondAttribute="trailing" constant="22" id="zYy-eW-34n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2BG-2E-LRh"/>
+                    <navigationItem key="navigationItem" title="设置" id="2BG-2E-LRh"/>
                     <connections>
                         <outlet property="exitLoginButton" destination="KOj-Ru-UoR" id="1Ry-L7-9Y0"/>
                     </connections>
