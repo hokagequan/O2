@@ -125,53 +125,5 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "O2Trip/ViewController/destinationViewController.m"
-            timestampString = "467533203.289697"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[destinationViewController viewDidLoad]"
-                  moduleName = "O2Trip"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip%20/O2Trip/ViewController/destinationViewController.m"
-                  timestampString = "467631463.57368"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "1775">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[destinationViewController viewDidLoad]_block_invoke"
-                  moduleName = "O2Trip"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip%20/O2Trip/ViewController/destinationViewController.m"
-                  timestampString = "467631463.573983"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

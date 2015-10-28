@@ -641,9 +641,12 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blE-jb-yes">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blE-jb-yes">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nNp-cP-WJw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -711,7 +714,9 @@
                         <constraints>
                             <constraint firstItem="OXB-TZ-qHL" firstAttribute="top" secondItem="WAS-m4-Hib" secondAttribute="bottom" id="3vt-YX-rt2"/>
                             <constraint firstItem="hvO-UO-Yc0" firstAttribute="leading" secondItem="PHx-HU-bjS" secondAttribute="leadingMargin" constant="-8" id="5hw-Mn-hzx"/>
+                            <constraint firstItem="blE-jb-yes" firstAttribute="top" secondItem="PHx-HU-bjS" secondAttribute="top" id="5kI-wz-1KD"/>
                             <constraint firstItem="WAS-m4-Hib" firstAttribute="top" secondItem="PHx-HU-bjS" secondAttribute="topMargin" constant="-22" id="Fa3-PL-Vaj"/>
+                            <constraint firstItem="blE-jb-yes" firstAttribute="leading" secondItem="PHx-HU-bjS" secondAttribute="leading" id="JaG-7a-8Uf"/>
                             <constraint firstItem="hvO-UO-Yc0" firstAttribute="top" secondItem="OkN-Ew-Zdb" secondAttribute="bottom" constant="5" id="Jii-Er-VPp"/>
                             <constraint firstItem="OXB-TZ-qHL" firstAttribute="leading" secondItem="Saw-Ik-6za" secondAttribute="trailing" id="Ltm-iF-LBs"/>
                             <constraint firstItem="OXB-TZ-qHL" firstAttribute="width" secondItem="Saw-Ik-6za" secondAttribute="width" multiplier="2:1" id="NBr-dr-RMy"/>
@@ -720,6 +725,7 @@
                             <constraint firstItem="WAS-m4-Hib" firstAttribute="leading" secondItem="PHx-HU-bjS" secondAttribute="leadingMargin" constant="-16" id="aIG-e4-wTz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WAS-m4-Hib" secondAttribute="trailing" constant="-16" id="bZ7-Ut-UvE"/>
                             <constraint firstItem="hgt-gK-Uej" firstAttribute="trailing" secondItem="PHx-HU-bjS" secondAttribute="trailingMargin" id="hS7-ya-7Hg"/>
+                            <constraint firstAttribute="trailing" secondItem="blE-jb-yes" secondAttribute="trailing" id="hzQ-ed-TNi"/>
                             <constraint firstItem="hgt-gK-Uej" firstAttribute="top" secondItem="OkN-Ew-Zdb" secondAttribute="bottom" constant="5" id="lcx-E3-3XN"/>
                             <constraint firstItem="Saw-Ik-6za" firstAttribute="leading" secondItem="PHx-HU-bjS" secondAttribute="leading" id="oA6-VB-Kn9"/>
                             <constraint firstItem="o2a-gr-CXl" firstAttribute="top" secondItem="Saw-Ik-6za" secondAttribute="bottom" id="snx-Ea-KUN"/>

@@ -99,10 +99,7 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    CAGradientLayer* layer=[CAGradientLayer layer];
-    layer.frame=CGRectMake(0,0, self.bgLabel.frame.size.width, self.bgLabel.frame.size.height);
-    layer.colors=[NSArray arrayWithObjects:(id)[UIColor blackColor].CGColor,(id)[UIColor clearColor].CGColor, nil];
-    [self.bgLabel.layer insertSublayer:layer atIndex:0];
+    
     self.collectionButton.alpha=1;
     self.backButton.alpha=1;
     _a=0;
@@ -152,6 +149,16 @@
  
     
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    CAGradientLayer* layer=[CAGradientLayer layer];
+    layer.frame=CGRectMake(0,0, self.bgLabel.frame.size.width, self.bgLabel.frame.size.height);
+    layer.colors=[NSArray arrayWithObjects:(id)[UIColor blackColor].CGColor,(id)[UIColor clearColor].CGColor, nil];
+    [self.bgLabel.layer insertSublayer:layer atIndex:0];
+}
+
 //获取时间的请求
 -(void)getOtherRequest
 {
