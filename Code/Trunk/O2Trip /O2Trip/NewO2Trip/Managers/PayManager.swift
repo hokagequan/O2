@@ -21,6 +21,13 @@ enum PayMode: Int {
 class PayManager: NSObject, WXApiDelegate {
     static let sharedPayManager = PayManager()
     
+    let alipayKey = "ljb36ladds9j62ncboigr431mts5ltlh"
+    let alipayPartner = "2088911527484782"
+    let alipaySeller = "info@o2trip.cn"
+    
+    let wechatAppID = "wxfc5b7d0ff882adcb"
+    let wechatAppKey = "4a53268e81a76ca6e9b96136314ce29f"
+    
     var isPaying = false
     weak var delegate: PayManagerDelegate?
     
@@ -68,7 +75,16 @@ class PayManager: NSObject, WXApiDelegate {
     
     func payUsingZhiFuBao(order: AliPayOrder) {
         let orderString = order.orderDescription()
-        // TODO: 支付宝支付
+        let signer = CreateRSADataSigner(alipayKey)
+        let signedString = signer.signString(orderString)
+        
+        if signedString != nil {
+            let finalString = "\(orderString)&sign=\(signedString!)&sign_type=RSA"
+            AlipaySDK.defaultService().payOrder(finalString, fromScheme: "O2Trip", callback: { (response) -> Void in
+                // TODO: 结果处理
+                print("\(response)")
+            })
+        }
     }
     
     // MARK: - WXApiDelegate

@@ -264,6 +264,8 @@ class HttpReqManager: NSObject {
         }
     }
     
+    // 获取支付信息
+    
     class func imageUrl(imageName: String?) -> NSURL? {
         if imageName == nil {
             return nil

@@ -31,8 +31,10 @@
         // Override point for customization after application launch.
     [ShareSDK registerApp:@"71f3ecb48ce9"];
     [ShareSDK connectSinaWeiboWithAppKey:@"256180517" appSecret:@"481eb6a38f97837b9e5cd9fda640e9bc" redirectUri:@"http://www.baidu.com"];
-    [ShareSDK connectWeChatWithAppId:@"wx6f2a2f4d08139d23" appSecret:@"37c79f56c3538445b9f32c89168db685 " wechatCls:[WXApi class]];
+    [ShareSDK connectWeChatWithAppId:@"wxfc5b7d0ff882adcb" appSecret:@"4a53268e81a76ca6e9b96136314ce29f " wechatCls:[WXApi class]];
     [ShareSDK connectQQWithQZoneAppKey:@"1104546609" qqApiInterfaceCls:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
+    
+    [WXApi registerApp:@"wxfc5b7d0ff882adcb"];
    
     //推送
     //注册Jpush推送
