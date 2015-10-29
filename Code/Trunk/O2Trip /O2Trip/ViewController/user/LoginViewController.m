@@ -18,6 +18,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
+@property (weak, nonatomic) IBOutlet UIButton *weboButton;
+@property (weak, nonatomic) IBOutlet UIButton *qqButton;
+@property (weak, nonatomic) IBOutlet UIButton *wechatButton;
+
 @end
 
 @implementation LoginViewController
@@ -141,4 +145,16 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - Actions
+
+- (IBAction)clickWeibo:(id)sender {
+}
+
+- (IBAction)clickQQ:(id)sender {
+}
+
+- (IBAction)clickWechat:(id)sender {
+}
+
 @end

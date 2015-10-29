@@ -474,27 +474,66 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPO-BD-dtp">
+                                <rect key="frame" x="55" y="454" width="34" height="34"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="632-kp-tbf"/>
+                                    <constraint firstAttribute="height" constant="34" id="Klf-t3-hLh"/>
+                                </constraints>
+                                <state key="normal" image="weibo"/>
+                                <connections>
+                                    <action selector="clickWeibo:" destination="sgN-oE-rC3" eventType="touchUpInside" id="Dcq-BJ-0s3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWf-lw-Cxl">
+                                <rect key="frame" x="231" y="454" width="34" height="34"/>
+                                <animations/>
+                                <state key="normal" image="wechat"/>
+                                <connections>
+                                    <action selector="clickWechat:" destination="sgN-oE-rC3" eventType="touchUpInside" id="paD-xt-YMG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnD-l8-1Ms">
+                                <rect key="frame" x="143" y="454" width="34" height="34"/>
+                                <animations/>
+                                <state key="normal" image="qq"/>
+                                <connections>
+                                    <action selector="clickQQ:" destination="sgN-oE-rC3" eventType="touchUpInside" id="Kzk-Nd-v96"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="XWf-lw-Cxl" firstAttribute="centerY" secondItem="SPO-BD-dtp" secondAttribute="centerY" id="0uj-OH-uox"/>
                             <constraint firstItem="O8e-BA-NqP" firstAttribute="top" secondItem="Kqc-d1-oZv" secondAttribute="bottom" constant="66" id="11d-rS-N4W"/>
+                            <constraint firstItem="CnD-l8-1Ms" firstAttribute="height" secondItem="SPO-BD-dtp" secondAttribute="height" id="2CR-lm-07I"/>
+                            <constraint firstItem="CnD-l8-1Ms" firstAttribute="centerY" secondItem="SPO-BD-dtp" secondAttribute="centerY" id="5wd-Uw-rN5"/>
                             <constraint firstAttribute="trailing" secondItem="U7J-Pt-WXB" secondAttribute="trailing" constant="7" id="6Av-rO-zxI"/>
                             <constraint firstAttribute="trailing" secondItem="e0W-mo-ceT" secondAttribute="trailing" constant="16" id="6Ky-24-iB5"/>
                             <constraint firstAttribute="trailing" secondItem="eff-Ov-4et" secondAttribute="trailing" constant="16" id="7vo-tD-bhF"/>
+                            <constraint firstItem="CnD-l8-1Ms" firstAttribute="leading" secondItem="SPO-BD-dtp" secondAttribute="trailing" constant="54" id="BH4-eN-Uof"/>
                             <constraint firstItem="Omb-w1-mO0" firstAttribute="leading" secondItem="6qZ-Tf-I2M" secondAttribute="leading" constant="7" id="GKQ-Nh-lA0"/>
                             <constraint firstItem="U7J-Pt-WXB" firstAttribute="top" secondItem="7Q8-Dz-bIt" secondAttribute="bottom" constant="16" id="HGT-Ft-oXU"/>
                             <constraint firstItem="0De-GK-wnL" firstAttribute="leading" secondItem="6qZ-Tf-I2M" secondAttribute="leading" constant="16" id="Jh5-ml-gFk"/>
                             <constraint firstItem="se0-hh-rHa" firstAttribute="top" secondItem="RyH-bF-2eQ" secondAttribute="bottom" id="LGR-hU-aTg"/>
                             <constraint firstItem="7Q8-Dz-bIt" firstAttribute="leading" secondItem="6qZ-Tf-I2M" secondAttribute="leading" constant="16" id="NPE-dL-PWI"/>
                             <constraint firstItem="O8e-BA-NqP" firstAttribute="leading" secondItem="6qZ-Tf-I2M" secondAttribute="leading" constant="30" id="Ti6-7b-N7E"/>
+                            <constraint firstAttribute="trailing" secondItem="XWf-lw-Cxl" secondAttribute="trailing" constant="55" id="WWZ-un-Ilg"/>
+                            <constraint firstItem="CnD-l8-1Ms" firstAttribute="width" secondItem="SPO-BD-dtp" secondAttribute="width" id="aCi-cC-S7O"/>
                             <constraint firstItem="e0W-mo-ceT" firstAttribute="top" secondItem="0De-GK-wnL" secondAttribute="bottom" id="c4S-Bh-G11"/>
                             <constraint firstAttribute="trailing" secondItem="7Q8-Dz-bIt" secondAttribute="trailing" constant="16" id="cdF-N5-WEF"/>
+                            <constraint firstItem="se0-hh-rHa" firstAttribute="top" secondItem="SPO-BD-dtp" secondAttribute="bottom" constant="80" id="ePT-Db-0Gp"/>
                             <constraint firstItem="7Q8-Dz-bIt" firstAttribute="top" secondItem="eff-Ov-4et" secondAttribute="bottom" constant="16" id="eff-cs-2Db"/>
+                            <constraint firstItem="XWf-lw-Cxl" firstAttribute="height" secondItem="SPO-BD-dtp" secondAttribute="height" id="evW-qX-N6T"/>
+                            <constraint firstItem="SPO-BD-dtp" firstAttribute="leading" secondItem="6qZ-Tf-I2M" secondAttribute="leading" constant="55" id="fL5-mg-XI0"/>
                             <constraint firstItem="0De-GK-wnL" firstAttribute="top" secondItem="O8e-BA-NqP" secondAttribute="bottom" constant="3" id="hh3-Fp-apt"/>
                             <constraint firstAttribute="trailing" secondItem="0De-GK-wnL" secondAttribute="trailing" constant="16" id="jJk-kf-JLv"/>
                             <constraint firstItem="eff-Ov-4et" firstAttribute="leading" secondItem="6qZ-Tf-I2M" secondAttribute="leading" constant="16" id="ngf-kr-wXo"/>
+                            <constraint firstItem="XWf-lw-Cxl" firstAttribute="width" secondItem="SPO-BD-dtp" secondAttribute="width" id="nmi-sP-A2B"/>
                             <constraint firstItem="e0W-mo-ceT" firstAttribute="leading" secondItem="6qZ-Tf-I2M" secondAttribute="leading" constant="30" id="o5m-AL-Wdq"/>
+                            <constraint firstItem="XWf-lw-Cxl" firstAttribute="leading" secondItem="CnD-l8-1Ms" secondAttribute="trailing" constant="54" id="qBr-pd-nfb"/>
                             <constraint firstItem="RyH-bF-2eQ" firstAttribute="leading" secondItem="6qZ-Tf-I2M" secondAttribute="leading" id="qW5-jh-d3Q"/>
                             <constraint firstItem="eff-Ov-4et" firstAttribute="top" secondItem="Omb-w1-mO0" secondAttribute="bottom" constant="42" id="sMU-TL-H3I"/>
                             <constraint firstItem="RyH-bF-2eQ" firstAttribute="top" secondItem="6qZ-Tf-I2M" secondAttribute="top" id="x5t-tm-Z8l"/>
@@ -507,7 +546,10 @@
                     <connections>
                         <outlet property="loginLabel" destination="eff-Ov-4et" id="dfv-qi-Ye1"/>
                         <outlet property="passwordTextField" destination="e0W-mo-ceT" id="HSK-9h-xJS"/>
+                        <outlet property="qqButton" destination="CnD-l8-1Ms" id="bJz-gm-IWL"/>
                         <outlet property="usernameTextField" destination="O8e-BA-NqP" id="k7B-4J-SST"/>
+                        <outlet property="weboButton" destination="SPO-BD-dtp" id="XAk-sT-ZmQ"/>
+                        <outlet property="wechatButton" destination="XWf-lw-Cxl" id="7hq-Gf-T87"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGE-Qe-8ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -7315,11 +7357,14 @@
         <image name="payment process@3x-13.png" width="120" height="90"/>
         <image name="payment process@3x-18.png" width="70" height="70"/>
         <image name="personal@3x-06-06.png" width="300" height="300"/>
+        <image name="qq" width="34" height="34"/>
         <image name="shopping cart_empty.png" width="52" height="52"/>
+        <image name="wechat" width="34" height="34"/>
+        <image name="weibo" width="34" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oSK-Jd-rUA"/>
         <segue reference="gRI-iX-hP5"/>
-        <segue reference="qyw-SV-Wzi"/>
+        <segue reference="oSK-Jd-rUA"/>
+        <segue reference="6yf-me-hNE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -97,6 +97,13 @@
 		10D6AABF1BBC1FA40010EF51 /* check_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AABE1BBC1FA40010EF51 /* check_sel@2x.png */; };
 		10D6AAC21BBC2D270010EF51 /* order_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */; };
 		10E0BC051BE21A2E00CE35A5 /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E0BC041BE21A2E00CE35A5 /* DataSigner.m */; };
+		10E0BC071BE228E700CE35A5 /* ThirdPartySignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0BC061BE228E700CE35A5 /* ThirdPartySignInManager.swift */; };
+		10E0BC0B1BE22A6A00CE35A5 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E0BC091BE22A6A00CE35A5 /* TencentOpenAPI.framework */; };
+		10E0BC0C1BE22A6A00CE35A5 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0BC0A1BE22A6A00CE35A5 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		10E0BC0D1BE22AFE00CE35A5 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E0BC091BE22A6A00CE35A5 /* TencentOpenAPI.framework */; };
+		10E0BC0E1BE22AFE00CE35A5 /* TencentOpenAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10E0BC091BE22A6A00CE35A5 /* TencentOpenAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10E0BC131BE22C2800CE35A5 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E0BC101BE22C2800CE35A5 /* libWeiboSDK.a */; };
+		10E0BC141BE22C2800CE35A5 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0BC111BE22C2800CE35A5 /* WeiboSDK.bundle */; };
 		10FE42571BB19CC400E37C76 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */; };
 		10FE42591BB2ED1600E37C76 /* OrderFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42581BB2ED1600E37C76 /* OrderFilterCell.swift */; };
 		10FE425B1BB2F09F00E37C76 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE425A1BB2F09F00E37C76 /* OrderCell.swift */; };
@@ -472,6 +479,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1052CD081BCE17F400DDDAA5 /* AlipaySDK.framework in Embed Frameworks */,
+				10E0BC0E1BE22AFE00CE35A5 /* TencentOpenAPI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +592,12 @@
 		10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "order_empty@2x.png"; sourceTree = "<group>"; };
 		10E0BC031BE21A2E00CE35A5 /* DataSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSigner.h; sourceTree = "<group>"; };
 		10E0BC041BE21A2E00CE35A5 /* DataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSigner.m; sourceTree = "<group>"; };
+		10E0BC061BE228E700CE35A5 /* ThirdPartySignInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartySignInManager.swift; sourceTree = "<group>"; };
+		10E0BC091BE22A6A00CE35A5 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		10E0BC0A1BE22A6A00CE35A5 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		10E0BC101BE22C2800CE35A5 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		10E0BC111BE22C2800CE35A5 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		10E0BC121BE22C2800CE35A5 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
 		10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		10FE42581BB2ED1600E37C76 /* OrderFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderFilterCell.swift; sourceTree = "<group>"; };
 		10FE425A1BB2F09F00E37C76 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
@@ -1132,9 +1146,11 @@
 				2B9B12A81AFA336C00C1B308 /* libsqlite3.dylib in Frameworks */,
 				2BDCC31F1AFB084600B758BA /* libstdc++.dylib in Frameworks */,
 				2BDCC31D1AFB083200B758BA /* MessageUI.framework in Frameworks */,
+				10E0BC0B1BE22A6A00CE35A5 /* TencentOpenAPI.framework in Frameworks */,
 				2BDCC3681AFB101A00B758BA /* libTCWeiboSDK.a in Frameworks */,
 				2BDCC35F1AFB101900B758BA /* WeChatConnection.framework in Frameworks */,
 				2BDCC3591AFB101900B758BA /* QQConnection.framework in Frameworks */,
+				10E0BC131BE22C2800CE35A5 /* libWeiboSDK.a in Frameworks */,
 				2BDCC31B1AFB078B00B758BA /* libicucore.dylib in Frameworks */,
 				2B9B12A41AFA334600C1B308 /* StoreKit.framework in Frameworks */,
 				2BDCC35A1AFB101900B758BA /* QZoneConnection.framework in Frameworks */,
@@ -1144,6 +1160,7 @@
 				2BDCC35B1AFB101900B758BA /* SinaWeiboConnection.framework in Frameworks */,
 				2B9B12A21AFA332100C1B308 /* MobileCoreServices.framework in Frameworks */,
 				2BDCC35C1AFB101900B758BA /* SMSConnection.framework in Frameworks */,
+				10E0BC0D1BE22AFE00CE35A5 /* TencentOpenAPI.framework in Frameworks */,
 				2BDCC3641AFB101A00B758BA /* TencentOpenAPI.framework in Frameworks */,
 				2BDCC3581AFB101900B758BA /* MailConnection.framework in Frameworks */,
 				2BF2086E1B57A50500AC5A23 /* libPushSDK-1.8.3.a in Frameworks */,
@@ -1232,6 +1249,7 @@
 				100A54BE1BB1575400F974A2 /* HttpReqManager.swift */,
 				108CAEAA1BC5642600902E34 /* PayManager.swift */,
 				10C6B2341BD723E500D38847 /* ODataManager.swift */,
+				10E0BC061BE228E700CE35A5 /* ThirdPartySignInManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1332,6 +1350,8 @@
 		108CAEAC1BC56B7B00902E34 /* ThirdPartys */ = {
 			isa = PBXGroup;
 			children = (
+				10E0BC0F1BE22C2800CE35A5 /* SinaWeibo */,
+				10E0BC081BE22A6A00CE35A5 /* Tencent */,
 				103939341BD8F3C40089F06A /* IZValuePicker */,
 				104A32A71BD878CD00F86C49 /* VRGCalendar */,
 				1052CD021BCE17ED00DDDAA5 /* AliPay */,
@@ -1409,6 +1429,25 @@
 				10D6AAC11BBC2D270010EF51 /* order_empty@2x.png */,
 			);
 			path = Order;
+			sourceTree = "<group>";
+		};
+		10E0BC081BE22A6A00CE35A5 /* Tencent */ = {
+			isa = PBXGroup;
+			children = (
+				10E0BC091BE22A6A00CE35A5 /* TencentOpenAPI.framework */,
+				10E0BC0A1BE22A6A00CE35A5 /* TencentOpenApi_IOS_Bundle.bundle */,
+			);
+			path = Tencent;
+			sourceTree = "<group>";
+		};
+		10E0BC0F1BE22C2800CE35A5 /* SinaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				10E0BC101BE22C2800CE35A5 /* libWeiboSDK.a */,
+				10E0BC111BE22C2800CE35A5 /* WeiboSDK.bundle */,
+				10E0BC121BE22C2800CE35A5 /* WeiboSDK.h */,
+			);
+			path = SinaWeibo;
 			sourceTree = "<group>";
 		};
 		10FE42551BB19C7600E37C76 /* Customs */ = {
@@ -2522,6 +2561,7 @@
 				2B5C1F201BA9530E00E770FC /* details@3x-02.png in Resources */,
 				2B5C1F4B1BA9530E00E770FC /* 120x120.png in Resources */,
 				2BD59F731B159237001D807F /* detailButtonViewCell.xib in Resources */,
+				10E0BC0C1BE22A6A00CE35A5 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				10D6AAC21BBC2D270010EF51 /* order_empty@2x.png in Resources */,
 				2B5C1F381BA9530E00E770FC /* discover@3x-09.png in Resources */,
 				2B5C1F751BA9530E00E770FC /* startpage5.jpg in Resources */,
@@ -2609,6 +2649,7 @@
 				2B5C1F2A1BA9530E00E770FC /* details@3x-13.png in Resources */,
 				10D6AABF1BBC1FA40010EF51 /* check_sel@2x.png in Resources */,
 				10D4CE151BC8974000565D59 /* pull_refresh@2x.png in Resources */,
+				10E0BC141BE22C2800CE35A5 /* WeiboSDK.bundle in Resources */,
 				2B5C1FBD1BA9582200E770FC /* CalendarDisableDate.png in Resources */,
 				2B5C1F5C1BA9530E00E770FC /* @3x_personal-05.png in Resources */,
 				1039392F1BD8D7C40089F06A /* TimePickerView.xib in Resources */,
@@ -2788,6 +2829,7 @@
 				10FE42571BB19CC400E37C76 /* UIViewController+ShowAlert.swift in Sources */,
 				2B6394481B74848F00C210E4 /* contactViewController.m in Sources */,
 				2B5C1FD51BA9582200E770FC /* MJType.m in Sources */,
+				10E0BC071BE228E700CE35A5 /* ThirdPartySignInManager.swift in Sources */,
 				2BDE8C421B04B8AC00C09985 /* collectionViewController.m in Sources */,
 				10FE426B1BB8280A00E37C76 /* PayTotalCell.swift in Sources */,
 				2B5C1FCF1BA9582200E770FC /* RMCalendarCollectionViewLayout.m in Sources */,
@@ -3028,22 +3070,23 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/tao/Desktop/O2Trip2,
-					/Users/tao/Desktop/O2Trip2/ShareSDK,
-					/Users/tao/Desktop/O2Trip2,
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/ShareSDK/Connection",
 					"$(PROJECT_DIR)/ShareSDK/Core",
 					"$(PROJECT_DIR)/ShareSDK/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/ShareSDK",
 					"$(PROJECT_DIR)/ShareSDK/UI",
-					/Users/tao/Downloads,
 					"$(PROJECT_DIR)/Alipay/lib/Channels/Alipay",
 					"$(PROJECT_DIR)/library/Alipay/lib/Channels/Alipay",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/Tencent",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/O2Trip/Config/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay/AlipaySDK.framework/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay/AlipaySDK.framework/Headers",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/Tencent/TencentOpenAPI.framework/Headers",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/SinaWeibo",
+				);
 				INFOPLIST_FILE = O2Trip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3061,6 +3104,7 @@
 					"$(PROJECT_DIR)/library/Alipay/lib",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/WeChat",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/SinaWeibo",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -3083,22 +3127,23 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/tao/Desktop/O2Trip2,
-					/Users/tao/Desktop/O2Trip2/ShareSDK,
-					/Users/tao/Desktop/O2Trip2,
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/ShareSDK/Connection",
 					"$(PROJECT_DIR)/ShareSDK/Core",
 					"$(PROJECT_DIR)/ShareSDK/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/ShareSDK",
 					"$(PROJECT_DIR)/ShareSDK/UI",
-					/Users/tao/Downloads,
 					"$(PROJECT_DIR)/Alipay/lib/Channels/Alipay",
 					"$(PROJECT_DIR)/library/Alipay/lib/Channels/Alipay",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/Tencent",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/O2Trip/Config/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay/AlipaySDK.framework/Headers";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay/AlipaySDK.framework/Headers",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/Tencent/TencentOpenAPI.framework/Headers",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/SinaWeibo",
+				);
 				INFOPLIST_FILE = O2Trip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3116,6 +3161,7 @@
 					"$(PROJECT_DIR)/library/Alipay/lib",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/WeChat",
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/SinaWeibo",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
