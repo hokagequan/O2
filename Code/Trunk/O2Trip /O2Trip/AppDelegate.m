@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <ShareSDK/ShareSDK.h>
 #import "WeiboApi.h"
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
@@ -29,11 +28,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         // Override point for customization after application launch.
-    [ShareSDK registerApp:@"71f3ecb48ce9"];
-    [ShareSDK connectSinaWeiboWithAppKey:@"256180517" appSecret:@"481eb6a38f97837b9e5cd9fda640e9bc" redirectUri:@"http://www.baidu.com"];
-    [ShareSDK connectWeChatWithAppId:@"wxfc5b7d0ff882adcb" appSecret:@"4a53268e81a76ca6e9b96136314ce29f " wechatCls:[WXApi class]];
-    [ShareSDK connectQQWithQZoneAppKey:@"1104546609" qqApiInterfaceCls:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
-    
     [WXApi registerApp:@"wxfc5b7d0ff882adcb"];
    
     //推送
@@ -82,29 +76,29 @@
         success = [[PayManager sharedInstance] handleOpenUrl:url];
     }
     else {
-        success = [ShareSDK handleOpenURL:url wxDelegate:self];
+        success = [[ThirdPartySignInManager defaultManager] handleOpenUrl:url];
     }
     return success;
 }
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-//    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
-//        // result : success, fail, cancel, invalid
-//        NSString *msg;
-//        if (error == nil) {
-//            NSLog(@"PingppError is nil");
-//            msg = result;
-//        } else {
-//            NSLog(@"PingppError: code=%lu msg=%@", (unsigned long)error.code, [error getMsg]);
-//            msg = [NSString stringWithFormat:@"result=%@ PingppError: code=%lu msg=%@", result, (unsigned long)error.code, [error getMsg]];
-//        }
-//        [(orderViewController*)self.viewController.visibleViewController showAlertMessage:msg];
-//    }];
-//    return  YES;
-
-    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self];
-  
-}
+//-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+////    [Pingpp handleOpenURL:url withCompletion:^(NSString *result, PingppError *error) {
+////        // result : success, fail, cancel, invalid
+////        NSString *msg;
+////        if (error == nil) {
+////            NSLog(@"PingppError is nil");
+////            msg = result;
+////        } else {
+////            NSLog(@"PingppError: code=%lu msg=%@", (unsigned long)error.code, [error getMsg]);
+////            msg = [NSString stringWithFormat:@"result=%@ PingppError: code=%lu msg=%@", result, (unsigned long)error.code, [error getMsg]];
+////        }
+////        [(orderViewController*)self.viewController.visibleViewController showAlertMessage:msg];
+////    }];
+////    return  YES;
+//
+//    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self];
+//  
+//}
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.window endEditing:YES];

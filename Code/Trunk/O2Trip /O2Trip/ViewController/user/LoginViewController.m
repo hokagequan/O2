@@ -10,7 +10,8 @@
 #import "UserViewModel.h"
 #import "mapViewController.h"
 #import "changeViewController.h"
-#import <ShareSDK/ShareSDK.h>
+
+#import "O2Trip-Swift.h"
 
 
 @interface LoginViewController ()
@@ -109,34 +110,34 @@
 - (IBAction)otherButtonClick:(id)sender
 {
     
-    UIButton* button=(UIButton*)sender;
-    if (button.tag==3) {
-        [ShareSDK cancelAuthWithType:ShareTypeSinaWeibo];
-        [ShareSDK getUserInfoWithType:ShareTypeSinaWeibo authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
-            
-            if (result) {
-                changeViewController* vc=[self.navigationController.viewControllers objectAtIndex:0];
-                [self.navigationController popToViewController:vc animated:YES];
-            }
-        }];
-        
-    }else if (button.tag==2)
-    {
-        
-        [ShareSDK getUserInfoWithType:ShareTypeWeixiTimeline authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
-            if (result) {
-                changeViewController* vc=[self.navigationController.viewControllers objectAtIndex:0];
-                [self.navigationController popToViewController:vc animated:YES];            }
-        }];
-    }else
-    {
-        //[ShareSDK cancelAuthWithType:ShareTypeQQSpace];
-        [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
-            if (result) {
-                changeViewController* vc=[self.navigationController.viewControllers objectAtIndex:0];
-                [self.navigationController popToViewController:vc animated:YES];            }
-        }];
-    }
+//    UIButton* button=(UIButton*)sender;
+//    if (button.tag==3) {
+//        [ShareSDK cancelAuthWithType:ShareTypeSinaWeibo];
+//        [ShareSDK getUserInfoWithType:ShareTypeSinaWeibo authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
+//            
+//            if (result) {
+//                changeViewController* vc=[self.navigationController.viewControllers objectAtIndex:0];
+//                [self.navigationController popToViewController:vc animated:YES];
+//            }
+//        }];
+//        
+//    }else if (button.tag==2)
+//    {
+//        
+//        [ShareSDK getUserInfoWithType:ShareTypeWeixiTimeline authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
+//            if (result) {
+//                changeViewController* vc=[self.navigationController.viewControllers objectAtIndex:0];
+//                [self.navigationController popToViewController:vc animated:YES];            }
+//        }];
+//    }else
+//    {
+//        //[ShareSDK cancelAuthWithType:ShareTypeQQSpace];
+//        [ShareSDK getUserInfoWithType:ShareTypeQQSpace authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
+//            if (result) {
+//                changeViewController* vc=[self.navigationController.viewControllers objectAtIndex:0];
+//                [self.navigationController popToViewController:vc animated:YES];            }
+//        }];
+//    }
    
 
 }
