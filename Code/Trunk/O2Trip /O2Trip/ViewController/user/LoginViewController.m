@@ -14,7 +14,7 @@
 #import "O2Trip-Swift.h"
 
 
-@interface LoginViewController ()
+@interface LoginViewController ()<ThirdPartySignInManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -40,7 +40,7 @@
 //        <#statements#>
 //    }
 
-   
+    [ThirdPartySignInManager defaultManager].delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -150,12 +150,21 @@
 #pragma mark - Actions
 
 - (IBAction)clickWeibo:(id)sender {
+    [[ThirdPartySignInManager defaultManager] signInWeibo];
 }
 
 - (IBAction)clickQQ:(id)sender {
+    [[ThirdPartySignInManager defaultManager] signInQQ];
 }
 
 - (IBAction)clickWechat:(id)sender {
+    [[ThirdPartySignInManager defaultManager] signInWechat];
+}
+
+#pragma mark - ThirdPartySignInManagerDelegate
+
+- (void)didFinishAuthorized:(ThirdPartySignInManager *)manager type:(enum ThirdPartyType)type success:(BOOL)success {
+    // TODO: 第三方登录
 }
 
 @end
