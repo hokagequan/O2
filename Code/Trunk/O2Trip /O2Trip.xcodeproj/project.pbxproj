@@ -15,6 +15,7 @@
 		100A54C61BB2B88900F974A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A54C51BB2B88900F974A2 /* Main.storyboard */; };
 		100A54C81BB2BD5B00F974A2 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54C71BB2BD5B00F974A2 /* OrdersViewController.swift */; };
 		100A54CC1BB37FF100F974A2 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A54CB1BB37FF100F974A2 /* OrderItem.swift */; };
+		100FD54E1BE35ED800529727 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1052CD041BCE17ED00DDDAA5 /* AlipaySDK.framework */; };
 		103939251BD8B30F0089F06A /* GridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103939241BD8B30F0089F06A /* GridView.xib */; };
 		103939281BD8B4ED0089F06A /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 103939271BD8B4ED0089F06A /* GridView.m */; };
 		1039392D1BD8D7B20089F06A /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039392C1BD8D7B20089F06A /* TimePickerView.swift */; };
@@ -31,8 +32,6 @@
 		104A32BA1BD87B0F00F86C49 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104A32B91BD87B0F00F86C49 /* CalendarView.xib */; };
 		1052CCFE1BCDFAF800DDDAA5 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1052CCF91BCDFAF800DDDAA5 /* libWeChatSDK.a */; };
 		1052CD051BCE17ED00DDDAA5 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1052CD031BCE17ED00DDDAA5 /* AlipaySDK.bundle */; };
-		1052CD071BCE17F400DDDAA5 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1052CD041BCE17ED00DDDAA5 /* AlipaySDK.framework */; };
-		1052CD081BCE17F400DDDAA5 /* AlipaySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1052CD041BCE17ED00DDDAA5 /* AlipaySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		106D36EB1BE3171C0001BC73 /* DataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 106D36901BE3171B0001BC73 /* DataVerifier.m */; };
 		106D36EC1BE3171C0001BC73 /* MD5DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 106D36921BE3171B0001BC73 /* MD5DataSigner.m */; };
 		106D36ED1BE3171C0001BC73 /* NSDataEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 106D36941BE3171B0001BC73 /* NSDataEx.m */; };
@@ -109,8 +108,6 @@
 		10E0BC071BE228E700CE35A5 /* ThirdPartySignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0BC061BE228E700CE35A5 /* ThirdPartySignInManager.swift */; };
 		10E0BC0B1BE22A6A00CE35A5 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E0BC091BE22A6A00CE35A5 /* TencentOpenAPI.framework */; };
 		10E0BC0C1BE22A6A00CE35A5 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0BC0A1BE22A6A00CE35A5 /* TencentOpenApi_IOS_Bundle.bundle */; };
-		10E0BC0D1BE22AFE00CE35A5 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E0BC091BE22A6A00CE35A5 /* TencentOpenAPI.framework */; };
-		10E0BC0E1BE22AFE00CE35A5 /* TencentOpenAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10E0BC091BE22A6A00CE35A5 /* TencentOpenAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		10E0BC131BE22C2800CE35A5 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E0BC101BE22C2800CE35A5 /* libWeiboSDK.a */; };
 		10E0BC141BE22C2800CE35A5 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0BC111BE22C2800CE35A5 /* WeiboSDK.bundle */; };
 		10FE42571BB19CC400E37C76 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE42561BB19CC400E37C76 /* UIViewController+ShowAlert.swift */; };
@@ -454,21 +451,6 @@
 			remoteInfo = O2Trip;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1052CD091BCE17F500DDDAA5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1052CD081BCE17F400DDDAA5 /* AlipaySDK.framework in Embed Frameworks */,
-				10E0BC0E1BE22AFE00CE35A5 /* TencentOpenAPI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		100A54AF1BB02D8C00F974A2 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -1145,7 +1127,7 @@
 		758BF49E1AA42B5A0023A5A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		758BF49F1AA42B5A0023A5A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		758BF4A71AA42B5A0023A5A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		758BF4AD1AA42B5A0023A5A6 /* O2TripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = O2TripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		758BF4AD1AA42B5A0023A5A6 /* O2Trip.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = O2Trip.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		758BF4B21AA42B5A0023A5A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		758BF4B31AA42B5A0023A5A6 /* O2TripTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = O2TripTests.m; sourceTree = "<group>"; };
 		758BF4C21AA42C280023A5A6 /* CenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterModel.h; sourceTree = "<group>"; };
@@ -1188,12 +1170,11 @@
 				10E0BC131BE22C2800CE35A5 /* libWeiboSDK.a in Frameworks */,
 				2BDCC31B1AFB078B00B758BA /* libicucore.dylib in Frameworks */,
 				2B9B12A41AFA334600C1B308 /* StoreKit.framework in Frameworks */,
+				100FD54E1BE35ED800529727 /* AlipaySDK.framework in Frameworks */,
 				2B9B12961AFA2DE300C1B308 /* Social.framework in Frameworks */,
 				106D37421BE327520001BC73 /* libssl.a in Frameworks */,
 				2B9B12A21AFA332100C1B308 /* MobileCoreServices.framework in Frameworks */,
-				10E0BC0D1BE22AFE00CE35A5 /* TencentOpenAPI.framework in Frameworks */,
 				2BF2086E1B57A50500AC5A23 /* libPushSDK-1.8.3.a in Frameworks */,
-				1052CD071BCE17F400DDDAA5 /* AlipaySDK.framework in Frameworks */,
 				2B9B129A1AFA32E200C1B308 /* AudioToolbox.framework in Frameworks */,
 				2B9B12981AFA2DEB00C1B308 /* Accounts.framework in Frameworks */,
 				2B9B12941AFA2DD900C1B308 /* ImageIO.framework in Frameworks */,
@@ -2250,7 +2231,7 @@
 			isa = PBXGroup;
 			children = (
 				758BF4971AA42B5A0023A5A6 /* O2Trip.app */,
-				758BF4AD1AA42B5A0023A5A6 /* O2TripTests.xctest */,
+				758BF4AD1AA42B5A0023A5A6 /* O2Trip.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2493,7 +2474,6 @@
 				758BF4931AA42B5A0023A5A6 /* Sources */,
 				758BF4941AA42B5A0023A5A6 /* Frameworks */,
 				758BF4951AA42B5A0023A5A6 /* Resources */,
-				1052CD091BCE17F500DDDAA5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2519,7 +2499,7 @@
 			);
 			name = O2TripTests;
 			productName = O2TripTests;
-			productReference = 758BF4AD1AA42B5A0023A5A6 /* O2TripTests.xctest */;
+			productReference = 758BF4AD1AA42B5A0023A5A6 /* O2Trip.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -3110,7 +3090,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = O2Trip;
 				PROVISIONING_PROFILE = "fdf7e088-dd18-44e7-b35b-fbfd47747850";
 				"PROVISIONING_PROFILE[sdk=*]" = "fdf7e088-dd18-44e7-b35b-fbfd47747850";
 				SWIFT_OBJC_BRIDGING_HEADER = "O2Trip/NewO2Trip/ViewControllers/O2Trip-Bridging-Header.h";
@@ -3156,7 +3136,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = O2Trip;
 				PROVISIONING_PROFILE = "fdf7e088-dd18-44e7-b35b-fbfd47747850";
 				SWIFT_OBJC_BRIDGING_HEADER = "O2Trip/NewO2Trip/ViewControllers/O2Trip-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3179,7 +3159,7 @@
 				);
 				INFOPLIST_FILE = O2TripTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = O2Trip;
 				PROVISIONING_PROFILE = "fbbb1c5b-8944-47b3-8489-bc8456b995a6";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/O2Trip.app/O2Trip";
 			};
@@ -3195,7 +3175,7 @@
 				);
 				INFOPLIST_FILE = O2TripTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = O2Trip;
 				PROVISIONING_PROFILE = "fbbb1c5b-8944-47b3-8489-bc8456b995a6";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/O2Trip.app/O2Trip";
 			};

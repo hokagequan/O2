@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:O2Trip.xcodeproj">
+      location = "self:/Users/Q/svn/GitHub/O2/Code/Trunk/O2Trip /O2Trip.xcodeproj">
    </FileRef>
 </Workspace>
