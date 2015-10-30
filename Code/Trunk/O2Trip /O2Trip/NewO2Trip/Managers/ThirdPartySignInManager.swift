@@ -23,9 +23,12 @@ class ThirdPartySignInManager: NSObject, WeiboSDKDelegate, WBHttpRequestDelegate
     
     static let thirdPartySignInManager = ThirdPartySignInManager()
     
-    let qqAppID = ""
+    let qqAppID = "1104859569"
+    let qqAppKey = "Q64UL3KImgbc5wUQ"
     let weixinAppID = "wxfc5b7d0ff882adcb"
     let weixinAppKey = "4a53268e81a76ca6e9b96136314ce29f"
+    let weiboAppID = "2996070161"
+    let weiboAppKey = "94b043a8068b8f8929f10330443640a4"
     
     let weixinAPIUrl = "https://api.weixin.qq.com/sns/"
     let thirdPartyUserInfo = ThirdPartyInfo()
@@ -53,6 +56,7 @@ class ThirdPartySignInManager: NSObject, WeiboSDKDelegate, WBHttpRequestDelegate
         super.init()
         
         tencentOAuth = TencentOAuth(appId: qqAppID, andDelegate: self)
+        WeiboSDK.registerApp(weiboAppID)
     }
     
     func handleOpenUrl(url: NSURL) -> Bool {

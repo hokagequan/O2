@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "758BF4961AA42B5A0023A5A6"
-               BuildableName = "OTrip.app"
+               BuildableName = "O2Trip.app"
                BlueprintName = "O2Trip"
                ReferencedContainer = "container:O2Trip.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "758BF4961AA42B5A0023A5A6"
-            BuildableName = "OTrip.app"
+            BuildableName = "O2Trip.app"
             BlueprintName = "O2Trip"
             ReferencedContainer = "container:O2Trip.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "758BF4961AA42B5A0023A5A6"
-            BuildableName = "OTrip.app"
+            BuildableName = "O2Trip.app"
             BlueprintName = "O2Trip"
             ReferencedContainer = "container:O2Trip.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "758BF4961AA42B5A0023A5A6"
-            BuildableName = "OTrip.app"
+            BuildableName = "O2Trip.app"
             BlueprintName = "O2Trip"
             ReferencedContainer = "container:O2Trip.xcodeproj">
          </BuildableReference>
