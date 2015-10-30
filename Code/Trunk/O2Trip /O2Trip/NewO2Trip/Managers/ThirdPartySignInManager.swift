@@ -57,6 +57,7 @@ class ThirdPartySignInManager: NSObject, WeiboSDKDelegate, WBHttpRequestDelegate
         
         tencentOAuth = TencentOAuth(appId: qqAppID, andDelegate: self)
         WeiboSDK.registerApp(weiboAppID)
+        WXApi.registerApp(weixinAppID)
     }
     
     func handleOpenUrl(url: NSURL) -> Bool {
@@ -107,27 +108,30 @@ class ThirdPartySignInManager: NSObject, WeiboSDKDelegate, WBHttpRequestDelegate
     
     private func getWeixinUserInfo(code: String) {
         self.weixinRequest("oauth2/access_token", params: ["appid": weixinAppID, "secret": weixinAppKey, "code": code, "grant_type": "authorization_code"], httpMethod: nil) { (response) -> Void in
-            guard let data = response?.dataUsingEncoding(NSUTF8StringEncoding) else {
+            if response == nil {
                 return
             }
             
             do {
-                let dict = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! Dictionary<String, String>
-                self.thirdPartyUserInfo.userID = dict["openid"]!
-                self.wxToken = dict["access_token"]!;
+                let dict = try NSJSONSerialization.JSONObjectWithData(response!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                self.thirdPartyUserInfo.userID = dict["openid"] as! String
+                self.wxToken = dict["access_token"] as! String
                 
                 self.weixinRequest("userinfo", params: ["access_token": self.wxToken, "openid": self.thirdPartyUserInfo.userID], httpMethod: "GET", finished: { (response) -> Void in
-                    guard let data = response?.dataUsingEncoding(NSUTF8StringEncoding) else {
+                    if response == nil {
                         return
                     }
                     
                     do {
-                        let respDict = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! Dictionary<String, String>
+                        let respDict = try NSJSONSerialization.JSONObjectWithData(response!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                         
-                        self.thirdPartyUserInfo.nickName = respDict["nickname"];
-                        self.thirdPartyUserInfo.gender = Int(respDict["sex"]!) == 1 ? "male" : "female";
-                        self.thirdPartyUserInfo.location = respDict["city"];
-                        self.thirdPartyUserInfo.photoUrl = respDict["headimgurl"];
+                        self.thirdPartyUserInfo.nickName = respDict["nickname"] as? String
+                        let gender = respDict["sex"]
+                        if gender != nil {
+                            self.thirdPartyUserInfo.gender = respDict["sex"] as! Int == 1 ? "male" : "female"
+                        }
+                        self.thirdPartyUserInfo.location = respDict["city"] as? String
+                        self.thirdPartyUserInfo.photoUrl = respDict["headimgurl"] as? String
                         
                         self.delegate?.didFinishAuthorized?(self, type: ThirdPartyType.Wechat, success: true)
                     }
@@ -143,14 +147,14 @@ class ThirdPartySignInManager: NSObject, WeiboSDKDelegate, WBHttpRequestDelegate
         
         for key in params.keys {
             let value = params[key]
-            parts.addObject("\(key)=\(value)")
+            parts.addObject("\(key)=\(value!)")
         }
         
         return parts.componentsJoinedByString("&")
     }
     
-    private func weixinRequest(method: String, params: Dictionary<String, String>, httpMethod: String?, finished: (String?) -> Void) {
-        var urlString = "\(weixinAPIUrl)\(method)"
+    private func weixinRequest(method: String, params: Dictionary<String, String>, httpMethod: String?, finished: (NSData?) -> Void) {
+        var urlString = "\(weixinAPIUrl)\(method)?"
         urlString += self.serializeParams(params)
         
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
@@ -159,10 +163,10 @@ class ThirdPartySignInManager: NSObject, WeiboSDKDelegate, WBHttpRequestDelegate
         }
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
             if data?.length > 0 {
-                finished(NSString(data: data!, encoding: NSUTF8StringEncoding) as? String)
+                finished(data)
             }
             else {
-                finished(error?.description)
+                finished(nil)
             }
         }
     }

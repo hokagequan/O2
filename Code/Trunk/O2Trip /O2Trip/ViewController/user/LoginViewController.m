@@ -43,6 +43,14 @@
     [ThirdPartySignInManager defaultManager].delegate = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.weboButton.hidden = ![WeiboSDK isWeiboAppInstalled];
+    self.qqButton.hidden = ![ThirdPartySignInManager isQQInstalled];
+    self.wechatButton.hidden = ![ThirdPartySignInManager isWechatInstalled];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -165,6 +173,7 @@
 
 - (void)didFinishAuthorized:(ThirdPartySignInManager *)manager type:(enum ThirdPartyType)type success:(BOOL)success {
     // TODO: 第三方登录
+    NSLog(@"OK");
 }
 
 @end
