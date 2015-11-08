@@ -5941,6 +5941,7 @@
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="4yU-rq-9yD"/>
+                                    <constraint firstAttribute="height" constant="16" id="fzg-uk-Fvb"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="@3x_personal-04.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -5956,7 +5957,6 @@
                             <constraint firstAttribute="trailing" secondItem="Zn9-qK-LHV" secondAttribute="trailing" id="1Wh-tR-pZq"/>
                             <constraint firstItem="Zn9-qK-LHV" firstAttribute="leading" secondItem="xuA-52-Nsb" secondAttribute="leading" id="5pl-Td-SzT"/>
                             <constraint firstItem="fxj-ra-e1S" firstAttribute="top" secondItem="5mo-Aq-o2F" secondAttribute="bottom" constant="6" id="Ldy-wa-dLI"/>
-                            <constraint firstItem="UPg-JR-I2N" firstAttribute="top" secondItem="fxj-ra-e1S" secondAttribute="bottom" constant="526" id="ZYb-ye-oKy"/>
                             <constraint firstItem="fxj-ra-e1S" firstAttribute="leading" secondItem="xuA-52-Nsb" secondAttribute="leadingMargin" constant="-8" id="lmR-Sl-Hgf"/>
                             <constraint firstItem="Zn9-qK-LHV" firstAttribute="top" secondItem="xuA-52-Nsb" secondAttribute="topMargin" constant="-20" id="u9G-Ff-Pgs"/>
                             <constraint firstItem="Zn9-qK-LHV" firstAttribute="bottom" secondItem="UPg-JR-I2N" secondAttribute="top" id="uxV-pw-RmZ"/>
@@ -7365,6 +7365,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="gRI-iX-hP5"/>
         <segue reference="oSK-Jd-rUA"/>
-        <segue reference="6yf-me-hNE"/>
+        <segue reference="qyw-SV-Wzi"/>
     </inferredMetricsTieBreakers>
 </document>
