@@ -159,6 +159,12 @@
     [self.bgLabel.layer insertSublayer:layer atIndex:0];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBarHidden = NO;
+}
+
 //获取时间的请求
 -(void)getOtherRequest
 {

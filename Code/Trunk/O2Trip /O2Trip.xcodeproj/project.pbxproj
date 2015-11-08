@@ -3072,6 +3072,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/O2Trip/Config/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys",
 					"$(PROJECT_DIR)/O2Trip",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay/AlipaySDK.framework/Headers",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/Tencent/TencentOpenAPI.framework/Headers",
@@ -3118,6 +3119,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/O2Trip/Config/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys",
 					"$(PROJECT_DIR)/O2Trip",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/AliPay/AlipaySDK.framework/Headers",
 					"$(PROJECT_DIR)/O2Trip/NewO2Trip/ThirdPartys/Tencent/TencentOpenAPI.framework/Headers",
