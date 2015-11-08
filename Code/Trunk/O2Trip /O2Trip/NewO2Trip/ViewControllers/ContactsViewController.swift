@@ -27,6 +27,8 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        contactItems.removeAll()
+        
         GiFHUD.setGifWithImageName("loading.gif")
         GiFHUD.show()
         

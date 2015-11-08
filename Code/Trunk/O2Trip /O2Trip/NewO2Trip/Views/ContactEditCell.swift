@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactEditCell: UITableViewCell {
+class ContactEditCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailTextField: UITextField!
@@ -22,6 +22,14 @@ class ContactEditCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    // MARK: - TextField
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
 
 }
